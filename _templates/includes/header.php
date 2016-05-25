@@ -10,7 +10,7 @@
 | | | | | | (_| | (_| |  __/  \ V  V /| | |_| | | | | | | | | | (_| \__ \ ||  __/ |    | |_) | |_| | | | (_| |  __/ |
 |_| |_| |_|\__,_|\__,_|\___|   \_/\_/ |_|\__|_| |_| |_| |_| |_|\__,_|___/\__\___|_|    |_.__/ \__,_|_|_|\__,_|\___|_|
 
-                                                                              https://github.com/oninross/master_builder
+                                                                              https://github.com/oninross/infiniteimaginations
 
                                                                                                                          -->
     <head>
@@ -42,28 +42,20 @@
         <meta name="twitter:image" content="" />
 
 
-        <!-- build:css /assets/master_builder/css/main.min.css -->
-        <link href="/assets/master_builder/css/main.css" rel="stylesheet">
+        <!-- build:css /assets/infiniteimaginations/css/main.infiniteimaginations.min.css -->
+        <link href="/assets/infiniteimaginations/css/main.css" rel="stylesheet">
+        <link href="/assets/infiniteimaginations/css/responsive.css" rel="stylesheet">
         <!-- /build -->
 
-        <?php if(!isset($is_table_preview)): ?>
-            <!-- build:css /assets/master_builder/css/responsive.min.css -->
-            <link href="/assets/master_builder/css/responsive.css" rel="stylesheet">
-            <!-- /build -->
-        <?php endif; ?>
-
-        <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
-
         <!--[if lt IE 9]>
-            <link rel="stylesheet" href = "/assets/master_builder/css/ie.css">
+            <link rel="stylesheet" href = "/assets/infiniteimaginations/css/ie.css">
             <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
         <![endif]-->
 
-        <script src="/assets/master_builder/js/vendor/modernizr.js"></script>
+        <script src="/assets/infiniteimaginations/js/vendor/modernizr.js"></script>
     </head>
     <body>
-        <?php if(!isset($is_table_preview)): ?>
         <header class="header" role="header">
             <div class="logo">
                 <div class="container">
@@ -75,4 +67,3 @@
 
             <?php include('primary-nav.php'); ?>
         </header>
-        <?php endif; ?>

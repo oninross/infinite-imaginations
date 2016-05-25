@@ -31,7 +31,7 @@ module.exports = function(grunt) {
                 files: {
                     'dist/assets/<%= pkg.name %>/js/modules.min.js': ['<%= concat.modules.dest %>'],
                     'dist/assets/<%= pkg.name %>/js/plugins.min.js': ['<%= concat.plugins.dest %>'],
-                    'dist/assets/<%= pkg.name %>/js/main.min.js': ['<%= copy.mainjs.dest %>']
+                    'dist/assets/<%= pkg.name %>/js/main.<%= pkg.name %>.min.js': ['<%= copy.mainjs.dest %>']
                 }
             },
             vendor: {
@@ -68,6 +68,14 @@ module.exports = function(grunt) {
                     ],
                 dest: 'dist/assets/<%= pkg.name %>/js/modules.js'
             },
+            mainjs: {
+                src: [
+                        'dist/assets/<%= pkg.name %>/js/plugins.js',
+                        'dist/assets/<%= pkg.name %>/js/modules.js',
+                        'dist/assets/<%= pkg.name %>/js/main.js'
+                    ],
+                dest: 'dist/assets/<%= pkg.name %>/js/main.<%= pkg.name %>.js'
+            },
             css: {
                 options: {
                     separator: ''
@@ -75,10 +83,11 @@ module.exports = function(grunt) {
                 src: [
                     '_styles/jquery.webui-popover.css',
                     '_styles/fancybox/jquery.fancybox.css',
+                    'dist/assets/<%= pkg.name %>/css/responsive.css',
                     'dist/assets/<%= pkg.name %>/css/main.css'
                 ],
                 separator: '',
-                dest: 'dist/assets/<%= pkg.name %>/css/main.css'
+                dest: 'dist/assets/<%= pkg.name %>/css/main.<%= pkg.name %>.css'
             },
         },
 
@@ -116,6 +125,11 @@ module.exports = function(grunt) {
             mainjs: {
                 src: '_scripts/main.js',
                 dest: 'dist/assets/<%= pkg.name %>/js/main.js'
+            },
+            copyAssets: {
+                files: [
+                    { expand: true, cwd: 'dist',  src: ['**/*'], dest: 'www' }
+                ]
             }
         },
 
@@ -321,8 +335,10 @@ module.exports = function(grunt) {
         'copy',
         'shell:sass',
         'concat:css',
+        'concat:mainjs',
         'cssmin',
         'uglify',
+        'copy:copyAssets',
         'imagemin',
         'processhtml',
         'php2html'

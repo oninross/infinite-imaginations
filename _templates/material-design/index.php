@@ -7,7 +7,7 @@
 <main id="main" role="document">
 
 	<!-- Hero Banner -->
-	<header class="standard-banner backstretch lazy" data-original="/assets/master_builder/images/background.jpg">
+	<header class="standard-banner backstretch lazy" data-original="/assets/infiniteimaginations/images/background.jpg">
 		<div class="container">
 			<h2>Material Design</h2>
 		</div>

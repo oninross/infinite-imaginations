@@ -12,23 +12,17 @@
         </script>
 
         <!-- build:js //ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js -->
-        <script src="/assets/master_builder/js/vendor/jquery-1.11.3.min.js"></script>
+        <script src="/assets/infiniteimaginations/js/vendor/jquery-1.11.3.min.js"></script>
         <!-- /build -->
 
         <!--[if lt IE 9]>
             <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
         <![endif]-->
 
-        <!-- build:js /assets/master_builder/js/plugins.min.js -->
-        <script src="/assets/master_builder/js/plugins.js"></script>
-        <!-- /build -->
-
-        <!-- build:js /assets/master_builder/js/modules.min.js -->
-        <script src="/assets/master_builder/js/modules.js"></script>
-        <!-- /build -->
-
-        <!-- build:js /assets/master_builder/js/main.min.js -->
-        <script src="/assets/master_builder/js/main.js"></script>
+        <!-- build:js /assets/infiniteimaginations/js/main.infiniteimaginations.min.js -->
+        <script src="/assets/infiniteimaginations/js/plugins.js"></script>
+        <script src="/assets/infiniteimaginations/js/modules.js"></script>
+        <script src="/assets/infiniteimaginations/js/main.js"></script>
         <!-- /build -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

@@ -1,5 +1,5 @@
 # Master Builder
-[![GitHub version](https://badge.fury.io/gh/oninross%2Fmaster_builder.svg)](http://badge.fury.io/gh/oninross%2Fmaster_builder)
+[![GitHub version](https://badge.fury.io/gh/oninross%2Finfiniteimaginations.svg)](http://badge.fury.io/gh/oninross%2Finfiniteimaginations)
 [![License](http://img.shields.io/badge/License-MIT-blue.svg)](http://opensource.org/licenses/MIT)
 
 ## Introduction
@@ -75,8 +75,8 @@ If you haven't used [SASS](http://sass-lang.com/) before, be sure to have a read
 ### Local PHP Server
 **Note:** You must set the document root in your Local PHP Server to the `dist` folder of the project for you to view it in a browser.  You can do this by editing the `httpd.conf` file. See the example below:
 ```
-DocumentRoot "C:\xampp\htdocs\master_builder\dist"
-<Directory "C:\xampp\htdocs\master_builder\dist">
+DocumentRoot "C:\xampp\htdocs\infiniteimaginations\dist"
+<Directory "C:\xampp\htdocs\infiniteimaginations\dist">
 ```
 
 ### GreenSock TweenMax and TimeLineMax *(optional)*
@@ -88,9 +88,9 @@ It will make your life a whole lot easier once you enable this in your browser. 
 ## Setup
 Provided that you have [Grunt](http://gruntjs.com/) and [Ruby](https://www.ruby-lang.org/en/) installed in your system, follow the steps to get started with your project.
 
-1. Open `package.json` file and change `master_builder` the desired project name.  Do not use white spaces.  Hyphens and underscores are accepted.
+1. Open `package.json` file and change `infiniteimaginations` the desired project name.  Do not use white spaces.  Hyphens and underscores are accepted.
 
-2. Open `header.php` and `footer.php`.  Change `master_builder` to the project name that you chose in step 1.
+2. Open `header.php` and `footer.php`.  Change `infiniteimaginations` to the project name that you chose in step 1.
 
 3. Open your Command Prompt (Windows) or your Terminal (Mac OSX) and go to the directory of your project.
 
@@ -127,7 +127,7 @@ grunt validate
 
 ## What's in the Package?
 ```
-master_builder/
+infiniteimaginations/
     ├── _fonts/
     ├── _icomoon/
     ├── _images/
@@ -298,7 +298,7 @@ Add `.backstretch` on the `div` that you wish to have the image to have a `backg
 `<img>` tags must have the class `lazy` attached to it and a data attribute named `data-original` containing the path of the image.  JS will do the rest.
 
 ## Issues, Bugs or Feature Requests
-If you found any bugs, would like to contribute, have comments or suggestions, head down to the [issues section](https://github.com/oninross/master_builder/issues) and log it in.  I will be more than happy to discuss it.
+If you found any bugs, would like to contribute, have comments or suggestions, head down to the [issues section](https://github.com/oninross/infiniteimaginations/issues) and log it in.  I will be more than happy to discuss it.
 
 ## Credits
 [Ang Ziwei](http://www.bitneko.com/) for creating the gruntfile.

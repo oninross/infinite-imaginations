@@ -8,8 +8,8 @@
 	<section class="container">
 		  <article>
 
-<h1><a id="Master_Builder_0"></a>Master Builder</h1>
-<p><a href="http://badge.fury.io/gh/oninross%2Fmaster_builder"><img src="https://badge.fury.io/gh/oninross%2Fmaster_builder.svg" alt="GitHub version"></a>
+<h1><a id="infiniteimaginations_0"></a>Master Builder</h1>
+<p><a href="http://badge.fury.io/gh/oninross%2Finfiniteimaginations"><img src="https://badge.fury.io/gh/oninross%2Finfiniteimaginations.svg" alt="GitHub version"></a>
 <a href="http://opensource.org/licenses/MIT"><img src="http://img.shields.io/badge/License-MIT-blue.svg" alt="License"></a></p>
 <h2><a id="Introduction_4"></a>Introduction</h2>
 <p>Master Builder is a simple out of the box front-end templating base used for building new websites created and maintained by Nino Ross Rodriguez.  Master Builder is not to compete with other frameworks, but more on to provide a very easy and structured framework for any developer to use.  If you don’t want to use any of the available features in the build, you can easily just remove the files that you don’t need.  No need to go down to code level and find the lines of code.  It would be as easy as <code>right click &gt; delete</code>.</p>
@@ -83,10 +83,10 @@
 <p>Provided that you have <a href="http://gruntjs.com/">Grunt</a> and <a href="https://www.ruby-lang.org/en/">Ruby</a> installed in your system, follow the steps to get started with your project.</p>
 <ol>
 <li>
-<p>Open <code>package.json</code> file and change <code>master_builder</code> the desired project name.  Do not use white spaces.  Hyphens and underscores are accepted.</p>
+<p>Open <code>package.json</code> file and change <code>infiniteimaginations</code> the desired project name.  Do not use white spaces.  Hyphens and underscores are accepted.</p>
 </li>
 <li>
-<p>Open <code>header.php</code> and <code>footer.php</code>.  Change <code>master_builder</code> to the project name that you chose in step 1.</p>
+<p>Open <code>header.php</code> and <code>footer.php</code>.  Change <code>infiniteimaginations</code> to the project name that you chose in step 1.</p>
 </li>
 <li>
 <p>Open your Command Prompt (Windows) or your Terminal (Mac OSX) and go to the directory of your project.</p>
@@ -115,7 +115,7 @@
 </code></pre>
 <p><strong><em>Validation Task:</em></strong> Will sift through your JS and SASS files to check for any errors.</p>
 <h2><a id="Whats_in_the_Package_127"></a>What’s in the Package?</h2>
-<pre><code>master_builder/
+<pre><code>infiniteimaginations/
     ├── _fonts/
     ├── _icomoon/
     ├── _images/
@@ -251,7 +251,7 @@
 <h3><a id="Lazy_Load_Images_296"></a>Lazy Load Images</h3>
 <p><code>&lt;img&gt;</code> tags must have the class <code>lazy</code> attached to it and a data attribute named <code>data-original</code> containing the path of the image.  JS will do the rest.</p>
 <h2><a id="Issues_Bugs_or_Feature_Requests_299"></a>Issues, Bugs or Feature Requests</h2>
-<p>If you found any bugs, would like to contribute, have comments or suggestions, head down to the <a href="https://github.com/oninross/master_builder/issues">issues section</a> and log it in.  I will be more than happy to discuss it.</p>
+<p>If you found any bugs, would like to contribute, have comments or suggestions, head down to the <a href="https://github.com/oninross/infiniteimaginations/issues">issues section</a> and log it in.  I will be more than happy to discuss it.</p>
 <h2><a id="Credits_302"></a>Credits</h2>
 <p><a href="http://www.bitneko.com/">Ang Ziwei</a> for creating the gruntfile.</p>
 <p><a href="http://greensock.com/">GreenSock</a> for making animating so much easier.</p>

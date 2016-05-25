@@ -164,10 +164,8 @@ jQuery.extend(jQuery.easing, {
         jRes.addFunc({
             breakpoint: ['desktop'],
             enter: function () {
-                RR.tableScrollbar.wrap();
             },
             exit: function () {
-                RR.tableScrollbar.unwrap();
             }
         });
 
@@ -175,10 +173,8 @@ jQuery.extend(jQuery.easing, {
         jRes.addFunc({
             breakpoint: ['tablet'],
             enter: function () {
-                RR.tableScrollbar.wrap();
             },
             exit: function () {
-                RR.tableScrollbar.unwrap();
             }
         });
 
@@ -186,10 +182,8 @@ jQuery.extend(jQuery.easing, {
         jRes.addFunc({
             breakpoint: ['mobile'],
             enter: function () {
-                RR.tableScrollbar.wrap();
             },
             exit: function () {
-                RR.tableScrollbar.unwrap();
             }
         });
     });

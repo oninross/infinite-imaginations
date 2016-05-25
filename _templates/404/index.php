@@ -7,7 +7,7 @@
 <main id="main" role="document">
 
 	<!-- Hero Banner -->
-	<header class="standard-banner backstretch lazy" data-original="/assets/master_builder_Angular/images/background.jpg">
+	<header class="standard-banner backstretch lazy" data-original="/assets/infiniteimaginations_Angular/images/background.jpg">
 	    <div class="container">
             <h2>404</h2>
 	    </div>
