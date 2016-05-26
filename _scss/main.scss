@@ -30,7 +30,7 @@
 *, *:before, *:after { box-sizing: inherit; }
 html { box-sizing: border-box; }
 body {
-    font: 62.5%/1.618 'HelveticaNeue', Arial, sans-serif;
+    font: 62.5%/1.5 'HelveticaNeue', Arial, sans-serif;
     margin: 0 !important;
 }
 
@@ -146,9 +146,28 @@ address, p {
 a {
     @include transition( all, 0.5s, $easeOutExpo );
 
+    color: $black;
     font-size: $default-font-size;
+    font-weight: $bold;
     margin-bottom: 10px;
+    position: relative;
     text-decoration: none;
+
+    &:after {
+        background-color: $blue;
+        bottom: 0;
+        content: '';
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+}
+
+hr {
+    border-top: 2px solid $black;
+    margin: 25px 0;
 }
 
 button {
@@ -234,7 +253,7 @@ svg.ripple {
 02 Layout
 ========================================================================== */
 #main {
-    position: relative;
+    // position: relative;
 }
 
 .backstretch {
@@ -251,6 +270,7 @@ svg.ripple {
     right: 0;
     top: 0;
     width: 100%;
+    z-index: -1;
 
     .pattern {
         background: url(/assets/infiniteimaginations/images/pattern.png);
@@ -348,7 +368,79 @@ svg.ripple {
 /* =======================================================================
 05 Homepage
 ========================================================================== */
+.hello {
+    h1 {
+        border-left: 14px solid $blue;
+        color: $white;
+        font-size: 7em;
+        margin-bottom: 30px;
+        padding: 25px;
+        position: relative;
 
+        .bar {
+            background: $black;
+            display: block;
+            height: 100%;
+            left: 0;
+            max-width: 480px;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: -1;
+        }
+    }
+
+    p {
+        font-size: 2em;
+    }
+
+    nav {
+        ul {
+            @include normalise-list;
+
+            text-align: center;
+        }
+
+        li {
+            @include inline-block;
+
+            border: 3px solid $black;
+            height: 125px;
+            margin: 0 15px;
+            padding: 20px 10px;
+            width: 125px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        a {
+            margin: 0;
+        }
+
+        span {
+            @include inline-block;
+
+            line-height: 1;
+            vertical-align: top;
+        }
+
+        .abbr {
+            font-size: 3.750em;
+            margin-bottom: 10px;
+        }
+
+        .full {
+            display: block;
+            font-size: 0.875em;
+        }
+    }
+}
 
 
 
