@@ -103,33 +103,6 @@ jQuery.extend(jQuery.easing, {
             effect : 'fadeIn'
         });
 
-
-        /* Placeholder Alternative */
-        (function () {
-            var $inputText = $('input[type="text"]');
-
-            if ($('.no-placeholder').length) {
-                $inputText
-                    .each(function () {
-                        var $this = $(this);
-                        $this.addClass('blur').attr('value', $this.attr('placeholder'));
-                    })
-                    .on('focus', function () {
-                        var $this = $(this);
-
-                        if ($this.val() == $this.attr('placeholder')) {
-                            $this.val('').removeClass('blur');
-                        }
-                    })
-                    .on('blur', function () {
-                        var $this = $(this);
-                        if ($this.val() == '') {
-                            $this.val($this.attr('placeholder')).addClass('blur');
-                        }
-                    });
-            }
-        })();
-
         /* Background-size: cover Fallback */
         (function () {
             if ($('.no-bgsizecover').length) {
