@@ -8,7 +8,7 @@
     <section class="hello">
         <div class="container">
             <div class="wrap">
-                <div class="col-10 col-offset-2">
+                <div class="col-10 col-offset-1">
                     <h1>
                         Hello world...
                         <span class="bar"></span>
