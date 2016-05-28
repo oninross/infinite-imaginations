@@ -270,13 +270,28 @@ svg.ripple {
     right: 0;
     top: 0;
     width: 100%;
-    z-index: -1;
+    z-index: -5;
+
+    video {
+        background-size: cover;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        left: 50%;
+        position: fixed;
+        transform: translateX(-50%) translateY(-50%);
+        top: 50%;
+        width: auto;
+        z-index: 5;
+    }
 
     .pattern {
         background: url(/assets/infiniteimaginations/images/pattern.png);
         display: block;
         height: 100%;
+        position: relative;
         width: 100%;
+        z-index: 10;
     }
 }
 
@@ -459,11 +474,6 @@ svg.ripple {
     }
 }
 
-.standard-banner {
-    color: $white;
-    height: 150px;
-    margin-bottom: 20px;
-}
 
 
 /* =======================================================================

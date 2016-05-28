@@ -8,7 +8,7 @@
     <section class="hello">
         <div class="container">
             <div class="wrap">
-                <div class="col-10 col-offset-2">
+                <div class="col-10 col-offset-1">
                     <h1>
                         Hello world...
                         <span class="bar"></span>
@@ -82,9 +82,7 @@
     <i class="pattern"></i>
 
     <video id="video_background" preload="auto" loop="loop" muted="muted" autoplay>
-        <source src="video/clouds.mp4" type="video/mp4" />
-        <source src="video/clouds.webm" type="video/webm" />
-        <source src="video/clouds.ogv" type="video/ogg" />
+        <source src="/assets/infiniteimaginations/images/background.mp4" type="video/mp4" />
     </video>
 </div>
 

@@ -76,11 +76,11 @@ var RR = (function (parent, $) {
                 tlClick.reverse();
             }
         }).on('mouseover', function () {
-            if (!$(this).hasClass('active')) {
+            if (!$(this).hasClass('active') && !isMobileDevice) {
                 tlHover.play();
             }
         }).on('mouseout', function () {
-            if (!$(this).hasClass('active')) {
+            if (!$(this).hasClass('active') && !isMobileDevice) {
                 tlHover.reverse();
             }
         });
