@@ -6,11 +6,10 @@
  */
 var RR = (function (parent, $) {
     'use strict';
+    var $window = $(window);
 
     var setup = function () {
-        var $window = $(window),
-            isMobileDevice = $window.width() < 768 ? true : false,
-            tlClick = new TimelineMax(),
+        var tlClick = new TimelineMax(),
             tlHover = new TimelineMax(),
             tl = '.box.tl',
             tm = '.box.tm',
@@ -62,7 +61,6 @@ var RR = (function (parent, $) {
 
         tlHover.pause();
 
-
         $('.menu').on('click', function (e) {
             e.preventDefault();
 
@@ -76,19 +74,24 @@ var RR = (function (parent, $) {
                 tlClick.reverse();
             }
         }).on('mouseover', function () {
-            if (!$(this).hasClass('active') && !isMobileDevice) {
+            if (!$(this).hasClass('active') && $('.no-touchevents').length) {
                 tlHover.play();
             }
         }).on('mouseout', function () {
-            if (!$(this).hasClass('active') && !isMobileDevice) {
+            if (!$(this).hasClass('active') && $('.no-touchevents').length) {
                 tlHover.reverse();
             }
         });
     };
 
+    var check = function () {
+        return $window.width() < 1024 ? true : false;
+    };
+
     // Export module method
     parent.listeners = {
-        setup: setup
+        setup: setup,
+        check: check
     };
 
     return parent;
