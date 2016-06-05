@@ -342,39 +342,23 @@ svg.ripple {
         width: 8px;
 
         &.tl {
-            top: -24px;
-            left: -24px;
-        }
-
-        &.tm {
-            top: -24px;
+            top: -12px;
+            left: -12px;
         }
 
         &.tr {
-            top: -24px;
-            right: -24px;
-        }
-
-        &.ml {
-            left: -24px;
-        }
-
-        &.mr {
-            right: -24px;
+            top: -12px;
+            right: -12px;
         }
 
         &.bl {
-            bottom: -24px;
-            left: -24px;
-        }
-
-        &.bm {
-            bottom: -24px;
+            bottom: -12px;
+            left: -12px;
         }
 
         &.br {
-            bottom: -24px;
-            right: -24px;
+            bottom: -12px;
+            right: -12px;
         }
     }
 }

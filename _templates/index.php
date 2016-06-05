@@ -14,7 +14,7 @@
                         <span class="bar"></span>
                     </h1>
 
-                    <p>I'm <strong>Niño Ross Rodriguez</strong>, a UX Developer based in Singapore with eight years of industry experience, specializing in developing pixel perfect websites quickly without sacrificing code quality. Get to know a bit more <a href="http://www.google.com/">about my skills</a> or feel free to look around my <a href="/#/coding/">coding</a> and <a href="/#/design/">design</a> works.</p>
+                    <p>I'm <strong>Niño Ross Rodriguez</strong>, a UX Developer based in Singapore with eight years of industry experience.  I specialize in developing pixel perfect websites quickly without sacrificing code quality. Get to know a bit more <a href="http://www.google.com/">about my skills</a> or feel free to look around my <a href="/#/coding/">coding</a> and <a href="/#/design/">design</a> works.</p>
 
                     <hr />
 
