@@ -22,8 +22,10 @@
                         <ul>
                             <li>
                                 <a href="/#/about/">
-                                    <span class="abbr">Ab</span>
-                                    <span class="full">about</span>
+                                    <span class="text">
+                                        <span class="abbr">Ab</span>
+                                        <span class="full">about</span>
+                                    </span>
 
                                     <span class="icon icon-about"></span>
                                 </a>
@@ -31,8 +33,10 @@
 
                             <li>
                                 <a href="/#/achievements/">
-                                    <span class="abbr">Ac</span>
-                                    <span class="full">achievements</span>
+                                    <span class="text">
+                                        <span class="abbr">Ac</span>
+                                        <span class="full">achievements</span>
+                                    </span>
 
                                     <span class="icon icon-achievements"></span>
                                 </a>
@@ -40,8 +44,10 @@
 
                             <li>
                                 <a href="/#/coding/">
-                                    <span class="abbr">Co</span>
-                                    <span class="full">coding</span>
+                                    <span class="text">
+                                        <span class="abbr">Co</span>
+                                        <span class="full">coding</span>
+                                    </span>
 
                                     <span class="icon icon-coding"></span>
                                 </a>
@@ -49,8 +55,10 @@
 
                             <li>
                                 <a href="/#/design/">
-                                    <span class="abbr">De</span>
-                                    <span class="full">design</span>
+                                    <span class="text">
+                                        <span class="abbr">De</span>
+                                        <span class="full">design</span>
+                                    </span>
 
                                     <span class="icon icon-design"></span>
                                 </a>
@@ -58,8 +66,10 @@
 
                             <li>
                                 <a href="/#/contact/">
-                                    <span class="abbr">Ct</span>
-                                    <span class="full">contact</span>
+                                    <span class="text">
+                                        <span class="abbr">Ct</span>
+                                        <span class="full">contact</span>
+                                    </span>
 
                                     <span class="icon icon-contact"></span>
                                 </a>

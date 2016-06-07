@@ -16,11 +16,11 @@ var RR = (function (parent, $) {
             bl = '.box.bl',
             br = '.box.br';
 
-        tlClick.to(tl, 0.25, { left: 0, top: 0, ease: Expo.easeOut });
-        tlClick.to(tr, 0.25, { right: 0, top: 0, ease: Expo.easeOut }, '-=0.25');
+        tlClick.to(tl, 0.25, { backgroundColor: '#fff',left: 0, top: 0, ease: Expo.easeOut });
+        tlClick.to(tr, 0.25, { backgroundColor: '#fff',right: 0, top: 0, ease: Expo.easeOut }, '-=0.25');
 
-        tlClick.to(bl, 0.25, { left: 0, bottom: 0, ease: Expo.easeOut }, '-=0.25');
-        tlClick.to(br, 0.25, { right: 0, bottom: 0, ease: Expo.easeOut }, '-=0.25');
+        tlClick.to(bl, 0.25, { backgroundColor: '#fff',left: 0, bottom: 0, ease: Expo.easeOut }, '-=0.25');
+        tlClick.to(br, 0.25, { backgroundColor: '#fff',right: 0, bottom: 0, ease: Expo.easeOut }, '-=0.25');
 
 
         tlClick.to(tl, 0.25, { height: 30, rotation: 45, ease: Expo.easeOut });
@@ -61,6 +61,9 @@ var RR = (function (parent, $) {
                 tlHover.reverse();
             }
         });
+
+        // Hello Section: nav animations
+
     };
 
     var check = function () {

@@ -83,8 +83,8 @@
             <nav class="primary-nav">
                 <ul>
                     <li>
-                        <a href="/#/hello/">
-                            <img src="/assets/infiniteimaginations/images/svg/logo-icon.svg" alt="home">
+                        <a class="active" href="/#/hello/">
+                            <span class="icon icon-infinite"></span>
                             <span class="vh">Home</span>
                         </a>
                     </li>

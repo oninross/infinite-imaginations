@@ -80,18 +80,37 @@ $ultra-bold: 900;
 }
 
 
-.icon-cross:before {
+.icon-about:before {
     content: "\e900";
 }
-.icon-chevron-down:before {
+.icon-email:before {
     content: "\e901";
 }
-.icon-chevron-right:before {
+.icon-instagram:before {
     content: "\e902";
 }
-.icon-done:before {
-    content: "\e28a";
+.icon-design:before {
+    content: "\e903";
 }
-.icon-print:before {
-    content: "\e2c1";
+.icon-linkedin:before {
+    content: "\e904";
 }
+.icon-coding:before {
+    content: "\e905";
+}
+.icon-contact:before {
+    content: "\e906";
+}
+.icon-github:before {
+    content: "\e907";
+}
+.icon-achievements:before {
+    content: "\e908";
+}
+.icon-facebook:before {
+    content: "\e909";
+}
+.icon-infinite:before {
+    content: "\e90a";
+}
+
