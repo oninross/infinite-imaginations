@@ -303,6 +303,16 @@ svg.ripple {
 ========================================================================== */
 .header {
     padding: 20px;
+    position: relative;
+
+    &-wrap {
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+    }
 }
 
 .logo {
@@ -317,15 +327,25 @@ svg.ripple {
 04 Main Navigation
 ========================================================================== */
 .primary-nav {
-    background-color: rgba(22, 21, 20, 0.9);
+    @include transition(width, 0.5s, $easeOutExpo);
+
     height: 100%;
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
+    width: 0;
     z-index: 10;
 
+    &.active {
+        width: 100%;
+
+        ul {
+            right: 0;
+        }
+    }
+
     ul {
+        @include transition(all, 0.5s, $easeOutExpo);
         @include normalise-list;
 
         background: $black;
@@ -333,14 +353,14 @@ svg.ripple {
         max-width: 300px;
         padding-top: 120px;
         position: absolute;
-        right: 0;
+        right: -300px;
         text-align: right;
         width: 100%;
         z-index: 5;
     }
 
     a {
-        @include transition(background-color, 0.25s, $easeOutExpo);
+        @include transition(all, 0.25s, $easeOutExpo);
 
         background-color: transparent;
         color: $white;
@@ -352,12 +372,21 @@ svg.ripple {
         width: 100%;
 
         &:after {
-            display: none;
+            @include transition(width, 0.25s, $easeOutExpo);
+
+            background-color: $white;
+            height: 100%;
+            left: auto;
+            right: 0;
+            width: 0;
         }
 
         &:hover {
-            background-color: $white;
             color: $black;
+
+            &:after {
+                width: 100%;
+            }
         }
 
         &.active {
@@ -365,6 +394,17 @@ svg.ripple {
             border-right: 15px solid $blue;
             color: $black;
         }
+    }
+
+    .overlay {
+        background-color: rgba(22, 21, 20, 0.9);
+        display: block;
+        cursor: pointer;
+        height: inherit;
+        right: 0;
+        position: absolute;
+        top: 0;
+        width: inherit;
     }
 }
 
@@ -386,8 +426,8 @@ svg.ripple {
 
         background-color: $black;
         display: block;
-        height: 6px;
-        width: 6px;
+        height: 8px;
+        width: 8px;
 
         &.tl {
             top: -12px;
@@ -479,10 +519,6 @@ svg.ripple {
             &:hover {
                 border: 3px solid $blue;
 
-                // .text {
-                //     @include scale(1.5);
-                // }
-
                 .icon {
                     @include scale(1);
 
@@ -499,10 +535,6 @@ svg.ripple {
         }
 
         .text {
-            // FIXME: Transition not working
-            @include transition(all, 0.5, $easeOutExpo);
-            @include scale(1);
-
             display: block;
             position: relative;
         }
@@ -518,8 +550,8 @@ svg.ripple {
         }
 
         .icon {
-            @include transition(all, 0.25s, $easeOutExpo);
             @include scale(0.75);
+            @include transition(all, 0.25s, $easeOutExpo);
 
             background: $blue;
             color: $white;

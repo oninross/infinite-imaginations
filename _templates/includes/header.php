@@ -80,19 +80,21 @@
                 <span class="box br"></span>
             </button>
 
-            <nav class="primary-nav">
-                <ul>
-                    <li>
-                        <a class="active" href="/#/hello/">
-                            <span class="icon icon-infinite"></span>
-                            <span class="vh">Home</span>
-                        </a>
-                    </li>
-                    <li><a href="/#/about/">about</a></li>
-                    <li><a href="/#/achievements/">achievements</a></li>
-                    <li><a href="/#/coding/">coding</a></li>
-                    <li><a href="/#/design/">design</a></li>
-                    <li><a href="/#/contact/">contact</a></li>
-                </ul>
-            </nav>
+            <div class="header-wrap">
+                <nav class="primary-nav">
+                    <ul>
+                        <li>
+                            <a class="active" href="/#/hello/">
+                                <span class="icon icon-infinite"></span>
+                                <span class="vh">Home</span>
+                            </a>
+                        </li>
+                        <li><a href="/#/about/">about</a></li>
+                        <li><a href="/#/achievements/">achievements</a></li>
+                        <li><a href="/#/coding/">coding</a></li>
+                        <li><a href="/#/design/">design</a></li>
+                        <li><a href="/#/contact/">contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>

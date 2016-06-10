@@ -6,68 +6,54 @@
  */
 var RR = (function (parent, $) {
     'use strict';
-    var $window = $(window);
+
+    var $document = $(document),
+        $window = $(window),
+        vh, vw;
 
     var setup = function () {
-        var tlClick = new TimelineMax(),
-            tlHover = new TimelineMax(),
-            tl = '.box.tl',
-            tr = '.box.tr',
-            bl = '.box.bl',
-            br = '.box.br';
+        // Background Pattern
+        vw = $document.width();
+        vh = $document.height();
 
-        tlClick.to(tl, 0.25, { backgroundColor: '#fff',left: 0, top: 0, ease: Expo.easeOut });
-        tlClick.to(tr, 0.25, { backgroundColor: '#fff',right: 0, top: 0, ease: Expo.easeOut }, '-=0.25');
+        backgroundResize();
 
-        tlClick.to(bl, 0.25, { backgroundColor: '#fff',left: 0, bottom: 0, ease: Expo.easeOut }, '-=0.25');
-        tlClick.to(br, 0.25, { backgroundColor: '#fff',right: 0, bottom: 0, ease: Expo.easeOut }, '-=0.25');
+        $window.on('resize', debounce(function () {
+            vw = $document.width();
+            vh = $document.height();
 
-
-        tlClick.to(tl, 0.25, { height: 30, rotation: 45, ease: Expo.easeOut });
-        tlClick.to(tr, 0.25, { height: 30, rotation: -45, ease: Expo.easeOut }, '-=0.25');
-
-        tlClick.to(bl, 0.25, { autoAlpha: 0, ease: Expo.easeOut }, '-=0.25');
-        tlClick.to(br, 0.25, { autoAlpha: 0, ease: Expo.easeOut }, '-=0.25');
-
-        tlClick.pause();
-
-
-        tlHover.to(tl, 0.25, { left: -16, top: -16, ease: Expo.easeOut });
-        tlHover.to(tr, 0.25, { right: -16, top: -16, ease: Expo.easeOut }, '-=0.25');
-
-        tlHover.to(bl, 0.25, { left: -16, bottom: -16, ease: Expo.easeOut }, '-=0.25');
-        tlHover.to(br, 0.25, { right: -16, bottom: -16, ease: Expo.easeOut }, '-=0.25');
-
-        tlHover.pause();
-
-        $('.menu').on('click', function (e) {
-            e.preventDefault();
-
-            var $this = $(this);
-
-            $this.toggleClass('active');
-
-            if ($this.hasClass('active')) {
-                tlClick.play();
-            } else {
-                tlClick.reverse();
-            }
-        }).on('mouseover', function () {
-            if (!$(this).hasClass('active') && $('.no-touchevents').length) {
-                tlHover.play();
-            }
-        }).on('mouseout', function () {
-            if (!$(this).hasClass('active') && $('.no-touchevents').length) {
-                tlHover.reverse();
-            }
-        });
+            backgroundResize();
+        }, 250));
 
         // Hello Section: nav animations
+        $('.hello nav a').on('mouseover', function (e) {
+            e.preventDefault();
 
+            TweenMax.to($(this).find('.text'), 0.25, {
+                autoAlpha: 0,
+                scale: 1.5,
+                ease: Expo.easeOut
+            });
+        }).on('mouseout', function (e) {
+            e.preventDefault();
+
+            TweenMax.to($(this).find('.text'), 0.25, {
+                autoAlpha: 1,
+                scale: 1,
+                ease: Expo.easeOut
+            });
+        });
     };
 
     var check = function () {
         return $window.width() < 1024 ? true : false;
+    };
+
+    function backgroundResize() {
+        $('.background').css({
+            width: vw + 'px',
+            height: vh + 'px'
+        });
     };
 
     // Export module method
