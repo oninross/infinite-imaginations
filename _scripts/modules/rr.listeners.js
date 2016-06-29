@@ -18,6 +18,61 @@ var RR = (function (parent, $) {
 
         backgroundResize();
 
+        // Sweet Intro Animation
+        TweenMax.to('.background', 1.5, {
+            opacity: 1
+        });
+
+        TweenMax.to('.background video', 1.5, {
+            opacity: 1,
+            delay: 0.5
+        });
+
+        TweenMax.to('.logo', 0.5, {
+            opacity: 1,
+            top: 0,
+            delay: 0.5
+        });
+
+        TweenMax.to('.hello h1', 1.5, {
+            'borderLeft' : '14px solid #2196f3',
+            ease: Expo.easeOut,
+            delay: 1.5
+        });
+
+        TweenMax.to('.hello .bar', 0.75, {
+            width: '100%',
+            ease: Expo.easeOut,
+            delay: 1.5,
+            onComplete: function () {
+                $('.hello h1').typist({
+                    speed: 12,
+                    text: 'Hello world...'
+                });
+            }
+        });
+
+        TweenMax.to('.hello p', 0.75, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 1.75
+        });
+
+        TweenMax.to('.hello hr', 1, {
+            width: '100%',
+            ease: Expo.easeOut,
+            delay: 2
+        });
+
+        TweenMax.staggerTo('.hello li', 1, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 2.25
+        }, 0.1);
+
+
         $window.on('resize', debounce(function () {
             vw = $document.width();
             vh = $document.height();

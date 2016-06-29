@@ -10,7 +10,7 @@
             <div class="wrap">
                 <div class="col-10 col-offset-1">
                     <h1>
-                        Hello world...
+                        <span class="vh">Hello World...</span>
                         <span class="bar"></span>
                     </h1>
 
@@ -81,11 +81,11 @@
         </div>
     </section>
 
-    <section class="about"></section>
+    <!-- <section class="about"></section>
     <section class="achievements"></section>
     <section class="coding"></section>
     <section class="design"></section>
-    <section class="contact"></section>
+    <section class="contact"></section> -->
 </main>
 
 <div class="background">

@@ -266,6 +266,7 @@ svg.ripple {
     bottom: 0;
     height: 100%;
     left: 0;
+    opacity: 0;
     position: absolute;
     right: 0;
     top: 0;
@@ -278,6 +279,7 @@ svg.ripple {
         min-width: 100%;
         min-height: 100%;
         left: 50%;
+        opacity: 0;
         position: fixed;
         transform: translateX(-50%) translateY(-50%);
         top: 50%;
@@ -316,6 +318,10 @@ svg.ripple {
 }
 
 .logo {
+    opacity: 0;
+    position: relative;
+    top: 50px;
+
     img {
         margin: 0;
     }
@@ -413,11 +419,14 @@ svg.ripple {
     border: 0;
     height: 50px;
     overflow: hidden;
+    opacity: 0;
     padding: 0;
     position: absolute;
     right: 10px;
-    top: 16px;
+    // top: 16px;
+    top: 66px;
     width: 50px;
+    visibility: hidden;
     z-index: 15;
 
     .box {
@@ -457,10 +466,13 @@ svg.ripple {
 ========================================================================== */
 .hello {
     h1 {
-        border-left: 14px solid $blue;
+        // border-left: 14px solid $blue;
+        border-left: 0px solid $blue;
         color: $white;
         font-size: 7em;
+        height: 120px;
         margin-bottom: 30px;
+        max-width: 525px;
         padding: 25px;
         position: relative;
 
@@ -469,16 +481,22 @@ svg.ripple {
             display: block;
             height: 100%;
             left: 0;
-            max-width: 480px;
             position: absolute;
             top: 0;
-            width: 100%;
+            width: 0;
             z-index: -1;
+        }
+
+        .text {
+            color: transparent;
         }
     }
 
     p {
         font-size: 2em;
+        opacity: 0;
+        position: relative;
+        top: 50px;
     }
 
     nav {
@@ -493,6 +511,9 @@ svg.ripple {
 
             height: 125px;
             margin: 0 15px;
+            opacity: 0;
+            position: relative;
+            top: 50px;
             width: 125px;
 
             &:first-child {
@@ -570,6 +591,10 @@ svg.ripple {
                 width: 75px;
             }
         }
+    }
+
+    hr {
+        width: 0;
     }
 }
 
