@@ -29,9 +29,7 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    'dist/assets/<%= pkg.name %>/js/modules.min.js': ['<%= concat.modules.dest %>'],
-                    'dist/assets/<%= pkg.name %>/js/plugins.min.js': ['<%= concat.plugins.dest %>'],
-                    'dist/assets/<%= pkg.name %>/js/main.<%= pkg.name %>.min.js': ['<%= copy.mainjs.dest %>']
+                    'dist/assets/<%= pkg.name %>/js/main.min.js': ['<%= concat.mainjs.dest %>']
                 }
             },
             vendor: {
@@ -73,8 +71,8 @@ module.exports = function(grunt) {
                         'dist/assets/<%= pkg.name %>/js/plugins.js',
                         'dist/assets/<%= pkg.name %>/js/modules.js',
                         'dist/assets/<%= pkg.name %>/js/main.js'
-                    ],
-                dest: 'dist/assets/<%= pkg.name %>/js/main.<%= pkg.name %>.js'
+                ],
+                dest: 'dist/assets/<%= pkg.name %>/js/<%= pkg.name %>.js'
             },
             css: {
                 options: {
@@ -83,12 +81,12 @@ module.exports = function(grunt) {
                 src: [
                     '_styles/jquery.webui-popover.css',
                     '_styles/fancybox/jquery.fancybox.css',
-                    'dist/assets/<%= pkg.name %>/css/responsive.css',
-                    'dist/assets/<%= pkg.name %>/css/main.css'
+                    'dist/assets/<%= pkg.name %>/css/main.css',
+                    'dist/assets/<%= pkg.name %>/css/responsive.css'
                 ],
                 separator: '',
-                dest: 'dist/assets/<%= pkg.name %>/css/main.<%= pkg.name %>.css'
-            },
+                dest: 'dist/assets/<%= pkg.name %>/css/main.css'
+            }
         },
 
         /**
@@ -126,9 +124,9 @@ module.exports = function(grunt) {
                 src: '_scripts/main.js',
                 dest: 'dist/assets/<%= pkg.name %>/js/main.js'
             },
-            copyAssets: {
+            assets: {
                 files: [
-                    { expand: true, cwd: 'dist',  src: ['**/*'], dest: 'www' }
+                    { expand: true, cwd: 'dist/assets',  src: ['**/*'], dest: 'dist/assets' }
                 ]
             }
         },
@@ -137,7 +135,17 @@ module.exports = function(grunt) {
          * Clean Task
          */
         clean: {
-            build: ['dist/**'],
+            build: [
+                'dist/**'
+            ],
+            dist: [
+                'dist/assets/<%= pkg.name %>/css/*.css',
+                '!dist/assets/<%= pkg.name %>/css/*.min.css',
+                'dist/assets/<%= pkg.name %>/js/*.js',
+                '!dist/assets/<%= pkg.name %>/js/*.min.js',
+                'dist/assets/<%= pkg.name %>/js/modules/**',
+                'dist/assets/<%= pkg.name %>/js/plugins/**'
+            ],
             www: [
                 'dist/assets/<%= pkg.name %>/css/*.css',
                 '!dist/assets/<%= pkg.name %>/css/*.min.css',
@@ -196,7 +204,7 @@ module.exports = function(grunt) {
                 files: [
                     '_scss/**/*.scss'
                 ],
-                tasks:['shell:sass'],
+                tasks:['shell:sass', 'sync'],
                 options: {
                     livereload: true
                 }
@@ -273,12 +281,10 @@ module.exports = function(grunt) {
                     docroot: 'dist'
                 },
                 files: [
-                    { expand: true, cwd: 'dist', src: ['**/*.php'], dest: 'www', ext: '.html' }
+                    { expand: true, cwd: 'dist', src: ['**/*.php'], dest: 'dist', ext: '.html' }
                 ]
             }
         }
-
-
     });
 
     /**
@@ -323,9 +329,11 @@ module.exports = function(grunt) {
         'shell:sass',
         'concat:css',
         'cssmin',
+        'concat:mainjs',
         'uglify',
         'imagemin',
-        'processhtml'
+        'processhtml',
+        'clean:dist'
     ]);
 
     grunt.registerTask('www', [
@@ -335,12 +343,13 @@ module.exports = function(grunt) {
         'copy',
         'shell:sass',
         'concat:css',
-        'concat:mainjs',
         'cssmin',
+        'concat:mainjs',
         'uglify',
-        'copy:copyAssets',
         'imagemin',
+        'copy:assets',
         'processhtml',
-        'php2html'
+        'php2html',
+        'clean:www'
     ]);
 };

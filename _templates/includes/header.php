@@ -51,7 +51,7 @@
         <meta name="twitter:description" content="UX Developer based in Singapore with eight years of industry experience.  I specialize in developing responsive front-end websites done in HTML5, CSS3 and JavaScript."/>
         <meta name="twitter:image" content="" />
 
-        <!-- build:css /assets/infiniteimaginations/css/main.infiniteimaginations.min.css -->
+        <!-- build:css /assets/infiniteimaginations/css/main.min.css -->
         <link href="/assets/infiniteimaginations/css/main.css" rel="stylesheet">
         <link href="/assets/infiniteimaginations/css/responsive.css" rel="stylesheet">
         <!-- /build -->

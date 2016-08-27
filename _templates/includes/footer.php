@@ -19,7 +19,7 @@
             <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
         <![endif]-->
 
-        <!-- build:js /assets/infiniteimaginations/js/main.infiniteimaginations.min.js -->
+        <!-- build:js /assets/infiniteimaginations/js/main.min.js -->
         <script src="/assets/infiniteimaginations/js/plugins.js"></script>
         <script src="/assets/infiniteimaginations/js/modules.js"></script>
         <script src="/assets/infiniteimaginations/js/main.js"></script>
