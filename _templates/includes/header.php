@@ -11,7 +11,7 @@
 
         <title>infinite imaginations | let your imaginations run wild</title>
 
-        <link rel="mask-icon" href="/favicon.svg" color="#2196f3">
+        <link rel="mask-icon" href="/favicon.svg" color="#196db3">
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
@@ -26,9 +26,9 @@
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/manifest.json">
-        <meta name="msapplication-TileColor" content="#2196f3">
+        <meta name="msapplication-TileColor" content="#196db3">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-        <meta name="theme-color" content="#2196f3">
+        <meta name="theme-color" content="#196db3">
 
         <meta name="robots" content="follow">
         <meta name="author" content="Nino Ross Rodriguez">

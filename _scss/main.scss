@@ -499,12 +499,12 @@ svg.ripple {
         li {
             @include inline-block;
 
-            height: 46px;
-            margin: 0 5px;
+            height: 14.5vw;
+            margin: 0 1.5vw;
             opacity: 0;
             position: relative;
             top: 50px;
-            width: 46px;
+            width: 14.5vw;
 
             &:first-child {
                 margin-left: 0;
@@ -521,7 +521,7 @@ svg.ripple {
             height: 100%;
             margin: 0;
             overflow: hidden;
-            padding: 9px 5px;
+            padding: 2.5vw 1.75vw;
             position: relative;
             text-decoration: none;
 
@@ -553,7 +553,7 @@ svg.ripple {
         }
 
         .abbr {
-            font-size: 1.250em;
+            font-size: 7vw;
             margin-bottom: 0;
         }
 
@@ -569,7 +569,7 @@ svg.ripple {
             background: $blue;
             color: $white;
             height: 100%;
-            font-size: 2em;
+            font-size: 9.5vw;
             left: 0;
             opacity: 0;
             position: absolute;
@@ -579,8 +579,8 @@ svg.ripple {
             &:before {
                 @include absolute-center;
 
-                height: 32px;
-                width: 32px;
+                height: 10vw;
+                width: 10vw;
             }
         }
     }
