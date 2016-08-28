@@ -147,6 +147,16 @@
     top: 50%;
 }
 
+@mixin reset-centering() {
+    -webkit-transform: translate(0, 0);
+      -moz-transition: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -o-transition: translate(0, 0);
+            transform: translate(0, 0);
+    position: static;
+    top: 0;
+}
+
 // Image Responsive
 @mixin img-responsive() {
     display: block;

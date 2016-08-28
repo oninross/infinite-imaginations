@@ -87,7 +87,46 @@ img {
 /* =======================================================================
 05 Homepage
 ========================================================================== */
+.hello {
+    @include vertically-centering-the-unknown();
 
+    h1 {
+        font-size: 7em;
+        height: 120px;
+        padding: 25px;
+    }
+
+    nav {
+        li {
+            height: 102px;
+            margin: 0 10px;
+            width: 102px;
+        }
+
+        a {
+            padding: 20px 10px;
+        }
+
+        .abbr {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .full {
+            display: block;
+            font-size: 0.7em;
+        }
+
+        .icon {
+            font-size: 4.688em;
+
+            &:before {
+                height: 75px;
+                width: 75px;
+            }
+        }
+    }
+}
 
 
 /* =======================================================================

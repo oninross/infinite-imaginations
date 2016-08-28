@@ -9,13 +9,10 @@ var RR = (function (parent, $) {
 
     var $document = $(document),
         $window = $(window),
-        vh, vw;
+        isMobileDevice, vh, vw;
 
     var setup = function () {
         // Background Pattern
-        vw = $document.width();
-        vh = $document.height();
-
         backgroundResize();
 
         // Sweet Intro Animation
@@ -105,6 +102,16 @@ var RR = (function (parent, $) {
     };
 
     function backgroundResize() {
+        isMobileDevice = $window.width() < 1024 ? 1 : 0;
+
+        if (isMobileDevice) {
+            vw = $document.width();
+            vh = $document.height();
+        } else {
+            vw = $window.width();
+            vh = $window.height();
+        }
+
         $('.background').css({
             width: vw + 'px',
             height: vh + 'px'
