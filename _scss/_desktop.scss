@@ -75,6 +75,16 @@ DEPENDENCIES
     @include reset-centering();
 }
 
+.achievements {
+    @include reset-centering();
+
+    .nominations {
+        li {
+            width: 27.25%;
+        }
+    }
+}
+
 
 
 

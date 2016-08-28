@@ -153,6 +153,16 @@ img {
     }
 }
 
+.achievements {
+    @include vertically-centering-the-unknown();
+
+    .nominations {
+        li {
+            width: 25%;
+        }
+    }
+}
+
 
 /* =======================================================================
 06 Standard

@@ -177,8 +177,77 @@
         </div>
     </section>
 
+    <section class="achievements">
+        <div class="container">
+            <div class="wrap">
+                <div class="col-12">
+                    <h1>
+                        achievements
+
+                        <span class="bar">
+                            <i class="icon icon-about"></i>
+                        </span>
+                    </h1>
+
+                    <div class="wrap">
+                        <div class="col-l col-6">
+                            <p>I have been lucky to be featured in "Web Designer Magazine" when I least expected it. I have also received a few nominations and features in websites including Awwwards, One Page Mania, CSS Reel, Lemeon Web Awards, CSS Awards, CSS Design Awards and CSS Awards over the past few years.</p>
+
+                            <a href="http://beta.infiniteimaginations.co" target="_blank">
+                                <img src="/assets/infiniteimaginations/images/web-designer-magazine.png" alt="Featured in Web Designer Magazine">
+
+                                beta.infiniteimaginations.co
+                            </a>
+                        </div>
+
+                        <div class="col-r col-6">
+                            <div class="nominations">
+                                <ul>
+                                    <li>
+                                        Nominated in Awwwards 2014
+                                    </li>
+
+                                    <li>
+                                        Nominated in CSS Reel 2014
+                                    </li>
+
+                                    <li>
+                                        Featured in One Page Mania 2014
+                                    </li>
+
+                                    <li>
+                                        Nominee in Lemon Web Awards 2014
+                                    </li>
+
+                                    <li>
+                                        Nominee in CSS Awards 2014
+                                    </li>
+
+                                    <li>
+                                        Nominee in CSS Design Awards 2012
+                                    </li>
+
+                                    <li>
+                                        Feature in CSS Awards 2012
+                                    </li>
+
+                                    <li>
+                                        Featured in Web Designer Magazine UK Issue 196
+                                    </li>
+
+                                    <li>
+                                        User Experience Certified by Udemy
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!--
-    <section class="achievements"></section>
     <section class="coding"></section>
     <section class="design"></section>
     <section class="contact"></section> -->

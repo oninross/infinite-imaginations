@@ -155,6 +155,45 @@ var RR = (function (parent, $) {
         }, 0.1);
 
 
+        // Achievements Animation
+        TweenMax.to('.achievements .bar', 0.75, {
+            width: '100%',
+            ease: Expo.easeOut
+        });
+
+        TweenMax.to('.achievements .icon', 1.5, {
+            opacity: 1,
+            ease: Expo.easeOut
+        });
+
+        TweenMax.to('.achievements h1', 1.5, {
+            'borderLeft' : '15px solid #2196f3',
+            ease: Expo.easeOut,
+            delay: 0.25
+        });
+
+        TweenMax.to('.achievements .col-l p', 0.75, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 0.75
+        });
+
+        TweenMax.to('.achievements .col-l a', 0.75, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 1
+        });
+
+        TweenMax.staggerTo('.nominations li', 0.75, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 1
+        }, 0.1);
+
+
 
         $window.on('resize', debounce(function () {
             vw = $document.width();

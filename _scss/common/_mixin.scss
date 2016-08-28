@@ -74,6 +74,13 @@
     -webkit-transition-timing-function: $easing;
 }
 
+@mixin no-transition() {
+    -webkit-transition: none !important;
+       -moz-transition: none !important;
+         -o-transition: none !important;
+            transition: none !important;
+}
+
 @mixin normalise-list() {
     padding: 0;
     margin: 0;
