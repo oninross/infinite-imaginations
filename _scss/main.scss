@@ -457,7 +457,6 @@ svg.ripple {
 ========================================================================== */
 .hello {
     h1 {
-        // border-left: 14px solid $blue;
         border-left: 0px solid $blue;
         color: $white;
         font-size: 3.4em;
@@ -488,6 +487,20 @@ svg.ripple {
         opacity: 0;
         position: relative;
         top: 50px;
+    }
+
+    a {
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+
+        &:hover {
+            background-color: $black;
+            color: $white;
+            margin: 0 -10px;
+            padding: 5px 10px;
+            text-decoration: none;
+        }
     }
 
     nav {
@@ -532,6 +545,8 @@ svg.ripple {
 
             &:hover {
                 border: 3px solid $blue;
+                margin: 0;
+                padding: 0;
 
                 .icon {
                     @include scale(1);
