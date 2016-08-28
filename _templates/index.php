@@ -81,7 +81,103 @@
         </div>
     </section>
 
-    <!-- <section class="about"></section>
+    <section class="about">
+        <div class="container">
+            <div class="wrap">
+                <div class="col-12">
+                    <h1>
+                        about
+
+                        <span class="bar">
+                            <i class="icon icon-about"></i>
+                        </span>
+                    </h1>
+
+                    <div class="wrap">
+                        <div class="col-l col-6">
+                            <p>I specialize in converting code into websites, transforming pixels into design, deliver the smoothest user experience and make a static site come alive with animation.  It is my passion and determination to provide quality products by following today's latest web standards in my projects. I love to tinker with code to make it work and suit the project's needs. Most of the time I hand-code everything from scratch using my <a href="https://www.github.com/oninross/firestarter" target="_blank">Firestarter framework</a> but knowledable in using HTML5 Boilerplate and Twitter Boostrap for rapid development when needed.</p>
+                        </div>
+
+                        <div class="col-r col-6">
+                            <div class="skills">
+                                <div class="skills__bar" data-percent="95.0">
+                                    <div class="skills__label">HTML5 / HTML</div>
+                                    <div class="skills__percent">
+                                        <span class="skills__percent-number">00.0</span><span class="skills__percent-unit">%</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__bar" data-percent="90.0">
+                                    <div class="skills__label">CSS3 / CSS</div>
+                                    <div class="skills__percent">
+                                        <span class="skills__percent-number">00.0</span><span class="skills__percent-unit">%</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__bar" data-percent="80.0">
+                                    <div class="skills__label">JavaScript / jQuery / TweenMax</div>
+                                    <div class="skills__percent">
+                                        <span class="skills__percent-number">00.0</span><span class="skills__percent-unit">%</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__bar" data-percent="70.0">
+                                    <div class="skills__label">ActionScript 3.0 / 2.0</div>
+                                    <div class="skills__percent">
+                                        <span class="skills__percent-number">00.0</span><span class="skills__percent-unit">%</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__bar" data-percent="90.0">
+                                    <div class="skills__label">Adobe PhotoShop</div>
+                                    <div class="skills__percent">
+                                        <span class="skills__percent-number">00.0</span><span class="skills__percent-unit">%</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__bar" data-percent="75.0">
+                                    <div class="skills__label">Web Design</div>
+                                    <div class="skills__percent">
+                                        <span class="skills__percent-number">00.0</span><span class="skills__percent-unit">%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div class="logos">
+                        <p>Some of the company projects that I have worked on:</p>
+
+                        <ul>
+                            <li>
+                                <img src="/assets/infiniteimaginations/images/svg/logo-ogilvy.svg" alt="OgilvyOne">
+                            </li>
+
+                            <li>
+                                <img src="/assets/infiniteimaginations/images/svg/logo-sony.svg" alt="Sony">
+                            </li>
+
+                            <li>
+                                <img src="/assets/infiniteimaginations/images/svg/logo-singtel.svg" alt="SingTel">
+                            </li>
+
+                            <li>
+                                <img src="/assets/infiniteimaginations/images/svg/logo-holiday-inn.svg" alt="Holiday Inn">
+                            </li>
+
+                            <li>
+                                <img src="/assets/infiniteimaginations/images/svg/logo-abacus.svg" alt="Abacus">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
     <section class="achievements"></section>
     <section class="coding"></section>
     <section class="design"></section>
@@ -91,7 +187,7 @@
 <div class="background">
     <i class="pattern"></i>
 
-    <video id="video_background" preload="auto" loop="loop" muted="muted" autoplay>
+    <video id="video_background" preload="auto" loop="loop" muted="muted">
         <source src="/assets/infiniteimaginations/images/background.mp4" type="video/mp4" />
     </video>
 </div>

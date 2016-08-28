@@ -456,6 +456,8 @@ svg.ripple {
 05 Homepage
 ========================================================================== */
 .hello {
+    display: none;
+
     h1 {
         border-left: 0px solid $blue;
         color: $white;
@@ -606,6 +608,106 @@ svg.ripple {
     }
 }
 
+.about {
+    h1 {
+        border-left: 0px solid $blue;
+        color: $white;
+        font-size: 2.8em;
+        margin-bottom: 30px;
+        padding: 15px 30px;
+        position: relative;
+
+        .icon {
+            bottom: 0;
+            height: 24px;
+            font-size: 0.750em;
+            margin: auto;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 20px;
+        }
+    }
+
+    p {
+        opacity: 0;
+        position: relative;
+        top: 50px;
+    }
+
+    .bar {
+        background-color: $black;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 0;
+        z-index: -1;
+    }
+
+    hr {
+        border-top: 3px solid $black;
+        width: 0;
+    }
+
+    .skills {
+        &__bar {
+            background-color: $black;
+            height: 28px;
+            margin-bottom: 15px;
+            min-width: 60px;
+            opacity: 0;
+            padding: 2px 5px;
+            position: relative;
+            top: 50px;
+            width: 0;
+        }
+
+        &__label {
+            color: $white;
+            font-size: 1.5em;
+            opacity: 0;
+            position: absolute;
+            top: 3px;
+        }
+
+        &__percent {
+            color: $white;
+            display: none;
+            position: absolute;
+            top: -2px;
+            right: 5px;
+
+            &-number {
+                font-size: 2em;
+                font-weight: $bold;
+            }
+
+            &-unit {
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    .logos {
+        margin-top: 20px;
+        text-align: center;
+
+        ul {
+            @include normalise-list;
+        }
+
+        li {
+            @include inline-block;
+
+            margin: 0 15px;
+            opacity: 0;
+            position: relative;
+            top: 50px;
+            width: 19.75vw;
+        }
+    }
+}
 
 
 /* =======================================================================
@@ -613,11 +715,12 @@ svg.ripple {
 ========================================================================== */
 .container {
     @extend %container;
-    @include clearfix;
 
     padding: 0 $gutter;
 
     .wrap {
+        @include clearfix;
+
         margin: 0 (-$gutter);
         padding: 0;
     }

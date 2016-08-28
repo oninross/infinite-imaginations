@@ -15,7 +15,8 @@ var RR = (function (parent, $) {
         // Background Pattern
         backgroundResize();
 
-        // Sweet Intro Animation
+
+        // Hello Animation
         TweenMax.to('.background', 1.5, {
             opacity: 1
         });
@@ -31,12 +32,6 @@ var RR = (function (parent, $) {
             delay: 0.5
         });
 
-        TweenMax.to('.hello h1', 1.5, {
-            'borderLeft' : '14px solid #2196f3',
-            ease: Expo.easeOut,
-            delay: 1.5
-        });
-
         TweenMax.to('.hello .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
@@ -48,6 +43,13 @@ var RR = (function (parent, $) {
                 });
             }
         });
+
+        TweenMax.to('.hello h1', 1.5, {
+            'borderLeft' : '14px solid #2196f3',
+            ease: Expo.easeOut,
+            delay: 1.75
+        });
+
 
         TweenMax.to('.hello p', 0.75, {
             opacity: 1,
@@ -68,6 +70,90 @@ var RR = (function (parent, $) {
             ease: Expo.easeOut,
             delay: 2.25
         }, 0.1);
+
+
+        // About Animation
+        TweenMax.to('.about .bar', 0.75, {
+            width: '100%',
+            ease: Expo.easeOut
+        });
+
+        TweenMax.to('.about .icon', 1.5, {
+            opacity: 1,
+            ease: Expo.easeOut
+        });
+
+        TweenMax.to('.about h1', 1.5, {
+            'borderLeft' : '15px solid #2196f3',
+            ease: Expo.easeOut,
+            delay: 0.25
+        });
+
+        TweenMax.to('.about .col-l p', 0.75, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 0.75
+        });
+
+        TweenMax.staggerTo('.skills__bar', 0.75, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 1
+        }, 0.1);
+
+        setTimeout(function() {
+            $('.skills__bar').each(function (i) {
+                var $this = $(this),
+                    $percent = $this.data('percent');
+
+                setTimeout(function () {
+                    $this.find('.skills__percent-number').countTo({
+                        from: 0.0,
+                        to: $percent,
+                        speed: 1500,
+                        decimals: 1,
+                        formatter: function (value, options) {
+                            return value.toFixed(options.decimals);
+                        }
+                    });
+                }, 250 * i);
+
+                TweenMax.to($this, 1, {
+                    width: $percent + '%',
+                    ease: Expo.easeInOut,
+                    delay: 0.25 * i
+                });
+
+                TweenMax.to($this.find('.skills__label'), 1, {
+                    opacity: 1,
+                    ease: Expo.easeInOut,
+                    delay: 0.25 * i
+                });
+            });
+        }, 750);
+
+        TweenMax.to('.about hr', 1, {
+            width: '100%',
+            ease: Expo.easeOut,
+            delay: 1
+        });
+
+        TweenMax.to('.logos p', 1, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 1.5
+        });
+
+        TweenMax.staggerTo('.about .logos li', 1, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 1.75
+        }, 0.1);
+
 
 
         $window.on('resize', debounce(function () {
