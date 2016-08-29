@@ -185,7 +185,7 @@
                         achievements
 
                         <span class="bar">
-                            <i class="icon icon-about"></i>
+                            <i class="icon icon-achievements"></i>
                         </span>
                     </h1>
 
@@ -250,7 +250,59 @@
     <!--
     <section class="coding"></section>
     <section class="design"></section>
-    <section class="contact"></section> -->
+    -->
+    <section class="contact">
+        <div class="container">
+            <div class="wrap">
+                <div class="col-12">
+                    <h1>
+                        contact
+
+                        <span class="bar">
+                            <i class="icon icon-contact"></i>
+                        </span>
+                    </h1>
+
+                    <p>If you want to talk anything about digital, UX, or collaborate, don't hesitate to connect.</p>
+
+                    <div class="contact-icons">
+                        <ul>
+                            <li>
+                                <a href="mailto:oninross@gmail.com">
+                                    <span class="vh">eMail</span>
+                                    <i class="icon icon-email"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://sg.linkedin.com/in/ninorossrodriguez" target="_blank">
+                                    <span class="vh">LinkedIn</span>
+                                    <i class="icon icon-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/oninross" target="_blank">
+                                    <span class="vh">GitHub</span>
+                                    <i class="icon icon-github"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/oninross" target="_blank">
+                                    <span class="vh">Facebook</span>
+                                    <i class="icon icon-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/oninross/" target="_blank">
+                                    <span class="vh">Instagram</span>
+                                    <i class="icon icon-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
 <div class="background">

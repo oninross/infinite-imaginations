@@ -279,6 +279,7 @@ svg.ripple {
     .pattern {
         background: url(/assets/infiniteimaginations/images/pattern.png);
         display: block;
+        display: none;
         height: 100%;
         position: relative;
         width: 100%;
@@ -784,6 +785,76 @@ svg.ripple {
             top: 50px;
             vertical-align: top;
             width: 41.3%;
+        }
+    }
+}
+
+.contact {
+    h1 {
+        border-left: 0px solid $blue;
+        color: $white;
+        font-size: 2.8em;
+        margin-bottom: 30px;
+        padding: 15px 30px;
+        position: relative;
+
+        .icon {
+            bottom: 0;
+            height: 24px;
+            font-size: 0.750em;
+            margin: auto;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 20px;
+        }
+    }
+
+    p {
+        font-size: 2.0em;
+        opacity: 0;
+        position: relative;
+        text-align: center;
+        top: 50px;
+    }
+
+    .bar {
+        background-color: $black;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 0;
+        z-index: -1;
+    }
+
+    &-icons {
+        text-align: center;
+
+        ul {
+            @include normalise-list;
+
+            li {
+                @include inline-block;
+
+                margin: 0 25px;
+                opacity: 0;
+                position: relative;
+                top: 50px;
+            }
+
+            a {
+                @include scale(1);
+                @include transition(all, 0.5s, $easeOutExpo);
+
+                font-size: 2.500em;
+                position: relative;
+                text-decoration: none;
+
+                &:hover {
+                    @include scale(1.5);
+                }
+            }
         }
     }
 }

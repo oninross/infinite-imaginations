@@ -85,6 +85,15 @@ DEPENDENCIES
     }
 }
 
+.contact {
+    @include reset-centering();
+    // left: 0;
+    // right: 0;
+
+    h1 {
+        font-size: 3.2em;
+    }
+}
 
 
 

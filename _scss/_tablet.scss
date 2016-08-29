@@ -84,6 +84,8 @@ img {
 
 
 
+
+
 /* =======================================================================
 05 Homepage
 ========================================================================== */
@@ -156,10 +158,22 @@ img {
 .achievements {
     @include vertically-centering-the-unknown();
 
+    h1 {
+        font-size: 3.2em;
+    }
+
     .nominations {
         li {
             width: 25%;
         }
+    }
+}
+
+.contact {
+    @include vertically-centering-the-unknown();
+
+    h1 {
+        font-size: 3.2em;
     }
 }
 
