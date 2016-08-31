@@ -57,8 +57,6 @@ DEPENDENCIES
     nav {
         li {
             height: 125px;
-            margin: 0 15px;
-            width: 125px;
         }
 
         .abbr {
@@ -80,6 +78,7 @@ DEPENDENCIES
 
     .nominations {
         li {
+            font-size: 0.938em;
             width: 27.25%;
         }
     }
@@ -94,7 +93,6 @@ DEPENDENCIES
         font-size: 3.2em;
     }
 }
-
 
 
 /* =======================================================================

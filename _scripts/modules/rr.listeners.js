@@ -32,12 +32,14 @@ var RR = (function (parent, $) {
             delay: 0.5
         });
 
+        $('.hello h1 .text').html('&nbsp;');
+
         TweenMax.to('.hello .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
             delay: 1.5,
             onComplete: function () {
-                $('.hello h1').typist({
+                $('.hello h1 .text').typist({
                     speed: 12,
                     text: 'Hello world...'
                 });
@@ -73,9 +75,17 @@ var RR = (function (parent, $) {
 
 
         // About Animation
+        $('.about h1 .text').html('&nbsp;');
+
         TweenMax.to('.about .bar', 0.75, {
             width: '100%',
-            ease: Expo.easeOut
+            ease: Expo.easeOut,
+            onComplete: function () {
+                $('.about h1 .text').typist({
+                    speed: 12,
+                    text: 'about'
+                });
+            }
         });
 
         TweenMax.to('.about .icon', 1.5, {
@@ -156,9 +166,17 @@ var RR = (function (parent, $) {
 
 
         // Achievements Animation
+        $('.achievements h1 .text').html('&nbsp;');
+
         TweenMax.to('.achievements .bar', 0.75, {
             width: '100%',
-            ease: Expo.easeOut
+            ease: Expo.easeOut,
+            onComplete: function () {
+                $('.achievements h1 .text').typist({
+                    speed: 12,
+                    text: 'achievements'
+                });
+            }
         });
 
         TweenMax.to('.achievements .icon', 1.5, {
@@ -195,9 +213,17 @@ var RR = (function (parent, $) {
 
 
         // contact Animation
+        $('.contact h1 .text').html('&nbsp;');
+
         TweenMax.to('.contact .bar', 0.75, {
             width: '100%',
-            ease: Expo.easeOut
+            ease: Expo.easeOut,
+            onComplete: function () {
+                $('.contact h1 .text').typist({
+                    speed: 12,
+                    text: 'contact'
+                });
+            }
         });
 
         TweenMax.to('.contact .icon', 1.5, {

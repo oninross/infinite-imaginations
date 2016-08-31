@@ -1,5 +1,4 @@
-/* ========================================================================== DEPENDENCIES
-    --------------------------------------------------------------------------
+/* ========================================================================== DEPENDENCIES --------------------------------------------------------------------------
     _color.scss
     _mixin.scss
     _common.scss
@@ -279,9 +278,8 @@ svg.ripple {
     .pattern {
         background: url(/assets/infiniteimaginations/images/pattern.png);
         display: block;
-        display: none;
         height: 100%;
-        position: relative;
+        position: fixed;
         width: 100%;
         z-index: 10;
     }
@@ -463,7 +461,7 @@ svg.ripple {
         font-size: 3.4em;
         height: 75px;
         margin-bottom: 30px;
-        max-width: 525px;
+        max-width: 540px;
         padding: 20px;
         position: relative;
 
@@ -477,14 +475,10 @@ svg.ripple {
             width: 0;
             z-index: -1;
         }
-
-        .text {
-            color: transparent;
-        }
     }
 
     p {
-        font-size: 2em;
+        font-size: 1.8em;
         opacity: 0;
         position: relative;
         top: 50px;
@@ -508,35 +502,39 @@ svg.ripple {
         ul {
             @include normalise-list;
 
+            margin: 0 (-$gutter);
             text-align: center;
         }
 
         li {
-            @include inline-block;
-
-            height: 14.5vw;
-            margin: 0 1.5vw;
+            float: left;
+            height: 40vw;
             opacity: 0;
+            margin-bottom: 30px;
+            padding: 0 $gutter;
             position: relative;
             top: 50px;
-            width: 14.5vw;
-
-            &:first-child {
-                margin-left: 0;
-            }
+            width: 50%;
 
             &:last-child {
-                margin-right: 0;
+                width: 100%;
             }
         }
 
         a {
+            display: -webkit-flex; /* Safari */
+            display: flex;
+
+            -webkit-align-items: center; /* Safari 7.0+ */
+                    align-items: center;
+
+            justify-content: center;
+
             border: 3px solid $black;
-            display: block;
             height: 100%;
             margin: 0;
             overflow: hidden;
-            padding: 2.5vw 1.75vw;
+            padding: 6.5vw 2.5vw;
             position: relative;
             text-decoration: none;
 
@@ -558,24 +556,17 @@ svg.ripple {
         }
 
         span {
-            @include inline-block;
-
+            display: block;
             line-height: 1;
             vertical-align: top;
         }
 
-        .text {
-            display: block;
-            position: relative;
-        }
-
         .abbr {
-            font-size: 7vw;
-            margin-bottom: 0;
+            font-size: 3.125em;
+            margin-bottom: 5px;
         }
 
         .full {
-            display: none;
             font-size: 0.875em;
         }
 
@@ -586,7 +577,7 @@ svg.ripple {
             background: $blue;
             color: $white;
             height: 100%;
-            font-size: 9.5vw;
+            font-size: 4.688em;
             left: 0;
             opacity: 0;
             position: absolute;
@@ -596,14 +587,41 @@ svg.ripple {
             &:before {
                 @include absolute-center;
 
-                height: 10vw;
-                width: 10vw;
+                height: 75px;
+                width: 75px;
             }
         }
     }
 
     hr {
         width: 0;
+    }
+}
+
+@media (max-width: $bpMaxMobile) and (orientation: landscape) {
+    .hello nav {
+        li {
+            height: 15vw;
+            margin-bottom: 0;
+            width: 20%;
+
+            &:last-child {
+                width: 20%;
+            }
+        }
+
+        .icon {
+            font-size: 3em;
+
+            &:before {
+                height: 48px;
+                width: 48px;
+            }
+        }
+
+        .full {
+            font-size: 0.6em;
+        }
     }
 }
 
@@ -847,16 +865,23 @@ svg.ripple {
                 @include scale(1);
                 @include transition(all, 0.5s, $easeOutExpo);
 
+                display: block;
                 font-size: 2.500em;
                 position: relative;
                 text-decoration: none;
 
                 &:hover {
-                    @include scale(1.5);
+                    @include scale(1.25);
                 }
             }
         }
     }
+}
+
+.hello,
+.contact,
+.about {
+    display: none;
 }
 
 

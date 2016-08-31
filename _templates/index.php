@@ -10,7 +10,7 @@
             <div class="wrap">
                 <div class="col-10 col-offset-1">
                     <h1>
-                        <span class="vh">Hello World...</span>
+                        <span class="text">Hello World...</span>
                         <span class="bar"></span>
                     </h1>
 
@@ -42,7 +42,7 @@
                                 </a>
                             </li>
 
-                            <li>
+                            <!-- <li>
                                 <a href="/#/coding/">
                                     <span class="text">
                                         <span class="abbr">Co</span>
@@ -62,7 +62,7 @@
 
                                     <span class="icon icon-design"></span>
                                 </a>
-                            </li>
+                            </li> -->
 
                             <li>
                                 <a href="/#/contact/">
@@ -86,7 +86,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        about
+                        <span class="text">about</span>
 
                         <span class="bar">
                             <i class="icon icon-about"></i>
@@ -182,7 +182,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        achievements
+                        <span class="text">achievements</span>
 
                         <span class="bar">
                             <i class="icon icon-achievements"></i>
@@ -256,7 +256,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        contact
+                        <span class="text">contact</span>
 
                         <span class="bar">
                             <i class="icon icon-contact"></i>
@@ -308,7 +308,7 @@
 <div class="background">
     <i class="pattern"></i>
 
-    <video id="video_background" preload="auto" loop="loop" muted="muted">
+    <video id="video_background" preload="auto" loop="loop" muted="muted" autoplay>
         <source src="/assets/infiniteimaginations/images/background.mp4" type="video/mp4" />
     </video>
 </div>
