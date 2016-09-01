@@ -12,13 +12,18 @@ var RR = (function (parent, $) {
 
         if ($url.indexOf('/#/') < 0) {
             // console.log('no hash');
-            window.history.pushState({}, 'Hello', '/#/hello/');
+            window.history.pushState({}, 'hello', '/#/hello/');
         }
+    };
+
+    var pushState = function ($data) {
+        window.history.pushState({}, $data, '/#/' + $data + '/');
     };
 
     // Export module method
     parent.history = {
-        setup: setup
+        setup: setup,
+        pushState: pushState
     };
 
     return parent;

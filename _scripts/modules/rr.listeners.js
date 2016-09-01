@@ -9,12 +9,15 @@ var RR = (function (parent, $) {
 
     var $document = $(document),
         $window = $(window),
-        currentPage = 'hello',
+        currPage = 'hello',
+        $data = 'hello',
+        isFirstLoad = true,
         isMobileDevice, vh, vw;
 
     var setup = function () {
         // Background Pattern
         backgroundResize();
+
 
         // Set 3D environment
         TweenLite.set('#main', {
@@ -38,184 +41,7 @@ var RR = (function (parent, $) {
             delay: 0.5
         });
 
-        $('.hello h1 .text').html('&nbsp;');
-
-        TweenMax.to('.hello .bar', 0.75, {
-            width: '100%',
-            ease: Expo.easeOut,
-            delay: 1.5,
-            onComplete: function () {
-                $('.hello h1 .text').typist({
-                    speed: 12,
-                    text: 'Hello world...'
-                });
-            }
-        });
-
-        TweenMax.to('.hello h1', 1.5, {
-            'borderLeft' : '14px solid #2196f3',
-            ease: Expo.easeOut,
-            delay: 1.75
-        });
-
-        TweenMax.to('.hello p', 0.75, {
-            opacity: 1,
-            top: 0,
-            ease: Expo.easeOut,
-            delay: 1.75
-        });
-
-        TweenMax.to('.hello hr', 1, {
-            width: '100%',
-            ease: Expo.easeOut,
-            delay: 2
-        });
-
-        TweenMax.staggerTo('.hello li', 1, {
-            opacity: 1,
-            top: 0,
-            ease: Expo.easeOut,
-            delay: 2.25
-        }, 0.1);
-
-
-        // About Animation
-        // $('.about h1 .text').html('&nbsp;');
-
-        // TweenMax.to('.about .bar', 0.75, {
-        //     width: '100%',
-        //     ease: Expo.easeOut,
-        //     onComplete: function () {
-        //         $('.about h1 .text').typist({
-        //             speed: 12,
-        //             text: 'about'
-        //         });
-        //     }
-        // });
-
-        // TweenMax.to('.about .icon', 1.5, {
-        //     opacity: 1,
-        //     ease: Expo.easeOut
-        // });
-
-        // TweenMax.to('.about h1', 1.5, {
-        //     'borderLeft' : '15px solid #2196f3',
-        //     ease: Expo.easeOut,
-        //     delay: 0.25
-        // });
-
-        // TweenMax.to('.about .col-l p', 0.75, {
-        //     opacity: 1,
-        //     top: 0,
-        //     ease: Expo.easeOut,
-        //     delay: 0.75
-        // });
-
-        // TweenMax.staggerTo('.skills__bar', 0.75, {
-        //     opacity: 1,
-        //     top: 0,
-        //     ease: Expo.easeOut,
-        //     delay: 1
-        // }, 0.1);
-
-        // setTimeout(function () {
-        //     $('.skills__bar').each(function (i) {
-        //         var $this = $(this),
-        //             $percent = $this.data('percent');
-
-        //         setTimeout(function () {
-        //             $this.find('.skills__percent-number').countTo({
-        //                 from: 0.0,
-        //                 to: $percent,
-        //                 speed: 1500,
-        //                 decimals: 1,
-        //                 formatter: function (value, options) {
-        //                     return value.toFixed(options.decimals);
-        //                 }
-        //             });
-        //         }, 250 * i);
-
-        //         TweenMax.to($this, 1, {
-        //             width: $percent + '%',
-        //             ease: Expo.easeInOut,
-        //             delay: 0.25 * i
-        //         });
-
-        //         TweenMax.to($this.find('.skills__label'), 1, {
-        //             opacity: 1,
-        //             ease: Expo.easeInOut,
-        //             delay: 0.25 * i
-        //         });
-        //     });
-        // }, 750);
-
-        // TweenMax.to('.about hr', 1, {
-        //     width: '100%',
-        //     ease: Expo.easeOut,
-        //     delay: 1
-        // });
-
-        // TweenMax.to('.logos p', 1, {
-        //     opacity: 1,
-        //     top: 0,
-        //     ease: Expo.easeOut,
-        //     delay: 1.5
-        // });
-
-        // TweenMax.staggerTo('.about .logos li', 1, {
-        //     opacity: 1,
-        //     top: 0,
-        //     ease: Expo.easeOut,
-        //     delay: 1.75
-        // }, 0.1);
-
-
-        // Achievements Animation
-        // $('.achievements h1 .text').html('&nbsp;');
-
-        // TweenMax.to('.achievements .bar', 0.75, {
-        //     width: '100%',
-        //     ease: Expo.easeOut,
-        //     onComplete: function () {
-        //         $('.achievements h1 .text').typist({
-        //             speed: 12,
-        //             text: 'achievements'
-        //         });
-        //     }
-        // });
-
-        // TweenMax.to('.achievements .icon', 1.5, {
-        //     opacity: 1,
-        //     ease: Expo.easeOut
-        // });
-
-        // TweenMax.to('.achievements h1', 1.5, {
-        //     'borderLeft' : '15px solid #2196f3',
-        //     ease: Expo.easeOut,
-        //     delay: 0.25
-        // });
-
-        // TweenMax.to('.achievements .col-l p', 0.75, {
-        //     opacity: 1,
-        //     top: 0,
-        //     ease: Expo.easeOut,
-        //     delay: 0.75
-        // });
-
-        // TweenMax.to('.achievements .col-l a', 0.75, {
-        //     opacity: 1,
-        //     top: 0,
-        //     ease: Expo.easeOut,
-        //     delay: 1
-        // });
-
-        // TweenMax.staggerTo('.nominations li', 0.75, {
-        //     opacity: 1,
-        //     top: 0,
-        //     ease: Expo.easeOut,
-        //     delay: 1
-        // }, 0.1);
-
+        enterHome(isFirstLoad);
 
         $window.on('resize', debounce(function () {
             vw = $document.width();
@@ -248,8 +74,9 @@ var RR = (function (parent, $) {
         $('.hello nav a').on('click', function (e) {
             e.preventDefault();
 
-            var $this = $(this),
-                $data = $this.data('name');
+            var $this = $(this);
+
+            $data = $this.data('name');
 
             // Create a clone of box
             $('body').append('<div class="element-clone" style="height: ' + $this.outerHeight() + 'px; width: ' + $this.outerWidth() + 'px;"/>');
@@ -261,39 +88,17 @@ var RR = (function (parent, $) {
                 top: $this.offset().top
             });
 
-            // Hello Outro
-            TweenMax.to('.hello', 0.5, {
-                transform: 'translateZ(-100px)',
-                opacity: 0,
-                ease: Expo.easeOut,
-                onComplete: function () {
-                    resetHello();
-                    $('.hello').hide();
-                    $('.' + $data).show()
-                        .find('h1 .text').html('&nbsp;');
+            // Outro current slide
+            exitCurrentSlide(currPage, $data);
+        });
 
-                    var $gotoElem = $('.' + $data + ' h1');
-                    TweenMax.to('.element-clone', 0.75, {
-                        left: $gotoElem.offset().left,
-                        top: $gotoElem.offset().top,
-                        height: $gotoElem.outerHeight(),
-                        width: 15,
-                        ease: Expo.easeInOut
-                    });
+        $('.header a').on('click', function (e) {
+            e.preventDefault();
 
-                    TweenMax.to('.element-clone .icon', 0.75, {
-                        opacity: 0,
-                        ease: Expo.easeInOut,
-                        onComplete: function () {
-                            switch ($data) {
-                                case 'contact':
-                                    introContact();
-                                    break;
-                            }
-                        }
-                    });
-                }
-            });
+            $data = 'hello';
+
+            // Outro current slide
+            exitCurrentSlide(currPage, $data);
         });
     };
 
@@ -318,33 +123,275 @@ var RR = (function (parent, $) {
         });
     };
 
-    function resetHello() {
-        $('.hello h1 .text').html('&nbsp;');
+    function exitCurrentSlide(currentPage, $data) {
+        TweenMax.to('.' + currentPage, 0.5, {
+            transform: 'translateZ(-100px)',
+            opacity: 0,
+            ease: Expo.easeOut,
+            onComplete: function () {
+                $('.' + currentPage).hide();
+                resetSlide(currentPage);
 
-        TweenMax.set('.hello .bar', {
+                RR.history.pushState($data);
+
+                $('.' + $data).show()
+                    .find('h1 .text').html('&nbsp;');
+
+                if ($data != 'hello') {
+                    var $gotoElem = $('.' + $data + ' h1');
+                    TweenMax.to('.element-clone', 0.75, {
+                        left: $gotoElem.offset().left,
+                        top: $gotoElem.offset().top,
+                        height: $gotoElem.outerHeight(),
+                        width: 15,
+                        ease: Expo.easeInOut
+                    });
+
+                    TweenMax.to('.element-clone .icon', 0.75, {
+                        opacity: 0,
+                        ease: Expo.easeInOut,
+                        onComplete: function () {
+                            $('.element-clone').remove();
+
+                            TweenMax.set('.' + $data + ' h1', {
+                                'borderLeft' : '15px solid #2196f3'
+                            });
+
+                            switch ($data) {
+                                case 'about':
+                                    enterAbout();
+                                    break;
+
+                                case 'achievements':
+                                    enterAchievements();
+                                    break;
+
+                                case 'contact':
+                                    enterContact();
+                                    break;
+                            }
+                        }
+                    });
+                } else {
+                    enterHome();
+                }
+
+                currPage = $data;
+            }
+        });
+    };
+
+    function resetSlide(slide) {
+        $('.' + slide + ' h1 .text').html('&nbsp;');
+
+        TweenMax.set('.' + slide, {
+            transform: 'translateZ(0)',
+            opacity: 1
+        });
+
+        TweenMax.set('.' + slide + ' .bar', {
             width: 0
         });
 
-        TweenMax.set('.hello h1', {
+        TweenMax.set('.' + slide + ' h1', {
             'borderLeft': '0 solid #2196f3'
         });
 
-        TweenMax.set('.hello p', {
+        TweenMax.set('.' + slide + ' p', {
             opacity: 0,
             top: 50
         });
 
-        TweenMax.set('.hello hr', {
+        TweenMax.set('.' + slide + ' hr', {
             width: 0
         });
 
-        TweenMax.set('.hello li', {
-            opacity: 1,
+        TweenMax.set('.' + slide + ' li', {
+            opacity: 0,
             top: 50
         });
+
+        switch (slide) {
+        }
     };
 
-    function introContact() {
+    function enterHome(isFirstLoad) {
+        $('.hello h1 .text').html('&nbsp;');
+
+        TweenMax.to('.hello .bar', 0.75, {
+            width: '100%',
+            ease: Expo.easeOut,
+            delay: isFirstLoad == true ? 1.5 : 0,
+            onComplete: function () {
+                $('.hello h1 .text').typist({
+                    speed: 12,
+                    text: 'Hello world...'
+                });
+            }
+        });
+
+        TweenMax.to('.hello h1', 1.5, {
+            'borderLeft' : '14px solid #2196f3',
+            ease: Expo.easeOut,
+            delay: isFirstLoad == true ? 1.75 : 0.25
+        });
+
+        TweenMax.to('.hello p', 0.75, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: isFirstLoad == true ? 1.75 : 0.25
+        });
+
+        TweenMax.to('.hello hr', 1, {
+            width: '100%',
+            ease: Expo.easeOut,
+            delay: isFirstLoad == true ? 2 : 0.5
+        });
+
+        TweenMax.staggerTo('.hello li', 1, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: isFirstLoad == true ? 2.25 : 0.75
+        }, 0.1);
+    };
+
+    function enterAbout() {
+        TweenMax.to('.about .bar', 0.75, {
+            width: '100%',
+            ease: Expo.easeOut,
+            onComplete: function () {
+                $('.about h1 .text').typist({
+                    speed: 12,
+                    text: 'about'
+                });
+            }
+        });
+
+        TweenMax.to('.about .icon', 1.5, {
+            opacity: 1,
+            ease: Expo.easeOut
+        });
+
+        TweenMax.to('.about h1', 1.5, {
+            'borderLeft' : '15px solid #2196f3',
+            ease: Expo.easeOut,
+            delay: 0.25
+        });
+
+        TweenMax.to('.about .col-l p', 0.75, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 0.75
+        });
+
+        TweenMax.staggerTo('.skills__bar', 0.75, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 1
+        }, 0.1);
+
+        setTimeout(function () {
+            $('.skills__bar').each(function (i) {
+                var $this = $(this),
+                    $percent = $this.data('percent');
+
+                setTimeout(function () {
+                    $this.find('.skills__percent-number').countTo({
+                        from: 0.0,
+                        to: $percent,
+                        speed: 1500,
+                        decimals: 1,
+                        formatter: function (value, options) {
+                            return value.toFixed(options.decimals);
+                        }
+                    });
+                }, 250 * i);
+
+                TweenMax.to($this, 1, {
+                    width: $percent + '%',
+                    ease: Expo.easeInOut,
+                    delay: 0.25 * i
+                });
+
+                TweenMax.to($this.find('.skills__label'), 1, {
+                    opacity: 1,
+                    ease: Expo.easeInOut,
+                    delay: 0.25 * i
+                });
+            });
+        }, 750);
+
+        TweenMax.to('.about hr', 1, {
+            width: '100%',
+            ease: Expo.easeOut,
+            delay: 1
+        });
+
+        TweenMax.to('.logos p', 1, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 1.5
+        });
+
+        TweenMax.staggerTo('.about .logos li', 1, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 1.75
+        }, 0.1);
+    };
+
+    function enterAchievements() {
+        TweenMax.to('.achievements .bar', 0.75, {
+            width: '100%',
+            ease: Expo.easeOut,
+            onComplete: function () {
+                $('.achievements h1 .text').typist({
+                    speed: 12,
+                    text: 'achievements'
+                });
+            }
+        });
+
+        TweenMax.to('.achievements .icon', 1.5, {
+            opacity: 1,
+            ease: Expo.easeOut
+        });
+
+        TweenMax.to('.achievements h1', 1.5, {
+            'borderLeft' : '15px solid #2196f3',
+            ease: Expo.easeOut,
+            delay: 0.25
+        });
+
+        TweenMax.to('.achievements .col-l p', 0.75, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 0.75
+        });
+
+        TweenMax.to('.achievements .col-l a', 0.75, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 1
+        });
+
+        TweenMax.staggerTo('.nominations li', 0.75, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 1
+        }, 0.1);
+    };
+
+    function enterContact() {
         TweenMax.to('.contact .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
@@ -361,24 +408,18 @@ var RR = (function (parent, $) {
             ease: Expo.easeOut
         });
 
-        TweenMax.to('.contact h1', 1.5, {
-            'borderLeft' : '15px solid #2196f3',
-            ease: Expo.easeOut,
-            delay: 0.25
-        });
-
         TweenMax.to('.contact p', 0.75, {
             opacity: 1,
             top: 0,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.5
         });
 
         TweenMax.staggerTo('.contact-icons li', 0.75, {
             opacity: 1,
             top: 0,
             ease: Expo.easeOut,
-            delay: 1
+            delay: 0.5
         }, 0.1);
     };
 

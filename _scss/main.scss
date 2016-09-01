@@ -609,6 +609,10 @@ svg.ripple {
             padding: 0;
         }
 
+        .text {
+            display: none;
+        }
+
         .icon {
             @include scale(1);
 
