@@ -21,7 +21,7 @@
                     <nav>
                         <ul>
                             <li>
-                                <a href="/#/about/">
+                                <a href="/#/about/" class="element-box" data-name="about">
                                     <span class="text">
                                         <span class="abbr">Ab</span>
                                         <span class="full">about</span>
@@ -32,7 +32,7 @@
                             </li>
 
                             <li>
-                                <a href="/#/achievements/">
+                                <a href="/#/achievements/" class="element-box" data-name="achievements">
                                     <span class="text">
                                         <span class="abbr">Ac</span>
                                         <span class="full">achievements</span>
@@ -43,7 +43,7 @@
                             </li>
 
                             <!-- <li>
-                                <a href="/#/coding/">
+                                <a href="/#/coding/" class="element-box" data-name="coding">
                                     <span class="text">
                                         <span class="abbr">Co</span>
                                         <span class="full">coding</span>
@@ -54,7 +54,7 @@
                             </li>
 
                             <li>
-                                <a href="/#/design/">
+                                <a href="/#/design/" class="element-box" data-name="design">
                                     <span class="text">
                                         <span class="abbr">De</span>
                                         <span class="full">design</span>
@@ -65,7 +65,7 @@
                             </li> -->
 
                             <li>
-                                <a href="/#/contact/">
+                                <a href="/#/contact/" class="element-box" data-name="contact">
                                     <span class="text">
                                         <span class="abbr">Ct</span>
                                         <span class="full">contact</span>

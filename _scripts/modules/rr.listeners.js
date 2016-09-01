@@ -9,11 +9,17 @@ var RR = (function (parent, $) {
 
     var $document = $(document),
         $window = $(window),
+        currentPage = 'hello',
         isMobileDevice, vh, vw;
 
     var setup = function () {
         // Background Pattern
         backgroundResize();
+
+        // Set 3D environment
+        TweenLite.set('#main', {
+            perspective: 700
+        });
 
 
         // Hello Animation
@@ -52,7 +58,6 @@ var RR = (function (parent, $) {
             delay: 1.75
         });
 
-
         TweenMax.to('.hello p', 0.75, {
             opacity: 1,
             top: 0,
@@ -75,146 +80,271 @@ var RR = (function (parent, $) {
 
 
         // About Animation
-        $('.about h1 .text').html('&nbsp;');
+        // $('.about h1 .text').html('&nbsp;');
 
-        TweenMax.to('.about .bar', 0.75, {
-            width: '100%',
-            ease: Expo.easeOut,
-            onComplete: function () {
-                $('.about h1 .text').typist({
-                    speed: 12,
-                    text: 'about'
-                });
-            }
-        });
+        // TweenMax.to('.about .bar', 0.75, {
+        //     width: '100%',
+        //     ease: Expo.easeOut,
+        //     onComplete: function () {
+        //         $('.about h1 .text').typist({
+        //             speed: 12,
+        //             text: 'about'
+        //         });
+        //     }
+        // });
 
-        TweenMax.to('.about .icon', 1.5, {
-            opacity: 1,
-            ease: Expo.easeOut
-        });
+        // TweenMax.to('.about .icon', 1.5, {
+        //     opacity: 1,
+        //     ease: Expo.easeOut
+        // });
 
-        TweenMax.to('.about h1', 1.5, {
-            'borderLeft' : '15px solid #2196f3',
-            ease: Expo.easeOut,
-            delay: 0.25
-        });
+        // TweenMax.to('.about h1', 1.5, {
+        //     'borderLeft' : '15px solid #2196f3',
+        //     ease: Expo.easeOut,
+        //     delay: 0.25
+        // });
 
-        TweenMax.to('.about .col-l p', 0.75, {
-            opacity: 1,
-            top: 0,
-            ease: Expo.easeOut,
-            delay: 0.75
-        });
+        // TweenMax.to('.about .col-l p', 0.75, {
+        //     opacity: 1,
+        //     top: 0,
+        //     ease: Expo.easeOut,
+        //     delay: 0.75
+        // });
 
-        TweenMax.staggerTo('.skills__bar', 0.75, {
-            opacity: 1,
-            top: 0,
-            ease: Expo.easeOut,
-            delay: 1
-        }, 0.1);
+        // TweenMax.staggerTo('.skills__bar', 0.75, {
+        //     opacity: 1,
+        //     top: 0,
+        //     ease: Expo.easeOut,
+        //     delay: 1
+        // }, 0.1);
 
-        setTimeout(function() {
-            $('.skills__bar').each(function (i) {
-                var $this = $(this),
-                    $percent = $this.data('percent');
+        // setTimeout(function () {
+        //     $('.skills__bar').each(function (i) {
+        //         var $this = $(this),
+        //             $percent = $this.data('percent');
 
-                setTimeout(function () {
-                    $this.find('.skills__percent-number').countTo({
-                        from: 0.0,
-                        to: $percent,
-                        speed: 1500,
-                        decimals: 1,
-                        formatter: function (value, options) {
-                            return value.toFixed(options.decimals);
-                        }
-                    });
-                }, 250 * i);
+        //         setTimeout(function () {
+        //             $this.find('.skills__percent-number').countTo({
+        //                 from: 0.0,
+        //                 to: $percent,
+        //                 speed: 1500,
+        //                 decimals: 1,
+        //                 formatter: function (value, options) {
+        //                     return value.toFixed(options.decimals);
+        //                 }
+        //             });
+        //         }, 250 * i);
 
-                TweenMax.to($this, 1, {
-                    width: $percent + '%',
-                    ease: Expo.easeInOut,
-                    delay: 0.25 * i
-                });
+        //         TweenMax.to($this, 1, {
+        //             width: $percent + '%',
+        //             ease: Expo.easeInOut,
+        //             delay: 0.25 * i
+        //         });
 
-                TweenMax.to($this.find('.skills__label'), 1, {
-                    opacity: 1,
-                    ease: Expo.easeInOut,
-                    delay: 0.25 * i
-                });
-            });
-        }, 750);
+        //         TweenMax.to($this.find('.skills__label'), 1, {
+        //             opacity: 1,
+        //             ease: Expo.easeInOut,
+        //             delay: 0.25 * i
+        //         });
+        //     });
+        // }, 750);
 
-        TweenMax.to('.about hr', 1, {
-            width: '100%',
-            ease: Expo.easeOut,
-            delay: 1
-        });
+        // TweenMax.to('.about hr', 1, {
+        //     width: '100%',
+        //     ease: Expo.easeOut,
+        //     delay: 1
+        // });
 
-        TweenMax.to('.logos p', 1, {
-            opacity: 1,
-            top: 0,
-            ease: Expo.easeOut,
-            delay: 1.5
-        });
+        // TweenMax.to('.logos p', 1, {
+        //     opacity: 1,
+        //     top: 0,
+        //     ease: Expo.easeOut,
+        //     delay: 1.5
+        // });
 
-        TweenMax.staggerTo('.about .logos li', 1, {
-            opacity: 1,
-            top: 0,
-            ease: Expo.easeOut,
-            delay: 1.75
-        }, 0.1);
+        // TweenMax.staggerTo('.about .logos li', 1, {
+        //     opacity: 1,
+        //     top: 0,
+        //     ease: Expo.easeOut,
+        //     delay: 1.75
+        // }, 0.1);
 
 
         // Achievements Animation
-        $('.achievements h1 .text').html('&nbsp;');
+        // $('.achievements h1 .text').html('&nbsp;');
 
-        TweenMax.to('.achievements .bar', 0.75, {
-            width: '100%',
-            ease: Expo.easeOut,
-            onComplete: function () {
-                $('.achievements h1 .text').typist({
-                    speed: 12,
-                    text: 'achievements'
-                });
-            }
+        // TweenMax.to('.achievements .bar', 0.75, {
+        //     width: '100%',
+        //     ease: Expo.easeOut,
+        //     onComplete: function () {
+        //         $('.achievements h1 .text').typist({
+        //             speed: 12,
+        //             text: 'achievements'
+        //         });
+        //     }
+        // });
+
+        // TweenMax.to('.achievements .icon', 1.5, {
+        //     opacity: 1,
+        //     ease: Expo.easeOut
+        // });
+
+        // TweenMax.to('.achievements h1', 1.5, {
+        //     'borderLeft' : '15px solid #2196f3',
+        //     ease: Expo.easeOut,
+        //     delay: 0.25
+        // });
+
+        // TweenMax.to('.achievements .col-l p', 0.75, {
+        //     opacity: 1,
+        //     top: 0,
+        //     ease: Expo.easeOut,
+        //     delay: 0.75
+        // });
+
+        // TweenMax.to('.achievements .col-l a', 0.75, {
+        //     opacity: 1,
+        //     top: 0,
+        //     ease: Expo.easeOut,
+        //     delay: 1
+        // });
+
+        // TweenMax.staggerTo('.nominations li', 0.75, {
+        //     opacity: 1,
+        //     top: 0,
+        //     ease: Expo.easeOut,
+        //     delay: 1
+        // }, 0.1);
+
+
+        $window.on('resize', debounce(function () {
+            vw = $document.width();
+            vh = $document.height();
+
+            backgroundResize();
+        }, 250));
+
+        // Hello Section: nav animations
+        $('.hello nav a').on('mouseover', function (e) {
+            e.preventDefault();
+
+            TweenMax.to($(this).find('.text'), 0.25, {
+                autoAlpha: 0,
+                scale: 1.5,
+                ease: Expo.easeOut
+            });
+        }).on('mouseout', function (e) {
+            e.preventDefault();
+
+            TweenMax.to($(this).find('.text'), 0.25, {
+                autoAlpha: 1,
+                scale: 1,
+                ease: Expo.easeOut
+            });
         });
 
-        TweenMax.to('.achievements .icon', 1.5, {
+
+        // Navigation Listeners
+        $('.hello nav a').on('click', function (e) {
+            e.preventDefault();
+
+            var $this = $(this),
+                $data = $this.data('name');
+
+            // Create a clone of box
+            $('body').append('<div class="element-clone" style="height: ' + $this.outerHeight() + 'px; width: ' + $this.outerWidth() + 'px;"/>');
+            $this.clone().appendTo('.element-clone');
+
+            // Set box same position as nav element
+            TweenMax.set('.element-clone', {
+                left: $this.offset().left,
+                top: $this.offset().top
+            });
+
+            // Hello Outro
+            TweenMax.to('.hello', 0.5, {
+                transform: 'translateZ(-100px)',
+                opacity: 0,
+                ease: Expo.easeOut,
+                onComplete: function () {
+                    resetHello();
+                    $('.hello').hide();
+                    $('.' + $data).show()
+                        .find('h1 .text').html('&nbsp;');
+
+                    var $gotoElem = $('.' + $data + ' h1');
+                    TweenMax.to('.element-clone', 0.75, {
+                        left: $gotoElem.offset().left,
+                        top: $gotoElem.offset().top,
+                        height: $gotoElem.outerHeight(),
+                        width: 15,
+                        ease: Expo.easeInOut
+                    });
+
+                    TweenMax.to('.element-clone .icon', 0.75, {
+                        opacity: 0,
+                        ease: Expo.easeInOut,
+                        onComplete: function () {
+                            switch ($data) {
+                                case 'contact':
+                                    introContact();
+                                    break;
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    };
+
+    var check = function () {
+        return $window.width() < 1024 ? true : false;
+    };
+
+    function backgroundResize() {
+        isMobileDevice = $window.width() < 1024 ? 1 : 0;
+
+        if (isMobileDevice) {
+            vw = $document.width();
+            vh = $document.height();
+        } else {
+            vw = $window.width();
+            vh = $window.height();
+        }
+
+        $('.background').css({
+            width: vw + 'px',
+            height: vh + 'px'
+        });
+    };
+
+    function resetHello() {
+        $('.hello h1 .text').html('&nbsp;');
+
+        TweenMax.set('.hello .bar', {
+            width: 0
+        });
+
+        TweenMax.set('.hello h1', {
+            'borderLeft': '0 solid #2196f3'
+        });
+
+        TweenMax.set('.hello p', {
+            opacity: 0,
+            top: 50
+        });
+
+        TweenMax.set('.hello hr', {
+            width: 0
+        });
+
+        TweenMax.set('.hello li', {
             opacity: 1,
-            ease: Expo.easeOut
+            top: 50
         });
+    };
 
-        TweenMax.to('.achievements h1', 1.5, {
-            'borderLeft' : '15px solid #2196f3',
-            ease: Expo.easeOut,
-            delay: 0.25
-        });
-
-        TweenMax.to('.achievements .col-l p', 0.75, {
-            opacity: 1,
-            top: 0,
-            ease: Expo.easeOut,
-            delay: 0.75
-        });
-
-        TweenMax.to('.achievements .col-l a', 0.75, {
-            opacity: 1,
-            top: 0,
-            ease: Expo.easeOut,
-            delay: 1
-        });
-
-        TweenMax.staggerTo('.nominations li', 0.75, {
-            opacity: 1,
-            top: 0,
-            ease: Expo.easeOut,
-            delay: 1
-        }, 0.1);
-
-
-        // contact Animation
-        $('.contact h1 .text').html('&nbsp;');
-
+    function introContact() {
         TweenMax.to('.contact .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
@@ -250,54 +380,6 @@ var RR = (function (parent, $) {
             ease: Expo.easeOut,
             delay: 1
         }, 0.1);
-
-
-        $window.on('resize', debounce(function () {
-            vw = $document.width();
-            vh = $document.height();
-
-            backgroundResize();
-        }, 250));
-
-        // Hello Section: nav animations
-        $('.hello nav a').on('mouseover', function (e) {
-            e.preventDefault();
-
-            TweenMax.to($(this).find('.text'), 0.25, {
-                autoAlpha: 0,
-                scale: 1.5,
-                ease: Expo.easeOut
-            });
-        }).on('mouseout', function (e) {
-            e.preventDefault();
-
-            TweenMax.to($(this).find('.text'), 0.25, {
-                autoAlpha: 1,
-                scale: 1,
-                ease: Expo.easeOut
-            });
-        });
-    };
-
-    var check = function () {
-        return $window.width() < 1024 ? true : false;
-    };
-
-    function backgroundResize() {
-        isMobileDevice = $window.width() < 1024 ? 1 : 0;
-
-        if (isMobileDevice) {
-            vw = $document.width();
-            vh = $document.height();
-        } else {
-            vw = $window.width();
-            vh = $window.height();
-        }
-
-        $('.background').css({
-            width: vw + 'px',
-            height: vh + 'px'
-        });
     };
 
     // Export module method

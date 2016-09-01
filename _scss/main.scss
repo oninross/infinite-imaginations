@@ -482,19 +482,19 @@ svg.ripple {
         opacity: 0;
         position: relative;
         top: 50px;
-    }
 
-    a {
-        background-color: transparent;
-        margin: 0;
-        padding: 0;
+        a {
+            background-color: transparent;
+            margin: 0;
+            padding: 0;
 
-        &:hover {
-            background-color: $black;
-            color: $white;
-            margin: 0 -10px;
-            padding: 5px 10px;
-            text-decoration: none;
+            &:hover {
+                background-color: $black;
+                color: $white;
+                margin: 0 -10px;
+                padding: 5px 10px;
+                text-decoration: none;
+            }
         }
     }
 
@@ -520,38 +520,44 @@ svg.ripple {
                 width: 100%;
             }
         }
+    }
 
-        a {
-            display: -webkit-flex; /* Safari */
-            display: flex;
+    hr {
+        width: 0;
+    }
+}
 
-            -webkit-align-items: center; /* Safari 7.0+ */
-                    align-items: center;
+.element {
+    &-box {
+        display: -webkit-flex; /* Safari */
+        display: flex;
 
-            justify-content: center;
+        -webkit-align-items: center; /* Safari 7.0+ */
+                align-items: center;
 
-            border: 3px solid $black;
-            height: 100%;
+        justify-content: center;
+
+        border: 3px solid $black;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        padding: 6.5vw 2.5vw;
+        position: relative;
+        text-decoration: none;
+
+        &:after {
+            display: none;
+        }
+
+        &:hover {
+            border: 3px solid $blue;
             margin: 0;
-            overflow: hidden;
-            padding: 6.5vw 2.5vw;
-            position: relative;
-            text-decoration: none;
+            padding: 0;
 
-            &:after {
-                display: none;
-            }
+            .icon {
+                @include scale(1);
 
-            &:hover {
-                border: 3px solid $blue;
-                margin: 0;
-                padding: 0;
-
-                .icon {
-                    @include scale(1);
-
-                    opacity: 1;
-                }
+                opacity: 1;
             }
         }
 
@@ -593,10 +599,25 @@ svg.ripple {
         }
     }
 
-    hr {
-        width: 0;
+    &-clone {
+        background-color: $blue;
+        position: absolute;
+
+        a {
+            border: 3px solid $blue;
+            margin: 0;
+            padding: 0;
+        }
+
+        .icon {
+            @include scale(1);
+
+            background-color: transparent;
+            opacity: 1;
+        }
     }
 }
+
 
 @media (max-width: $bpMaxMobile) and (orientation: landscape) {
     .hello nav {
@@ -626,6 +647,8 @@ svg.ripple {
 }
 
 .about {
+    display: none;
+
     h1 {
         border-left: 0px solid $blue;
         color: $white;
@@ -727,6 +750,8 @@ svg.ripple {
 }
 
 .achievements {
+    display: none;
+
     h1 {
         border-left: 0px solid $blue;
         color: $white;
@@ -808,6 +833,8 @@ svg.ripple {
 }
 
 .contact {
+    display: none;
+
     h1 {
         border-left: 0px solid $blue;
         color: $white;
@@ -878,11 +905,6 @@ svg.ripple {
     }
 }
 
-.hello,
-.contact,
-.about {
-    display: none;
-}
 
 
 /* =======================================================================
