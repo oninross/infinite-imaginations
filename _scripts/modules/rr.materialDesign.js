@@ -351,37 +351,21 @@ var RR = (function (parent, $) {
         }
 
         // create SVG element
-        var dummy = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        dummy.setAttributeNS(null, 'class', 'ripple ripple' + inc);
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+            g = document.createElementNS('http://www.w3.org/2000/svg', 'g'),
+            circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle'),
+            x = e.offsetX,
+            y = e.offsetY;
 
-        // var ripplePosX = e.pageX - el.parent().offset().left - 15;
-        var x = e.offsetX,
-            y = e.offsetY,
-            w = e.target.offsetWidth,
-            h = e.target.offsetHeight,
-            offsetX = Math.abs((w / 2) - x),
-            offsetY = Math.abs((h / 2) - y),
-            deltaX = (w / 2) + offsetX,
-            deltaY = (h / 2) + offsetY;
-
-        if (isNaN(deltaX)) {
-            return false;
-        }
-
-        var g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-
-        g.setAttributeNS(null, 'transform', 'translate(' + deltaX + ', ' + deltaY + ')');
-
-        var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-
+        svg.setAttributeNS(null, 'class', 'ripple ripple' + inc);
+        g.setAttributeNS(null, 'transform', 'translate(' + x + ', ' + y + ')');
         circle.setAttributeNS(null, 'r', (parseInt(el.outerWidth()) + x));
 
-        dummy.appendChild(g);
+        svg.appendChild(g);
         g.appendChild(circle);
-        el.append(dummy);
+        el.append(svg);
 
         var $ripple = el.find('.ripple' + inc);
-
         TweenMax.from($ripple.find('circle'), 1.5, {
             attr: { r: 0 },
             opacity: 0.75,
@@ -393,6 +377,7 @@ var RR = (function (parent, $) {
 
         inc++;
     };
+
 
     // Export module method
     parent.materialDesign = {

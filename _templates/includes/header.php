@@ -84,16 +84,70 @@
                 <nav class="primary-nav">
                     <ul>
                         <li>
-                            <a class="active" href="/#/hello/">
+                            <a href="/#/home/" class="element-box" data-name="home">
+                                <span class="text">
+                                    <span class="abbr">Ab</span>
+                                    <span class="full">about</span>
+                                </span>
+
                                 <span class="icon icon-infinite"></span>
-                                <span class="vh">Home</span>
                             </a>
                         </li>
-                        <li><a href="/#/about/">about</a></li>
-                        <li><a href="/#/achievements/">achievements</a></li>
-                        <li><a href="/#/coding/">coding</a></li>
-                        <li><a href="/#/design/">design</a></li>
-                        <li><a href="/#/contact/">contact</a></li>
+
+                        <li>
+                            <a href="/#/about/" class="element-box" data-name="about">
+                                <span class="text">
+                                    <span class="abbr">Ab</span>
+                                    <span class="full">about</span>
+                                </span>
+
+                                <span class="icon icon-about"></span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/#/achievements/" class="element-box" data-name="achievements">
+                                <span class="text">
+                                    <span class="abbr">Ac</span>
+                                    <span class="full">achievements</span>
+                                </span>
+
+                                <span class="icon icon-achievements"></span>
+                            </a>
+                        </li>
+
+                        <!-- <li>
+                            <a href="/#/coding/" class="element-box" data-name="coding">
+                                <span class="text">
+                                    <span class="abbr">Co</span>
+                                    <span class="full">coding</span>
+                                </span>
+
+                                <span class="icon icon-coding"></span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/#/design/" class="element-box" data-name="design">
+                                <span class="text">
+                                    <span class="abbr">De</span>
+                                    <span class="full">design</span>
+                                </span>
+
+                                <span class="icon icon-design"></span>
+                            </a>
+                        </li> -->
+
+                        <li>
+                            <a href="/#/contact/" class="element-box" data-name="contact">
+                                <span class="text">
+                                    <span class="abbr">Ct</span>
+                                    <span class="full">contact</span>
+                                </span>
+
+                                <span class="icon icon-contact"></span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>

@@ -14,6 +14,15 @@ var RR = (function (parent, $) {
             // console.log('no hash');
             window.history.pushState({}, 'hello', '/#/hello/');
         }
+
+        $(window).on('hashchange', function (e) {
+            var $url = window.location.hash;
+
+            $url = $url.replace('#/', '');
+            $url = $url.replace('/', '');
+
+
+        });
     };
 
     var pushState = function ($data) {

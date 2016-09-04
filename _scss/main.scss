@@ -29,6 +29,7 @@
 *, *:before, *:after { box-sizing: inherit; }
 html { box-sizing: border-box; }
 body {
+    background-color: $material-background;
     font: 62.5%/1.5 'HelveticaNeue', Arial, sans-serif;
     margin: 0 !important;
 }
@@ -299,63 +300,85 @@ svg.ripple {
 
     &.active {
         width: 100%;
-
-        ul {
-            right: 0;
-        }
     }
 
     ul {
-        @include transition(all, 0.5s, $easeOutExpo);
         @include normalise-list;
+        @extend .clearfix;
 
-        background: $black;
-        height: 100%;
-        max-width: 300px;
-        padding-top: 120px;
-        position: absolute;
-        right: -300px;
-        text-align: right;
-        width: 100%;
-        z-index: 5;
+        margin-top: 35px;
+        text-align: center;
+    }
+
+    li {
+        float: left;
+        height: 40vw;
+        // opacity: 0;
+        margin-bottom: 30px;
+        padding: 0 $gutter;
+        position: relative;
+        top: 50px;
+        width: 50%;
+        z-index: 1;
     }
 
     a {
-        @include transition(all, 0.25s, $easeOutExpo);
-
-        background-color: transparent;
         color: $white;
-        display: block;
-        font-size: 1.625em;
-        line-height: normal;
-        margin-bottom: 0;
-        padding: 10px;
-        width: 100%;
-
-        &:after {
-            @include transition(width, 0.25s, $easeOutExpo);
-
-            background-color: $white;
-            height: 100%;
-            left: auto;
-            right: 0;
-            width: 0;
-        }
-
-        &:hover {
-            color: $black;
-
-            &:after {
-                width: 100%;
-            }
-        }
-
-        &.active {
-            background-color: $white;
-            border-right: 15px solid $blue;
-            color: $black;
-        }
+        border: 3px solid $white;
     }
+
+    // ul {
+    //     @include transition(all, 0.5s, $easeOutExpo);
+    //     @include normalise-list;
+
+    //     background: $black;
+    //     height: 100%;
+    //     max-width: 300px;
+    //     padding-top: 120px;
+    //     position: absolute;
+    //     right: -300px;
+    //     text-align: right;
+    //     width: 100%;
+    //     z-index: 5;
+    // }
+
+    // a {
+    //     @include transition(all, 0.25s, $easeOutExpo);
+
+    //     background-color: transparent;
+    //     color: $white;
+    //     display: block;
+    //     font-size: 1.625em;
+    //     line-height: normal;
+    //     margin-bottom: 0;
+    //     padding: 10px;
+    //     text-decoration: none;
+    //     width: 100%;
+
+    //     &:after {
+    //         @include transition(width, 0.25s, $easeOutExpo);
+
+    //         background-color: $white;
+    //         height: 100%;
+    //         left: auto;
+    //         right: 0;
+    //         width: 0;
+    //     }
+
+    //     &:hover {
+    //         color: $black;
+
+    //         &:after {
+    //             width: 100%;
+    //         }
+    //     }
+
+    //     &.active {
+    //         background-color: $white;
+    //         border-right: 15px solid $blue;
+    //         color: $black;
+    //     }
+    // }
 
     .overlay {
         background-color: rgba(22, 21, 20, 0.9);
@@ -464,6 +487,8 @@ svg.ripple {
     }
 
     nav {
+        display: none;
+
         ul {
             @include normalise-list;
 
@@ -488,6 +513,7 @@ svg.ripple {
     }
 
     hr {
+        display: none;
         width: 0;
     }
 }

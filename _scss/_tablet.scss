@@ -103,6 +103,8 @@ img {
     }
 
     nav {
+        display: block;
+
         li {
             height: 102px;
             width: 33.333333%;
@@ -111,6 +113,10 @@ img {
                 width: 33.333333%;
             }
         }
+    }
+
+    hr {
+        display: block;
     }
 }
 

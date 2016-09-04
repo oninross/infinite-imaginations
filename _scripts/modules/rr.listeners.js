@@ -27,6 +27,13 @@ var RR = (function (parent, $) {
             top: 0
         });
 
+        TweenMax.to('.menu', 0.5, {
+            autoAlpha: 1,
+            top: 16,
+            ease: Expo.easeOut,
+            delay: 0.25
+        });
+
         enterHome(isFirstLoad);
 
         // Hello Section: nav animations
@@ -50,8 +57,8 @@ var RR = (function (parent, $) {
 
 
         // Navigation Listeners
-        $('.hello nav a').on('click', function (e) {
-            e.preventDefault();
+        $('.hello nav a, .primary-nav a').on('click', function () {
+            // e.preventDefault();
 
             var $this = $(this);
 
@@ -69,10 +76,15 @@ var RR = (function (parent, $) {
 
             // Outro current slide
             exitCurrentSlide(currPage, $data);
+
+            // Mobile menu click
+            if ($this.closest('.primary-nav').length) {
+                $('.header .menu').trigger('click');
+            }
         });
 
-        $('.header a').on('click', function (e) {
-            e.preventDefault();
+        $('.header a').on('click', function () {
+            // e.preventDefault();
 
             $data = 'hello';
 
@@ -200,7 +212,7 @@ var RR = (function (parent, $) {
         TweenMax.to('.hello .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
-            delay: isFirstLoad == true ? 1.5 : 0,
+            delay: isFirstLoad == true ? 0.5 : 0,
             onComplete: function () {
                 $('.hello h1 .text').typist({
                     speed: 12,
@@ -212,27 +224,27 @@ var RR = (function (parent, $) {
         TweenMax.to('.hello h1', 1.5, {
             'borderLeft' : '14px solid #2196f3',
             ease: Expo.easeOut,
-            delay: isFirstLoad == true ? 1.75 : 0.25
+            delay: isFirstLoad == true ? 0.75 : 0.25
         });
 
         TweenMax.to('.hello p', 0.75, {
             opacity: 1,
             top: 0,
             ease: Expo.easeOut,
-            delay: isFirstLoad == true ? 1.75 : 0.25
+            delay: isFirstLoad == true ? 0.75 : 0.25
         });
 
         TweenMax.to('.hello hr', 1, {
             width: '100%',
             ease: Expo.easeOut,
-            delay: isFirstLoad == true ? 2 : 0.5
+            delay: isFirstLoad == true ? 1 : 0.5
         });
 
         TweenMax.staggerTo('.hello li', 1, {
             opacity: 1,
             top: 0,
             ease: Expo.easeOut,
-            delay: isFirstLoad == true ? 2.25 : 0.75
+            delay: isFirstLoad == true ? 1.25 : 0.75
         }, 0.1);
     };
 
