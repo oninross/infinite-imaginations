@@ -15,10 +15,6 @@ var RR = (function (parent, $) {
         isMobileDevice, vh, vw;
 
     var setup = function () {
-        // Background Pattern
-        backgroundResize();
-
-
         // Set 3D environment
         TweenLite.set('#main', {
             perspective: 700
@@ -26,29 +22,12 @@ var RR = (function (parent, $) {
 
 
         // Hello Animation
-        TweenMax.to('.background', 1.5, {
-            opacity: 1
-        });
-
-        TweenMax.to('.background video', 1.5, {
-            opacity: 1,
-            delay: 0.5
-        });
-
         TweenMax.to('.logo', 0.5, {
             opacity: 1,
-            top: 0,
-            delay: 0.5
+            top: 0
         });
 
         enterHome(isFirstLoad);
-
-        $window.on('resize', debounce(function () {
-            vw = $document.width();
-            vh = $document.height();
-
-            backgroundResize();
-        }, 250));
 
         // Hello Section: nav animations
         $('.hello nav a').on('mouseover', function (e) {

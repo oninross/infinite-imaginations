@@ -305,13 +305,5 @@
     </section>
 </main>
 
-<div class="background">
-    <i class="pattern"></i>
-
-    <video id="video_background" preload="auto" loop="loop" muted="muted" autoplay>
-        <source src="/assets/infiniteimaginations/images/background.mp4" type="video/mp4" />
-    </video>
-</div>
-
 <?php include('footer.php'); ?>
 
