@@ -65,6 +65,10 @@ var RR = (function (parent, $) {
 
             $data = $this.data('name');
 
+            if ($data == currentPage) {
+                return false;
+            }
+
             // Create a clone of box
             $('body').append('<div class="element-clone" style="height: ' + $this.outerHeight() + 'px; width: ' + $this.outerWidth() + 'px;"/>');
             $this.clone().appendTo('.element-clone');

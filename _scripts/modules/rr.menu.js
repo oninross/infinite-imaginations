@@ -36,7 +36,6 @@ var RR = (function (parent, $) {
 
         tlClick.pause();
 
-
         tlHover.to(tl, 0.25, { left: -16, top: -16, ease: Expo.easeOut });
         tlHover.to(tr, 0.25, { right: -16, top: -16, ease: Expo.easeOut }, '-=0.25');
 
@@ -55,8 +54,22 @@ var RR = (function (parent, $) {
 
             if ($this.hasClass('active')) {
                 tlClick.play();
+
+                TweenMax.staggerTo($primaryNav.find('li'), 0.75, {
+                    autoAlpha: 1,
+                    scale: 1,
+                    ease: Expo.easeOut,
+                    delay: 0.2
+                }, 0.1);
             } else {
                 tlClick.reverse();
+
+                TweenMax.staggerTo($primaryNav.find('li'), 0.5, {
+                    autoAlpha: 0,
+                    scale: 1.25,
+                    ease: Expo.easeOut,
+                    delay: 0.2
+                }, 0.1);
             }
         }).on('mouseover', function () {
             if (!$(this).hasClass('active') && $('.no-touchevents').length) {
@@ -71,9 +84,9 @@ var RR = (function (parent, $) {
         $primaryNav
             .append('<i class="overlay"></i>')
             .on('click', '.overlay', function (e) {
-            e.preventDefault();
+                e.preventDefault();
 
-            $menu.trigger('click');
+                $menu.trigger('click');
             });
 
         vw = $document.outerWidth();

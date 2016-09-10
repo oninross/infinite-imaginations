@@ -294,7 +294,6 @@ p {
 ========================================================================== */
 .primary-nav {
     @include transition(all, 0.5s, $easeOutExpo);
-    @include scale(1.25);
 
     height: 100%;
     left: 0;
@@ -306,8 +305,6 @@ p {
     z-index: 10;
 
     &.active {
-        @include scale(1);
-
         opacity: 1;
         visibility: visible;
     }
@@ -321,13 +318,16 @@ p {
     }
 
     li {
+        @include scale(1.25);
+
         float: left;
         height: 40vw;
-        // opacity: 0;
+        opacity: 0;
         margin-bottom: 30px;
         padding: 0 $gutter;
         position: relative;
         top: 50px;
+        visibility: hidden;
         width: 50%;
         z-index: 1;
     }
