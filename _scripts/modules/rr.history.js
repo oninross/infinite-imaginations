@@ -10,9 +10,13 @@ var RR = (function (parent, $) {
     var setup = function () {
         var $url = window.location.href;
 
-        $url = window.location.hash;
-        $url = $url.replace('#/', '');
-        $url = $url.replace('/', '');
+        if ($url.indexOf('#') < 0) {
+            $url = 'hello';
+        } else {
+            $url = window.location.hash;
+            $url = $url.replace('#/', '');
+            $url = $url.replace('/', '');
+        }
 
         RR.listeners.exitCurrentSlide($url);
 

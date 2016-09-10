@@ -108,7 +108,9 @@ var RR = (function (parent, $) {
             onComplete: function () {
                 $('.' + currentPage).hide();
 
-                if (!$('.' + $url).length) {
+                if ($url == '') {
+                    $url = 'hello';
+                } else if (!$('.' + $url).length) {
                     $url = '404';
                 }
 
