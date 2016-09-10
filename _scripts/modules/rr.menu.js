@@ -58,6 +58,7 @@ var RR = (function (parent, $) {
                 TweenMax.staggerTo($primaryNav.find('li'), 0.75, {
                     autoAlpha: 1,
                     scale: 1,
+                    top: 0,
                     ease: Expo.easeOut,
                     delay: 0.2
                 }, 0.1);
@@ -67,6 +68,7 @@ var RR = (function (parent, $) {
                 TweenMax.staggerTo($primaryNav.find('li'), 0.5, {
                     autoAlpha: 0,
                     scale: 1.25,
+                    top: 50,
                     ease: Expo.easeOut,
                     delay: 0.2
                 }, 0.1);

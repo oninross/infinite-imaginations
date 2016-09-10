@@ -81,7 +81,20 @@ img {
 /* =======================================================================
 04 Main Navigation
 ========================================================================== */
+.primary-nav {
+    ul {
+        @include vertically-centering-the-unknown();
 
+        margin-top: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    li {
+        height: 170px;
+        width: 25%;
+    }
+}
 
 
 
@@ -137,6 +150,8 @@ img {
 .about {
     @include vertically-centering-the-unknown();
 
+    width: 100%;
+
     h1 {
         font-size: 3.2em;
     }
@@ -162,6 +177,8 @@ img {
 .achievements {
     @include vertically-centering-the-unknown();
 
+    width: 100%;
+
     h1 {
         font-size: 3.2em;
     }
@@ -177,6 +194,18 @@ img {
 
 .contact {
     @include vertically-centering-the-unknown();
+
+    width: 100%;
+
+    h1 {
+        font-size: 3.2em;
+    }
+}
+
+.error {
+    @include vertically-centering-the-unknown();
+
+    width: 100%;
 
     h1 {
         font-size: 3.2em;

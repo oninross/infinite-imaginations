@@ -9,12 +9,15 @@ var RR = (function (parent, $) {
 
     var $document = $(document),
         $window = $(window),
+        $header = $('.header'),
         currentPage = 'hello',
         $data = 'hello',
-        isFirstLoad = true,
         isMobileDevice, vh, vw;
 
     var setup = function () {
+        // Background Pattern
+        backgroundResize();
+
         // Set 3D environment
         TweenLite.set('#main', {
             perspective: 700
@@ -34,8 +37,6 @@ var RR = (function (parent, $) {
             delay: 0.25
         });
 
-        enterHello(isFirstLoad);
-        isFirstLoad = false;
 
         // Hello Section: nav animations
         $('.hello nav a').on('mouseover', function (e) {
@@ -59,8 +60,6 @@ var RR = (function (parent, $) {
 
         // Navigation Listeners
         $('.hello nav a, .primary-nav a').on('click', function () {
-            // e.preventDefault();
-
             var $this = $(this);
 
             $data = $this.data('name');
@@ -79,9 +78,6 @@ var RR = (function (parent, $) {
                 top: $this.offset().top
             });
 
-            // Outro current slide
-            // exitCurrentSlide(currPage, $data);
-
             // Mobile menu click
             if ($this.closest('.primary-nav').length) {
                 $('.header .menu').trigger('click');
@@ -89,12 +85,15 @@ var RR = (function (parent, $) {
         });
 
         $('.header .logo a').on('click', function () {
-            // e.preventDefault();
             $data = 'hello';
-
-            // Outro current slide
-            // exitCurrentSlide(currPage, $data);
         });
+
+        $window.on('resize', debounce(function () {
+            vw = $document.width();
+            vh = $document.height();
+
+            backgroundResize();
+        }, 250));
     };
 
     var check = function () {
@@ -108,7 +107,6 @@ var RR = (function (parent, $) {
             ease: Expo.easeOut,
             onComplete: function () {
                 $('.' + currentPage).hide();
-                resetSlide(currentPage);
 
                 if (!$('.' + $url).length) {
                     $url = '404';
@@ -120,8 +118,12 @@ var RR = (function (parent, $) {
                     $url = 'error';
                 }
 
+                backgroundResize();
+
                 $('.' + $url).show()
                     .find('h1 .text').html('&nbsp;');
+
+                resetSlide(currentPage);
 
                 var $gotoElem = $('.' + $url + ' h1');
                 TweenMax.to('.element-clone', 0.75, {
@@ -138,9 +140,11 @@ var RR = (function (parent, $) {
                     onComplete: function () {
                         $('.element-clone').remove();
 
-                        TweenMax.set('.' + $url + ' h1', {
-                            'borderLeft' : '15px solid #2196f3'
-                        });
+                        if ($url !== 'hello') {
+                            TweenMax.set('.' + $url + ' h1', {
+                                'borderLeft' : '15px solid #2196f3'
+                            });
+                        }
 
                         switch ($url) {
                             case 'hello':
@@ -173,16 +177,17 @@ var RR = (function (parent, $) {
     function backgroundResize() {
         isMobileDevice = $window.width() < 1024 ? 1 : 0;
 
+        $('#main').css({
+            height: 0
+        });
+
         if (isMobileDevice) {
-            vw = $document.width();
-            vh = $document.height();
+            vh = $document.height() - $header.outerHeight();
         } else {
-            vw = $window.width();
             vh = $window.height();
         }
 
-        $('.background').css({
-            width: vw + 'px',
+        $('#main').css({
             height: vh + 'px'
         });
     };
@@ -239,13 +244,13 @@ var RR = (function (parent, $) {
         }
     };
 
-    function enterHello(isFirstLoad) {
+    function enterHello() {
         $('.hello h1 .text').html('&nbsp;');
 
         TweenMax.to('.hello .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
-            delay: isFirstLoad == true ? 0.5 : 0,
+            delay: 0,
             onComplete: function () {
                 $('.hello h1 .text').typist({
                     speed: 12,
@@ -255,29 +260,29 @@ var RR = (function (parent, $) {
         });
 
         TweenMax.to('.hello h1', 1.5, {
-            'borderLeft' : '14px solid #2196f3',
+            'borderLeft' : '15px solid #2196f3',
             ease: Expo.easeOut,
-            delay: isFirstLoad == true ? 0.75 : 0.25
+            delay: 0.25
         });
 
         TweenMax.to('.hello p', 0.75, {
             opacity: 1,
             top: 0,
             ease: Expo.easeOut,
-            delay: isFirstLoad == true ? 0.75 : 0.25
+            delay: 0.25
         });
 
         TweenMax.to('.hello hr', 1, {
             width: '100%',
             ease: Expo.easeOut,
-            delay: isFirstLoad == true ? 1 : 0.5
+            delay: 0.5
         });
 
         TweenMax.staggerTo('.hello li', 1, {
             opacity: 1,
             top: 0,
             ease: Expo.easeOut,
-            delay: isFirstLoad == true ? 1.25 : 0.75
+            delay: 0.75
         }, 0.1);
     };
 
