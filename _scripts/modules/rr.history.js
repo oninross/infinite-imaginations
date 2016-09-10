@@ -10,18 +10,18 @@ var RR = (function (parent, $) {
     var setup = function () {
         var $url = window.location.href;
 
-        if ($url.indexOf('/#/') < 0) {
-            // console.log('no hash');
-            window.history.pushState({}, 'hello', '/#/hello/');
-        }
+        $url = window.location.hash;
+        $url = $url.replace('#/', '');
+        $url = $url.replace('/', '');
+
+        RR.listeners.exitCurrentSlide($url);
 
         $(window).on('hashchange', function (e) {
-            var $url = window.location.hash;
-
+            $url = window.location.hash;
             $url = $url.replace('#/', '');
             $url = $url.replace('/', '');
 
-
+            RR.listeners.exitCurrentSlide($url);
         });
     };
 

@@ -14,7 +14,7 @@
                         <span class="bar"></span>
                     </h1>
 
-                    <p>I'm <strong>Niño Ross Rodriguez</strong>, a UX Developer based in Singapore with eight years of industry experience.  I specialize in developing pixel perfect websites quickly without sacrificing code quality. Get to know a bit more <a href="http://www.google.com/">about my skills</a> or feel free to look around my <a href="/#/coding/">coding</a> and <a href="/#/design/">design</a> works.</p>
+                    <p>I'm <strong>Niño Ross Rodriguez</strong>, a User Experience Developer based in Singapore with eight years of industry experience.  I specialize in developing pixel perfect websites quickly without sacrificing code quality. Get to know a bit more <a href="/#/about/">about my skills</a> or feel free to look around my <a href="/#/coding/">coding</a> and <a href="/#/design/">design</a> works.</p>
 
                     <hr />
 
@@ -299,6 +299,24 @@
                             </li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="error">
+        <div class="container">
+            <div class="wrap">
+                <div class="col-12">
+                    <h1>
+                        <span class="text">oops!</span>
+
+                        <span class="bar">
+                            <i class="icon icon-warning"></i>
+                        </span>
+                    </h1>
+
+                    <p>Sorry, the page you are looking for does not exist</p>
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@ var RR = (function (parent, $) {
 
     var $document = $(document),
         $window = $(window),
-        currPage = 'hello',
+        currentPage = 'hello',
         $data = 'hello',
         isFirstLoad = true,
         isMobileDevice, vh, vw;
@@ -34,7 +34,8 @@ var RR = (function (parent, $) {
             delay: 0.25
         });
 
-        enterHome(isFirstLoad);
+        enterHello(isFirstLoad);
+        isFirstLoad = false;
 
         // Hello Section: nav animations
         $('.hello nav a').on('mouseover', function (e) {
@@ -75,7 +76,7 @@ var RR = (function (parent, $) {
             });
 
             // Outro current slide
-            exitCurrentSlide(currPage, $data);
+            // exitCurrentSlide(currPage, $data);
 
             // Mobile menu click
             if ($this.closest('.primary-nav').length) {
@@ -83,18 +84,86 @@ var RR = (function (parent, $) {
             }
         });
 
-        $('.header a').on('click', function () {
+        $('.header .logo a').on('click', function () {
             // e.preventDefault();
-
             $data = 'hello';
 
             // Outro current slide
-            exitCurrentSlide(currPage, $data);
+            // exitCurrentSlide(currPage, $data);
         });
     };
 
     var check = function () {
         return $window.width() < 1024 ? true : false;
+    };
+
+    var exitCurrentSlide = function($url) {
+        TweenMax.to('.' + currentPage, 0.5, {
+            transform: 'translateZ(-100px)',
+            opacity: 0,
+            ease: Expo.easeOut,
+            onComplete: function () {
+                $('.' + currentPage).hide();
+                resetSlide(currentPage);
+
+                if (!$('.' + $url).length) {
+                    $url = '404';
+                }
+
+                RR.history.pushState($url);
+
+                if ($url == '404') {
+                    $url = 'error';
+                }
+
+                $('.' + $url).show()
+                    .find('h1 .text').html('&nbsp;');
+
+                var $gotoElem = $('.' + $url + ' h1');
+                TweenMax.to('.element-clone', 0.75, {
+                    left: $gotoElem.offset().left,
+                    top: $gotoElem.offset().top,
+                    height: $gotoElem.outerHeight(),
+                    width: 15,
+                    ease: Expo.easeInOut
+                });
+
+                TweenMax.to('.element-clone .icon', 0.75, {
+                    opacity: 0,
+                    ease: Expo.easeInOut,
+                    onComplete: function () {
+                        $('.element-clone').remove();
+
+                        TweenMax.set('.' + $url + ' h1', {
+                            'borderLeft' : '15px solid #2196f3'
+                        });
+
+                        switch ($url) {
+                            case 'hello':
+                                enterHello();
+                                break;
+                            case 'about':
+                                enterAbout();
+                                break;
+
+                            case 'achievements':
+                                enterAchievements();
+                                break;
+
+                            case 'contact':
+                                enterContact();
+                                break;
+
+                            case 'error':
+                                enterError();
+                                break;
+                        }
+                    }
+                });
+
+                currentPage = $url;
+            }
+        });
     };
 
     function backgroundResize() {
@@ -111,64 +180,6 @@ var RR = (function (parent, $) {
         $('.background').css({
             width: vw + 'px',
             height: vh + 'px'
-        });
-    };
-
-    function exitCurrentSlide(currentPage, $data) {
-        TweenMax.to('.' + currentPage, 0.5, {
-            transform: 'translateZ(-100px)',
-            opacity: 0,
-            ease: Expo.easeOut,
-            onComplete: function () {
-                $('.' + currentPage).hide();
-                resetSlide(currentPage);
-
-                RR.history.pushState($data);
-
-                $('.' + $data).show()
-                    .find('h1 .text').html('&nbsp;');
-
-                if ($data != 'hello') {
-                    var $gotoElem = $('.' + $data + ' h1');
-                    TweenMax.to('.element-clone', 0.75, {
-                        left: $gotoElem.offset().left,
-                        top: $gotoElem.offset().top,
-                        height: $gotoElem.outerHeight(),
-                        width: 15,
-                        ease: Expo.easeInOut
-                    });
-
-                    TweenMax.to('.element-clone .icon', 0.75, {
-                        opacity: 0,
-                        ease: Expo.easeInOut,
-                        onComplete: function () {
-                            $('.element-clone').remove();
-
-                            TweenMax.set('.' + $data + ' h1', {
-                                'borderLeft' : '15px solid #2196f3'
-                            });
-
-                            switch ($data) {
-                                case 'about':
-                                    enterAbout();
-                                    break;
-
-                                case 'achievements':
-                                    enterAchievements();
-                                    break;
-
-                                case 'contact':
-                                    enterContact();
-                                    break;
-                            }
-                        }
-                    });
-                } else {
-                    enterHome();
-                }
-
-                currPage = $data;
-            }
         });
     };
 
@@ -203,10 +214,28 @@ var RR = (function (parent, $) {
         });
 
         switch (slide) {
+            case 'about':
+                TweenMax.set('.skills__bar', {
+                    opacity: 0,
+                    top: 50,
+                    width: 0
+                });
+
+                TweenMax.set('.skills__label', {
+                    opacity: 0
+                });
+                break;
+
+            case 'achievements':
+                TweenMax.set('.achievements .col-l a', {
+                    opacity: 0,
+                    top: 50
+                });
+                break;
         }
     };
 
-    function enterHome(isFirstLoad) {
+    function enterHello(isFirstLoad) {
         $('.hello h1 .text').html('&nbsp;');
 
         TweenMax.to('.hello .bar', 0.75, {
@@ -414,10 +443,36 @@ var RR = (function (parent, $) {
         }, 0.1);
     };
 
+    function enterError() {
+        TweenMax.to('.error .bar', 0.75, {
+            width: '100%',
+            ease: Expo.easeOut,
+            onComplete: function () {
+                $('.error h1 .text').typist({
+                    speed: 12,
+                    text: 'error'
+                });
+            }
+        });
+
+        TweenMax.to('.error .icon', 1.5, {
+            opacity: 1,
+            ease: Expo.easeOut
+        });
+
+        TweenMax.to('.error p', 0.75, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 0.5
+        });
+    };
+
     // Export module method
     parent.listeners = {
         setup: setup,
-        check: check
+        check: check,
+        exitCurrentSlide: exitCurrentSlide
     };
 
     return parent;

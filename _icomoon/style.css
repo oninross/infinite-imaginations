@@ -1,60 +1,63 @@
 @font-face {
-    font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?1mqvhu');
-    src:    url('fonts/icomoon.eot?1mqvhu#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?1mqvhu') format('truetype'),
-        url('fonts/icomoon.woff?1mqvhu') format('woff'),
-        url('fonts/icomoon.svg?1mqvhu#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?wijwle');
+  src:  url('fonts/icomoon.eot?wijwle#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?wijwle') format('truetype'),
+    url('fonts/icomoon.woff?wijwle') format('woff'),
+    url('fonts/icomoon.svg?wijwle#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-warning:before {
+  content: "\e90b";
+}
 .icon-about:before {
-    content: "\e900";
+  content: "\e900";
 }
 .icon-email:before {
-    content: "\e901";
+  content: "\e901";
 }
 .icon-instagram:before {
-    content: "\e902";
+  content: "\e902";
 }
 .icon-design:before {
-    content: "\e903";
+  content: "\e903";
 }
 .icon-linkedin:before {
-    content: "\e904";
+  content: "\e904";
 }
 .icon-coding:before {
-    content: "\e905";
+  content: "\e905";
 }
 .icon-contact:before {
-    content: "\e906";
+  content: "\e906";
 }
 .icon-github:before {
-    content: "\e907";
+  content: "\e907";
 }
 .icon-achievements:before {
-    content: "\e908";
+  content: "\e908";
 }
 .icon-facebook:before {
-    content: "\e909";
+  content: "\e909";
 }
 .icon-infinite:before {
-    content: "\e90a";
+  content: "\e90a";
 }
 

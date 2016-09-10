@@ -57,6 +57,11 @@ DEPENDENCIES
     nav {
         li {
             height: 125px;
+            width: 20%;
+
+            &:last-child {
+                width: 20%;
+            }
         }
     }
 }

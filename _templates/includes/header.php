@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="description" content="">
 
-        <title>infinite imaginations | let your imaginations run wild</title>
+        <title>infinite imaginations | because i can</title>
 
         <link rel="mask-icon" href="/favicon.svg" color="#196db3">
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -36,7 +36,7 @@
         <meta name="description" content="UX Developer based in Singapore with eight years of industry experience.  I specialize in developing responsive front-end websites done in HTML5, CSS3 and JavaScript.">
         <meta name="keywords" content="nino ross rodriguez, infinite imaginations, web design, web develop, front-end, responsive, responsive web design, website, user experience, html, html5, css, css3, less, twitter bootstrap, javascript, jquery, json, angularJS, actionscript, flash" />
 
-        <meta property="og:title" content="infinite imaginations | let your imaginations run wild">
+        <meta property="og:title" content="infinite imaginations | because i can">
         <meta property="og:type" content="">
         <meta property="og:url" content="">
         <meta property="og:image" content="">
@@ -47,7 +47,7 @@
         <meta name="twitter:creator" content="Nino Ross Rodriguez"/>
         <meta name="twitter:url" content=""/>
 
-        <meta name="twitter:title" content="infinite imaginations | let your imaginations run wild"/>
+        <meta name="twitter:title" content="infinite imaginations | because i can"/>
         <meta name="twitter:description" content="UX Developer based in Singapore with eight years of industry experience.  I specialize in developing responsive front-end websites done in HTML5, CSS3 and JavaScript."/>
         <meta name="twitter:image" content="" />
 
@@ -67,7 +67,7 @@
     <body>
         <header class="header" role="header">
             <div class="logo">
-                <a href="/#/hello/">
+                <a href="/#/hello/" data-name="hello">
                     <img src="/assets/infiniteimaginations/images/svg/logo.svg" alt="infinite imaginations">
                 </a>
             </div>
@@ -84,10 +84,10 @@
                 <nav class="primary-nav">
                     <ul>
                         <li>
-                            <a href="/#/home/" class="element-box" data-name="home">
+                            <a href="/#/hello/" class="element-box" data-name="hello">
                                 <span class="text">
-                                    <span class="abbr">Ab</span>
-                                    <span class="full">about</span>
+                                    <span class="abbr">Ho</span>
+                                    <span class="full">home</span>
                                 </span>
 
                                 <span class="icon icon-infinite"></span>

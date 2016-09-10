@@ -11,7 +11,8 @@ $ultra-bold: 900;
     font-family: 'EBGaramond12-Regular';
     src: url('../fonts/EBGaramond12-Regular.eot?#iefix') format('embedded-opentype'),
     url('../fonts/EBGaramond12-Regular.otf') format('opentype'),
-    url('../fonts/EBGaramond12-Regular.woff') format('woff'), url('../fonts/EBGaramond12-Regular.ttf') format('truetype'),
+    url('../fonts/EBGaramond12-Regular.woff') format('woff'),
+    url('../fonts/EBGaramond12-Regular.ttf') format('truetype'),
     url('../fonts/EBGaramond12-Regular.svg#EBGaramond12-Regular') format('svg');
     font-weight: $thin;
     font-style: normal;
@@ -90,7 +91,9 @@ $ultra-bold: 900;
    @extend %icomoon;
 }
 
-
+.icon-warning:before {
+  content: "\e90b";
+}
 .icon-about:before {
     content: "\e900";
 }
