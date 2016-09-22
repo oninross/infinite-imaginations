@@ -8,35 +8,30 @@ var RR = (function (parent, $) {
     'use strict';
 
     var setup = function () {
-        var $url = window.location.href;
+        Path.root("#/hello/");
 
-        if ($url.indexOf('#') < 0) {
-            $url = 'hello';
-        } else {
-            $url = window.location.hash;
-            $url = $url.replace('#/', '');
-            $url = $url.replace('/', '');
-        }
-
-        RR.listeners.exitCurrentSlide($url);
-
-        $(window).on('hashchange', function (e) {
-            $url = window.location.hash;
-            $url = $url.replace('#/', '');
-            $url = $url.replace('/', '');
-
-            RR.listeners.exitCurrentSlide($url);
+        Path.map('#/hello/').to(function() {
+            RR.listeners.exitCurrentSlide('hello');
         });
-    };
 
-    var pushState = function ($data) {
-        window.history.pushState({}, $data, '/#/' + $data + '/');
+        Path.map('#/about/').to(function() {
+            RR.listeners.exitCurrentSlide('about');
+        });
+
+        Path.map('#/achievements/').to(function() {
+            RR.listeners.exitCurrentSlide('achievements');
+        });
+
+        Path.map('#/contact/').to(function() {
+            RR.listeners.exitCurrentSlide('contact');
+        });
+
+        Path.listen();
     };
 
     // Export module method
     parent.history = {
-        setup: setup,
-        pushState: pushState
+        setup: setup
     };
 
     return parent;

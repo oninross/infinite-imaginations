@@ -283,7 +283,7 @@ p {
     z-index: 10;
 
     img {
-        max-width: 175px;
+        max-width: 150px;
         margin: 0;
     }
 }
@@ -308,6 +308,13 @@ p {
     &.active {
         opacity: 1;
         visibility: visible;
+
+        li {
+            -webkit-transform: none; /* Safari */
+                -ms-transform: none; /* IE 9 */
+                    transform: none;
+            opacity: 1;
+        }
     }
 
     ul {
@@ -319,7 +326,12 @@ p {
     }
 
     li {
-        @include scale(1.25);
+        @include transition(all, 0.5s, $easeOutExpo);
+
+        -webkit-transform: translateY(-50px) scale(1.25); /* Safari */
+            -ms-transform: translateY(-50px) scale(1.25); /* IE 9 */
+                transform: translateY(-50px) scale(1.25);
+              will-change: transform;
 
         float: left;
         height: 40vw;
@@ -327,10 +339,15 @@ p {
         margin-bottom: 30px;
         padding: 0 $gutter;
         position: relative;
-        top: 50px;
-        visibility: hidden;
         width: 50%;
         z-index: 1;
+
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+                -webkit-transition-delay: 0.1s * $i, 0.1s * $i;
+                        transition-delay: 0.1s * $i, 0.1s * $i;
+            }
+        }
     }
 
     a {
@@ -459,7 +476,8 @@ p {
         color: $white;
         font-size: 3.4em;
         height: 75px;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
+        margin-top: 30px;
         max-width: 545px;
         padding: 20px;
         position: relative;
@@ -659,7 +677,8 @@ p {
         border-left: 0px solid $blue;
         color: $white;
         font-size: 2.8em;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
+        margin-top: 30px;
         padding: 15px 30px 15px 20px;
         position: relative;
 
@@ -762,7 +781,8 @@ p {
         border-left: 0px solid $blue;
         color: $white;
         font-size: 2.8em;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
+        margin-top: 30px;
         padding: 15px 30px 15px 20px;
         position: relative;
 
@@ -845,7 +865,8 @@ p {
         border-left: 0px solid $blue;
         color: $white;
         font-size: 2.8em;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
+        margin-top: 30px;
         padding: 15px 30px 15px 20px;
         position: relative;
 

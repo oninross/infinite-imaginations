@@ -32,7 +32,7 @@ var RR = (function (parent, $) {
 
         TweenMax.to('.menu', 0.5, {
             autoAlpha: 1,
-            top: 16,
+            top: 10,
             ease: Expo.easeOut,
             delay: 0.25
         });
@@ -113,8 +113,6 @@ var RR = (function (parent, $) {
                 } else if (!$('.' + $url).length) {
                     $url = '404';
                 }
-
-                RR.history.pushState($url);
 
                 if ($url == '404') {
                     $url = 'error';

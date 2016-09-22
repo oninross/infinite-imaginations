@@ -55,23 +55,23 @@ var RR = (function (parent, $) {
             if ($this.hasClass('active')) {
                 tlClick.play();
 
-                TweenMax.staggerTo($primaryNav.find('li'), 0.75, {
-                    autoAlpha: 1,
-                    scale: 1,
-                    top: 0,
-                    ease: Expo.easeOut,
-                    delay: 0.2
-                }, 0.1);
+                // TweenMax.staggerTo($primaryNav.find('li'), 0.75, {
+                //     autoAlpha: 1,
+                //     scale: 1,
+                //     top: 0,
+                //     ease: Expo.easeOut,
+                //     delay: 0.2
+                // }, 0.1);
             } else {
                 tlClick.reverse();
 
-                TweenMax.staggerTo($primaryNav.find('li'), 0.5, {
-                    autoAlpha: 0,
-                    scale: 1.25,
-                    top: 50,
-                    ease: Expo.easeOut,
-                    delay: 0.2
-                }, 0.1);
+                // TweenMax.staggerTo($primaryNav.find('li'), 0.5, {
+                //     autoAlpha: 0,
+                //     scale: 1.25,
+                //     top: 50,
+                //     ease: Expo.easeOut,
+                //     delay: 0.2
+                // }, 0.1);
             }
         }).on('mouseover', function () {
             if (!$(this).hasClass('active') && $('.no-touchevents').length) {
