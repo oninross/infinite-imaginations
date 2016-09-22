@@ -155,11 +155,11 @@
 }
 
 @mixin reset-centering() {
-    -webkit-transform: translate(0, 0);
-      -moz-transition: translate(0, 0);
-        -ms-transform: translate(0, 0);
-        -o-transition: translate(0, 0);
-            transform: translate(0, 0);
+    -webkit-transform: none;
+      -moz-transition: none;
+        -ms-transform: none;
+        -o-transition: none;
+            transform: none;
     position: static;
     top: 0;
 }

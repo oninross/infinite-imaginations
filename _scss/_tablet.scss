@@ -103,7 +103,7 @@ img {
 05 Homepage
 ========================================================================== */
 .hello {
-    @include vertically-centering-the-unknown();
+    // @include vertically-centering-the-unknown();
 
     h1 {
         font-size: 7em;
@@ -148,7 +148,7 @@ img {
 }
 
 .about {
-    @include vertically-centering-the-unknown();
+    // @include vertically-centering-the-unknown();
 
     width: 100%;
 
@@ -175,7 +175,7 @@ img {
 }
 
 .achievements {
-    @include vertically-centering-the-unknown();
+    // @include vertically-centering-the-unknown();
 
     width: 100%;
 
@@ -193,7 +193,7 @@ img {
 }
 
 .contact {
-    @include vertically-centering-the-unknown();
+    // @include vertically-centering-the-unknown();
 
     width: 100%;
 
@@ -203,7 +203,7 @@ img {
 }
 
 .error {
-    @include vertically-centering-the-unknown();
+    // @include vertically-centering-the-unknown();
 
     width: 100%;
 
