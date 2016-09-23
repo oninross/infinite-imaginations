@@ -342,7 +342,7 @@ p {
         width: 50%;
         z-index: 1;
 
-        @for $i from 1 through 5 {
+        @for $i from 1 through 6 {
             &:nth-child(#{$i}) {
                 -webkit-transition-delay: 0.1s * $i, 0.1s * $i;
                         transition-delay: 0.1s * $i, 0.1s * $i;
@@ -588,12 +588,12 @@ p {
         }
 
         .abbr {
-            font-size: 3.125em;
+            font-size: 2.75em;
             margin-bottom: 5px;
         }
 
         .full {
-            font-size: 1em;
+            font-size: 0.75em;
         }
 
         .icon {
@@ -603,7 +603,7 @@ p {
             background: $blue;
             color: $white;
             height: 100%;
-            font-size: 4.688em;
+            font-size: 3.75em;
             left: 0;
             opacity: 0;
             position: absolute;
@@ -843,7 +843,7 @@ p {
             @include inline-block;
 
             border: 6px solid $black;
-            font-size: 0.938em;
+            font-size: 0.600em;
             font-weight: $bold;
             height: 145px;
             line-height: 1.125;
@@ -856,6 +856,104 @@ p {
             width: 41.3%;
         }
     }
+}
+
+.case-studies {
+    display: none;
+
+    h1 {
+        border-left: 0px solid $blue;
+        color: $white;
+        font-size: 2.8em;
+        margin-bottom: 50px;
+        margin-top: 30px;
+        padding: 15px 30px 15px 20px;
+        position: relative;
+
+        .icon {
+            bottom: 0;
+            height: 24px;
+            font-size: 0.750em;
+            margin: auto;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 20px;
+        }
+    }
+
+    p {
+        opacity: 0;
+        position: relative;
+        top: 50px;
+    }
+
+    .bar {
+        background-color: $black;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 0;
+        z-index: -1;
+    }
+
+    .card {
+        border: 6px solid $black;
+        height: 297px;
+        position: relative;
+
+        &-wrap {
+            bottom: 20px;
+            left: 20px;
+            max-width: 300px;
+            position: absolute;
+            right: 20px;
+            text-decoration: none;
+            width: 100%;
+
+            .cta {
+                background-color: $black;
+                color: $white;
+                margin-bottom: 0;
+                max-width: 180px;
+                text-align: center;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        &-title {
+            display: block;
+            font-size: 1.325em;
+            margin-bottom: 10px;
+        }
+
+        &-link {
+            display: block;
+
+            &:hover {
+                background-color: $black;
+
+                .card-title {
+                    color: $white;
+                }
+
+                .cta {
+                    background-color: $white;
+                    color: $black;
+                }
+            }
+        }
+    }
+}
+
+.coding {
+}
+
+.design {
 }
 
 .contact {
@@ -883,7 +981,6 @@ p {
     }
 
     p {
-        font-size: 2.4em;
         opacity: 0;
         position: relative;
         text-align: center;
@@ -920,7 +1017,7 @@ p {
                 @include transition(all, 0.5s, $easeOutExpo);
 
                 display: block;
-                font-size: 2.500em;
+                font-size: 2.0em;
                 position: relative;
                 text-decoration: none;
 

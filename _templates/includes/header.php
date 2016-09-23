@@ -116,7 +116,7 @@
                             </a>
                         </li>
 
-                        <!-- <li>
+                        <li>
                             <a href="/#/coding/" class="element-box" data-name="coding">
                                 <span class="text">
                                     <span class="abbr">Co</span>
@@ -136,7 +136,7 @@
 
                                 <span class="icon icon-design"></span>
                             </a>
-                        </li> -->
+                        </li>
 
                         <li>
                             <a href="/#/contact/" class="element-box" data-name="contact">

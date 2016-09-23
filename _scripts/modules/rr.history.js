@@ -22,6 +22,14 @@ var RR = (function (parent, $) {
             RR.listeners.exitCurrentSlide('achievements');
         });
 
+        Path.map('#/coding/').to(function() {
+            RR.listeners.exitCurrentSlide('coding');
+        });
+
+        Path.map('#/design/').to(function() {
+            RR.listeners.exitCurrentSlide('design');
+        });
+
         Path.map('#/contact/').to(function() {
             RR.listeners.exitCurrentSlide('contact');
         });

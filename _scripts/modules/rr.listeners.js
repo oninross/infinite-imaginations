@@ -9,6 +9,7 @@ var RR = (function (parent, $) {
 
     var $document = $(document),
         $window = $(window),
+        $main = $('#main'),
         $header = $('.header'),
         currentPage = 'hello',
         $data = 'hello',
@@ -158,6 +159,14 @@ var RR = (function (parent, $) {
                                 enterAchievements();
                                 break;
 
+                            case 'coding':
+                                enterCoding();
+                                break;
+
+                            case 'design':
+                                enterDesign();
+                                break;
+
                             case 'contact':
                                 enterContact();
                                 break;
@@ -177,18 +186,19 @@ var RR = (function (parent, $) {
     function backgroundResize() {
         isMobileDevice = $window.width() < 1024 ? 1 : 0;
 
-        $('#main').css({
+        $main.css({
             height: 0
         });
 
         if (isMobileDevice) {
-            vh = $document.height() - $header.outerHeight();
+            vh = $document.height() - $header.outerHeight() + 'px'
         } else {
-            vh = $window.height();
+            vh = 'auto'
+            // vh = $window.height();
         }
 
-        $('#main').css({
-            height: vh + 'px'
+        $main.css({
+            height: vh
         });
     };
 
@@ -206,6 +216,10 @@ var RR = (function (parent, $) {
 
         TweenMax.set('.' + slide + ' h1', {
             'borderLeft': '0 solid #2196f3'
+        });
+
+        TweenMax.set('.' + slide + ' .icon', {
+            opacity: 0
         });
 
         TweenMax.set('.' + slide + ' p', {
@@ -237,6 +251,20 @@ var RR = (function (parent, $) {
 
             case 'achievements':
                 TweenMax.set('.achievements .col-l a', {
+                    opacity: 0,
+                    top: 50
+                });
+                break;
+
+            case 'coding':
+                TweenMax.set('.coding .card', {
+                    opacity: 0,
+                    top: 50
+                });
+                break;
+
+            case 'design':
+                TweenMax.set('.design .card', {
                     opacity: 0,
                     top: 50
                 });
@@ -417,6 +445,68 @@ var RR = (function (parent, $) {
             top: 0,
             ease: Expo.easeOut,
             delay: 1
+        }, 0.1);
+    };
+
+    function enterCoding() {
+        TweenMax.to('.coding .bar', 0.75, {
+            width: '100%',
+            ease: Expo.easeOut,
+            onComplete: function () {
+                $('.coding h1 .text').typist({
+                    speed: 12,
+                    text: 'coding'
+                });
+            }
+        });
+
+        TweenMax.to('.coding .icon', 1.5, {
+            opacity: 1,
+            ease: Expo.easeOut
+        });
+
+        TweenMax.to('.coding h1', 1.5, {
+            'borderLeft' : '15px solid #2196f3',
+            ease: Expo.easeOut,
+            delay: 0.25
+        });
+
+        TweenMax.staggerTo('.coding .card', 0.75, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 0.5
+        }, 0.1);
+    };
+
+    function enterDesign() {
+        TweenMax.to('.design .bar', 0.75, {
+            width: '100%',
+            ease: Expo.easeOut,
+            onComplete: function () {
+                $('.design h1 .text').typist({
+                    speed: 12,
+                    text: 'design'
+                });
+            }
+        });
+
+        TweenMax.to('.design .icon', 1.5, {
+            opacity: 1,
+            ease: Expo.easeOut
+        });
+
+        TweenMax.to('.design h1', 1.5, {
+            'borderLeft' : '15px solid #2196f3',
+            ease: Expo.easeOut,
+            delay: 0.25
+        });
+
+        TweenMax.staggerTo('.design .card', 0.75, {
+            opacity: 1,
+            top: 0,
+            ease: Expo.easeOut,
+            delay: 0.5
         }, 0.1);
     };
 

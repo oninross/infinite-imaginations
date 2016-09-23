@@ -57,10 +57,10 @@ DEPENDENCIES
     nav {
         li {
             height: 125px;
-            width: 33.333333%;
+            width: 20%;
 
             &:last-child {
-                width: 33.333333%;
+                width: 20%;
             }
         }
     }
@@ -68,11 +68,11 @@ DEPENDENCIES
 
 .element-box {
     .abbr {
-        font-size: 3.750em;
+        font-size: 2.5em;
     }
 
     .full {
-        font-size: 0.875em;
+        font-size: 0.8em;
     }
 }
 
@@ -85,10 +85,30 @@ DEPENDENCIES
 
     .nominations {
         li {
-            font-size: 0.938em;
+            font-size: 0.8em;
             width: 27.25%;
+
+            &:last-child {
+                @include inline-block;
+            }
         }
     }
+}
+
+.case-studies {
+    @include reset-centering();
+
+    .card {
+        height: 250px;
+    }
+}
+
+.coding {
+
+}
+
+.design {
+
 }
 
 .contact {
