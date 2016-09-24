@@ -81,14 +81,14 @@ var RR = (function (parent, $) {
         backgroundResize();
 
         $window.on('resize scroll', debounce(function () {
-            vw = $document.outerWidth();
-            vh = $document.outerHeight();
-
             backgroundResize();
         }, 250));
     };
 
     function backgroundResize() {
+        vw = $window.outerWidth();
+        vh = $window.outerHeight();
+
         $headerWrap.css({
             width: vw + 'px',
             height: vh + 'px'

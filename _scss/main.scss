@@ -299,7 +299,7 @@ p {
     height: 100%;
     left: 0;
     opacity: 0;
-    position: absolute;
+    position: fixed;
     top: 0;
     visibility: hidden;
     width: 100%;
@@ -434,6 +434,10 @@ p {
     width: 50px;
     visibility: hidden;
     z-index: 15;
+
+    &.active {
+        position: fixed;
+    }
 
     .box {
         @include absolute-center;
@@ -853,7 +857,7 @@ p {
             padding: 14px;
             top: 50px;
             vertical-align: top;
-            width: 41.3%;
+            width: 41%;
         }
     }
 }

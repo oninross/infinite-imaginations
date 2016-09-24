@@ -186,9 +186,9 @@ var RR = (function (parent, $) {
     function backgroundResize() {
         isMobileDevice = $window.width() < 1024 ? 1 : 0;
 
-        $main.css({
-            height: 0
-        });
+        // $main.css({
+        //     height: 0
+        // });
 
         if (isMobileDevice) {
             vh = $document.height() - $header.outerHeight() + 'px'
@@ -197,9 +197,9 @@ var RR = (function (parent, $) {
             // vh = $window.height();
         }
 
-        $main.css({
-            height: vh
-        });
+        // $main.css({
+        //     height: vh
+        // });
     };
 
     function resetSlide(slide) {
