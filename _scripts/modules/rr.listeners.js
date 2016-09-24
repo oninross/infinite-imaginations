@@ -186,20 +186,11 @@ var RR = (function (parent, $) {
     function backgroundResize() {
         isMobileDevice = $window.width() < 1024 ? 1 : 0;
 
-        // $main.css({
-        //     height: 0
-        // });
-
         if (isMobileDevice) {
             vh = $document.height() - $header.outerHeight() + 'px'
         } else {
             vh = 'auto'
-            // vh = $window.height();
         }
-
-        // $main.css({
-        //     height: vh
-        // });
     };
 
     function resetSlide(slide) {
@@ -218,7 +209,7 @@ var RR = (function (parent, $) {
             'borderLeft': '0 solid #2196f3'
         });
 
-        TweenMax.set('.' + slide + ' .icon', {
+        TweenMax.set('.' + slide + ' .bar .icon', {
             opacity: 0
         });
 
@@ -567,11 +558,18 @@ var RR = (function (parent, $) {
         });
     };
 
+    var setActiveNav = function (navEl) {
+        $('.primary-nav')
+            .find('.active').removeClass('active').end()
+            .find('.element-box[data-name=' + navEl + ']').addClass('active');
+    };
+
     // Export module method
     parent.listeners = {
         setup: setup,
         check: check,
-        exitCurrentSlide: exitCurrentSlide
+        exitCurrentSlide: exitCurrentSlide,
+        setActiveNav: setActiveNav
     };
 
     return parent;

@@ -54,7 +54,14 @@ var RR = (function (parent, $) {
 
             if ($this.hasClass('active')) {
                 tlClick.play();
+
+                $primaryNav.find('ul').css({
+                    height: $window.height() - parseInt($primaryNav.find('ul').css('margin-top'))
+                });
             } else {
+                $primaryNav.find('ul').css({
+                    height: 'auto'
+                });
                 tlClick.reverse();
             }
         }).on('mouseover', function () {

@@ -85,6 +85,7 @@ img {
     ul {
         @include centering-the-unknown();
 
+        height: auto !important;
         margin: auto;
         margin-top: 0;
         max-width: 640px;

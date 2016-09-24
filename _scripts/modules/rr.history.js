@@ -12,26 +12,32 @@ var RR = (function (parent, $) {
 
         Path.map('#/hello/').to(function() {
             RR.listeners.exitCurrentSlide('hello');
+            RR.listeners.setActiveNav('hello');
         });
 
         Path.map('#/about/').to(function() {
             RR.listeners.exitCurrentSlide('about');
+            RR.listeners.setActiveNav('about');
         });
 
         Path.map('#/achievements/').to(function() {
             RR.listeners.exitCurrentSlide('achievements');
+            RR.listeners.setActiveNav('achievements');
         });
 
         Path.map('#/coding/').to(function() {
             RR.listeners.exitCurrentSlide('coding');
+            RR.listeners.setActiveNav('coding');
         });
 
         Path.map('#/design/').to(function() {
             RR.listeners.exitCurrentSlide('design');
+            RR.listeners.setActiveNav('design');
         });
 
         Path.map('#/contact/').to(function() {
             RR.listeners.exitCurrentSlide('contact');
+            RR.listeners.setActiveNav('contact');
         });
 
         Path.listen();
