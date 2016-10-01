@@ -252,8 +252,8 @@ svg.ripple {
 }
 
 p {
-    font-size: 2.0em;
-    font-family: 'EBGaramond12-Regular', Georgia, serif;
+    font-size: 1.8em;
+    font-family: 'EBGaramond-Regular', Georgia, serif;
 }
 
 
@@ -634,7 +634,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 50px;
         margin-top: 30px;
-        padding: 15px 30px 15px 20px;
+        padding: 15px 30px 15px 10px;
         position: relative;
 
         .icon {
@@ -673,11 +673,11 @@ p {
     .skills {
         &__bar {
             background-color: $black;
-            height: 28px;
+            height: 30px;
             margin-bottom: 15px;
             min-width: 60px;
             opacity: 0;
-            padding: 2px 5px;
+            padding: 10px;
             position: relative;
             top: 50px;
             width: 0;
@@ -688,7 +688,7 @@ p {
             font-size: 1.5em;
             opacity: 0;
             position: absolute;
-            top: 3px;
+            top: 4px;
         }
 
         &__percent {
@@ -724,7 +724,7 @@ p {
             opacity: 0;
             position: relative;
             top: 50px;
-            width: 19.75vw;
+            width: 19.5vw;
         }
     }
 }
@@ -738,7 +738,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 50px;
         margin-top: 30px;
-        padding: 15px 30px 15px 20px;
+        padding: 15px 30px 15px 10px;
         position: relative;
 
         .icon {
@@ -822,7 +822,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 50px;
         margin-top: 30px;
-        padding: 15px 30px 15px 20px;
+        padding: 15px 30px 15px 10px;
         position: relative;
 
         .icon {
@@ -920,7 +920,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 50px;
         margin-top: 30px;
-        padding: 15px 30px 15px 20px;
+        padding: 15px 30px 15px 10px;
         position: relative;
 
         .icon {
@@ -992,7 +992,7 @@ p {
         color: $white;
         font-size: 2.8em;
         margin-bottom: 30px;
-        padding: 15px 30px 15px 20px;
+        padding: 15px 30px 15px 10px;
         position: relative;
 
         .icon {

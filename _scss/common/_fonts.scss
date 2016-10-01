@@ -8,12 +8,12 @@ $ultra-bold: 900;
 
 // Garamond
 @font-face {
-    font-family: 'EBGaramond12-Regular';
-    src: url('../fonts/EBGaramond12-Regular.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/EBGaramond12-Regular.otf') format('opentype'),
-    url('../fonts/EBGaramond12-Regular.woff') format('woff'),
-    url('../fonts/EBGaramond12-Regular.ttf') format('truetype'),
-    url('../fonts/EBGaramond12-Regular.svg#EBGaramond12-Regular') format('svg');
+    font-family: 'EBGaramond-Regular';
+    src: url('../fonts/EBGaramond-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/EBGaramond-Regular.otf') format('opentype'),
+    url('../fonts/EBGaramond-Regular.woff') format('woff'),
+    url('../fonts/EBGaramond-Regular.ttf') format('truetype'),
+    url('../fonts/EBGaramond-Regular.svg#EBGaramond-Regular') format('svg');
     font-weight: $thin;
     font-style: normal;
 }
