@@ -16,7 +16,7 @@
                         <span class="bar"></span>
                     </h1>
 
-                    <p>I'm <strong>Niño Ross Rodriguez</strong>, a Senior User Experience Developer based in Singapore with eight years of industry experience.  I specialize in developing pixel perfect websites quickly without sacrificing code quality. Get to know a bit more <a href="/#/about/">about my skills</a> or feel free to look around my <a href="/#/coding/">coding</a> and <a href="/#/design/">design</a> works.</p>
+                    <p>I'm <a href="/#/about/"><span>Niño Ross Rodriguez</span></a>, a Senior User Experience Developer based in Singapore with eight years of industry experience.  I specialize in developing pixel perfect websites quickly without sacrificing code quality. Get to know a bit more <a href="/#/about/"><span>about my skills</span></a> or feel free to look around my <a href="/#/coding/"><span>coding</span></a> and <a href="/#/design/"><span>design</span></a> works.</p>
 
                     <hr />
 
@@ -97,7 +97,7 @@
 
                     <div class="wrap">
                         <div class="col-l col-6">
-                            <p>I specialize in converting code into websites, transforming pixels into design, deliver the smoothest user experience and make a static site come alive with animation.  It is my passion and determination to provide quality products by following today's latest web standards in my projects. I love to tinker with code to make it work and suit the project's needs. Most of the time I hand-code everything from scratch using my <a href="https://www.github.com/oninross/firestarter" target="_blank">Firestarter framework</a> but knowledable in using HTML5 Boilerplate and Twitter Boostrap for rapid development when needed.</p>
+                            <p>I specialize in converting code into websites, transforming pixels into design, deliver the smoothest user experience and make a static site come alive with animation.  It is my passion and determination to provide quality products by following today's latest web standards in my projects. I love to tinker with code to make it work and suit the project's needs. Most of the time I hand-code everything from scratch using my <a href="https://www.github.com/oninross/firestarter" target="_blank"><span>Firestarter framework</span></a> but knowledable in using HTML5 Boilerplate and Twitter Boostrap for rapid development when needed.</p>
                         </div>
 
                         <div class="col-r col-6">
@@ -197,9 +197,13 @@
 
                             <a href="http://beta.infiniteimaginations.co" target="_blank">
                                 <img src="/assets/infiniteimaginations/images/web-designer-magazine.png" alt="Featured in Web Designer Magazine">
-
-                                beta.infiniteimaginations.co
                             </a>
+
+                            <p>
+                                <a href="http://beta.infiniteimaginations.co" target="_blank">
+                                    <span>beta.infiniteimaginations.co</span>
+                                </a>
+                            </p>
                         </div>
 
                         <div class="col-r col-6">
@@ -454,4 +458,21 @@
 </main>
 
 <?php include('footer.php'); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

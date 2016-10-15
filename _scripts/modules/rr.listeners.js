@@ -20,22 +20,39 @@ var RR = (function (parent, $) {
         backgroundResize();
 
         // Set 3D environment
-        TweenLite.set('#main', {
+        TweenMax.set('#main', {
             perspective: 700
         });
 
 
         // Hello Animation
+        TweenMax.to('.ui-corner', 0.5, {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            delay: 0.25,
+            ease: Expo.easeOut
+        });
+
+        TweenMax.to('.ui-pattern', 1, {
+            opacity: 0.5,
+            scale: 1,
+            delay: 0.5,
+            ease: Expo.easeOut
+        });
+
         TweenMax.to('.logo', 0.5, {
             opacity: 1,
-            top: 0
+            y: 0,
+            ease: Expo.easeOut,
+            delay: 0.5
         });
 
         TweenMax.to('.menu', 0.5, {
             autoAlpha: 1,
-            top: 10,
+            y: -10,
             ease: Expo.easeOut,
-            delay: 0.25
+            delay: 0.75
         });
 
 
@@ -215,7 +232,7 @@ var RR = (function (parent, $) {
 
         TweenMax.set('.' + slide + ' p', {
             opacity: 0,
-            top: 50
+            y: 50
         });
 
         TweenMax.set('.' + slide + ' hr', {
@@ -224,14 +241,14 @@ var RR = (function (parent, $) {
 
         TweenMax.set('.' + slide + ' li', {
             opacity: 0,
-            top: 50
+            y: 50
         });
 
         switch (slide) {
             case 'about':
                 TweenMax.set('.skills__bar', {
                     opacity: 0,
-                    top: 50,
+                    y: 50,
                     width: 0
                 });
 
@@ -243,21 +260,21 @@ var RR = (function (parent, $) {
             case 'achievements':
                 TweenMax.set('.achievements .col-l a', {
                     opacity: 0,
-                    top: 50
+                    y: 50
                 });
                 break;
 
             case 'coding':
                 TweenMax.set('.coding .card', {
                     opacity: 0,
-                    top: 50
+                    y: 50
                 });
                 break;
 
             case 'design':
                 TweenMax.set('.design .card', {
                     opacity: 0,
-                    top: 50
+                    y: 50
                 });
                 break;
         }
@@ -286,7 +303,7 @@ var RR = (function (parent, $) {
 
         TweenMax.to('.hello p', 0.75, {
             opacity: 1,
-            top: 0,
+            y: 0,
             ease: Expo.easeOut,
             delay: 0.25
         });
@@ -299,7 +316,7 @@ var RR = (function (parent, $) {
 
         TweenMax.staggerTo('.hello li', 1, {
             opacity: 1,
-            top: 0,
+            y: 0,
             ease: Expo.easeOut,
             delay: 0.75
         }, 0.1);
@@ -330,14 +347,14 @@ var RR = (function (parent, $) {
 
         TweenMax.to('.about .col-l p', 0.75, {
             opacity: 1,
-            top: 0,
+            y: 0,
             ease: Expo.easeOut,
             delay: 0.75
         });
 
         TweenMax.staggerTo('.skills__bar', 0.75, {
             opacity: 1,
-            top: 0,
+            y: 0,
             ease: Expo.easeOut,
             delay: 1
         }, 0.1);
@@ -381,14 +398,14 @@ var RR = (function (parent, $) {
 
         TweenMax.to('.logos p', 1, {
             opacity: 1,
-            top: 0,
+            y: 0,
             ease: Expo.easeOut,
             delay: 1.5
         });
 
         TweenMax.staggerTo('.about .logos li', 1, {
             opacity: 1,
-            top: 0,
+            y: 0,
             ease: Expo.easeOut,
             delay: 1.75
         }, 0.1);
@@ -419,21 +436,21 @@ var RR = (function (parent, $) {
 
         TweenMax.to('.achievements .col-l p', 0.75, {
             opacity: 1,
-            top: 0,
+            y: 0,
             ease: Expo.easeOut,
             delay: 0.75
         });
 
         TweenMax.to('.achievements .col-l a', 0.75, {
             opacity: 1,
-            top: 0,
+            y: 0,
             ease: Expo.easeOut,
             delay: 1
         });
 
         TweenMax.staggerTo('.nominations li', 0.75, {
             opacity: 1,
-            top: 0,
+            y: 0,
             ease: Expo.easeOut,
             delay: 1
         }, 0.1);
@@ -464,7 +481,7 @@ var RR = (function (parent, $) {
 
         TweenMax.staggerTo('.coding .card', 0.75, {
             opacity: 1,
-            top: 0,
+            y: 0,
             ease: Expo.easeOut,
             delay: 0.5
         }, 0.1);
@@ -495,7 +512,7 @@ var RR = (function (parent, $) {
 
         TweenMax.staggerTo('.design .card', 0.75, {
             opacity: 1,
-            top: 0,
+            y: 0,
             ease: Expo.easeOut,
             delay: 0.5
         }, 0.1);
@@ -520,14 +537,14 @@ var RR = (function (parent, $) {
 
         TweenMax.to('.contact p', 0.75, {
             opacity: 1,
-            top: 0,
+            y: 0,
             ease: Expo.easeOut,
             delay: 0.5
         });
 
         TweenMax.staggerTo('.contact-icons li', 0.75, {
             opacity: 1,
-            top: 0,
+            y: 0,
             ease: Expo.easeOut,
             delay: 0.5
         }, 0.1);
@@ -552,7 +569,7 @@ var RR = (function (parent, $) {
 
         TweenMax.to('.error p', 0.75, {
             opacity: 1,
-            top: 0,
+            y: 0,
             ease: Expo.easeOut,
             delay: 0.5
         });

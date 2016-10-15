@@ -93,6 +93,15 @@
     width: $w;
 }
 
+//CSS3 element transform
+@mixin translate ($val1: 0, $val2: 0) {
+    -webkit-transform: translate($val1, $val2);
+      -moz-transition: translate($val1, $val2);
+        -ms-transform: translate($val1, $val2);
+        -o-transition: translate($val1, $val2);
+            transform: translate($val1, $val2);
+}
+
 //CSS3 element rotation
 @mixin rotate ($angle: 90deg, $origin: center) {
     -webkit-transform: rotate($angle); //* Safari and Chrome */

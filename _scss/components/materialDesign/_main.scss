@@ -103,11 +103,11 @@
 // Cards
 .card {
     // @include transition( all, 1s, $easeOutExpo );
+    @include translate(0, 150px);
 
     opacity: 0;
     padding: 15px;
     position: relative;
-    top: 150px;
 
     &.show {
         opacity: 1;
