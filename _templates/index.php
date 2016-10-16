@@ -264,7 +264,7 @@
                     </h1>
 
                     <div class="wrap">
-                        <a href="#" class="card-link">
+                        <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
@@ -274,7 +274,7 @@
                             </div>
                         </a>
 
-                        <a href="#" class="card-link">
+                        <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
@@ -284,7 +284,7 @@
                             </div>
                         </a>
 
-                        <a href="#" class="card-link">
+                        <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
@@ -294,7 +294,7 @@
                             </div>
                         </a>
 
-                        <a href="#" class="card-link">
+                        <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
@@ -322,7 +322,7 @@
                     </h1>
 
                     <div class="wrap">
-                        <a href="#" class="card-link">
+                        <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
@@ -332,7 +332,7 @@
                             </div>
                         </a>
 
-                        <a href="#" class="card-link">
+                        <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
@@ -342,7 +342,7 @@
                             </div>
                         </a>
 
-                        <a href="#" class="card-link">
+                        <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
@@ -352,7 +352,7 @@
                             </div>
                         </a>
 
-                        <a href="#" class="card-link">
+                        <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
@@ -379,7 +379,53 @@
                         </span>
                     </h1>
 
-                    <p>Lorem ipsum dolor</p>
+                    <div class="wrap">
+                    	<div class="col-8 col-offset-2">
+                    		<div class="case-study__section">
+			                    <h2>TLDR;</h2>
+
+			                    <hr />
+
+			                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
+
+			                    <a href="#" class="cta">
+			                    	<span>Visit website</span>
+			                    </a>
+		                   	</div>
+
+		                    <div class="case-study__section">
+								<h2>Objectives</h2>
+
+								<hr />
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
+							</div>
+
+							<div class="case-study__section">
+								<h2>Challenges</h2>
+
+								<hr />
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
+							</div>
+
+							<div class="case-study__section">
+								<h2>Solutions</h2>
+
+								<hr />
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
+							</div>
+
+							<div class="case-study__section">
+								<h2>Technology Used</h2>
+
+								<hr />
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
+							</div>
+                    	</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -441,7 +487,7 @@
     <section class="error">
         <div class="container">
             <div class="wrap">
-                <div class="col-12">
+                <div class="col-10 col-offset-1">
                     <h1>
                         <span class="text">oops!</span>
 

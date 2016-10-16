@@ -27,7 +27,7 @@ var RR = (function (parent, $) {
 
 
         // Hello Animation
-        TweenMax.to('.ui-corner', 0.5, {
+        TweenMax.to('.ui-corner', 1, {
             x: 0,
             y: 0,
             opacity: 1,
@@ -290,6 +290,27 @@ var RR = (function (parent, $) {
 
             case 'design':
                 TweenMax.set('.design .card', {
+                    opacity: 0,
+                    y: 50
+                });
+                break;
+
+            case 'case-study':
+                TweenMax.set('.case-study .case-study__section h2', {
+                    opacity: 0,
+                    y: 50
+                });
+
+                TweenMax.set('.case-study .case-study__section hr', {
+                    width: 0
+                });
+
+                TweenMax.set('.case-study .case-study__section p', {
+                    opacity: 0,
+                    y: 50
+                });
+
+                TweenMax.set('.case-study .case-study__section .cta', {
                     opacity: 0,
                     y: 50
                 });
@@ -561,12 +582,32 @@ var RR = (function (parent, $) {
             delay: 0.25
         });
 
-        TweenMax.to('.case-study p', 0.75, {
+        TweenMax.staggerTo('.case-study .case-study__section h2', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
             delay: 0.5
-        });
+        }, 0.1);
+
+        TweenMax.staggerTo('.case-study .case-study__section hr', 0.5, {
+            width: '100%',
+            ease: Expo.easeOut,
+            delay: 0.75
+        }, 0.1);
+
+        TweenMax.staggerTo('.case-study .case-study__section p', 0.5, {
+            opacity: 1,
+            y: 0,
+            ease: Expo.easeOut,
+            delay: 1
+        }, 0.1);
+
+        TweenMax.staggerTo('.case-study .case-study__section .cta', 0.5, {
+            opacity: 1,
+            y: 0,
+            ease: Expo.easeOut,
+            delay: 1.25
+        }, 0.1);
     };
 
     function enterContact() {
@@ -580,7 +621,6 @@ var RR = (function (parent, $) {
                 });
             }
         });
-
 
         TweenMax.to('.contact .icon', 1.5, {
             opacity: 1,
