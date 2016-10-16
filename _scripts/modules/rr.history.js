@@ -35,13 +35,36 @@ var RR = (function (parent, $) {
             RR.listeners.setActiveNav('design');
         });
 
+        Path.map('#/design/').to(function() {
+            RR.listeners.exitCurrentSlide('design');
+            RR.listeners.setActiveNav('design');
+        });
+
+        Path.map('#/case-study/').to(function() {
+            RR.listeners.exitCurrentSlide('case-study');
+            // RR.listeners.setActiveNav('contact');
+        });
+
         Path.map('#/contact/').to(function() {
             RR.listeners.exitCurrentSlide('contact');
             RR.listeners.setActiveNav('contact');
         });
 
+        Path.rescue(function() {
+            RR.listeners.exitCurrentSlide('error');
+        });
+
+        // Path.map("#/users/:id").enter(updateAnalytics).to(function(){
+            // Code here
+        // });
+
         Path.listen();
     };
+
+    // Define our update method.
+    function updateAnalytics(){
+        // ga('send', 'pageview', document.location.href);
+    }
 
     // Export module method
     parent.history = {

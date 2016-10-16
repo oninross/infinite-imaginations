@@ -10,13 +10,11 @@
             <div class="wrap">
                 <div class="col-10 col-offset-1">
                     <h1>
-                        <span class="text">
-                            <i class="vh">Hello World...</i>
-                        </span>
+                        <span class="text">Hello World...</span>
                         <span class="bar"></span>
                     </h1>
 
-                    <p>I'm <a href="/#/about/"><span>Niño Ross Rodriguez</span></a>, a Senior User Experience Developer based in Singapore with eight years of industry experience.  I specialize in developing pixel perfect websites quickly without sacrificing code quality. Get to know a bit more <a href="/#/about/"><span>about my skills</span></a> or feel free to look around my <a href="/#/coding/"><span>coding</span></a> and <a href="/#/design/"><span>design</span></a> works.</p>
+                    <p>I'm <a href="/#/about/"><span>Niño Ross Rodriguez,</span></a> a Senior User Experience Developer based in Singapore with eight years of industry experience.  I specialize in developing pixel perfect websites quickly without sacrificing code quality. Get to know a bit more <a href="/#/about/"><span>about my skills</span></a> or feel free to look around my <a href="/#/coding/"><span>coding</span></a> and <a href="/#/design/"><span>design</span></a> works.</p>
 
                     <hr />
 
@@ -266,53 +264,45 @@
                     </h1>
 
                     <div class="wrap">
-                        <div class="col-6">
-                            <a href="#" class="card-link">
-                                <div class="card">
-                                    <div class="card-wrap">
-                                        <span class="card-title">Lorem ipsum dolor</span>
+                        <a href="#" class="card-link">
+                            <div class="card">
+                                <div class="card-wrap">
+                                    <span class="card-title">Lorem ipsum dolor</span>
 
-                                        <span class="cta">See case study</span>
-                                    </div>
+                                    <span class="cta">See case study</span>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
 
-                        <div class="col-6">
-                            <a href="#" class="card-link">
-                                <div class="card">
-                                    <div class="card-wrap">
-                                        <span class="card-title">Lorem ipsum dolor</span>
+                        <a href="#" class="card-link">
+                            <div class="card">
+                                <div class="card-wrap">
+                                    <span class="card-title">Lorem ipsum dolor</span>
 
-                                        <span class="cta">See case study</span>
-                                    </div>
+                                    <span class="cta">See case study</span>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
 
-                        <div class="col-6">
-                            <a href="#" class="card-link">
-                                <div class="card">
-                                    <div class="card-wrap">
-                                        <span class="card-title">Lorem ipsum dolor</span>
+                        <a href="#" class="card-link">
+                            <div class="card">
+                                <div class="card-wrap">
+                                    <span class="card-title">Lorem ipsum dolor</span>
 
-                                        <span class="cta">See case study</span>
-                                    </div>
+                                    <span class="cta">See case study</span>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
 
-                        <div class="col-6">
-                            <a href="#" class="card-link">
-                                <div class="card">
-                                    <div class="card-wrap">
-                                        <span class="card-title">Lorem ipsum dolor</span>
+                        <a href="#" class="card-link">
+                            <div class="card">
+                                <div class="card-wrap">
+                                    <span class="card-title">Lorem ipsum dolor</span>
 
-                                        <span class="cta">See case study</span>
-                                    </div>
+                                    <span class="cta">See case study</span>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -332,54 +322,64 @@
                     </h1>
 
                     <div class="wrap">
-                        <div class="col-6">
-                            <a href="#" class="card-link">
-                                <div class="card">
-                                    <div class="card-wrap">
-                                        <span class="card-title">Lorem ipsum dolor</span>
+                        <a href="#" class="card-link">
+                            <div class="card">
+                                <div class="card-wrap">
+                                    <span class="card-title">Lorem ipsum dolor</span>
 
-                                        <span class="cta">See case study</span>
-                                    </div>
+                                    <span class="cta">See case study</span>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
 
-                        <div class="col-6">
-                            <a href="#" class="card-link">
-                                <div class="card">
-                                    <div class="card-wrap">
-                                        <span class="card-title">Lorem ipsum dolor</span>
+                        <a href="#" class="card-link">
+                            <div class="card">
+                                <div class="card-wrap">
+                                    <span class="card-title">Lorem ipsum dolor</span>
 
-                                        <span class="cta">See case study</span>
-                                    </div>
+                                    <span class="cta">See case study</span>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
 
-                        <div class="col-6">
-                            <a href="#" class="card-link">
-                                <div class="card">
-                                    <div class="card-wrap">
-                                        <span class="card-title">Lorem ipsum dolor</span>
+                        <a href="#" class="card-link">
+                            <div class="card">
+                                <div class="card-wrap">
+                                    <span class="card-title">Lorem ipsum dolor</span>
 
-                                        <span class="cta">See case study</span>
-                                    </div>
+                                    <span class="cta">See case study</span>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
 
-                        <div class="col-6">
-                            <a href="#" class="card-link">
-                                <div class="card">
-                                    <div class="card-wrap">
-                                        <span class="card-title">Lorem ipsum dolor</span>
+                        <a href="#" class="card-link">
+                            <div class="card">
+                                <div class="card-wrap">
+                                    <span class="card-title">Lorem ipsum dolor</span>
 
-                                        <span class="cta">See case study</span>
-                                    </div>
+                                    <span class="cta">See case study</span>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="case-study">
+        <div class="container">
+            <div class="wrap">
+                <div class="col-12">
+                    <h1>
+                        <span class="text">case study: detail</span>
+
+                        <span class="bar">
+                            <i class="icon icon-about"></i>
+                        </span>
+                    </h1>
+
+                    <p>Lorem ipsum dolor</p>
                 </div>
             </div>
         </div>

@@ -13,11 +13,12 @@ var RR = (function (parent, $) {
         $header = $('.header'),
         currentPage = 'hello',
         $data = 'hello',
+        bSkillsLabel = [],
         isMobileDevice, vh, vw;
 
     var setup = function () {
         // Background Pattern
-        backgroundResize();
+        // backgroundResize();
 
         // Set 3D environment
         TweenMax.set('#main', {
@@ -35,7 +36,7 @@ var RR = (function (parent, $) {
         });
 
         TweenMax.to('.ui-pattern', 1, {
-            opacity: 0.5,
+            opacity: 0.3,
             scale: 1,
             delay: 0.5,
             ease: Expo.easeOut
@@ -106,6 +107,23 @@ var RR = (function (parent, $) {
             $data = 'hello';
         });
 
+        var b = baffle('p a', {
+            characters: '▀▁▂▃▄▅▆▇█▉▊▋▌▍▎▏▐░▒▓▔▕▖▗▘▙▚▛▜▝▞▟'
+        });
+
+        $('.skills__bar').each(function(i, v) {
+            bSkillsLabel.push(baffle('.skills__bar:nth-child(' + (i + 1) + ') .skills__label', { characters: '▀▁▂▃▄▅▆▇█▉▊▋▌▍▎▏▐░▒▓▔▕▖▗▘▙▚▛▜▝▞▟' }));
+        });
+
+        // bSkillsLabel = baffle('.skills__label', {
+        //     characters: '▀▁▂▃▄▅▆▇█▉▊▋▌▍▎▏▐░▒▓▔▕▖▗▘▙▚▛▜▝▞▟'
+        // });
+
+        $('p a').on('mouseover', function() {
+
+            // $(this)[0].start().reveal(750);
+        });
+
         $window.on('resize', debounce(function () {
             vw = $document.width();
             vh = $document.height();
@@ -119,7 +137,7 @@ var RR = (function (parent, $) {
     };
 
     var exitCurrentSlide = function($url) {
-        TweenMax.to('.' + currentPage, 0.5, {
+        TweenMax.to('.' + currentPage, 0.75, {
             transform: 'translateZ(-100px)',
             opacity: 0,
             ease: Expo.easeOut,
@@ -136,7 +154,7 @@ var RR = (function (parent, $) {
                     $url = 'error';
                 }
 
-                backgroundResize();
+                // backgroundResize();
 
                 $('.' + $url).show()
                     .find('h1 .text').html('&nbsp;');
@@ -188,6 +206,10 @@ var RR = (function (parent, $) {
                                 enterContact();
                                 break;
 
+                            case 'case-study':
+                                enterCaseStudy();
+                                break;
+
                             case 'error':
                                 enterError();
                                 break;
@@ -200,15 +222,15 @@ var RR = (function (parent, $) {
         });
     };
 
-    function backgroundResize() {
-        isMobileDevice = $window.width() < 1024 ? 1 : 0;
+    // function backgroundResize() {
+    //     isMobileDevice = $window.width() < 1024 ? 1 : 0;
 
-        if (isMobileDevice) {
-            vh = $document.height() - $header.outerHeight() + 'px'
-        } else {
-            vh = 'auto'
-        }
-    };
+    //     if (isMobileDevice) {
+    //         vh = $document.height() - $header.outerHeight() + 'px'
+    //     } else {
+    //         vh = 'auto'
+    //     }
+    // };
 
     function resetSlide(slide) {
         $('.' + slide + ' h1 .text').html('&nbsp;');
@@ -329,7 +351,7 @@ var RR = (function (parent, $) {
             onComplete: function () {
                 $('.about h1 .text').typist({
                     speed: 12,
-                    text: 'about'
+                    text: '// about'
                 });
             }
         });
@@ -385,7 +407,10 @@ var RR = (function (parent, $) {
                 TweenMax.to($this.find('.skills__label'), 1, {
                     opacity: 1,
                     ease: Expo.easeInOut,
-                    delay: 0.25 * i
+                    delay: 0.25 * i,
+                    onStart: function () {
+                        bSkillsLabel[i].start().reveal(1000);
+                    }
                 });
             });
         }, 750);
@@ -418,7 +443,7 @@ var RR = (function (parent, $) {
             onComplete: function () {
                 $('.achievements h1 .text').typist({
                     speed: 12,
-                    text: 'achievements'
+                    text: '// achievements'
                 });
             }
         });
@@ -463,7 +488,7 @@ var RR = (function (parent, $) {
             onComplete: function () {
                 $('.coding h1 .text').typist({
                     speed: 12,
-                    text: 'coding'
+                    text: '// coding'
                 });
             }
         });
@@ -494,7 +519,7 @@ var RR = (function (parent, $) {
             onComplete: function () {
                 $('.design h1 .text').typist({
                     speed: 12,
-                    text: 'design'
+                    text: '// design'
                 });
             }
         });
@@ -518,6 +543,37 @@ var RR = (function (parent, $) {
         }, 0.1);
     };
 
+    function enterCaseStudy() {
+        TweenMax.to('.case-study .bar', 0.75, {
+            width: '100%',
+            ease: Expo.easeOut,
+            onComplete: function () {
+                $('.case-study h1 .text').typist({
+                    speed: 12,
+                    text: '// case study'
+                });
+            }
+        });
+
+        TweenMax.to('.case-study .icon', 1.5, {
+            opacity: 1,
+            ease: Expo.easeOut
+        });
+
+        TweenMax.to('.case-study h1', 1.5, {
+            'borderLeft' : '15px solid #2196f3',
+            ease: Expo.easeOut,
+            delay: 0.25
+        });
+
+        TweenMax.to('.case-study p', 0.75, {
+            opacity: 1,
+            y: 0,
+            ease: Expo.easeOut,
+            delay: 0.5
+        });
+    };
+
     function enterContact() {
         TweenMax.to('.contact .bar', 0.75, {
             width: '100%',
@@ -525,10 +581,11 @@ var RR = (function (parent, $) {
             onComplete: function () {
                 $('.contact h1 .text').typist({
                     speed: 12,
-                    text: 'contact'
+                    text: '// contact'
                 });
             }
         });
+
 
         TweenMax.to('.contact .icon', 1.5, {
             opacity: 1,
@@ -557,9 +614,14 @@ var RR = (function (parent, $) {
             onComplete: function () {
                 $('.error h1 .text').typist({
                     speed: 12,
-                    text: 'error'
+                    text: '// error'
                 });
             }
+        });
+
+        TweenMax.to('.error h1', 1.5, {
+            'borderLeft' : '15px solid #cc0000',
+            ease: Expo.easeOut,
         });
 
         TweenMax.to('.error .icon', 1.5, {
