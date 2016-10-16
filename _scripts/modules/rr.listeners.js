@@ -119,17 +119,12 @@ var RR = (function (parent, $) {
         //     characters: '▀▁▂▃▄▅▆▇█▉▊▋▌▍▎▏▐░▒▓▔▕▖▗▘▙▚▛▜▝▞▟'
         // });
 
-        $('p a').on('mouseover', function() {
+        // $window.on('resize', debounce(function () {
+        //     vw = $document.width();
+        //     vh = $document.height();
 
-            // $(this)[0].start().reveal(750);
-        });
-
-        $window.on('resize', debounce(function () {
-            vw = $document.width();
-            vh = $document.height();
-
-            backgroundResize();
-        }, 250));
+        //     backgroundResize();
+        // }, 250));
     };
 
     var check = function () {
