@@ -1,0 +1,100 @@
+{
+    "case-studies": [
+        {
+            "name": "BHP Billiton",
+            "tldr": null,
+            "objectives": null,
+            "challenges": null,
+            "solutions": null,
+            "technology": null,
+            "images": {
+                "thumb": null,
+                "case-study": []
+            },
+            "url": {
+                "local": null,
+                "live": null
+            }
+        },
+        {
+            "name": "Central Manpower Base",
+            "tldr": null,
+            "objectives": null,
+            "challenges": null,
+            "solutions": null,
+            "technology": null,
+            "images": {
+                "thumb": null,
+                "case-study": []
+            },
+            "url": {
+                "local": null,
+                "live": null
+            }
+        },
+        {
+            "name": "Adelphi Digital",
+            "tldr": null,
+            "objectives": null,
+            "challenges": null,
+            "solutions": null,
+            "technology": null,
+            "images": {
+                "thumb": null,
+                "case-study": []
+            },
+            "url": {
+                "local": null,
+                "live": null
+            }
+        },
+        {
+            "name": "infinite imaginations BETA",
+            "tldr": null,
+            "objectives": null,
+            "challenges": null,
+            "solutions": null,
+            "technology": null,
+            "images": {
+                "thumb": null,
+                "case-study": []
+            },
+            "url": {
+                "local": null,
+                "live": null
+            }
+        },
+        {
+            "name": "Envirobot",
+            "tldr": null,
+            "objectives": null,
+            "challenges": null,
+            "solutions": null,
+            "technology": null,
+            "images": {
+                "thumb": null,
+                "case-study": []
+            },
+            "url": {
+                "local": null,
+                "live": null
+            }
+        },
+        {
+            "name": "The Jewel Box",
+            "tldr": null,
+            "objectives": null,
+            "challenges": null,
+            "solutions": null,
+            "technology": null,
+            "images": {
+                "thumb": null,
+                "case-study": []
+            },
+            "url": {
+                "local": null,
+                "live": null
+            }
+        }
+    ]
+}
