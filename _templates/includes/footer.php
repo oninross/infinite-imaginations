@@ -3,7 +3,6 @@
             <div class="ui-corner ui-corner__ur"></div>
             <div class="ui-corner ui-corner__bl"></div>
             <div class="ui-corner ui-corner__br"></div>
-            <div class="ui-pattern"></div>
         </div>
 
         <script id="toaster-template" type="text/template">

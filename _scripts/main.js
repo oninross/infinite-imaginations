@@ -96,7 +96,7 @@ jQuery.extend(jQuery.easing, {
     $(function () {
 
         // Set framerate to 60fps
-        TweenMax.ticker.fps(60);
+        TweenMax.ticker.fps(120);
 
         // Init Lazy Loading
         $('.lazy').lazyload({

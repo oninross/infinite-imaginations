@@ -486,6 +486,7 @@ p {
         visibility: visible;
 
         li {
+            background-color: transparent;
             -webkit-transform: none; /* Safari */
                 -ms-transform: none; /* IE 9 */
                     transform: none;
@@ -505,9 +506,10 @@ p {
     li {
         @include transition(all, 0.5s, $easeOutExpo);
 
-        -webkit-transform: translateY(-50px) scale(1.25); /* Safari */
-            -ms-transform: translateY(-50px) scale(1.25); /* IE 9 */
-                transform: translateY(-50px) scale(1.25);
+        background-color: $white;
+        -webkit-transform: translate(5px, 20px) scale(0.5); /* Safari */
+            -ms-transform: translate(5px, 20px) scale(0.5); /* IE 9 */
+                transform: translate(5px, 20px) scale(0.5);
               will-change: transform;
 
         float: left;
@@ -519,13 +521,23 @@ p {
         width: 50%;
         z-index: 1;
 
-        @for $i from 1 through 6 {
-            &:nth-child(#{$i}) {
-                -webkit-transition-delay: 0.1s * $i, 0.1s * $i;
-                        transition-delay: 0.1s * $i, 0.1s * $i;
-            }
+        &:nth-child(1),
+        &:nth-child(4) {
+            -webkit-transition-delay: 0.1s, 0.1s;
+                    transition-delay: 0.1s, 0.1s;
         }
-    }
+
+        &:nth-child(3),
+        &:nth-child(6) {
+            -webkit-transition-delay: 0.2s, 0.2s;
+                    transition-delay: 0.2s, 0.2s;
+        }
+
+        &:nth-child(5) {
+            -webkit-transition-delay: 0.3s, 0.3s;
+                    transition-delay: 0.3s, 0.3s;
+        }
+   }
 
     a {
         color: $white;
@@ -832,7 +844,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 40px;
         margin-top: 50px;
-        padding: 15px 30px 15px 10px;
+        padding: 15px 30px 15px;
         position: relative;
 
         .icon {
@@ -926,6 +938,10 @@ p {
             position: relative;
             width: 19.5vw;
         }
+
+        p {
+            text-align: center;
+        }
     }
 }
 
@@ -938,7 +954,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 40px;
         margin-top: 50px;
-        padding: 15px 30px 15px 10px;
+        padding: 15px 30px 15px;
         position: relative;
 
         .icon {
@@ -1023,7 +1039,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 40px;
         margin-top: 50px;
-        padding: 15px 30px 15px 10px;
+        padding: 15px 30px 15px;
         position: relative;
 
         .icon {
@@ -1135,7 +1151,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 40px;
         margin-top: 50px;
-        padding: 15px 30px 15px 10px;
+        padding: 15px 30px 15px;
         position: relative;
 
         .icon {
@@ -1230,7 +1246,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 40px;
         margin-top: 50px;
-        padding: 15px 30px 15px 10px;
+        padding: 15px 30px 15px;
         position: relative;
 
         .icon {
@@ -1304,7 +1320,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 40px;
         margin-top: 50px;
-        padding: 15px 30px 15px 10px;
+        padding: 15px 30px 15px;
         position: relative;
 
         .icon {

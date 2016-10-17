@@ -14,6 +14,13 @@ var RR = (function (parent, $) {
         currentPage = 'hello',
         $data = 'hello',
         bSkillsLabel = [],
+        bAbout,
+        bAchievements,
+        bCoding,
+        bDesign,
+        bContact,
+        bCaseStudy,
+        bError,
         isMobileDevice, vh, vw;
 
     var setup = function () {
@@ -53,7 +60,7 @@ var RR = (function (parent, $) {
             autoAlpha: 1,
             y: -10,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.5
         });
 
 
@@ -107,16 +114,51 @@ var RR = (function (parent, $) {
             $data = 'hello';
         });
 
-        var b = baffle('p a', {
-            characters: '▀▁▂▃▄▅▆▇█▉▊▋▌▍▎▏▐░▒▓▔▕▖▗▘▙▚▛▜▝▞▟'
+        // var b = baffle('p a', {
+        //     characters: '█▓▒░█▓▒░█▓▒░█▓▒░'
+        // });
+
+        bAbout = baffle('.about h1 .text', {
+            characters: '█▓▒░█▓▒░█▓▒░█▓▒░',
+            speed: 100
+        });
+
+        bAchievements = baffle('.achievements h1 .text', {
+            characters: '█▓▒░█▓▒░█▓▒░█▓▒░',
+            speed: 100
+        });
+
+        bCoding = baffle('.coding h1 .text', {
+            characters: '█▓▒░█▓▒░█▓▒░█▓▒░',
+            speed: 100
+        });
+
+        bDesign = baffle('.design h1 .text', {
+            characters: '█▓▒░█▓▒░█▓▒░█▓▒░',
+            speed: 100
+        });
+
+        bContact = baffle('.contact h1 .text', {
+            characters: '█▓▒░█▓▒░█▓▒░█▓▒░',
+            speed: 100
+        });
+
+        bCaseStudy = baffle('.casestudy h1 .text', {
+            characters: '█▓▒░█▓▒░█▓▒░█▓▒░',
+            speed: 100
+        });
+
+        bError = baffle('.error h1 .text', {
+            characters: '█▓▒░█▓▒░█▓▒░█▓▒░',
+            speed: 100
         });
 
         $('.skills__bar').each(function(i, v) {
-            bSkillsLabel.push(baffle('.skills__bar:nth-child(' + (i + 1) + ') .skills__label', { characters: '▀▁▂▃▄▅▆▇█▉▊▋▌▍▎▏▐░▒▓▔▕▖▗▘▙▚▛▜▝▞▟' }));
+            bSkillsLabel.push(baffle('.skills__bar:nth-child(' + (i + 1) + ') .skills__label', { characters: '█▓▒░█▓▒░█▓▒░█▓▒░', speed: 100 }));
         });
 
         // bSkillsLabel = baffle('.skills__label', {
-        //     characters: '▀▁▂▃▄▅▆▇█▉▊▋▌▍▎▏▐░▒▓▔▕▖▗▘▙▚▛▜▝▞▟'
+        //     characters: '█▓▒░█▓▒░█▓▒░█▓▒░'
         // });
 
         // $window.on('resize', debounce(function () {
@@ -132,10 +174,32 @@ var RR = (function (parent, $) {
     };
 
     var exitCurrentSlide = function($url) {
-        TweenMax.to('.' + currentPage, 0.75, {
-            transform: 'translateZ(-100px)',
+        TweenMax.to('.' + currentPage + ' h1', 0.5, {
             opacity: 0,
-            ease: Expo.easeOut,
+            y: -30,
+            ease: Expo.easeInOut
+        });
+
+        TweenMax.to('.' + currentPage + ' p', 0.5, {
+            opacity: 0,
+            y: -30,
+            ease: Expo.easeInOut,
+            delay: 0.25
+        });
+
+        TweenMax.to('.' + currentPage + ' hr', 0.5, {
+            opacity: 0,
+            y: -30,
+            ease: Expo.easeInOut,
+            delay: 0.5
+        });
+
+
+        TweenMax.staggerTo('.hello li', 0.5, {
+            opacity: 0,
+            y: -30,
+            ease: Expo.easeInOut,
+            delay: 0.75,
             onComplete: function () {
                 $('.' + currentPage).hide();
 
@@ -214,7 +278,91 @@ var RR = (function (parent, $) {
 
                 currentPage = $url;
             }
-        });
+        }, 0.1);
+
+        // TweenMax.to('.' + currentPage, 0.75, {
+        //     transform: 'translateZ(-100px)',
+        //     opacity: 0,
+        //     ease: Expo.easeOut,
+        //     onComplete: function () {
+        //         $('.' + currentPage).hide();
+
+        //         if ($url == '') {
+        //             $url = 'hello';
+        //         } else if (!$('.' + $url).length) {
+        //             $url = '404';
+        //         }
+
+        //         if ($url == '404') {
+        //             $url = 'error';
+        //         }
+
+        //         // backgroundResize();
+
+        //         $('.' + $url).show()
+        //             .find('h1 .text').html('&nbsp;');
+
+        //         resetSlide(currentPage);
+
+        //         var $gotoElem = $('.' + $url + ' h1');
+        //         TweenMax.to('.element-clone', 0.75, {
+        //             left: $gotoElem.offset().left,
+        //             top: $gotoElem.offset().top,
+        //             height: $gotoElem.outerHeight(),
+        //             width: 15,
+        //             ease: Expo.easeInOut
+        //         });
+
+        //         TweenMax.to('.element-clone .icon', 0.75, {
+        //             opacity: 0,
+        //             ease: Expo.easeInOut,
+        //             onComplete: function () {
+        //                 $('.element-clone').remove();
+
+        //                 if ($url !== 'hello') {
+        //                     TweenMax.set('.' + $url + ' h1', {
+        //                         'borderLeft' : '15px solid #2196f3'
+        //                     });
+        //                 }
+
+        //                 switch ($url) {
+        //                     case 'hello':
+        //                         enterHello();
+        //                         break;
+        //                     case 'about':
+        //                         enterAbout();
+        //                         break;
+
+        //                     case 'achievements':
+        //                         enterAchievements();
+        //                         break;
+
+        //                     case 'coding':
+        //                         enterCoding();
+        //                         break;
+
+        //                     case 'design':
+        //                         enterDesign();
+        //                         break;
+
+        //                     case 'contact':
+        //                         enterContact();
+        //                         break;
+
+        //                     case 'case-study':
+        //                         enterCaseStudy();
+        //                         break;
+
+        //                     case 'error':
+        //                         enterError();
+        //                         break;
+        //                 }
+        //             }
+        //         });
+
+        //         currentPage = $url;
+        //     }
+        // });
     };
 
     // function backgroundResize() {
@@ -236,11 +384,20 @@ var RR = (function (parent, $) {
         });
 
         TweenMax.set('.' + slide + ' .bar', {
+            transform: 'translateZ(0)',
+            opacity: 1,
+            width: 0
+        });
+
+        TweenMax.set('.' + slide + ' hr', {
+            transform: 'translateZ(0)',
+            opacity: 1,
             width: 0
         });
 
         TweenMax.set('.' + slide + ' h1', {
-            'borderLeft': '0 solid #2196f3'
+            'borderLeft': '0 solid #2196f3',
+            opacity: 1
         });
 
         TweenMax.set('.' + slide + ' .bar .icon', {
@@ -365,10 +522,11 @@ var RR = (function (parent, $) {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                $('.about h1 .text').typist({
-                    speed: 12,
-                    text: '// about'
-                });
+                bAbout.start().reveal(1500);
+                // $('.about h1 .text').typist({
+                //     speed: 12,
+                //     text: '// about'
+                // });
             }
         });
 
@@ -425,7 +583,7 @@ var RR = (function (parent, $) {
                     ease: Expo.easeInOut,
                     delay: 0.25 * i,
                     onStart: function () {
-                        bSkillsLabel[i].start().reveal(1000);
+                        bSkillsLabel[i].start().reveal(1500);
                     }
                 });
             });
@@ -457,10 +615,11 @@ var RR = (function (parent, $) {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                $('.achievements h1 .text').typist({
-                    speed: 12,
-                    text: '// achievements'
-                });
+                bAchievements.start().reveal(1500);
+                // $('.achievements h1 .text').typist({
+                //     speed: 12,
+                //     text: '// achievements'
+                // });
             }
         });
 
@@ -502,10 +661,11 @@ var RR = (function (parent, $) {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                $('.coding h1 .text').typist({
-                    speed: 12,
-                    text: '// coding'
-                });
+                bCoding.start().reveal(1500);
+                // $('.coding h1 .text').typist({
+                //     speed: 12,
+                //     text: '// coding'
+                // });
             }
         });
 
@@ -533,10 +693,11 @@ var RR = (function (parent, $) {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                $('.design h1 .text').typist({
-                    speed: 12,
-                    text: '// design'
-                });
+                bDesign.start().reveal(1500);
+                // $('.design h1 .text').typist({
+                //     speed: 12,
+                //     text: '// design'
+                // });
             }
         });
 
@@ -564,10 +725,11 @@ var RR = (function (parent, $) {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                $('.case-study h1 .text').typist({
-                    speed: 12,
-                    text: '// case study'
-                });
+                bCaseStudy.start().reveal(1500);
+                // $('.case-study h1 .text').typist({
+                //     speed: 12,
+                //     text: '// case study'
+                // });
             }
         });
 
@@ -615,10 +777,11 @@ var RR = (function (parent, $) {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                $('.contact h1 .text').typist({
-                    speed: 12,
-                    text: '// contact'
-                });
+                bContact.start().reveal(1500);
+                // $('.contact h1 .text').typist({
+                //     speed: 12,
+                //     text: '// contact'
+                // });
             }
         });
 
@@ -647,10 +810,11 @@ var RR = (function (parent, $) {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                $('.error h1 .text').typist({
-                    speed: 12,
-                    text: '// error'
-                });
+                bError.start().reveal(1500);
+                // $('.error h1 .text').typist({
+                //     speed: 12,
+                //     text: '// error'
+                // });
             }
         });
 
