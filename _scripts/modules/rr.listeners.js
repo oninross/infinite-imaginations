@@ -190,7 +190,7 @@ var RR = (function (parent, $) {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.3
+                delay: 0.2
             }, 0.1, function () {
                 switchSlide($url);
             });
@@ -199,14 +199,14 @@ var RR = (function (parent, $) {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.3
+                delay: 0.2
             }, 0.1);
 
             TweenMax.staggerTo('.logos li', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.4
+                delay: 0.2
             }, 0.1, function () {
                 switchSlide($url);
             });
@@ -215,14 +215,14 @@ var RR = (function (parent, $) {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.3
+                delay: 0.2
             }, 0.1);
 
             TweenMax.to('.achievements a', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.3,
+                delay: 0.2,
                 onComplete: function () {
                     switchSlide($url);
                 }
@@ -232,7 +232,7 @@ var RR = (function (parent, $) {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.3
+                delay: 0.2
             }, 0.1, function () {
                 switchSlide($url);
             });
@@ -241,7 +241,7 @@ var RR = (function (parent, $) {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.3
+                delay: 0.2
             }, 0.1, function () {
                 switchSlide($url);
             });
@@ -250,7 +250,7 @@ var RR = (function (parent, $) {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.3,
+                delay: 0.2,
                 onComplete: function () {
                     switchSlide($url);
                 }
@@ -264,9 +264,14 @@ var RR = (function (parent, $) {
             }, 0.1, function () {
                 switchSlide($url);
             });
+        } else if (currentPage == 'error') {
+            TweenMax.to('element', 0.5, {
+                delay: 0.2,
+                onComplete: function () {
+                    switchSlide($url);
+                }
+            });
         }
-
-        console.log(currentPage)
     };
 
     function switchSlide($url) {
@@ -368,6 +373,7 @@ var RR = (function (parent, $) {
 
         TweenMax.set('.' + slide + ' h1', {
             'borderLeft': '0 solid #2196f3',
+            y: 0,
             opacity: 1
         });
 
