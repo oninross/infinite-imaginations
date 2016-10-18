@@ -355,18 +355,16 @@ var RR = (function (parent, $) {
         $('.' + slide + ' h1 .text').html('&nbsp;');
 
         TweenMax.set('.' + slide, {
-            transform: 'translateZ(0)',
             opacity: 1
         });
 
         TweenMax.set('.' + slide + ' .bar', {
-            transform: 'translateZ(0)',
             opacity: 1,
             width: 0
         });
 
         TweenMax.set('.' + slide + ' hr', {
-            transform: 'translateZ(0)',
+            y: 0,
             opacity: 1,
             width: 0
         });
