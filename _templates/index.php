@@ -86,7 +86,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        <span class="text">about</span>
+                        <span class="text">// about</span>
 
                         <span class="bar">
                             <i class="icon icon-about"></i>
@@ -182,7 +182,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        <span class="text">achievements</span>
+                        <span class="text">// achievements</span>
 
                         <span class="bar">
                             <i class="icon icon-achievements"></i>
@@ -256,7 +256,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        <span class="text">coding</span>
+                        <span class="text">// coding</span>
 
                         <span class="bar">
                             <i class="icon icon-coding"></i>
@@ -314,7 +314,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        <span class="text">design</span>
+                        <span class="text">// design</span>
 
                         <span class="bar">
                             <i class="icon icon-design"></i>
@@ -372,7 +372,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        <span class="text">case study: detail</span>
+                        <span class="text">// case study: detail</span>
 
                         <span class="bar">
                             <i class="icon icon-about"></i>
@@ -436,7 +436,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        <span class="text">contact</span>
+                        <span class="text">// contact</span>
 
                         <span class="bar">
                             <i class="icon icon-contact"></i>
@@ -489,7 +489,7 @@
             <div class="wrap">
                 <div class="col-10 col-offset-1">
                     <h1>
-                        <span class="text">oops!</span>
+                        <span class="text">// oops!</span>
 
                         <span class="bar">
                             <i class="icon icon-warning"></i>

@@ -24,9 +24,6 @@ var RR = (function (parent, $) {
         isMobileDevice, vh, vw;
 
     var setup = function () {
-        // Background Pattern
-        // backgroundResize();
-
         // Set 3D environment
         TweenMax.set('#main', {
             perspective: 700
@@ -114,10 +111,6 @@ var RR = (function (parent, $) {
             $data = 'hello';
         });
 
-        // var b = baffle('p a', {
-        //     characters: '█▓▒░█▓▒░█▓▒░█▓▒░'
-        // });
-
         bAbout = baffle('.about h1 .text', {
             characters: '█▓▒░█▓▒░█▓▒░█▓▒░',
             speed: 100
@@ -153,7 +146,7 @@ var RR = (function (parent, $) {
             speed: 100
         });
 
-        $('.skills__bar').each(function(i, v) {
+        $('.skills__bar').each(function (i, v) {
             bSkillsLabel.push(baffle('.skills__bar:nth-child(' + (i + 1) + ') .skills__label', { characters: '█▓▒░█▓▒░█▓▒░█▓▒░', speed: 100 }));
         });
 
@@ -164,8 +157,6 @@ var RR = (function (parent, $) {
         // $window.on('resize', debounce(function () {
         //     vw = $document.width();
         //     vh = $document.height();
-
-        //     backgroundResize();
         // }, 250));
     };
 
@@ -173,207 +164,187 @@ var RR = (function (parent, $) {
         return $window.width() < 1024 ? true : false;
     };
 
-    var exitCurrentSlide = function($url) {
+    var exitCurrentSlide = function ($url) {
         TweenMax.to('.' + currentPage + ' h1', 0.5, {
             opacity: 0,
-            y: -30,
+            y: -50,
             ease: Expo.easeInOut
         });
 
         TweenMax.to('.' + currentPage + ' p', 0.5, {
             opacity: 0,
-            y: -30,
+            y: -50,
             ease: Expo.easeInOut,
-            delay: 0.25
+            delay: 0.1
         });
 
         TweenMax.to('.' + currentPage + ' hr', 0.5, {
             opacity: 0,
-            y: -30,
+            y: -50,
             ease: Expo.easeInOut,
-            delay: 0.5
+            delay: 0.2
         });
 
+        if (currentPage == 'hello') {
+            TweenMax.staggerTo('.hello li', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.3
+            }, 0.1, function () {
+                switchSlide($url);
+            });
+        } else if (currentPage == 'about') {
+            TweenMax.staggerTo('.skills__bar', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.3
+            }, 0.1);
 
-        TweenMax.staggerTo('.hello li', 0.5, {
-            opacity: 0,
-            y: -30,
-            ease: Expo.easeInOut,
-            delay: 0.75,
-            onComplete: function () {
-                $('.' + currentPage).hide();
+            TweenMax.staggerTo('.logos li', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.4
+            }, 0.1, function () {
+                switchSlide($url);
+            });
+        } else if (currentPage == 'achievements') {
+            TweenMax.staggerTo('.nominations li', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.3
+            }, 0.1);
 
-                if ($url == '') {
-                    $url = 'hello';
-                } else if (!$('.' + $url).length) {
-                    $url = '404';
+            TweenMax.to('.achievements a', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.3,
+                onComplete: function () {
+                    switchSlide($url);
                 }
+            });
+        } else if (currentPage == 'coding' || currentPage == 'design') {
+            TweenMax.staggerTo('.case-studies .card', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.3
+            }, 0.1, function () {
+                switchSlide($url);
+            });
+        } else if (currentPage == 'case-study') {
+            TweenMax.staggerTo('.case-study h2', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.3
+            }, 0.1, function () {
+                switchSlide($url);
+            });
 
-                if ($url == '404') {
-                    $url = 'error';
+            TweenMax.to('.case-study a', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.3,
+                onComplete: function () {
+                    switchSlide($url);
                 }
+            });
+        } else if (currentPage == 'contact') {
+            TweenMax.staggerTo('.contact-icons li', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.3
+            }, 0.1, function () {
+                switchSlide($url);
+            });
+        }
 
-                // backgroundResize();
-
-                $('.' + $url).show()
-                    .find('h1 .text').html('&nbsp;');
-
-                resetSlide(currentPage);
-
-                var $gotoElem = $('.' + $url + ' h1');
-                TweenMax.to('.element-clone', 0.75, {
-                    left: $gotoElem.offset().left,
-                    top: $gotoElem.offset().top,
-                    height: $gotoElem.outerHeight(),
-                    width: 15,
-                    ease: Expo.easeInOut
-                });
-
-                TweenMax.to('.element-clone .icon', 0.75, {
-                    opacity: 0,
-                    ease: Expo.easeInOut,
-                    onComplete: function () {
-                        $('.element-clone').remove();
-
-                        if ($url !== 'hello') {
-                            TweenMax.set('.' + $url + ' h1', {
-                                'borderLeft' : '15px solid #2196f3'
-                            });
-                        }
-
-                        switch ($url) {
-                            case 'hello':
-                                enterHello();
-                                break;
-                            case 'about':
-                                enterAbout();
-                                break;
-
-                            case 'achievements':
-                                enterAchievements();
-                                break;
-
-                            case 'coding':
-                                enterCoding();
-                                break;
-
-                            case 'design':
-                                enterDesign();
-                                break;
-
-                            case 'contact':
-                                enterContact();
-                                break;
-
-                            case 'case-study':
-                                enterCaseStudy();
-                                break;
-
-                            case 'error':
-                                enterError();
-                                break;
-                        }
-                    }
-                });
-
-                currentPage = $url;
-            }
-        }, 0.1);
-
-        // TweenMax.to('.' + currentPage, 0.75, {
-        //     transform: 'translateZ(-100px)',
-        //     opacity: 0,
-        //     ease: Expo.easeOut,
-        //     onComplete: function () {
-        //         $('.' + currentPage).hide();
-
-        //         if ($url == '') {
-        //             $url = 'hello';
-        //         } else if (!$('.' + $url).length) {
-        //             $url = '404';
-        //         }
-
-        //         if ($url == '404') {
-        //             $url = 'error';
-        //         }
-
-        //         // backgroundResize();
-
-        //         $('.' + $url).show()
-        //             .find('h1 .text').html('&nbsp;');
-
-        //         resetSlide(currentPage);
-
-        //         var $gotoElem = $('.' + $url + ' h1');
-        //         TweenMax.to('.element-clone', 0.75, {
-        //             left: $gotoElem.offset().left,
-        //             top: $gotoElem.offset().top,
-        //             height: $gotoElem.outerHeight(),
-        //             width: 15,
-        //             ease: Expo.easeInOut
-        //         });
-
-        //         TweenMax.to('.element-clone .icon', 0.75, {
-        //             opacity: 0,
-        //             ease: Expo.easeInOut,
-        //             onComplete: function () {
-        //                 $('.element-clone').remove();
-
-        //                 if ($url !== 'hello') {
-        //                     TweenMax.set('.' + $url + ' h1', {
-        //                         'borderLeft' : '15px solid #2196f3'
-        //                     });
-        //                 }
-
-        //                 switch ($url) {
-        //                     case 'hello':
-        //                         enterHello();
-        //                         break;
-        //                     case 'about':
-        //                         enterAbout();
-        //                         break;
-
-        //                     case 'achievements':
-        //                         enterAchievements();
-        //                         break;
-
-        //                     case 'coding':
-        //                         enterCoding();
-        //                         break;
-
-        //                     case 'design':
-        //                         enterDesign();
-        //                         break;
-
-        //                     case 'contact':
-        //                         enterContact();
-        //                         break;
-
-        //                     case 'case-study':
-        //                         enterCaseStudy();
-        //                         break;
-
-        //                     case 'error':
-        //                         enterError();
-        //                         break;
-        //                 }
-        //             }
-        //         });
-
-        //         currentPage = $url;
-        //     }
-        // });
+        console.log(currentPage)
     };
 
-    // function backgroundResize() {
-    //     isMobileDevice = $window.width() < 1024 ? 1 : 0;
+    function switchSlide($url) {
+        $('.' + currentPage).hide();
 
-    //     if (isMobileDevice) {
-    //         vh = $document.height() - $header.outerHeight() + 'px'
-    //     } else {
-    //         vh = 'auto'
-    //     }
-    // };
+        if ($url == '') {
+            $url = 'hello';
+        } else if (!$('.' + $url).length) {
+            $url = '404';
+        }
+
+        if ($url == '404') {
+            $url = 'error';
+        }
+
+        $('.' + $url).show()
+            .find('h1 .text').html('&nbsp;');
+
+        resetSlide(currentPage);
+
+        var $gotoElem = $('.' + $url + ' h1');
+        TweenMax.to('.element-clone', 0.75, {
+            left: $gotoElem.offset().left,
+            top: $gotoElem.offset().top,
+            height: $gotoElem.outerHeight(),
+            width: 15,
+            ease: Expo.easeInOut
+        });
+
+        TweenMax.to('.element-clone .icon', 0.75, {
+            opacity: 0,
+            ease: Expo.easeInOut,
+            onComplete: function () {
+                $('.element-clone').remove();
+
+                if ($url !== 'hello') {
+                    TweenMax.set('.' + $url + ' h1', {
+                        'borderLeft' : '15px solid #2196f3'
+                    });
+                }
+
+                switch ($url) {
+                    case 'hello':
+                        enterHello();
+                        break;
+                    case 'about':
+                        enterAbout();
+                        break;
+
+                    case 'achievements':
+                        enterAchievements();
+                        break;
+
+                    case 'coding':
+                        enterCoding();
+                        break;
+
+                    case 'design':
+                        enterDesign();
+                        break;
+
+                    case 'contact':
+                        enterContact();
+                        break;
+
+                    case 'case-study':
+                        enterCaseStudy();
+                        break;
+
+                    case 'error':
+                        enterError();
+                        break;
+                }
+            }
+        });
+
+        currentPage = $url;
+    }
 
     function resetSlide(slide) {
         $('.' + slide + ' h1 .text').html('&nbsp;');
@@ -820,7 +791,7 @@ var RR = (function (parent, $) {
 
         TweenMax.to('.error h1', 1.5, {
             'borderLeft' : '15px solid #cc0000',
-            ease: Expo.easeOut,
+            ease: Expo.easeOut
         });
 
         TweenMax.to('.error .icon', 1.5, {
