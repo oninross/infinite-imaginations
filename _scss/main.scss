@@ -636,16 +636,21 @@ p {
 05 Homepage
 ========================================================================== */
 .hello {
+    margin-top: 15vmin;
+
     h1 {
         border-left: 0px solid $blue;
         color: $white;
+        display: block;
         font-size: 3.4em;
         height: 75px;
         margin-bottom: 40px;
         margin-top: 50px;
         max-width: 545px;
+        opacity: 0;
         padding: 20px;
         position: relative;
+        text-overflow: clip;
 
         .bar {
             background: $black;
@@ -701,6 +706,10 @@ p {
     hr {
         display: none;
         width: 0;
+    }
+
+    .text {
+        text-overflow: clip;
     }
 }
 

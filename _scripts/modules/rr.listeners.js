@@ -14,6 +14,7 @@ var RR = (function (parent, $) {
         currentPage = 'hello',
         $data = 'hello',
         bSkillsLabel = [],
+        bHello,
         bAbout,
         bAchievements,
         bCoding,
@@ -111,47 +112,52 @@ var RR = (function (parent, $) {
             $data = 'hello';
         });
 
+        bHello = baffle('.hello h1 .text', {
+            characters: '█▓▒░',
+            speed: 40
+        });
+
         bAbout = baffle('.about h1 .text', {
-            characters: '█▓▒░█▓▒░█▓▒░█▓▒░',
-            speed: 100
+            characters: '█▓▒░',
+            speed: 40
         });
 
         bAchievements = baffle('.achievements h1 .text', {
-            characters: '█▓▒░█▓▒░█▓▒░█▓▒░',
-            speed: 100
+            characters: '█▓▒░',
+            speed: 40
         });
 
         bCoding = baffle('.coding h1 .text', {
-            characters: '█▓▒░█▓▒░█▓▒░█▓▒░',
-            speed: 100
+            characters: '█▓▒░',
+            speed: 40
         });
 
         bDesign = baffle('.design h1 .text', {
-            characters: '█▓▒░█▓▒░█▓▒░█▓▒░',
-            speed: 100
+            characters: '█▓▒░',
+            speed: 40
         });
 
         bContact = baffle('.contact h1 .text', {
-            characters: '█▓▒░█▓▒░█▓▒░█▓▒░',
-            speed: 100
+            characters: '█▓▒░',
+            speed: 40
         });
 
         bCaseStudy = baffle('.casestudy h1 .text', {
-            characters: '█▓▒░█▓▒░█▓▒░█▓▒░',
-            speed: 100
+            characters: '█▓▒░',
+            speed: 40
         });
 
         bError = baffle('.error h1 .text', {
-            characters: '█▓▒░█▓▒░█▓▒░█▓▒░',
-            speed: 100
+            characters: '█▓▒░',
+            speed: 40
         });
 
         $('.skills__bar').each(function (i, v) {
-            bSkillsLabel.push(baffle('.skills__bar:nth-child(' + (i + 1) + ') .skills__label', { characters: '█▓▒░█▓▒░█▓▒░█▓▒░', speed: 100 }));
+            bSkillsLabel.push(baffle('.skills__bar:nth-child(' + (i + 1) + ') .skills__label', { characters: '█▓▒░', speed: 40 }));
         });
 
         // bSkillsLabel = baffle('.skills__label', {
-        //     characters: '█▓▒░█▓▒░█▓▒░█▓▒░'
+        //     characters: '█▓▒░'
         // });
 
         // $window.on('resize', debounce(function () {
@@ -458,10 +464,11 @@ var RR = (function (parent, $) {
             ease: Expo.easeOut,
             delay: 0,
             onComplete: function () {
-                $('.hello h1 .text').typist({
-                    speed: 12,
-                    text: 'Hello world...'
-                });
+                bHello.start().reveal(750, 800);
+                // $('.hello h1 .text').typist({
+                //     speed: 12,
+                //     text: 'Hello world...'
+                // });
             }
         });
 
@@ -497,7 +504,7 @@ var RR = (function (parent, $) {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bAbout.start().reveal(1500);
+                bAbout.start().reveal(750, 800);
                 // $('.about h1 .text').typist({
                 //     speed: 12,
                 //     text: '// about'
@@ -558,7 +565,7 @@ var RR = (function (parent, $) {
                     ease: Expo.easeInOut,
                     delay: 0.25 * i,
                     onStart: function () {
-                        bSkillsLabel[i].start().reveal(1500);
+                        bSkillsLabel[i].start().reveal(750, 800);
                     }
                 });
             });
@@ -590,7 +597,7 @@ var RR = (function (parent, $) {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bAchievements.start().reveal(1500);
+                bAchievements.start().reveal(750, 800);
                 // $('.achievements h1 .text').typist({
                 //     speed: 12,
                 //     text: '// achievements'
@@ -636,7 +643,7 @@ var RR = (function (parent, $) {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bCoding.start().reveal(1500);
+                bCoding.start().reveal(750, 800);
                 // $('.coding h1 .text').typist({
                 //     speed: 12,
                 //     text: '// coding'
@@ -668,7 +675,7 @@ var RR = (function (parent, $) {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bDesign.start().reveal(1500);
+                bDesign.start().reveal(750, 800);
                 // $('.design h1 .text').typist({
                 //     speed: 12,
                 //     text: '// design'
@@ -700,7 +707,7 @@ var RR = (function (parent, $) {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bCaseStudy.start().reveal(1500);
+                bCaseStudy.start().reveal(750, 800);
                 // $('.case-study h1 .text').typist({
                 //     speed: 12,
                 //     text: '// case study'
@@ -752,7 +759,7 @@ var RR = (function (parent, $) {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bContact.start().reveal(1500);
+                bContact.start().reveal(750, 800);
                 // $('.contact h1 .text').typist({
                 //     speed: 12,
                 //     text: '// contact'
@@ -785,7 +792,7 @@ var RR = (function (parent, $) {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bError.start().reveal(1500);
+                bError.start().reveal(750, 800);
                 // $('.error h1 .text').typist({
                 //     speed: 12,
                 //     text: '// error'

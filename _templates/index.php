@@ -10,8 +10,7 @@
             <div class="wrap">
                 <div class="col-10 col-offset-1">
                     <h1>
-                        <span class="vh">Hello World...</span>
-                        <span class="text"></span>
+                        <span class="text">Hello World...</span>
                         <span class="bar"></span>
                     </h1>
 

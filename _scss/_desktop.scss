@@ -53,7 +53,7 @@ DEPENDENCIES
 05 Homepage
 ========================================================================== */
 .hello {
-    @include reset-centering();
+    // @include reset-centering();
 
     nav {
         li {
@@ -78,11 +78,11 @@ DEPENDENCIES
 }
 
 .about {
-    @include reset-centering();
+    // @include reset-centering();
 }
 
 .achievements {
-    @include reset-centering();
+    // @include reset-centering();
 
     .nominations {
         li {
@@ -97,7 +97,7 @@ DEPENDENCIES
 }
 
 .case-studies {
-    @include reset-centering();
+    // @include reset-centering();
 
     .card {
         height: 250px;
@@ -113,7 +113,7 @@ DEPENDENCIES
 }
 
 .contact {
-    @include reset-centering();
+    // @include reset-centering();
 
     h1 {
         font-size: 3.2em;
@@ -121,7 +121,7 @@ DEPENDENCIES
 }
 
 .error {
-    @include reset-centering();
+    // @include reset-centering();
 
     h1 {
         font-size: 3.2em;
