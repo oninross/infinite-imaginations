@@ -10,11 +10,11 @@
             <div class="wrap">
                 <div class="col-10 col-offset-1">
                     <h1>
-                        <span class="text">Hello World...</span>
+                        <span class="text" data-text="Hello World...">Hello World...</span>
                         <span class="bar"></span>
                     </h1>
 
-                    <p>I'm <a href="/#/about/"><span>Niño Ross Rodriguez,</span></a> a Senior User Experience Developer based in Singapore with eight years of industry experience.  I specialize in developing pixel perfect websites quickly without sacrificing code quality. Get to know a bit more <a href="/#/about/"><span>about my skills</span></a> or feel free to look around my <a href="/#/coding/"><span>coding</span></a> and <a href="/#/design/"><span>design</span></a> works.</p>
+                    <p>I'm <a href="/#/about/" data-text="Niño Ross Rodriguez,"><span>Niño Ross Rodriguez,</span></a> a Senior User Experience Developer based in Singapore with eight years of industry experience.  I specialize in developing pixel perfect websites quickly without sacrificing code quality. Get to know a bit more <a href="/#/about/" data-text="about my skills"><span>about my skills</span></a> or feel free to look around my <a href="/#/coding/" data-text="coding"><span>coding</span></a> and <a href="/#/design/" data-text="design"><span>design</span></a> works.</p>
 
                     <hr />
 
@@ -86,7 +86,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        <span class="text">// about</span>
+                        <span class="text" data-text="// about">// about</span>
 
                         <span class="bar">
                             <i class="icon icon-about"></i>
@@ -95,7 +95,7 @@
 
                     <div class="wrap">
                         <div class="col-l col-6">
-                            <p>I specialize in converting code into websites, transforming pixels into design, deliver the smoothest user experience and make a static site come alive with animation.  It is my passion and determination to provide quality products by following today's latest web standards in my projects. I love to tinker with code to make it work and suit the project's needs. Most of the time I hand-code everything from scratch using my <a href="https://www.github.com/oninross/firestarter" target="_blank"><span>Firestarter framework</span></a> but knowledable in using HTML5 Boilerplate and Twitter Boostrap for rapid development when needed.</p>
+                            <p>I specialize in converting code into websites, transforming pixels into design, deliver the smoothest user experience and make a static site come alive with animation.  It is my passion and determination to provide quality products by following today's latest web standards in my projects. I love to tinker with code to make it work and suit the project's needs. Most of the time I hand-code everything from scratch using my <a href="https://www.github.com/oninross/firestarter" target="_blank" data-text="Firestarter framework"><span>Firestarter framework</span></a> but knowledable in using HTML5 Boilerplate and Twitter Boostrap for rapid development when needed.</p>
                         </div>
 
                         <div class="col-r col-6">
@@ -182,7 +182,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        <span class="text">// achievements</span>
+                        <span class="text" data-text="// achievements">// achievements</span>
 
                         <span class="bar">
                             <i class="icon icon-achievements"></i>
@@ -256,7 +256,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        <span class="text">// coding</span>
+                        <span class="text" data-text="// coding">// coding</span>
 
                         <span class="bar">
                             <i class="icon icon-coding"></i>
@@ -271,6 +271,8 @@
 
                                     <span class="cta">See case study</span>
                                 </div>
+
+                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
                             </div>
                         </a>
 
@@ -281,6 +283,8 @@
 
                                     <span class="cta">See case study</span>
                                 </div>
+
+                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
                             </div>
                         </a>
 
@@ -291,6 +295,8 @@
 
                                     <span class="cta">See case study</span>
                                 </div>
+
+                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
                             </div>
                         </a>
 
@@ -301,6 +307,8 @@
 
                                     <span class="cta">See case study</span>
                                 </div>
+
+                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
                             </div>
                         </a>
                     </div>
@@ -314,7 +322,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        <span class="text">// design</span>
+                        <span class="text" data-text="// design">// design</span>
 
                         <span class="bar">
                             <i class="icon icon-design"></i>
@@ -329,6 +337,8 @@
 
                                     <span class="cta">See case study</span>
                                 </div>
+
+                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
                             </div>
                         </a>
 
@@ -339,6 +349,8 @@
 
                                     <span class="cta">See case study</span>
                                 </div>
+
+                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
                             </div>
                         </a>
 
@@ -349,6 +361,8 @@
 
                                     <span class="cta">See case study</span>
                                 </div>
+
+                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
                             </div>
                         </a>
 
@@ -359,6 +373,8 @@
 
                                     <span class="cta">See case study</span>
                                 </div>
+
+                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
                             </div>
                         </a>
                     </div>
@@ -372,7 +388,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        <span class="text">// case study: detail</span>
+                        <span class="text" data-text="">// case study: detail</span>
 
                         <span class="bar">
                             <i class="icon icon-about"></i>
@@ -436,7 +452,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        <span class="text">// contact</span>
+                        <span class="text" data-text="// contact">// contact</span>
 
                         <span class="bar">
                             <i class="icon icon-contact"></i>
@@ -489,7 +505,7 @@
             <div class="wrap">
                 <div class="col-10 col-offset-1">
                     <h1>
-                        <span class="text">// oops!</span>
+                        <span class="text" data-text="// oops!">// oops!</span>
 
                         <span class="bar">
                             <i class="icon icon-warning"></i>
