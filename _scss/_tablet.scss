@@ -92,6 +92,10 @@ img {
         overflow: hidden;
         width: 100%;
         z-index: 10;
+
+        &:before {
+            display: none;
+        }
     }
 
     li {
@@ -127,7 +131,7 @@ img {
         }
 
         .full {
-            font-size: 0.8em;
+            font-size: 0.950em;
         }
     }
 }
@@ -178,13 +182,13 @@ img {
     padding: 20px 10px;
 
     .abbr {
-        font-size: 2.5em;
+        font-size: 2.1em;
         margin-bottom: 5px;
     }
 
     .full {
         display: block;
-        font-size: 0.5em;
+        font-size: 0.6em;
     }
 }
 

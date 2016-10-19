@@ -198,7 +198,7 @@
                             </a>
 
                             <p>
-                                <a href="http://beta.infiniteimaginations.co" target="_blank">
+                                <a class="beta" href="http://beta.infiniteimaginations.co" target="_blank">
                                     <span>beta.infiniteimaginations.co</span>
                                 </a>
                             </p>
@@ -207,41 +207,15 @@
                         <div class="col-r col-6">
                             <div class="nominations">
                                 <ul>
-                                    <li>
-                                        Nominated in Awwwards 2014
-                                    </li>
-
-                                    <li>
-                                        Nominated in CSS Reel 2014
-                                    </li>
-
-                                    <li>
-                                        Featured in One Page Mania 2014
-                                    </li>
-
-                                    <li>
-                                        Nominee in Lemon Web Awards 2014
-                                    </li>
-
-                                    <li>
-                                        Nominee in CSS Awards 2014
-                                    </li>
-
-                                    <li>
-                                        Nominee in CSS Design Awards 2012
-                                    </li>
-
-                                    <li>
-                                        Feature in CSS Awards 2012
-                                    </li>
-
-                                    <li>
-                                        Featured in Web Designer Magazine UK Issue 196
-                                    </li>
-
-                                    <li>
-                                        User Experience Certified by Udemy
-                                    </li>
+                                    <li>Nominated in Awwwards 2014</li>
+                                    <li>Featured in Web Designer Magazine UK Issue 196</li>
+                                    <li>User Experience Certified by Udemy</li>
+                                    <li>Featured in One Page Mania 2014</li>
+                                    <li>Nominated in CSS Reel 2014</li>
+                                    <li>Nominee in Lemon Web Awards 2014</li>
+                                    <li>Nominee in CSS Awards 2014</li>
+                                    <li>Nominee in CSS Design Awards 2012</li>
+                                    <li>Feature in CSS Awards 2012</li>
                                 </ul>
                             </div>
                         </div>
@@ -404,9 +378,7 @@
 
 			                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
 
-			                    <a href="#" class="cta">
-			                    	<span>Visit website</span>
-			                    </a>
+			                    <a href="#" class="cta" data-text="visit website">visit website</a>
 		                   	</div>
 
 		                    <div class="case-study__section">

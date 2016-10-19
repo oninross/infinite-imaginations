@@ -221,8 +221,17 @@ var RR = (function (parent, $) {
                     switchSlide($url);
                 }
             });
-        } else if (currentPage == 'coding' || currentPage == 'design') {
-            TweenMax.staggerTo('.case-studies .card', 0.5, {
+        } else if (currentPage == 'coding') {
+            TweenMax.staggerTo('.coding .card', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.2
+            }, 0.1, function () {
+                switchSlide($url);
+            });
+        } else if (currentPage == 'design') {
+            TweenMax.staggerTo('.design .card', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,

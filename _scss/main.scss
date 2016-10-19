@@ -199,9 +199,6 @@ button {
         background: lighten($grey, 25%);
         border: 1px solid $grey;
         font-size: 1em;
-
-        // text-align: center;
-
     }
 }
 
@@ -293,55 +290,6 @@ svg.ripple {
 /* =======================================================================
 02 Layout
 ========================================================================== */
-.typed-cursor {
-    opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes blink {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@-moz-keyframes blink {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
 .glitch {
     display: block;
     position: relative;
@@ -358,13 +306,13 @@ svg.ripple {
 
     &:before {
         animation: noise-anim-2 3s infinite linear alternate-reverse;
-        left: -4px;
+        left: -3px;
         text-shadow: 1px 0 cyan;
     }
 
     &:after {
         animation: noise-anim-1 2s infinite linear alternate-reverse;
-        left: 4px;
+        left: 3px;
         text-shadow: -1px 0 red;
     }
 }
@@ -394,7 +342,6 @@ p {
     font-size: 2em;
     font-weight: $light;
     // font-family: 'EBGaramond-Regular', Georgia, serif;
-    text-align: justify;
 
     a {
         @include inline-block;
@@ -403,39 +350,14 @@ p {
         border-left: 5px solid $blue;
         color: $white;
         display: inline-block !important;
-        *display: inline;
-        zoom: 1;
         font-weight: $bold;
+        margin-bottom: 0;
         padding: 2px 10px 4px;
         position: relative;
 
         &:hover {
             @extend .glitch;
         }
-
-        // &:after {
-        //     @include transition(width, 0.5s, $easeOutExpo);
-
-        //     background-color: $blue;
-        //     content: '';
-        //     height: 100%;
-        //     left: 0;
-        //     position: absolute;
-        //     top: 0;
-        //     width: 0;
-        //     z-index: 1;
-        // }
-
-        // &:hover {
-        //     &:after {
-        //         width: 100%;
-        //     }
-        // }
-
-        // span {
-        //     position: relative;
-        //     z-index: 5;
-        // }
     }
 }
 
@@ -602,9 +524,22 @@ p {
 
         @extend .clearfix;
 
-        overflow-y: scroll;
         margin-top: 70px;
+        overflow-y: scroll;
+        padding-top: 10px;
+        position: relative;
         text-align: center;
+
+        &:before {
+            @include background-gradient(rgba(22, 21, 20, 0.9), transparent, vertical);
+
+            height: 20px;
+            left: 0;
+            position: fixed;
+            top: 70px;
+            width: 100%;
+            z-index: 10;
+        }
     }
 
     li {
@@ -666,24 +601,6 @@ p {
         top: 0;
         width: inherit;
     }
-
-    // .pattern {
-    //     @include transition(width, 0.5s, $easeOutExpo);
-
-    //     background: repeating-linear-gradient(
-    //         -45deg,
-    //         #ffffff,
-    //         #ffffff 2px,
-    //         transparent 0px,
-    //         transparent 9px
-    //     );
-
-    //     height: 30px;
-    //     position: absolute;
-    //     right: 64px;
-    //     top: 20px;
-    //     width: 0;
-    // }
 }
 
 .menu {
@@ -882,7 +799,7 @@ p {
         }
 
         .full {
-            font-size: 0.75em;
+            font-size: 0.600em;
         }
 
         .icon {
@@ -972,7 +889,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 40px;
         margin-top: 50px;
-        padding: 15px 30px 15px;
+        padding: 15px 30px 15px 15px;
         position: relative;
 
         .icon {
@@ -983,7 +900,7 @@ p {
             opacity: 0;
             position: absolute;
             top: 0;
-            right: 20px;
+            right: 15px;
         }
     }
 
@@ -1083,7 +1000,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 40px;
         margin-top: 50px;
-        padding: 15px 30px 15px;
+        padding: 15px 30px 15px 15px;
         position: relative;
 
         .icon {
@@ -1094,7 +1011,7 @@ p {
             opacity: 0;
             position: absolute;
             top: 0;
-            right: 20px;
+            right: 15px;
         }
     }
 
@@ -1105,6 +1022,17 @@ p {
         position: relative;
     }
 
+    hr {
+        border-top: 3px solid $black;
+        width: 0;
+    }
+
+    .beta {
+        display: block !important;
+        margin: auto;
+        width: 290px;
+    }
+
     .bar {
         background-color: $black;
         height: 100%;
@@ -1113,11 +1041,6 @@ p {
         top: 0;
         width: 0;
         z-index: -1;
-    }
-
-    hr {
-        border-top: 3px solid $black;
-        width: 0;
     }
 
     .col-l {
@@ -1159,6 +1082,13 @@ p {
             width: 41%;
         }
     }
+
+    .text {
+        display: block;
+        overflow: hidden;
+        text-overflow: clip;
+        white-space: nowrap;
+    }
 }
 
 .case-studies {
@@ -1170,7 +1100,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 40px;
         margin-top: 50px;
-        padding: 15px 30px 15px;
+        padding: 15px 30px 15px 15px;
         position: relative;
 
         .icon {
@@ -1181,7 +1111,7 @@ p {
             opacity: 0;
             position: absolute;
             top: 0;
-            right: 20px;
+            right: 15px;
         }
     }
 
@@ -1291,7 +1221,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 40px;
         margin-top: 50px;
-        padding: 15px 30px 15px;
+        padding: 15px 30px 15px 15px;
         position: relative;
 
         .icon {
@@ -1302,8 +1232,12 @@ p {
             opacity: 0;
             position: absolute;
             top: 0;
-            right: 20px;
+            right: 15px;
         }
+    }
+
+    hr {
+        position: relative;
     }
 
     .bar {
@@ -1317,14 +1251,14 @@ p {
     }
 
     .cta {
-        @inlude inline-block;
-
         background-color: $black;
         border-left: 8px solid $blue;
         color: $white !important;
         cursor: pointer;
+        display: block;
         margin: auto;
         padding: 10px 14px;
+        position: relative;
         text-decoration: none;
         width: 160px;
 
@@ -1333,24 +1267,14 @@ p {
             z-index: 5;
         }
 
-        &:before {
-            @include transition(width, 0.5s, $easeOutExpo);
-
-            background-color: $blue;
-            content: '';
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 0;
-            z-index: 1;
-        }
-
         &:hover {
+            @extend .glitch;
+
             text-decoration: none;
 
-            &:before {
-                width: 100%;
+            &:before,
+            &:after {
+                top: 10px;
             }
         }
     }
@@ -1370,8 +1294,20 @@ p {
             opacity: 0;
         }
 
+        h2 {
+            background: repeating-linear-gradient(
+                -45deg,
+                lighten($matte-black, 60%),
+                lighten($matte-black, 60%) 2px,
+                transparent 0px,
+                transparent 5px
+            );
+            margin: 0;
+            padding: 8px 0;
+        }
+
         hr {
-            margin: 20px 0;
+            margin: 0 0 20px;
             width: 0;
         }
     }
@@ -1386,7 +1322,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 40px;
         margin-top: 50px;
-        padding: 15px 30px 15px;
+        padding: 15px 30px 15px 15px;
         position: relative;
 
         .icon {
@@ -1397,7 +1333,7 @@ p {
             opacity: 0;
             position: absolute;
             top: 0;
-            right: 20px;
+            right: 15px;
         }
     }
 
@@ -1462,7 +1398,7 @@ p {
         font-size: 2.8em;
         margin-bottom: 40px;
         margin-top: 50px;
-        padding: 15px 30px 15px;
+        padding: 15px 30px 15px 15px;
         position: relative;
 
         .icon {
@@ -1474,7 +1410,7 @@ p {
             opacity: 0;
             position: absolute;
             top: 0;
-            right: 20px;
+            right: 15px;
         }
     }
 
