@@ -21,8 +21,10 @@ var RR = (function (parent, $) {
         bDesign,
         bContact,
         bCaseStudy,
-        bError,
-        isMobileDevice, vh, vw;
+        skillsWatcher,
+        logosWatcher,
+        nominationsWatcher,
+        bError, vh, vw;
 
     var setup = function () {
 
@@ -102,6 +104,43 @@ var RR = (function (parent, $) {
 
         $('.header .logo a').on('click', function () {
             $data = 'hello';
+        });
+
+        skillsWatcher = scrollMonitor.create(document.getElementsByClassName('skills'));
+        logosWatcher = scrollMonitor.create(document.getElementsByClassName('logos'));
+        nominationsWatcher = scrollMonitor.create(document.getElementsByClassName('nominations'));
+
+        $('.case-study__section').each(function (i, el) {
+            var $this = $(el),
+                caseStudyWatcher = scrollMonitor.create(el, -75);
+
+            caseStudyWatcher.enterViewport(function () {
+                TweenMax.staggerTo($this.find('h2'), 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut
+                }, 0.1);
+
+                TweenMax.staggerTo($this.find('hr'), 0.5, {
+                    width: '100%',
+                    ease: Expo.easeOut,
+                    delay: 0.25
+                }, 0.1);
+
+                TweenMax.staggerTo($this.find('p'), 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.5
+                }, 0.1);
+
+                TweenMax.staggerTo($this.find('.cta'), 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.75
+                }, 0.1);
+            });
         });
 
         bHello = baffle('.hello h1 .text', {
@@ -189,6 +228,11 @@ var RR = (function (parent, $) {
                 switchSlide($url);
             });
         } else if (currentPage == 'about') {
+            if (isMobile()) {
+                skillsWatcher.destroy();
+                logosWatcher.destroy();
+            }
+
             TweenMax.staggerTo('.skills__bar', 0.5, {
                 opacity: 0,
                 y: -50,
@@ -205,21 +249,24 @@ var RR = (function (parent, $) {
                 switchSlide($url);
             });
         } else if (currentPage == 'achievements') {
+            if (isMobile()) {
+                nominationsWatcher.destroy();
+            }
+
             TweenMax.staggerTo('.nominations li', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
                 delay: 0.2
-            }, 0.1);
+            }, 0.1, function () {
+                switchSlide($url);
+            });
 
             TweenMax.to('.achievements a', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.2,
-                onComplete: function () {
-                    switchSlide($url);
-                }
+                delay: 0.2
             });
         } else if (currentPage == 'coding') {
             TweenMax.staggerTo('.coding .card', 0.5, {
@@ -458,13 +505,6 @@ var RR = (function (parent, $) {
     function enterHello() {
         $('.hello h1 .text').html('&nbsp;');
 
-        // console.log(Modernizr.mq('(max-width: 767px)'))
-        // console.log(Modernizr.mq('(min-width: 768px)'))
-        // console.log(Modernizr.mq('(min-width: 1024px)'))
-
-        // if () {
-
-        // }
         TweenMax.to('.hello .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
@@ -530,66 +570,129 @@ var RR = (function (parent, $) {
             delay: 0.75
         });
 
-        TweenMax.staggerTo('.skills__bar', 0.75, {
-            opacity: 1,
-            y: 0,
-            ease: Expo.easeOut,
-            delay: 1
-        }, 0.1);
+        if (isMobile()) {
+            skillsWatcher.enterViewport(function () {
+                TweenMax.staggerTo('.skills__bar', 0.75, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                }, 0.1);
 
-        setTimeout(function () {
-            $('.skills__bar').each(function (i) {
-                var $this = $(this),
-                    $percent = $this.data('percent');
+                $('.skills__bar').each(function (i) {
+                    var $this = $(this),
+                        $percent = $this.data('percent');
 
-                setTimeout(function () {
-                    $this.find('.skills__percent-number').countTo({
-                        from: 0.0,
-                        to: $percent,
-                        speed: 1500,
-                        decimals: 1,
-                        formatter: function (value, options) {
-                            return value.toFixed(options.decimals);
+                    setTimeout(function () {
+                        $this.find('.skills__percent-number').countTo({
+                            from: 0.0,
+                            to: $percent,
+                            speed: 1500,
+                            decimals: 1,
+                            formatter: function (value, options) {
+                                return value.toFixed(options.decimals);
+                            }
+                        });
+                    }, 250 * i);
+
+                    TweenMax.to($this, 1, {
+                        width: $percent + '%',
+                        ease: Expo.easeInOut,
+                        delay: 0.25 * i
+                    });
+
+                    TweenMax.to($this.find('.skills__label'), 1, {
+                        opacity: 1,
+                        ease: Expo.easeInOut,
+                        delay: 0.25 * i,
+                        onStart: function () {
+                            bSkillsLabel[i].start().reveal(750, 750);
                         }
                     });
-                }, 250 * i);
-
-                TweenMax.to($this, 1, {
-                    width: $percent + '%',
-                    ease: Expo.easeInOut,
-                    delay: 0.25 * i
-                });
-
-                TweenMax.to($this.find('.skills__label'), 1, {
-                    opacity: 1,
-                    ease: Expo.easeInOut,
-                    delay: 0.25 * i,
-                    onStart: function () {
-                        bSkillsLabel[i].start().reveal(750, 750);
-                    }
                 });
             });
-        }, 750);
 
-        TweenMax.to('.about hr', 1, {
-            width: '100%',
-            ease: Expo.easeOut,
-            delay: 1
-        });
+            logosWatcher.enterViewport(function () {
+                TweenMax.to('.about hr', 1, {
+                    width: '100%',
+                    ease: Expo.easeOut
+                });
 
-        TweenMax.to('.logos p', 1, {
-            opacity: 1,
-            y: 0,
-            ease: Expo.easeOut,
-            delay: 1.5
-        });
+                TweenMax.to('.logos p', 1, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.25
+                });
 
-        TweenMax.staggerTo('.about .logos li', 1, {
-            opacity: 1,
-            y: 0,
-            ease: Expo.easeOut,
-            delay: 1.75
-        }, 0.1);
+                TweenMax.staggerTo('.about .logos li', 1, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.5
+                }, 0.1);
+            });
+        } else {
+            TweenMax.staggerTo('.skills__bar', 0.75, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeOut,
+                delay: 1
+            }, 0.1);
+
+            setTimeout(function () {
+                $('.skills__bar').each(function (i) {
+                    var $this = $(this),
+                        $percent = $this.data('percent');
+
+                    setTimeout(function () {
+                        $this.find('.skills__percent-number').countTo({
+                            from: 0.0,
+                            to: $percent,
+                            speed: 1500,
+                            decimals: 1,
+                            formatter: function (value, options) {
+                                return value.toFixed(options.decimals);
+                            }
+                        });
+                    }, 250 * i);
+
+                    TweenMax.to($this, 1, {
+                        width: $percent + '%',
+                        ease: Expo.easeInOut,
+                        delay: 0.25 * i
+                    });
+
+                    TweenMax.to($this.find('.skills__label'), 1, {
+                        opacity: 1,
+                        ease: Expo.easeInOut,
+                        delay: 0.25 * i,
+                        onStart: function () {
+                            bSkillsLabel[i].start().reveal(750, 750);
+                        }
+                    });
+                });
+            }, 750);
+
+            TweenMax.to('.about hr', 1, {
+                width: '100%',
+                ease: Expo.easeOut,
+                delay: 1
+            });
+
+            TweenMax.to('.logos p', 1, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeOut,
+                delay: 1.5
+            });
+
+            TweenMax.staggerTo('.about .logos li', 1, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeOut,
+                delay: 1.75
+            }, 0.1);
+        }
     };
 
     function enterAchievements() {
@@ -627,12 +730,22 @@ var RR = (function (parent, $) {
             delay: 1
         });
 
-        TweenMax.staggerTo('.nominations li', 0.75, {
-            opacity: 1,
-            y: 0,
-            ease: Expo.easeOut,
-            delay: 1
-        }, 0.1);
+        if (isMobile()) {
+            nominationsWatcher.enterViewport(function () {
+                TweenMax.staggerTo('.nominations li', 0.75, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut
+                }, 0.1);
+            });
+        } else {
+            TweenMax.staggerTo('.nominations li', 0.75, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeOut,
+                delay: 1
+            }, 0.1);
+        }
     };
 
     function enterCoding() {
@@ -700,6 +813,7 @@ var RR = (function (parent, $) {
             onComplete: function () {
                 bCaseStudy.start().reveal(750, 750);
                 $('.case-study .text').addClass('glitch');
+                scrollMonitor.recalculateLocations();
             }
         });
 
@@ -713,33 +827,6 @@ var RR = (function (parent, $) {
             ease: Expo.easeOut,
             delay: 0.25
         });
-
-        TweenMax.staggerTo('.case-study .case-study__section h2', 0.5, {
-            opacity: 1,
-            y: 0,
-            ease: Expo.easeOut,
-            delay: 0.5
-        }, 0.1);
-
-        TweenMax.staggerTo('.case-study .case-study__section hr', 0.5, {
-            width: '100%',
-            ease: Expo.easeOut,
-            delay: 0.75
-        }, 0.1);
-
-        TweenMax.staggerTo('.case-study .case-study__section p', 0.5, {
-            opacity: 1,
-            y: 0,
-            ease: Expo.easeOut,
-            delay: 1
-        }, 0.1);
-
-        TweenMax.staggerTo('.case-study .case-study__section .cta', 0.5, {
-            opacity: 1,
-            y: 0,
-            ease: Expo.easeOut,
-            delay: 1.25
-        }, 0.1);
     };
 
     function enterContact() {
@@ -806,11 +893,26 @@ var RR = (function (parent, $) {
             .find('.element-box[data-name=' + navEl + ']').addClass('active');
     };
 
+    var isMobile = function () {
+        return Modernizr.mq('(max-width: 767px)');
+    };
+
+    var isTablet = function () {
+        return Modernizr.mq('(min-width: 768px)');
+    };
+
+    var isDesktop = function () {
+        return Modernizr.mq('(min-width: 1024px)');
+    };
+
     // Export module method
     parent.listeners = {
         setup: setup,
         exitCurrentSlide: exitCurrentSlide,
-        setActiveNav: setActiveNav
+        setActiveNav: setActiveNav,
+        isMobile: isMobile,
+        isTablet: isTablet,
+        isDesktop: isDesktop
     };
 
     return parent;
