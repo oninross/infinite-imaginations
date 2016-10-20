@@ -93,6 +93,10 @@ var RR = (function (parent, $) {
             // Mobile menu click
             if ($this.closest('.primary-nav').length) {
                 $('.header .menu').trigger('click');
+
+                setTimeout(function () {
+                    RR.menu.tlHoverReverse();
+                }, 500);
             }
         });
 
@@ -152,10 +156,6 @@ var RR = (function (parent, $) {
         //     vw = $document.width();
         //     vh = $document.height();
         // }, 250));
-    };
-
-    var check = function () {
-        return $window.width() < 1024 ? true : false;
     };
 
     var exitCurrentSlide = function ($url) {
@@ -458,6 +458,13 @@ var RR = (function (parent, $) {
     function enterHello() {
         $('.hello h1 .text').html('&nbsp;');
 
+        // console.log(Modernizr.mq('(max-width: 767px)'))
+        // console.log(Modernizr.mq('(min-width: 768px)'))
+        // console.log(Modernizr.mq('(min-width: 1024px)'))
+
+        // if () {
+
+        // }
         TweenMax.to('.hello .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
@@ -802,7 +809,6 @@ var RR = (function (parent, $) {
     // Export module method
     parent.listeners = {
         setup: setup,
-        check: check,
         exitCurrentSlide: exitCurrentSlide,
         setActiveNav: setActiveNav
     };

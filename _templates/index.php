@@ -14,7 +14,7 @@
                         <span class="bar"></span>
                     </h1>
 
-                    <p>I'm <a href="/#/about/" data-text="Niño Ross Rodriguez,"><span>Niño Ross Rodriguez,</span></a> a Senior User Experience Developer based in Singapore with eight years of industry experience.  I specialize in developing pixel perfect websites quickly without sacrificing code quality. Get to know a bit more <a href="/#/about/" data-text="about my skills"><span>about my skills</span></a> or feel free to look around my <a href="/#/coding/" data-text="coding"><span>coding</span></a> and <a href="/#/design/" data-text="design"><span>design</span></a> works.</p>
+                    <p>I'm <a href="/#/about/" data-text="Niño Ross Rodriguez,"><span>Niño Ross Rodriguez,</span></a> a Senior User Experience (UX) Developer with eight years of industry experience, specializing in developing pixel perfect websites quickly without sacrificing code quality and ensuring that users have the best UX they can get in a site. Get to know a bit more <a href="/#/about/" data-text="about my skills"><span>about my skills</span></a> or feel free to look around my <a href="/#/coding/" data-text="coding"><span>coding</span></a> and <a href="/#/design/" data-text="design"><span>design</span></a> works.</p>
 
                     <hr />
 
@@ -95,7 +95,8 @@
 
                     <div class="wrap">
                         <div class="col-l col-6">
-                            <p>I specialize in converting code into websites, transforming pixels into design, deliver the smoothest user experience and make a static site come alive with animation.  It is my passion and determination to provide quality products by following today's latest web standards in my projects. I love to tinker with code to make it work and suit the project's needs. Most of the time I hand-code everything from scratch using my <a href="https://www.github.com/oninross/firestarter" target="_blank" data-text="Firestarter framework"><span>Firestarter framework</span></a> but knowledable in using HTML5 Boilerplate and Twitter Boostrap for rapid development when needed.</p>
+                            <p>As a <strong>Senior UX Developer</strong>, I love being challenged.  I like to <strong>create</strong> solutions to user experience problems, <strong>imagine</strong> fun interaction and animation, and <strong>developing</strong> the best web experience.</p>
+                            <p>Most of the time I hand-code everything from scratch using my <a href="https://www.github.com/oninross/firestarter" target="_blank" data-text="Firestarter framework">Firestarter framework</a>.  I use HTML5 Boilerplate and Twitter Bootstrap for rapid development if it is only necessary.</p>
                         </div>
 
                         <div class="col-r col-6">
@@ -151,25 +152,11 @@
                         <p>Some of the company projects that I have worked on:</p>
 
                         <ul>
-                            <li>
-                                <img src="/assets/infiniteimaginations/images/svg/logo-ogilvy.svg" alt="OgilvyOne">
-                            </li>
-
-                            <li>
-                                <img src="/assets/infiniteimaginations/images/svg/logo-sony.svg" alt="Sony">
-                            </li>
-
-                            <li>
-                                <img src="/assets/infiniteimaginations/images/svg/logo-singtel.svg" alt="SingTel">
-                            </li>
-
-                            <li>
-                                <img src="/assets/infiniteimaginations/images/svg/logo-holiday-inn.svg" alt="Holiday Inn">
-                            </li>
-
-                            <li>
-                                <img src="/assets/infiniteimaginations/images/svg/logo-abacus.svg" alt="Abacus">
-                            </li>
+                            <li><img src="/assets/infiniteimaginations/images/svg/logo-ogilvy.svg" alt="OgilvyOne"></li>
+                            <li><img src="/assets/infiniteimaginations/images/svg/logo-sony.svg" alt="Sony"></li>
+                            <li><img src="/assets/infiniteimaginations/images/svg/logo-singtel.svg" alt="SingTel"></li>
+                            <li><img src="/assets/infiniteimaginations/images/svg/logo-holiday-inn.svg" alt="Holiday Inn"></li>
+                            <li><img src="/assets/infiniteimaginations/images/svg/logo-abacus.svg" alt="Abacus"></li>
                         </ul>
                     </div>
                 </div>
@@ -191,16 +178,14 @@
 
                     <div class="wrap">
                         <div class="col-l col-6">
-                            <p>I have been lucky to be featured in "Web Designer Magazine" when I least expected it. I have also received a few nominations and features in websites including Awwwards, One Page Mania, CSS Reel, Lemeon Web Awards, CSS Awards, CSS Design Awards and CSS Awards over the past few years.</p>
+                            <p>I have been fortunate enough to be featured in "Web Designer Magazine" when I least expected it. I also have received a few nominations and features in websites including Awwwards, One Page Mania, CSS Reel, Lemon Web Awards, CSS Awards, CSS Design Awards and CSS Awards over the past few years.</p>
 
                             <a href="http://beta.infiniteimaginations.co" target="_blank">
                                 <img src="/assets/infiniteimaginations/images/web-designer-magazine.png" alt="Featured in Web Designer Magazine">
                             </a>
 
                             <p>
-                                <a class="beta" href="http://beta.infiniteimaginations.co" target="_blank">
-                                    <span>beta.infiniteimaginations.co</span>
-                                </a>
+                                <a class="beta" href="http://beta.infiniteimaginations.co" target="_blank" data-text="beta.infiniteimaginations.co">beta.infiniteimaginations.co</a>
                             </p>
                         </div>
 
@@ -431,7 +416,8 @@
                         </span>
                     </h1>
 
-                    <p>If you want to talk anything about digital, UX, or collaborate, don't hesitate to connect.</p>
+                    <p>If you want to have a chat about anything digital, UX, or collaborate, don't hesitate to connect with me.</p>
+                    <p>I am always up for anything geeky. ^_^</p>
 
                     <div class="contact-icons">
                         <ul>

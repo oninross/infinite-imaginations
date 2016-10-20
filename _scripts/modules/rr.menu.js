@@ -11,15 +11,16 @@ var RR = (function (parent, $) {
         $primaryNav = $('.primary-nav'),
         $menu = $('.header .menu'),
         $headerWrap = $('.header-wrap'),
-        vh, vw;
+        vh, vw, tlHover;
 
     var setup = function () {
         var tlClick = new TimelineMax(),
-            tlHover = new TimelineMax(),
             tl = '.box.tl',
             tr = '.box.tr',
             bl = '.box.bl',
             br = '.box.br';
+
+        tlHover = new TimelineMax();
 
         tlClick.to(tl, 0.25, { backgroundColor: '#fff',left: 0, top: 0, ease: Expo.easeOut });
         tlClick.to(tr, 0.25, { backgroundColor: '#fff',right: 0, top: 0, ease: Expo.easeOut }, '-=0.25');
@@ -92,6 +93,10 @@ var RR = (function (parent, $) {
         }, 250));
     };
 
+    var tlHoverReverse = function() {
+        tlHover.reverse();
+    };
+
     function backgroundResize() {
         vw = $window.outerWidth();
         vh = $window.outerHeight();
@@ -104,7 +109,8 @@ var RR = (function (parent, $) {
 
     // Export module method
     parent.menu = {
-        setup: setup
+        setup: setup,
+        tlHoverReverse: tlHoverReverse
     };
 
     return parent;
