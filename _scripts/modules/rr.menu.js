@@ -52,6 +52,7 @@ var RR = (function (parent, $) {
 
             $this.toggleClass('active');
             $primaryNav.toggleClass('active');
+            $headerWrap.toggleClass('active');
 
             if ($this.hasClass('active')) {
                 tlClick.play();

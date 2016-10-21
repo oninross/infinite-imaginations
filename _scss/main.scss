@@ -361,7 +361,7 @@ p {
 }
 
 #main {
-    // position: relative;
+    margin-top: 75px;
 }
 
 .backstretch {
@@ -370,106 +370,119 @@ p {
     position: relative;
 }
 
-.ui {
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: -1;
+// .ui {
+//     height: 100%;
+//     left: 0;
+//     position: fixed;
+//     top: 0;
+//     width: 100%;
+//     z-index: -1;
 
-    &-corner {
-        opacity: 0;
-        position: absolute;
-        height: 10px;
-        width: 10px;
+//     &-corner {
+//         opacity: 0;
+//         position: absolute;
+//         height: 10px;
+//         width: 10px;
 
-        &:before,
-        &:after {
-            background-color: $black;
-            content: '';
-            position: absolute;
-        }
+//         &:before,
+//         &:after {
+//             background-color: $black;
+//             content: '';
+//             position: absolute;
+//         }
 
-        &:before {
-            height: 10px;
-            width: 2px;
-        }
+//         &:before {
+//             height: 10px;
+//             width: 2px;
+//         }
 
-        &:after {
-            height: 2px;
-            width: 10px;
-        }
+//         &:after {
+//             height: 2px;
+//             width: 10px;
+//         }
 
-        &__ul {
-            @include translate(50px, 50px);
+//         &__ul {
+//             @include translate(50px, 50px);
 
-            left: 10px;
-            top: 10px;
-        }
+//             left: 10px;
+//             top: 60px;
+//         }
 
-        &__ur {
-            @include translate(-50px, 50px);
+//         &__ur {
+//             @include translate(-50px, 50px);
 
-            top: 10px;
-            right: 10px;
+//             top: 60px;
+//             right: 10px;
 
-            &:before {
-                right: 0;
-            }
-        }
+//             &:before {
+//                 right: 0;
+//             }
+//         }
 
-        &__bl {
-            @include translate(50px, -50px);
+//         &__bl {
+//             @include translate(50px, -50px);
 
-            bottom: 10px;
-            left: 10px;
+//             bottom: 10px;
+//             left: 10px;
 
-            &:after {
-                bottom: 0;
-            }
-        }
+//             &:after {
+//                 bottom: 0;
+//             }
+//         }
 
-        &__br {
-            @include translate(-50px, -50px);
+//         &__br {
+//             @include translate(-50px, -50px);
 
-            bottom: 10px;
-            right: 10px;
+//             bottom: 10px;
+//             right: 10px;
 
-            &:before {
-                right: 0;
-            }
+//             &:before {
+//                 right: 0;
+//             }
 
-            &:after {
-                bottom: 0;
-            }
-        }
-    }
+//             &:after {
+//                 bottom: 0;
+//             }
+//         }
+//     }
 
-    &-pattern {
-        @include scale(1.5);
+//     &-pattern {
+//         @include scale(1.5);
 
-        background: url(/assets/infiniteimaginations/images/pattern.png);
-        height: 100%;
-        opacity: 0;
-        width: 100%;
-    }
-}
+//         background: url(/assets/infiniteimaginations/images/pattern.png);
+//         height: 100%;
+//         opacity: 0;
+//         width: 100%;
+//     }
+// }
 
 /* =======================================================================
 03 Header
 ========================================================================== */
 .header {
+    height: 75px;
     padding: 20px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 
     &-wrap {
+        @include transition(visibilty, 0.5s, $easeOutExpo);
+
         height: 100%;
+        // opacity: 0;
         overflow: hidden;
         position: absolute;
         right: 0;
         top: 0;
+        visibility: hidden;
         width: 100%;
+
+        &.active {
+            // opacity: 1;
+            visibility: visible;
+        }
     }
 }
 
@@ -478,7 +491,7 @@ p {
 
     opacity: 0;
     position: absolute;
-    z-index: 10;
+    z-index: 1;
 
     img {
         max-width: 150px;
@@ -516,16 +529,19 @@ p {
             transform: none;
             opacity: 1;
         }
+
+        .overlay {
+            height: 100%;
+        }
     }
 
     ul {
         @include normalise-list;
-
         @extend .clearfix;
 
         margin-top: 70px;
         overflow-y: scroll;
-        padding-top: 10px;
+        padding-top: 20px;
         position: relative;
         text-align: center;
 
@@ -542,7 +558,7 @@ p {
     }
 
     li {
-        @include transition(all, 0.5s, $easeOutExpo);
+        @include transition(all, 0.3s, $easeOutExpo);
 
         background-color: $white;
         -webkit-transform: translate(5px, 20px) scale(0.5);
@@ -594,7 +610,7 @@ p {
         background-color: rgba(22, 21, 20, 0.9);
         display: block;
         cursor: pointer;
-        height: inherit;
+        height: 100%;
         right: 0;
         position: absolute;
         top: 0;
@@ -613,9 +629,7 @@ p {
     padding: 0;
     position: absolute;
     right: 10px;
-
-    // top: 16px;
-    // top: 66px;
+    top: 12px;
     width: 50px;
     visibility: hidden;
     z-index: 15;
@@ -659,8 +673,56 @@ p {
 /* =======================================================================
 05 Homepage
 ========================================================================== */
+section {
+    display: none;
+
+    h1 {
+        border-left: 0px solid $blue;
+        color: $white;
+        font-size: 2.8em;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        padding: 15px 30px 15px 15px;
+        position: relative;
+
+        .icon {
+            bottom: 0;
+            height: 24px;
+            font-size: 0.750em;
+            margin: auto;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 15px;
+        }
+    }
+
+    p {
+        @include translate(0, 50px);
+
+        opacity: 0;
+        position: relative;
+    }
+
+    hr {
+        border-top: 3px solid $black;
+        width: 0;
+    }
+
+    .bar {
+        background-color: $black;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 0;
+        z-index: -1;
+    }
+}
+
 .hello {
-    margin-top: 5vmin;
+    display: block;
+    // margin-top: 5vmin;
 
     h1 {
         border-left: 0px solid $blue;
@@ -669,7 +731,7 @@ p {
         font-size: 3.4em;
         height: 75px;
         margin-bottom: 40px;
-        margin-top: 50px;
+        margin-top: 10px;
         max-width: 585px;
         opacity: 0;
         padding: 20px;
@@ -735,6 +797,7 @@ p {
     .text {
         display: block;
         overflow: hidden;
+        padding: 2px;
         text-overflow: clip;
         white-space: nowrap;
     }
@@ -880,51 +943,6 @@ p {
 }
 
 .about {
-    display: none;
-
-    h1 {
-        border-left: 0px solid $blue;
-        color: $white;
-        font-size: 2.8em;
-        margin-bottom: 40px;
-        margin-top: 50px;
-        padding: 15px 30px 15px 15px;
-        position: relative;
-
-        .icon {
-            bottom: 0;
-            height: 24px;
-            font-size: 0.750em;
-            margin: auto;
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            right: 15px;
-        }
-    }
-
-    p {
-        @include translate(0, 50px);
-
-        opacity: 0;
-        position: relative;
-    }
-
-    .bar {
-        background-color: $black;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 0;
-        z-index: -1;
-    }
-
-    hr {
-        border-top: 3px solid $black;
-        width: 0;
-    }
-
     .skills {
         &__bar {
             @include translate(0, 50px);
@@ -991,55 +1009,10 @@ p {
 }
 
 .achievements {
-    display: none;
-
-    h1 {
-        border-left: 0px solid $blue;
-        color: $white;
-        font-size: 2.8em;
-        margin-bottom: 40px;
-        margin-top: 50px;
-        padding: 15px 30px 15px 15px;
-        position: relative;
-
-        .icon {
-            bottom: 0;
-            height: 24px;
-            font-size: 0.750em;
-            margin: auto;
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            right: 15px;
-        }
-    }
-
-    p {
-        @include translate(0, 50px);
-
-        opacity: 0;
-        position: relative;
-    }
-
-    hr {
-        border-top: 3px solid $black;
-        width: 0;
-    }
-
     .beta {
         display: block !important;
         margin: auto;
         width: 290px;
-    }
-
-    .bar {
-        background-color: $black;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 0;
-        z-index: -1;
     }
 
     .col-l {
@@ -1091,46 +1064,6 @@ p {
 }
 
 .case-studies {
-    display: none;
-
-    h1 {
-        border-left: 0px solid $blue;
-        color: $white;
-        font-size: 2.8em;
-        margin-bottom: 40px;
-        margin-top: 50px;
-        padding: 15px 30px 15px 15px;
-        position: relative;
-
-        .icon {
-            bottom: 0;
-            height: 24px;
-            font-size: 0.750em;
-            margin: auto;
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            right: 15px;
-        }
-    }
-
-    p {
-        @include translate(0, 50px);
-
-        opacity: 0;
-        position: relative;
-    }
-
-    .bar {
-        background-color: $black;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 0;
-        z-index: -1;
-    }
-
     .card {
         @include transition(background-color, 0.5s, $easeOutExpo);
 
@@ -1212,41 +1145,8 @@ p {
 .design {}
 
 .case-study {
-    display: none;
-
-    h1 {
-        border-left: 0px solid $blue;
-        color: $white;
-        font-size: 2.8em;
-        margin-bottom: 40px;
-        margin-top: 50px;
-        padding: 15px 30px 15px 15px;
-        position: relative;
-
-        .icon {
-            bottom: 0;
-            height: 24px;
-            font-size: 0.750em;
-            margin: auto;
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            right: 15px;
-        }
-    }
-
     hr {
         position: relative;
-    }
-
-    .bar {
-        background-color: $black;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 0;
-        z-index: -1;
     }
 
     .cta {
@@ -1313,46 +1213,9 @@ p {
 }
 
 .contact {
-    display: none;
-
-    h1 {
-        border-left: 0px solid $blue;
-        color: $white;
-        font-size: 2.8em;
-        margin-bottom: 40px;
-        margin-top: 50px;
-        padding: 15px 30px 15px 15px;
-        position: relative;
-
-        .icon {
-            bottom: 0;
-            height: 24px;
-            font-size: 0.750em;
-            margin: auto;
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            right: 15px;
-        }
-    }
-
     p {
-        @include translate(0, 50px);
-
         margin-bottom: 0;
-        opacity: 0;
-        position: relative;
         text-align: center;
-    }
-
-    .bar {
-        background-color: $black;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 0;
-        z-index: -1;
     }
 
     &-icons {
@@ -1394,24 +1257,8 @@ p {
     display: none;
 
     h1 {
-        border-left: 0px solid $blue;
-        color: $white;
-        font-size: 2.8em;
-        margin-bottom: 40px;
-        margin-top: 50px;
-        padding: 15px 30px 15px 15px;
-        position: relative;
-
         .icon {
-            bottom: 0;
             color: $white;
-            height: 24px;
-            font-size: 0.750em;
-            margin: auto;
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            right: 15px;
         }
     }
 
@@ -1419,8 +1266,6 @@ p {
         @include translate(0, 50px);
 
         font-size: 2.4em;
-        opacity: 0;
-        position: relative;
         text-align: center;
     }
 

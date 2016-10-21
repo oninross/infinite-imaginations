@@ -46,7 +46,7 @@ var RR = (function (parent, $) {
 
         TweenMax.to('.menu', 0.5, {
             autoAlpha: 1,
-            y: -10,
+            y: 0,
             ease: Expo.easeOut,
             delay: 0.75
         });
@@ -106,13 +106,13 @@ var RR = (function (parent, $) {
             $data = 'hello';
         });
 
-        skillsWatcher = scrollMonitor.create(document.getElementsByClassName('skills'));
-        logosWatcher = scrollMonitor.create(document.getElementsByClassName('logos'));
-        nominationsWatcher = scrollMonitor.create(document.getElementsByClassName('nominations'));
+        skillsWatcher = scrollMonitor.create(document.getElementsByClassName('skills'), -100);
+        logosWatcher = scrollMonitor.create(document.getElementsByClassName('logos'), -100);
+        nominationsWatcher = scrollMonitor.create(document.getElementsByClassName('nominations'), -100);
 
         $('.case-study__section').each(function (i, el) {
             var $this = $(el),
-                caseStudyWatcher = scrollMonitor.create(el, -75);
+                caseStudyWatcher = scrollMonitor.create(el, -100);
 
             caseStudyWatcher.enterViewport(function () {
                 TweenMax.staggerTo($this.find('h2'), 0.5, {
@@ -870,7 +870,7 @@ var RR = (function (parent, $) {
         });
 
         TweenMax.to('.error h1', 1.5, {
-            'borderLeft' : '15px solid #fff',
+            'borderLeft' : '15px solid #383838',
             ease: Expo.easeOut
         });
 
