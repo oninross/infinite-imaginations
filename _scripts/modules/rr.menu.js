@@ -37,7 +37,9 @@ var RR = (function (parent, $) {
 
         tlClick.pause();
         tlClick.eventCallback('onReverseComplete', function () {
-            $('.menu .box').attr('style', '');
+            setTimeout(function () {
+                $('.menu .box').attr('style', '');
+            }, 200);
         });
 
         tlHover.to(tl, 0.25, { left: -16, top: -16, ease: Expo.easeOut });

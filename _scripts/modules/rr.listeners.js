@@ -12,6 +12,8 @@ var RR = (function (parent, $) {
         $header = $('.header'),
         currentPage = 'hello',
         $data = 'hello',
+        syncTime = 0.75,
+        $gotoElem,
         bSkillsLabel = [],
         bHello,
         bAbout,
@@ -28,13 +30,13 @@ var RR = (function (parent, $) {
     var setup = function () {
 
         // Hello Animation
-        TweenMax.to('.ui-corner', 1, {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            delay: 0.5,
-            ease: Expo.easeOut
-        });
+        // TweenMax.to('.ui-corner', 1, {
+        //     x: 0,
+        //     y: 0,
+        //     opacity: 1,
+        //     delay: 0.5,
+        //     ease: Expo.easeOut
+        // });
 
         TweenMax.to('.logo', 0.5, {
             opacity: 1,
@@ -91,6 +93,22 @@ var RR = (function (parent, $) {
                 top: $this.offset().top
             });
 
+            $gotoElem = $('.' + currentPage + ' h1');
+            TweenMax.to('.element-clone', syncTime, {
+                left: $gotoElem.offset().left,
+                top: $gotoElem.offset().top,
+                height: $gotoElem.outerHeight(),
+                width: 15,
+                ease: Expo.easeInOut,
+                delay: 0.5
+            });
+
+            TweenMax.to('.element-clone .icon', syncTime, {
+                opacity: 0,
+                ease: Expo.easeInOut,
+                delay: 0.5
+            });
+
             // Mobile menu click
             if ($this.closest('.primary-nav').length) {
                 $('.header .menu').trigger('click');
@@ -114,31 +132,37 @@ var RR = (function (parent, $) {
                 caseStudyWatcher = scrollMonitor.create(el, -100);
 
             caseStudyWatcher.enterViewport(function () {
-                TweenMax.staggerTo($this.find('h2'), 0.5, {
+                TweenMax.to($this.find('h2'), 0.5, {
                     opacity: 1,
                     y: 0,
                     ease: Expo.easeOut
-                }, 0.1);
+                });
 
-                TweenMax.staggerTo($this.find('hr'), 0.5, {
+                TweenMax.to($this.find('hr'), 0.5, {
                     width: '100%',
                     ease: Expo.easeOut,
                     delay: 0.25
-                }, 0.1);
+                });
 
-                TweenMax.staggerTo($this.find('p'), 0.5, {
-                    opacity: 1,
-                    y: 0,
+                TweenMax.to($this.find('.pattern'), 0.5, {
+                    width: '100%',
                     ease: Expo.easeOut,
                     delay: 0.5
-                }, 0.1);
+                });
 
-                TweenMax.staggerTo($this.find('.cta'), 0.5, {
+                TweenMax.to($this.find('p'), 0.5, {
                     opacity: 1,
                     y: 0,
                     ease: Expo.easeOut,
                     delay: 0.75
-                }, 0.1);
+                });
+
+                TweenMax.to($this.find('.cta'), 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 1
+                });
             });
         });
 
@@ -189,9 +213,9 @@ var RR = (function (parent, $) {
         $window.on('scroll', function () {
             // opacity = (document.body.scrollTop / 100).toFixed(2);
             if (document.body.scrollTop >= 20) {
-                $header.addClass('dark shadow-z3');
+                $header.addClass('dark shadow-z2');
             } else {
-                $header.removeClass('dark shadow-z3');
+                $header.removeClass('dark shadow-z2');
             }
         });
     };
@@ -217,11 +241,12 @@ var RR = (function (parent, $) {
             delay: 0.2
         });
 
-        TweenMax.to(window, 1.5, {
+        TweenMax.to(window, syncTime, {
             scrollTo: {
-                y: 0,
-                ease: Expo.easeInOut
-            }
+                y: 0
+            },
+            ease: Expo.easeInOut,
+            delay: 0.5
         });
 
         if (currentPage == 'hello') {
@@ -229,7 +254,8 @@ var RR = (function (parent, $) {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.2
+                delay: 0.2,
+                clearProps: 'all'
             }, 0.1, function () {
                 switchSlide($url);
             });
@@ -238,14 +264,16 @@ var RR = (function (parent, $) {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.2
+                delay: 0.2,
+                clearProps: 'all'
             }, 0.1);
 
             TweenMax.staggerTo('.logos li', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.2
+                delay: 0.2,
+                clearProps: 'all'
             }, 0.1, function () {
                 switchSlide($url);
             });
@@ -256,6 +284,7 @@ var RR = (function (parent, $) {
                 ease: Expo.easeInOut,
                 delay: 0.2
             }, 0.1, function () {
+                $('.nominations li').attr('style', '');
                 switchSlide($url);
             });
 
@@ -263,14 +292,16 @@ var RR = (function (parent, $) {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.2
+                delay: 0.2,
+                clearProps: 'all'
             });
         } else if (currentPage == 'coding') {
             TweenMax.staggerTo('.coding .card', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.2
+                delay: 0.2,
+                clearProps: 'all'
             }, 0.1, function () {
                 switchSlide($url);
             });
@@ -279,7 +310,8 @@ var RR = (function (parent, $) {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.2
+                delay: 0.2,
+                clearProps: 'all'
             }, 0.1, function () {
                 switchSlide($url);
             });
@@ -288,7 +320,8 @@ var RR = (function (parent, $) {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.2
+                delay: 0.2,
+                clearProps: 'all'
             }, 0.1, function () {
                 switchSlide($url);
             });
@@ -298,6 +331,7 @@ var RR = (function (parent, $) {
                 y: -50,
                 ease: Expo.easeInOut,
                 delay: 0.2,
+                clearProps: 'all',
                 onComplete: function () {
                     switchSlide($url);
                 }
@@ -307,7 +341,8 @@ var RR = (function (parent, $) {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
-                delay: 0.3
+                delay: 0.3,
+                clearProps: 'all'
             }, 0.1, function () {
                 switchSlide($url);
             });
@@ -339,61 +374,46 @@ var RR = (function (parent, $) {
 
         resetSlide(currentPage);
 
-        var $gotoElem = $('.' + $url + ' h1');
-        TweenMax.to('.element-clone', 0.75, {
-            left: $gotoElem.offset().left,
-            top: $gotoElem.offset().top,
-            height: $gotoElem.outerHeight(),
-            width: 15,
-            ease: Expo.easeInOut
-        });
+        $('.element-clone').remove();
 
-        TweenMax.to('.element-clone .icon', 0.75, {
-            opacity: 0,
-            ease: Expo.easeInOut,
-            onComplete: function () {
-                $('.element-clone').remove();
+        if ($url !== 'hello') {
+            TweenMax.set('.' + $url + ' h1', {
+                'borderLeft' : '15px solid #2196f3'
+            });
+        }
 
-                if ($url !== 'hello') {
-                    TweenMax.set('.' + $url + ' h1', {
-                        'borderLeft' : '15px solid #2196f3'
-                    });
-                }
+        switch ($url) {
+            case 'hello':
+                enterHello();
+                break;
+            case 'about':
+                enterAbout();
+                break;
 
-                switch ($url) {
-                    case 'hello':
-                        enterHello();
-                        break;
-                    case 'about':
-                        enterAbout();
-                        break;
+            case 'achievements':
+                enterAchievements();
+                break;
 
-                    case 'achievements':
-                        enterAchievements();
-                        break;
+            case 'coding':
+                enterCoding();
+                break;
 
-                    case 'coding':
-                        enterCoding();
-                        break;
+            case 'design':
+                enterDesign();
+                break;
 
-                    case 'design':
-                        enterDesign();
-                        break;
+            case 'contact':
+                enterContact();
+                break;
 
-                    case 'contact':
-                        enterContact();
-                        break;
+            case 'case-study':
+                enterCaseStudy();
+                break;
 
-                    case 'case-study':
-                        enterCaseStudy();
-                        break;
-
-                    case 'error':
-                        enterError();
-                        break;
-                }
-            }
-        });
+            case 'error':
+                enterError();
+                break;
+        }
 
         currentPage = $url;
     }
@@ -460,6 +480,17 @@ var RR = (function (parent, $) {
                     opacity: 0,
                     y: 50
                 });
+
+                TweenMax.set('.achievements .ui-pattern', {
+                    opacity: 0
+                });
+
+                TweenMax.set('.achievements .nominations li', {
+                    opacity: 1,
+                    y: 0
+                });
+
+                $('.achievements .nominations li').removeClass('init');
                 break;
 
             case 'coding':
@@ -504,13 +535,13 @@ var RR = (function (parent, $) {
     function enterHello() {
         $('.hello h1 .text').html('&nbsp;');
 
-        TweenMax.to('.hello .bar', 0.75, {
+        TweenMax.to('.hello .bar', 1, {
             width: '100%',
             ease: Expo.easeOut,
             delay: 0,
             onComplete: function () {
                 bHello.start().reveal(750, 750);
-                $('.hello .text').addClass('glitch');
+                $('.hello h1 .text').addClass('glitch');
             }
         });
 
@@ -542,12 +573,12 @@ var RR = (function (parent, $) {
     };
 
     function enterAbout() {
-        TweenMax.to('.about .bar', 0.75, {
+        TweenMax.to('.about .bar', 1, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
                 bAbout.start().reveal(750, 750);
-                $('.about .text').addClass('glitch');
+                $('.about h1 .text').addClass('glitch');
             }
         });
 
@@ -695,12 +726,12 @@ var RR = (function (parent, $) {
     };
 
     function enterAchievements() {
-        TweenMax.to('.achievements .bar', 0.75, {
+        TweenMax.to('.achievements .bar', 1, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
                 bAchievements.start().reveal(750, 750);
-                $('.achievements .text').addClass('glitch');
+                $('.achievements h1 .text').addClass('glitch');
             }
         });
 
@@ -731,29 +762,35 @@ var RR = (function (parent, $) {
 
         if (isMobile()) {
             nominationsWatcher.enterViewport(function () {
-                TweenMax.staggerTo('.nominations li', 0.75, {
+                TweenMax.staggerTo('.nominations .ui-pattern', 0.75, {
                     opacity: 1,
-                    y: 0,
-                    ease: Expo.easeOut
+                    scale: 1,
+                    ease: Expo.easeOut,
+                    onStart: function () {
+                        $(this.target).parent().parent().addClass('init');
+                    }
                 }, 0.1);
             });
         } else {
-            TweenMax.staggerTo('.nominations li', 0.75, {
+            TweenMax.staggerTo('.nominations .ui-pattern', 0.75, {
                 opacity: 1,
-                y: 0,
+                scale: 1,
                 ease: Expo.easeOut,
-                delay: 1
+                delay: 1,
+                onStart: function () {
+                    $(this.target).parent().parent().addClass('init');
+                }
             }, 0.1);
         }
     };
 
     function enterCoding() {
-        TweenMax.to('.coding .bar', 0.75, {
+        TweenMax.to('.coding .bar', 1, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
                 bCoding.start().reveal(750, 750);
-                $('.coding .text').addClass('glitch');
+                $('.coding h1 .text').addClass('glitch');
             }
         });
 
@@ -777,12 +814,12 @@ var RR = (function (parent, $) {
     };
 
     function enterDesign() {
-        TweenMax.to('.design .bar', 0.75, {
+        TweenMax.to('.design .bar', 1, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
                 bDesign.start().reveal(750, 750);
-                $('.design .text').addClass('glitch');
+                $('.design h1 .text').addClass('glitch');
             }
         });
 
@@ -806,12 +843,12 @@ var RR = (function (parent, $) {
     };
 
     function enterCaseStudy() {
-        TweenMax.to('.case-study .bar', 0.75, {
+        TweenMax.to('.case-study .bar', 1, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
                 bCaseStudy.start().reveal(750, 750);
-                $('.case-study .text').addClass('glitch');
+                $('.case h1-study .text').addClass('glitch');
                 scrollMonitor.recalculateLocations();
             }
         });
@@ -829,12 +866,12 @@ var RR = (function (parent, $) {
     };
 
     function enterContact() {
-        TweenMax.to('.contact .bar', 0.75, {
+        TweenMax.to('.contact .bar', 1, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
                 bContact.start().reveal(750, 750);
-                $('.contact .text').addClass('glitch');
+                $('.contact h1 .text').addClass('glitch');
             }
         });
 
@@ -859,12 +896,12 @@ var RR = (function (parent, $) {
     };
 
     function enterError() {
-        TweenMax.to('.error .bar', 0.75, {
+        TweenMax.to('.error .bar', 1, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
                 bError.start().reveal(750, 750);
-                $('.error .text').addClass('glitch');
+                $('.error h1 .text').addClass('glitch');
             }
         });
 

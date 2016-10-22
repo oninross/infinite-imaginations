@@ -192,15 +192,113 @@
                         <div class="col-r col-6">
                             <div class="nominations">
                                 <ul>
-                                    <li>Nominated in Awwwards 2014</li>
-                                    <li>Featured in Web Designer Magazine UK Issue 196</li>
-                                    <li>User Experience Certified by Udemy</li>
-                                    <li>Featured in One Page Mania 2014</li>
-                                    <li>Nominated in CSS Reel 2014</li>
-                                    <li>Nominee in Lemon Web Awards 2014</li>
-                                    <li>Nominee in CSS Awards 2014</li>
-                                    <li>Nominee in CSS Design Awards 2012</li>
-                                    <li>Feature in CSS Awards 2012</li>
+                                    <li>
+                                        <span class="title">Nominated in Awwwards 2014</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern">
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">Featured in Web Designer Magazine UK Issue 196</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern">
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">User Experience Certified by Udemy</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern">
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">Featured in One Page Mania 2014</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern">
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">Nominated in CSS Reel 2014</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern">
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">Nominee in Lemon Web Awards 2014</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern">
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">Nominee in CSS Awards 2014</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern">
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">Nominee in CSS Design Awards 2012</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern">
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">Feature in CSS Awards 2012</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern">
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -227,11 +325,12 @@
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
+                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
                                     <span class="cta">See case study</span>
                                 </div>
 
-                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
+                                <img src="http://placehold.it/480x270/" alt="">
                             </div>
                         </a>
 
@@ -239,11 +338,12 @@
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
+                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
                                     <span class="cta">See case study</span>
                                 </div>
 
-                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
+                                <img src="http://placehold.it/480x270/" alt="">
                             </div>
                         </a>
 
@@ -251,11 +351,12 @@
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
+                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
                                     <span class="cta">See case study</span>
                                 </div>
 
-                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
+                                <img src="http://placehold.it/480x270/" alt="">
                             </div>
                         </a>
 
@@ -263,11 +364,12 @@
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
+                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
                                     <span class="cta">See case study</span>
                                 </div>
 
-                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
+                                <img src="http://placehold.it/480x270/" alt="">
                             </div>
                         </a>
                     </div>
@@ -293,11 +395,12 @@
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
+                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
                                     <span class="cta">See case study</span>
                                 </div>
 
-                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
+                                <img src="http://placehold.it/480x270/" alt="">
                             </div>
                         </a>
 
@@ -305,11 +408,12 @@
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
+                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
                                     <span class="cta">See case study</span>
                                 </div>
 
-                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
+                                <img src="http://placehold.it/480x270/" alt="">
                             </div>
                         </a>
 
@@ -317,11 +421,12 @@
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
+                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
                                     <span class="cta">See case study</span>
                                 </div>
 
-                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
+                                <img src="http://placehold.it/480x270/" alt="">
                             </div>
                         </a>
 
@@ -329,11 +434,12 @@
                             <div class="card">
                                 <div class="card-wrap">
                                     <span class="card-title">Lorem ipsum dolor</span>
+                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
                                     <span class="cta">See case study</span>
                                 </div>
 
-                                <img src="https://unsplash.it/g/480/250/?image=<?php echo rand(1000, 1084) ?>" alt="">
+                                <img src="http://placehold.it/480x270/" alt="">
                             </div>
                         </a>
                     </div>
@@ -361,6 +467,8 @@
 
 			                    <hr />
 
+                                <i class="pattern"></i>
+
 			                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
 
 			                    <a href="#" class="cta" data-text="visit website">visit website</a>
@@ -371,6 +479,8 @@
 
 								<hr />
 
+                                <i class="pattern"></i>
+
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
 							</div>
 
@@ -378,6 +488,8 @@
 								<h2>Challenges</h2>
 
 								<hr />
+
+                                <i class="pattern"></i>
 
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
 							</div>
@@ -387,6 +499,8 @@
 
 								<hr />
 
+                                <i class="pattern"></i>
+
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
 							</div>
 
@@ -394,6 +508,8 @@
 								<h2>Technology Used</h2>
 
 								<hr />
+
+                                <i class="pattern"></i>
 
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
 							</div>
