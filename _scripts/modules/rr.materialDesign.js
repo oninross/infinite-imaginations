@@ -320,7 +320,8 @@ var RR = (function (parent, $) {
         });
 
         TweenMax.to(toaster, 0.75, {
-            scale: 0,
+            scale: 0.75,
+            opacity: 0,
             ease: Expo.easeOut,
             delay: 5,
             onComplete: function () {

@@ -550,6 +550,12 @@ p {
         color: $white;
         border: 3px solid $white;
     }
+
+    .element-box {
+        .text {
+            padding: 0;
+        }
+    }
 }
 
 .menu {
@@ -727,7 +733,7 @@ section {
     .text {
         display: block;
         overflow: hidden;
-        padding: 2px;
+        padding: 0 0 2px;
         text-overflow: clip;
         white-space: nowrap;
     }
@@ -750,7 +756,7 @@ section {
         border: 3px solid $black;
         height: 100%;
         margin: 0;
-        overflow: hidden;
+        // overflow: hidden;
         padding: 6.5vw 2.5vw;
         position: relative;
         text-decoration: none;
@@ -786,12 +792,12 @@ section {
         }
 
         .abbr {
-            font-size: 2.75em;
+            font-size: 1.950em;
             margin-bottom: 5px;
         }
 
         .full {
-            font-size: 0.600em;
+            font-size: 0.750em;
         }
 
         .icon {
@@ -820,6 +826,7 @@ section {
 
     &-clone {
         background-color: $blue;
+        overflow: hidden;
         position: absolute;
 
         a {
@@ -1156,6 +1163,9 @@ section {
         }
 
         &:after {
+            -webkit-transition-delay: 0.1s;
+                    transition-delay: 0.1s;
+
             background-color: $black;
         }
 
@@ -1172,11 +1182,6 @@ section {
                 width: 100%;
             }
 
-            &:after {
-                -webkit-transition-delay: 0.1s;
-                        transition-delay: 0.1s;
-            }
-
             .card-title,
             .card-desc {
                 color: $white;
@@ -1186,6 +1191,20 @@ section {
                 .cta {
                     background-color: $white;
                     color: $black;
+                    max-width: 215px;
+
+                    .icon {
+                        color: $black;
+                        opacity: 1;
+
+                        &:first-child {
+                            @include translate(-10px, 0);
+                        }
+
+                        &:last-child {
+                            @include translate(0, 0);
+                        }
+                    }
                 }
             }
         }
@@ -1230,6 +1249,7 @@ section {
             @include transition(all, $animTime, $easeOutExpo);
 
             display: block;
+            font-size: 0.800em;
             font-style: italic;
             font-weight: $light;
             line-height: 1;
@@ -1242,6 +1262,52 @@ section {
             margin-bottom: $gutter;
             padding: 0 $gutter;
             width: 100%;
+        }
+
+        .cta {
+            @include transition(all, $animTime, $easeInOutExpo);
+
+            padding: 10px 20px;
+            position: relative;
+            max-width: 185px;
+            text-align: left;
+
+            &-icon {
+                bottom: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+
+                .icon {
+                    @include transition(all, $animTime, $easeInOutExpo);
+
+                    bottom: 0;
+                    color: $white;
+                    display: block;
+                    font-size: 2em;
+                    height: 40px;
+                    margin: auto;
+                    opacity: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 40px;
+
+                    &:first-child {
+                        @include translate(-40px, 0);
+
+                        -webkit-transition-delay: 0.3s;
+                                transition-delay: 0.3s;
+                    }
+
+                    &:last-child {
+                        @include translate(-30px, 0);
+
+                        -webkit-transition-delay: 0.2s;
+                                transition-delay: 0.2s;
+                    }
+                }
+            }
         }
     }
 }

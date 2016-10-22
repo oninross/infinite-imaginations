@@ -128,6 +128,11 @@ module.exports = function(grunt) {
                 files: [
                     { expand: true, cwd: 'dist/assets',  src: ['**/*'], dest: 'dist/assets' }
                 ]
+            },
+            api: {
+                files: [
+                    { expand: true, cwd: '_api',  src: ['**/*'], dest: 'dist/api' }
+                ]
             }
         },
 
@@ -193,9 +198,9 @@ module.exports = function(grunt) {
         watch: {
             js:{
                 files: [
-                    '_scripts/**/*.js', '_script/plugins/**/*', '_script/vendor/**/*'
+                    '_scripts/**/*.js', '_script/plugins/**/*', '_script/vendor/**/*', '_json/**/*'
                 ],
-                tasks:['concat', 'copy:mainjs'],
+                tasks:['concat', 'copy:mainjs', 'copy:api'],
                 options: {
                     livereload: true
                 }

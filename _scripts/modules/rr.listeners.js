@@ -12,8 +12,7 @@ var RR = (function (parent, $) {
         $header = $('.header'),
         currentPage = 'hello',
         $data = 'hello',
-        syncTime = 0.75,
-        $gotoElem,
+        syncTime = 0,
         bSkillsLabel = [],
         bHello,
         bAbout,
@@ -30,13 +29,7 @@ var RR = (function (parent, $) {
     var setup = function () {
 
         // Hello Animation
-        // TweenMax.to('.ui-corner', 1, {
-        //     x: 0,
-        //     y: 0,
-        //     opacity: 1,
-        //     delay: 0.5,
-        //     ease: Expo.easeOut
-        // });
+        syncTime = isMobile() == true ? 1 : 0.75;
 
         TweenMax.to('.logo', 0.5, {
             opacity: 1,
@@ -93,22 +86,6 @@ var RR = (function (parent, $) {
                 top: $this.offset().top
             });
 
-            $gotoElem = $('.' + currentPage + ' h1');
-            TweenMax.to('.element-clone', syncTime, {
-                left: $gotoElem.offset().left,
-                top: $gotoElem.offset().top,
-                height: $gotoElem.outerHeight(),
-                width: 15,
-                ease: Expo.easeInOut,
-                delay: 0.5
-            });
-
-            TweenMax.to('.element-clone .icon', syncTime, {
-                opacity: 0,
-                ease: Expo.easeInOut,
-                delay: 0.5
-            });
-
             // Mobile menu click
             if ($this.closest('.primary-nav').length) {
                 $('.header .menu').trigger('click');
@@ -123,6 +100,8 @@ var RR = (function (parent, $) {
             $data = 'hello';
         });
 
+
+        // Magical Scroll Monitor
         skillsWatcher = scrollMonitor.create(document.getElementsByClassName('skills'), -100);
         logosWatcher = scrollMonitor.create(document.getElementsByClassName('logos'), -100);
         nominationsWatcher = scrollMonitor.create(document.getElementsByClassName('nominations'), -100);
@@ -166,6 +145,8 @@ var RR = (function (parent, $) {
             });
         });
 
+
+        // Funky decoder
         bHello = baffle('.hello h1 .text', {
             characters: '█▓▒░',
             speed: 40
@@ -210,6 +191,22 @@ var RR = (function (parent, $) {
             bSkillsLabel.push(baffle('.skills__bar:nth-child(' + (i + 1) + ') .skills__label', { characters: '█▓▒░', speed: 40 }));
         });
 
+
+        // Load ajax
+        $.ajax({
+            url: '/api/caseStudies',
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                console.log(data)
+            },
+            error: function (error) {
+                RR.materialDesign.toaster('Whoops! Something went wrong! Error (' + error.status + ' ' + error.statusText + ')');
+            }
+        });
+
+
+        // Blarg
         $window.on('scroll', function () {
             // opacity = (document.body.scrollTop / 100).toFixed(2);
             if (document.body.scrollTop >= 20) {
@@ -239,14 +236,6 @@ var RR = (function (parent, $) {
             y: -50,
             ease: Expo.easeInOut,
             delay: 0.2
-        });
-
-        TweenMax.to(window, syncTime, {
-            scrollTo: {
-                y: 0
-            },
-            ease: Expo.easeInOut,
-            delay: 0.5
         });
 
         if (currentPage == 'hello') {
@@ -369,58 +358,79 @@ var RR = (function (parent, $) {
             $url = 'error';
         }
 
-        $('.' + $url).show()
+        $('.' + $url)
+            .show()
             .find('h1 .text').html('&nbsp;');
 
-        resetSlide(currentPage);
+        var $gotoElem = $('.' + $url + ' h1');
+        TweenMax.to('.element-clone', syncTime  , {
+            left: $gotoElem.offset().left,
+            top: $gotoElem.offset().top,
+            height: $gotoElem.outerHeight(),
+            width: 15,
+            ease: Expo.easeInOut
+        });
 
-        $('.element-clone').remove();
+        TweenMax.to(window, syncTime, {
+            scrollTo: {
+                y: 0
+            },
+            ease: Expo.easeInOut
+        });
 
-        if ($url !== 'hello') {
-            TweenMax.set('.' + $url + ' h1', {
-                'borderLeft' : '15px solid #2196f3'
-            });
-        }
+        TweenMax.to('.element-clone .icon', syncTime, {
+            opacity: 0,
+            ease: Expo.easeInOut,
+            onComplete: function () {
+                $('.element-clone').remove();
 
-        switch ($url) {
-            case 'hello':
-                enterHello();
-                break;
-            case 'about':
-                enterAbout();
-                break;
+                resetSlide(currentPage);
 
-            case 'achievements':
-                enterAchievements();
-                break;
+                if ($url !== 'hello') {
+                    TweenMax.set('.' + $url + ' h1', {
+                        'borderLeft' : '15px solid #2196f3'
+                    });
+                }
 
-            case 'coding':
-                enterCoding();
-                break;
+                switch ($url) {
+                    case 'hello':
+                        enterHello();
+                        break;
+                    case 'about':
+                        enterAbout();
+                        break;
 
-            case 'design':
-                enterDesign();
-                break;
+                    case 'achievements':
+                        enterAchievements();
+                        break;
 
-            case 'contact':
-                enterContact();
-                break;
+                    case 'coding':
+                        enterCoding();
+                        break;
 
-            case 'case-study':
-                enterCaseStudy();
-                break;
+                    case 'design':
+                        enterDesign();
+                        break;
 
-            case 'error':
-                enterError();
-                break;
-        }
+                    case 'contact':
+                        enterContact();
+                        break;
 
-        currentPage = $url;
+                    case 'case-study':
+                        enterCaseStudy();
+                        break;
+
+                    case 'error':
+                        enterError();
+                        break;
+                }
+
+                currentPage = $url;
+            }
+        });
     }
 
     function resetSlide(slide) {
-        $('.' + slide + ' h1 .text').html('&nbsp;');
-
         TweenMax.set('.' + slide, {
             opacity: 1
         });
@@ -538,18 +548,17 @@ var RR = (function (parent, $) {
         TweenMax.to('.hello .bar', 1, {
             width: '100%',
             ease: Expo.easeOut,
-            delay: 0,
             onComplete: function () {
                 bHello.start().reveal(750, 750);
                 $('.hello h1 .text').addClass('glitch');
             }
         });
 
-        TweenMax.to('.hello h1', 1.5, {
-            'borderLeft' : '15px solid #2196f3',
-            ease: Expo.easeOut,
-            delay: 0.25
-        });
+        // TweenMax.to('.hello h1', 1.5, {
+        //     'borderLeft' : '15px solid #2196f3',
+        //     ease: Expo.easeOut,
+        //     delay: 0.25
+        // });
 
         TweenMax.to('.hello p', 0.75, {
             opacity: 1,
@@ -582,22 +591,22 @@ var RR = (function (parent, $) {
             }
         });
 
-        TweenMax.to('.about .icon', 1.5, {
+        TweenMax.to('.about h1 .icon', 1.5, {
             opacity: 1,
             ease: Expo.easeOut
         });
 
-        TweenMax.to('.about h1', 1.5, {
-            'borderLeft' : '15px solid #2196f3',
-            ease: Expo.easeOut,
-            delay: 0.25
-        });
+        // TweenMax.to('.about h1', 1.5, {
+        //     'borderLeft' : '15px solid #2196f3',
+        //     ease: Expo.easeOut,
+        //     delay: 0.25
+        // });
 
         TweenMax.to('.about .col-l p', 0.75, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.5
         });
 
         if (isMobile()) {
@@ -666,7 +675,7 @@ var RR = (function (parent, $) {
                 opacity: 1,
                 y: 0,
                 ease: Expo.easeOut,
-                delay: 1
+                delay: 0.75
             }, 0.1);
 
             setTimeout(function () {
@@ -713,14 +722,14 @@ var RR = (function (parent, $) {
                 opacity: 1,
                 y: 0,
                 ease: Expo.easeOut,
-                delay: 1.5
+                delay: 1.25
             });
 
             TweenMax.staggerTo('.about .logos li', 1, {
                 opacity: 1,
                 y: 0,
                 ease: Expo.easeOut,
-                delay: 1.75
+                delay: 1.5
             }, 0.1);
         }
     };
@@ -735,29 +744,29 @@ var RR = (function (parent, $) {
             }
         });
 
-        TweenMax.to('.achievements .icon', 1.5, {
+        TweenMax.to('.achievements h1 .icon', 1.5, {
             opacity: 1,
             ease: Expo.easeOut
         });
 
-        TweenMax.to('.achievements h1', 1.5, {
-            'borderLeft' : '15px solid #2196f3',
-            ease: Expo.easeOut,
-            delay: 0.25
-        });
+        // TweenMax.to('.achievements h1', 1.5, {
+        //     'borderLeft' : '15px solid #2196f3',
+        //     ease: Expo.easeOut,
+        //     delay: 0.25
+        // });
 
         TweenMax.to('.achievements .col-l p', 0.75, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.5
         });
 
         TweenMax.to('.achievements .col-l a', 0.75, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 1
+            delay: 0.75
         });
 
         if (isMobile()) {
@@ -776,7 +785,7 @@ var RR = (function (parent, $) {
                 opacity: 1,
                 scale: 1,
                 ease: Expo.easeOut,
-                delay: 1,
+                delay: 0.75,
                 onStart: function () {
                     $(this.target).parent().parent().addClass('init');
                 }
@@ -794,22 +803,22 @@ var RR = (function (parent, $) {
             }
         });
 
-        TweenMax.to('.coding .icon', 1.5, {
+        TweenMax.to('.coding h1 .icon', 1.5, {
             opacity: 1,
             ease: Expo.easeOut
         });
 
-        TweenMax.to('.coding h1', 1.5, {
-            'borderLeft' : '15px solid #2196f3',
-            ease: Expo.easeOut,
-            delay: 0.25
-        });
+        // TweenMax.to('.coding h1', 1.5, {
+        //     'borderLeft' : '15px solid #2196f3',
+        //     ease: Expo.easeOut,
+        //     delay: 0.25
+        // });
 
         TweenMax.staggerTo('.coding .card', 0.75, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.5
+            delay: 0.75
         }, 0.1);
     };
 
@@ -823,22 +832,22 @@ var RR = (function (parent, $) {
             }
         });
 
-        TweenMax.to('.design .icon', 1.5, {
+        TweenMax.to('.design h1 .icon', 1.5, {
             opacity: 1,
             ease: Expo.easeOut
         });
 
-        TweenMax.to('.design h1', 1.5, {
-            'borderLeft' : '15px solid #2196f3',
-            ease: Expo.easeOut,
-            delay: 0.25
-        });
+        // TweenMax.to('.design h1', 1.5, {
+        //     'borderLeft' : '15px solid #2196f3',
+        //     ease: Expo.easeOut,
+        //     delay: 0.25
+        // });
 
         TweenMax.staggerTo('.design .card', 0.75, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.5
+            delay: 0.75
         }, 0.1);
     };
 
@@ -853,16 +862,16 @@ var RR = (function (parent, $) {
             }
         });
 
-        TweenMax.to('.case-study .icon', 1.5, {
+        TweenMax.to('.case-study h1 .icon', 1.5, {
             opacity: 1,
             ease: Expo.easeOut
         });
 
-        TweenMax.to('.case-study h1', 1.5, {
-            'borderLeft' : '15px solid #2196f3',
-            ease: Expo.easeOut,
-            delay: 0.25
-        });
+        // TweenMax.to('.case-study h1', 1.5, {
+        //     'borderLeft' : '15px solid #2196f3',
+        //     ease: Expo.easeOut,
+        //     delay: 0.25
+        // });
     };
 
     function enterContact() {
@@ -875,7 +884,7 @@ var RR = (function (parent, $) {
             }
         });
 
-        TweenMax.to('.contact .icon', 1.5, {
+        TweenMax.to('.contact h1 .icon', 1.5, {
             opacity: 1,
             ease: Expo.easeOut
         });
@@ -884,14 +893,14 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.5
+            delay: 0.75
         });
 
         TweenMax.staggerTo('.contact-icons li', 0.75, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.5
+            delay: 1
         }, 0.1);
     };
 
@@ -910,7 +919,7 @@ var RR = (function (parent, $) {
             ease: Expo.easeOut
         });
 
-        TweenMax.to('.error .icon', 1.5, {
+        TweenMax.to('.error h1 .icon', 1.5, {
             opacity: 1,
             ease: Expo.easeOut
         });
@@ -919,7 +928,7 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.5
+            delay: 0.75
         });
     };
 

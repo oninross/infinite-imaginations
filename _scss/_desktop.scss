@@ -45,7 +45,13 @@ DEPENDENCIES
 /* =======================================================================
 04 Main Navigation
 ========================================================================== */
-
+.primary-nav {
+    .element-box {
+        .abbr {
+            font-size: 3.400em;
+        }
+    }
+}
 
 
 
@@ -57,7 +63,7 @@ DEPENDENCIES
 
     nav {
         li {
-            height: 125px;
+            height: 146px;
             width: 20%;
 
             &:last-child {
@@ -69,7 +75,7 @@ DEPENDENCIES
 
 .element-box {
     .abbr {
-        font-size: 2.5em;
+        font-size: 3.350em;
     }
 
     .full {

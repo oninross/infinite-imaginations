@@ -96,7 +96,7 @@
                     <div class="wrap">
                         <div class="col-l col-6">
                             <p>As a <strong>Senior UX Developer</strong>, I love being challenged.  I like to <strong>create</strong> solutions to user experience problems, <strong>imagine</strong> fun interaction and animation, and <strong>developing</strong> the best web experience.</p>
-                            <p>Most of the time I hand-code everything from scratch using my <a href="https://www.github.com/oninross/firestarter" target="_blank" data-text="Firestarter framework">Firestarter framework</a>.  I use HTML5 Boilerplate and Twitter Bootstrap for rapid development if it is only necessary.</p>
+                            <p>Most of the time I hand-code everything from scratch using my <a href="https://www.github.com/oninross/firestarter" target="_blank" data-text="Firestarter framework">Firestarter framework.</a>  I use HTML5 Boilerplate and Twitter Bootstrap for rapid development if it is only necessary.</p>
                         </div>
 
                         <div class="col-r col-6">
@@ -289,7 +289,7 @@
                                     </li>
 
                                     <li>
-                                        <span class="title">Feature in CSS Awards 2012</span>
+                                        <span class="title">Featured in CSS Awards 2012</span>
 
                                         <div class="ui">
                                             <div class="ui-corner ui-corner__ul"></div>
@@ -327,7 +327,14 @@
                                     <span class="card-title">Lorem ipsum dolor</span>
                                     <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <span class="cta">See case study</span>
+                                    <div class="cta">
+                                        See case study
+
+                                        <div class="cta-icon">
+                                            <i class="icon icon-chevron-right"></i>
+                                            <i class="icon icon-chevron-right"></i>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <img src="http://placehold.it/480x270/" alt="">
@@ -340,7 +347,14 @@
                                     <span class="card-title">Lorem ipsum dolor</span>
                                     <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <span class="cta">See case study</span>
+                                    <div class="cta">
+                                        See case study
+
+                                        <div class="cta-icon">
+                                            <i class="icon icon-chevron-right"></i>
+                                            <i class="icon icon-chevron-right"></i>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <img src="http://placehold.it/480x270/" alt="">
@@ -353,7 +367,14 @@
                                     <span class="card-title">Lorem ipsum dolor</span>
                                     <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <span class="cta">See case study</span>
+                                    <div class="cta">
+                                        See case study
+
+                                        <div class="cta-icon">
+                                            <i class="icon icon-chevron-right"></i>
+                                            <i class="icon icon-chevron-right"></i>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <img src="http://placehold.it/480x270/" alt="">
@@ -366,7 +387,14 @@
                                     <span class="card-title">Lorem ipsum dolor</span>
                                     <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <span class="cta">See case study</span>
+                                    <div class="cta">
+                                        See case study
+
+                                        <div class="cta-icon">
+                                            <i class="icon icon-chevron-right"></i>
+                                            <i class="icon icon-chevron-right"></i>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <img src="http://placehold.it/480x270/" alt="">
@@ -397,7 +425,14 @@
                                     <span class="card-title">Lorem ipsum dolor</span>
                                     <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <span class="cta">See case study</span>
+                                    <div class="cta">
+                                        See case study
+
+                                        <div class="cta-icon">
+                                            <i class="icon icon-chevron-right"></i>
+                                            <i class="icon icon-chevron-right"></i>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <img src="http://placehold.it/480x270/" alt="">
@@ -410,7 +445,14 @@
                                     <span class="card-title">Lorem ipsum dolor</span>
                                     <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <span class="cta">See case study</span>
+                                    <div class="cta">
+                                        See case study
+
+                                        <div class="cta-icon">
+                                            <i class="icon icon-chevron-right"></i>
+                                            <i class="icon icon-chevron-right"></i>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <img src="http://placehold.it/480x270/" alt="">
@@ -423,7 +465,14 @@
                                     <span class="card-title">Lorem ipsum dolor</span>
                                     <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <span class="cta">See case study</span>
+                                    <div class="cta">
+                                        See case study
+
+                                        <div class="cta-icon">
+                                            <i class="icon icon-chevron-right"></i>
+                                            <i class="icon icon-chevron-right"></i>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <img src="http://placehold.it/480x270/" alt="">
@@ -436,7 +485,14 @@
                                     <span class="card-title">Lorem ipsum dolor</span>
                                     <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <span class="cta">See case study</span>
+                                    <div class="cta">
+                                        See case study
+
+                                        <div class="cta-icon">
+                                            <i class="icon icon-chevron-right"></i>
+                                            <i class="icon icon-chevron-right"></i>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <img src="http://placehold.it/480x270/" alt="">
@@ -533,6 +589,7 @@
                     </h1>
 
                     <p>If you want to have a chat about anything digital, UX, or collaborate, don't hesitate to connect with me.</p>
+                    <br />
                     <p>I am always up for anything geeky. ^_^</p>
 
                     <div class="contact-icons">
