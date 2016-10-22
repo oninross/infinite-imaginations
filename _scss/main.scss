@@ -892,6 +892,35 @@ section {
             padding: 10px;
             position: relative;
             width: 0;
+
+            &:before {
+                background-color: $black;
+                content: '';
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: 5;
+            }
+
+            &:after {
+                background: repeating-linear-gradient(
+                    -45deg,
+                    lighten($matte-black, 25%),
+                    lighten($matte-black, 25%) 2px,
+                    transparent 0px,
+                    transparent 5px
+                );
+
+                content: '';
+                height: 100%;
+                left: 4px;
+                top: 4px;
+                position: absolute;
+                width: 100%;
+                z-index: 1;
+            }
         }
 
         &__label {
@@ -900,6 +929,7 @@ section {
             opacity: 0;
             position: absolute;
             top: 4px;
+            z-index: 10;
         }
 
         &__percent {
@@ -908,6 +938,7 @@ section {
             position: absolute;
             top: -2px;
             right: 5px;
+            z-index: 10;
 
             &-number {
                 font-size: 2em;
@@ -1141,6 +1172,7 @@ section {
         border: 6px solid $black;
         height: 220px;
         overflow: hidden;
+        padding: 0;
         position: relative;
 
         &:before,
@@ -1169,13 +1201,6 @@ section {
             background-color: $black;
         }
 
-        img {
-            left: 0;
-            position: absolute;
-            top: 0;
-            z-index: 1;
-        }
-
         &:hover {
             &:before,
             &:after {
@@ -1187,7 +1212,7 @@ section {
                 color: $white;
             }
 
-            .card-wrap {
+            .card-text {
                 .cta {
                     background-color: $white;
                     color: $black;
@@ -1209,7 +1234,38 @@ section {
             }
         }
 
+        img {
+            left: 0;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+        }
+
         &-wrap {
+            height: 100%;
+            position: relative;
+
+            // &:after {
+            //     background: repeating-linear-gradient(
+            //         -45deg,
+            //         lighten($matte-black, 25%),
+            //         lighten($matte-black, 25%) 2px,
+            //         transparent 0px,
+            //         transparent 5px
+            //     );
+
+            //     content: '';
+            //     height: 100%;
+            //     left: 0;
+            //     opacity: 0;
+            //     position: absolute;
+            //     top: 0;
+            //     width: 100%;
+            //     z-index: 1;
+            // }
+        }
+
+        &-text {
             bottom: 20px;
             left: 20px;
             max-width: 300px;
@@ -1246,7 +1302,7 @@ section {
         }
 
         &-desc {
-            @include transition(all, $animTime, $easeOutExpo);
+            @include transition(all, $animTime, $easeInOutExpo);
 
             display: block;
             font-size: 0.800em;

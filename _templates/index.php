@@ -324,80 +324,88 @@
                         <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
-                                    <span class="card-title">Lorem ipsum dolor</span>
-                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
+                                    <div class="card-text">
+                                        <span class="card-title">Lorem ipsum dolor</span>
+                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <div class="cta">
-                                        See case study
+                                        <div class="cta">
+                                            See case study
 
-                                        <div class="cta-icon">
-                                            <i class="icon icon-chevron-right"></i>
-                                            <i class="icon icon-chevron-right"></i>
+                                            <div class="cta-icon">
+                                                <i class="icon icon-chevron-right"></i>
+                                                <i class="icon icon-chevron-right"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <img src="http://placehold.it/480x270/" alt="">
+                                    <img src="http://placehold.it/480x270/" alt="">
+                                </div>
                             </div>
                         </a>
 
                         <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
-                                    <span class="card-title">Lorem ipsum dolor</span>
-                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
+                                    <div class="card-text">
+                                        <span class="card-title">Lorem ipsum dolor</span>
+                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <div class="cta">
-                                        See case study
+                                        <div class="cta">
+                                            See case study
 
-                                        <div class="cta-icon">
-                                            <i class="icon icon-chevron-right"></i>
-                                            <i class="icon icon-chevron-right"></i>
+                                            <div class="cta-icon">
+                                                <i class="icon icon-chevron-right"></i>
+                                                <i class="icon icon-chevron-right"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <img src="http://placehold.it/480x270/" alt="">
+                                    <img src="http://placehold.it/480x270/" alt="">
+                                </div>
                             </div>
                         </a>
 
                         <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
-                                    <span class="card-title">Lorem ipsum dolor</span>
-                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
+                                    <div class="card-text">
+                                        <span class="card-title">Lorem ipsum dolor</span>
+                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <div class="cta">
-                                        See case study
+                                        <div class="cta">
+                                            See case study
 
-                                        <div class="cta-icon">
-                                            <i class="icon icon-chevron-right"></i>
-                                            <i class="icon icon-chevron-right"></i>
+                                            <div class="cta-icon">
+                                                <i class="icon icon-chevron-right"></i>
+                                                <i class="icon icon-chevron-right"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <img src="http://placehold.it/480x270/" alt="">
+                                    <img src="http://placehold.it/480x270/" alt="">
+                                </div>
                             </div>
                         </a>
 
                         <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
-                                    <span class="card-title">Lorem ipsum dolor</span>
-                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
+                                    <div class="card-text">
+                                        <span class="card-title">Lorem ipsum dolor</span>
+                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <div class="cta">
-                                        See case study
+                                        <div class="cta">
+                                            See case study
 
-                                        <div class="cta-icon">
-                                            <i class="icon icon-chevron-right"></i>
-                                            <i class="icon icon-chevron-right"></i>
+                                            <div class="cta-icon">
+                                                <i class="icon icon-chevron-right"></i>
+                                                <i class="icon icon-chevron-right"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <img src="http://placehold.it/480x270/" alt="">
+                                    <img src="http://placehold.it/480x270/" alt="">
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -422,80 +430,88 @@
                         <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
-                                    <span class="card-title">Lorem ipsum dolor</span>
-                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
+                                    <div class="card-text">
+                                        <span class="card-title">Lorem ipsum dolor</span>
+                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <div class="cta">
-                                        See case study
+                                        <div class="cta">
+                                            See case study
 
-                                        <div class="cta-icon">
-                                            <i class="icon icon-chevron-right"></i>
-                                            <i class="icon icon-chevron-right"></i>
+                                            <div class="cta-icon">
+                                                <i class="icon icon-chevron-right"></i>
+                                                <i class="icon icon-chevron-right"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <img src="http://placehold.it/480x270/" alt="">
+                                    <img src="http://placehold.it/480x270/" alt="">
+                                </div>
                             </div>
                         </a>
 
                         <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
-                                    <span class="card-title">Lorem ipsum dolor</span>
-                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
+                                    <div class="card-text">
+                                        <span class="card-title">Lorem ipsum dolor</span>
+                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <div class="cta">
-                                        See case study
+                                        <div class="cta">
+                                            See case study
 
-                                        <div class="cta-icon">
-                                            <i class="icon icon-chevron-right"></i>
-                                            <i class="icon icon-chevron-right"></i>
+                                            <div class="cta-icon">
+                                                <i class="icon icon-chevron-right"></i>
+                                                <i class="icon icon-chevron-right"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <img src="http://placehold.it/480x270/" alt="">
+                                    <img src="http://placehold.it/480x270/" alt="">
+                                </div>
                             </div>
                         </a>
 
                         <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
-                                    <span class="card-title">Lorem ipsum dolor</span>
-                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
+                                    <div class="card-text">
+                                        <span class="card-title">Lorem ipsum dolor</span>
+                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <div class="cta">
-                                        See case study
+                                        <div class="cta">
+                                            See case study
 
-                                        <div class="cta-icon">
-                                            <i class="icon icon-chevron-right"></i>
-                                            <i class="icon icon-chevron-right"></i>
+                                            <div class="cta-icon">
+                                                <i class="icon icon-chevron-right"></i>
+                                                <i class="icon icon-chevron-right"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <img src="http://placehold.it/480x270/" alt="">
+                                    <img src="http://placehold.it/480x270/" alt="">
+                                </div>
                             </div>
                         </a>
 
                         <a href="/#/case-study/" class="card-link">
                             <div class="card">
                                 <div class="card-wrap">
-                                    <span class="card-title">Lorem ipsum dolor</span>
-                                    <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
+                                    <div class="card-text">
+                                        <span class="card-title">Lorem ipsum dolor</span>
+                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
 
-                                    <div class="cta">
-                                        See case study
+                                        <div class="cta">
+                                            See case study
 
-                                        <div class="cta-icon">
-                                            <i class="icon icon-chevron-right"></i>
-                                            <i class="icon icon-chevron-right"></i>
+                                            <div class="cta-icon">
+                                                <i class="icon icon-chevron-right"></i>
+                                                <i class="icon icon-chevron-right"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <img src="http://placehold.it/480x270/" alt="">
+                                    <img src="http://placehold.it/480x270/" alt="">
+                                </div>
                             </div>
                         </a>
                     </div>
