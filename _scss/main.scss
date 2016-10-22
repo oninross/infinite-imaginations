@@ -460,8 +460,11 @@ p {
 03 Header
 ========================================================================== */
 .header {
+    @include transition(all, 0.5s, $easeOutExpo);
+
+    background-color: $material-background;
     height: 75px;
-    padding: 20px;
+    padding: 17px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -482,6 +485,21 @@ p {
         &.active {
             // opacity: 1;
             visibility: visible;
+        }
+    }
+
+    &.dark {
+        background-color: $black;
+
+        svg {
+            path,
+            polygon {
+                fill: $white;
+            }
+        }
+
+        .menu .box {
+            background-color: $white;
         }
     }
 }
@@ -531,7 +549,43 @@ p {
         }
 
         .overlay {
-            height: 100%;
+            &:before,
+            &:after {
+                height: 100%;
+            }
+
+            &:after {
+                -webkit-transition-delay: 0.1s;
+                        transition-delay: 0.1s;
+            }
+
+            &:after {
+                -webkit-transition-delay: 0.15s;
+                        transition-delay: 0.15s;
+            }
+        }
+    }
+
+    .overlay {
+        display: block;
+        cursor: pointer;
+        height: 100%;
+        right: 0;
+        position: absolute;
+        top: 0;
+        width: inherit;
+
+        &:before,
+        &:after {
+            @include transition(height, 0.3s, $easeOutExpo);
+
+            background-color: rgba(22, 21, 20, 0.75);
+            content: '';
+            display: block;
+            height: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
         }
     }
 
@@ -604,17 +658,6 @@ p {
     a {
         color: $white;
         border: 3px solid $white;
-    }
-
-    .overlay {
-        background-color: rgba(22, 21, 20, 0.9);
-        display: block;
-        cursor: pointer;
-        height: 100%;
-        right: 0;
-        position: absolute;
-        top: 0;
-        width: inherit;
     }
 }
 

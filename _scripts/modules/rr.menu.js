@@ -36,6 +36,9 @@ var RR = (function (parent, $) {
         tlClick.to(br, 0.25, { autoAlpha: 0, ease: Expo.easeOut }, '-=0.25');
 
         tlClick.pause();
+        tlClick.eventCallback('onReverseComplete', function () {
+            $('.menu .box').attr('style', '');
+        });
 
         tlHover.to(tl, 0.25, { left: -16, top: -16, ease: Expo.easeOut });
         tlHover.to(tr, 0.25, { right: -16, top: -16, ease: Expo.easeOut }, '-=0.25');

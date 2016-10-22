@@ -9,7 +9,6 @@ var RR = (function (parent, $) {
 
     var $document = $(document),
         $window = $(window),
-        $main = $('#main'),
         $header = $('.header'),
         currentPage = 'hello',
         $data = 'hello',
@@ -187,14 +186,14 @@ var RR = (function (parent, $) {
             bSkillsLabel.push(baffle('.skills__bar:nth-child(' + (i + 1) + ') .skills__label', { characters: '█▓▒░', speed: 40 }));
         });
 
-        // bSkillsLabel = baffle('.skills__label', {
-        //     characters: '█▓▒░'
-        // });
-
-        // $window.on('resize', debounce(function () {
-        //     vw = $document.width();
-        //     vh = $document.height();
-        // }, 250));
+        $window.on('scroll', function () {
+            // opacity = (document.body.scrollTop / 100).toFixed(2);
+            if (document.body.scrollTop >= 20) {
+                $header.addClass('dark shadow-z3');
+            } else {
+                $header.removeClass('dark shadow-z3');
+            }
+        });
     };
 
     var exitCurrentSlide = function ($url) {
@@ -218,6 +217,13 @@ var RR = (function (parent, $) {
             delay: 0.2
         });
 
+        TweenMax.to(window, 1.5, {
+            scrollTo: {
+                y: 0,
+                ease: Expo.easeInOut
+            }
+        });
+
         if (currentPage == 'hello') {
             TweenMax.staggerTo('.hello li', 0.5, {
                 opacity: 0,
@@ -228,11 +234,6 @@ var RR = (function (parent, $) {
                 switchSlide($url);
             });
         } else if (currentPage == 'about') {
-            if (isMobile()) {
-                skillsWatcher.destroy();
-                logosWatcher.destroy();
-            }
-
             TweenMax.staggerTo('.skills__bar', 0.5, {
                 opacity: 0,
                 y: -50,
@@ -249,10 +250,6 @@ var RR = (function (parent, $) {
                 switchSlide($url);
             });
         } else if (currentPage == 'achievements') {
-            if (isMobile()) {
-                nominationsWatcher.destroy();
-            }
-
             TweenMax.staggerTo('.nominations li', 0.5, {
                 opacity: 0,
                 y: -50,
@@ -324,7 +321,7 @@ var RR = (function (parent, $) {
         }
     };
 
-    function switchSlide($url) {
+    function switchSlide ($url) {
         $('.' + currentPage).hide();
 
         if ($url == '') {
@@ -500,6 +497,8 @@ var RR = (function (parent, $) {
                 });
                 break;
         }
+
+        scrollMonitor.recalculateLocations();
     };
 
     function enterHello() {
