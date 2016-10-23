@@ -1412,6 +1412,7 @@ section {
         }
 
         h2,
+        h3,
         li,
         p,
         .cta {
@@ -1435,6 +1436,10 @@ section {
             font-weight: $light;
         }
 
+        .col {
+            margin-bottom: 0;
+        }
+
         .pattern {
             background: repeating-linear-gradient(
                 -45deg,
@@ -1448,6 +1453,15 @@ section {
             height: 10px;
             margin-bottom: 20px;
             width: 0;
+        }
+    }
+
+    .tldr {
+        &-sub {
+            li,
+            p {
+                font-size: 16px;
+            }
         }
     }
 }

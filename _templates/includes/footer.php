@@ -11,6 +11,82 @@
             </div>
         </script>
 
+        <script id="case-study-template" type="text/template">
+            <div class="case-study__section tldr">
+                <div class="wrap">
+                    <div class="col col-12">
+                        <h2>TLDR;</h2>
+
+                        <hr />
+
+                        <i class="pattern"></i>
+
+                        <p>{{! it.tldr }}</p>
+
+                        {{? it.url.live }}
+                        <a href="{{! it.url.live }}" class="cta" data-text="visit website">visit website</a>
+                        {{? }}
+                    </div>
+
+                    <div class="tldr-sub col col-6">
+                        <div class="case-study__section technology">
+                            <h3>Technology Used</h3>
+
+                            <hr />
+
+                            <i class="pattern"></i>
+
+                            <ul>
+                                {{~it.technology :value:index }}
+                                <li>{{=value}}</li>
+                                {{~}}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tldr-sub col col-6">
+                        <div class="case-study__section role">
+                            <h3>Role</h3>
+
+                            <hr />
+
+                            <i class="pattern"></i>
+
+                            <p>{{! it.role }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{? it.challenges }}
+            <div class="case-study__section challenges">
+                <h2>Challenges</h2>
+
+                <hr />
+
+                <i class="pattern"></i>
+
+                {{~it.challenges :value:index }}
+                <p>{{=value}}</p>
+                {{~}}
+            </div>
+            {{? }}
+
+            {{? it.solutions }}
+            <div class="case-study__section solutions">
+                <h2>Solutions</h2>
+
+                <hr />
+
+                <i class="pattern"></i>
+
+                {{~it.solutions :value:index }}
+                <p>{{=value}}</p>
+                {{~}}
+            </div>
+            {{? }}
+        </script>
+
         <!-- build:js //ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js -->
         <script src="/assets/infiniteimaginations/js/vendor/jquery-1.11.3.min.js"></script>
         <!-- /build -->

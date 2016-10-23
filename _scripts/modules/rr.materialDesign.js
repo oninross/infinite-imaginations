@@ -270,27 +270,6 @@ var RR = (function (parent, $) {
 
         $('.material').materialize();
 
-        // cards
-        // var $card = $('.card');
-        // if ($card.length) {
-        //     $card.each(function (i, el) {
-        //         var $this = $(el);
-
-        //         var cardWatcher = scrollMonitor.create(el);
-        //         cardWatcher.enterViewport (function () {
-        //             $this.addClass('show', this.isInViewport);
-        //             $this.removeClass('up', this.isAboveViewport);
-        //         });
-
-        //         cardWatcher.exitViewport(function () {
-        //             $this.removeClass('show', this.isInViewport);
-        //             $this.toggleClass('up', this.isAboveViewport);
-        //         });
-        //     });
-
-        //     scrollMonitor.recalculateLocations();
-        // }
-
         $window.on('resize', debounce(function () {
             isMobileDevice = $window.width() < 1024 ? true : false;
         }, 250));

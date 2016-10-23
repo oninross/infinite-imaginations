@@ -481,7 +481,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        <div class="text" data-text="// case study: ">// case study: <span></span></div>
+                        <div class="text" data-text="// case study: ">// case study: </div>
 
                         <span class="bar">
                             <i class="icon icon-about"></i>
@@ -489,59 +489,7 @@
                     </h1>
 
                     <div class="wrap">
-                    	<div class="col-8 col-offset-2">
-                    		<div class="case-study__section tldr">
-			                    <h2>TLDR;</h2>
-
-			                    <hr />
-
-                                <i class="pattern"></i>
-
-			                    <p></p>
-
-			                    <a href="#" class="cta" data-text="visit website">visit website</a>
-		                   	</div>
-
-		                    <div class="case-study__section role">
-								<h2>Role</h2>
-
-								<hr />
-
-                                <i class="pattern"></i>
-
-								<p></p>
-							</div>
-
-							<div class="case-study__section challenges">
-								<h2>Challenges</h2>
-
-								<hr />
-
-                                <i class="pattern"></i>
-
-								<p></p>
-							</div>
-
-							<div class="case-study__section solutions">
-								<h2>Solutions</h2>
-
-								<hr />
-
-                                <i class="pattern"></i>
-
-								<p></p>
-							</div>
-
-							<div class="case-study__section technology">
-								<h2>Technology Used</h2>
-
-								<hr />
-
-                                <i class="pattern"></i>
-
-								<p></p>
-							</div>
-                    	</div>
+                    	<div class="case-study__wrap col-8 col-offset-2"></div>
                     </div>
                 </div>
             </div>
