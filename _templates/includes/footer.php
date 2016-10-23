@@ -1,10 +1,3 @@
-        <!-- <div class="ui">
-            <div class="ui-corner ui-corner__ul"></div>
-            <div class="ui-corner ui-corner__ur"></div>
-            <div class="ui-corner ui-corner__bl"></div>
-            <div class="ui-corner ui-corner__br"></div>
-        </div> -->
-
         <script id="toaster-template" type="text/template">
             <div class="toaster toaster{{= it.ind }}">
                 <div class="container">

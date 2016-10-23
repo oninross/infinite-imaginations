@@ -42,11 +42,11 @@ var RR = (function (parent, $) {
             }, 200);
         });
 
-        tlHover.to(tl, 0.25, { left: -16, top: -16, ease: Expo.easeOut });
-        tlHover.to(tr, 0.25, { right: -16, top: -16, ease: Expo.easeOut }, '-=0.25');
+        tlHover.to(tl, 0.2, { left: -20, top: -20, ease: Expo.easeOut });
+        tlHover.to(tr, 0.2, { right: -20, top: -20, ease: Expo.easeOut }, '-=0.2');
 
-        tlHover.to(bl, 0.25, { left: -16, bottom: -16, ease: Expo.easeOut }, '-=0.25');
-        tlHover.to(br, 0.25, { right: -16, bottom: -16, ease: Expo.easeOut }, '-=0.25');
+        tlHover.to(bl, 0.2, { left: -20, bottom: -20, ease: Expo.easeOut }, '-=0.2');
+        tlHover.to(br, 0.2, { right: -20, bottom: -20, ease: Expo.easeOut }, '-=0.2');
 
         tlHover.pause();
 

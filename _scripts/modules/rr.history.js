@@ -40,8 +40,9 @@ var RR = (function (parent, $) {
             RR.listeners.setActiveNav('design');
         });
 
-        Path.map('#/case-study/').to(function() {
+        Path.map('#/case-study/:param').to(function() {
             RR.listeners.exitCurrentSlide('case-study');
+            RR.listeners.getData(this.params['param']);
             // RR.listeners.setActiveNav('contact');
         });
 

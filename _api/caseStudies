@@ -1,7 +1,8 @@
 {
-    "case-studies": [
+    "caseStudies": [
         {
-            "name": "BHP Billiton",
+            "title": "BHP Billiton",
+            "desc": "BHP Billiton - Description",
             "tldr": "A redesign and rebuild the corporate website for the client and the first modular/component build for Adelphi Digital.",
             "role": "Front-end Developer / UX Consultant",
             "challenges": [
@@ -25,11 +26,12 @@
             },
             "url": {
                 "live": null,
-                "local": null
+                "local": "/#/case-study/bhp-billiton"
             }
         },
         {
-            "name": "Central Manpower Base",
+            "title": "Central Manpower Base",
+            "desc": "Central Manpower - Description Base",
             "tldr": "Redesign, rebuild and enhance the user experience of a static brochure site for a government client in Singapore.",
             "role": "Front-end Developer / UX Consultant",
             "challenges": [
@@ -49,11 +51,12 @@
             },
             "url": {
                 "live": null,
-                "local": null
+                "local": "/#/case-study/central-manpower-base"
             }
         },
         {
-            "name": "Adelphi Digital",
+            "title": "Adelphi Digital",
+            "desc": "Adelphi Digital - Description",
             "tldr": "Develop the company website in 4 days",
             "role": "Front-end Developer / UX Consultant",
             "challenges": [
@@ -71,11 +74,12 @@
             },
             "url": {
                 "live": null,
-                "local": null
+                "local": "/#/case-study/adelphi-digital"
             }
         },
         {
-            "name": "infinite imaginations BETA",
+            "title": "infinite imaginations BETA",
+            "desc": "infinite imaginations - Description BETA",
             "tldr": "A revolutionary and cutting edge website in design and technology that utilizes existing resources in the internet that were barely known to the public.",
             "role": "Front-end Developer / Designer",
             "challenges": [
@@ -95,11 +99,12 @@
             },
             "url": {
                 "live": null,
-                "local": null
+                "local": "/#/case-study/infinite-imaginations-beta"
             }
         },
         {
-            "name": "The Jewel Box",
+            "title": "The Jewel Box",
+            "desc": "The Jewel - Description Box",
             "tldr": "An interactive touch screen to showcase the different venues and the history about Mt. Fabre in different languages.",
             "role": "Interface Designer / Flash Developer Developer",
             "challenges": "We were provided with a low-powered machine to drive the touch screen, and we needed to display a lot of information in the device.  We also had to make sure that the user interface was fool proof for users who didn’t know how to use a touch screen.",
@@ -115,11 +120,12 @@
             },
             "url": {
                 "live": null,
-                "local": null
+                "local": "/#/case-study/the-jewel-box"
             }
         },
         {
-            "name": "Envirobot",
+            "title": "Envirobot",
+            "desc": "Envirobot - Description",
             "tldr": "An interactive touchscreen built into the chassis of a remote controlled robot circulating around Singapore high schools.",
             "role": "Front-end Developer / UX Consultant",
             "challenges": [
@@ -136,7 +142,7 @@
             },
             "url": {
                 "live": null,
-                "local": null
+                "local": "/#/case-study/envirobot"
             }
         }
     ]

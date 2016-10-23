@@ -361,6 +361,8 @@ p {
 }
 
 #main {
+    @include transition(height, $animTime, $easeOutExpo);
+
     margin-top: 75px;
 }
 
@@ -1375,13 +1377,13 @@ section {
 
     .cta {
         background-color: $black;
-        border-left: 8px solid $blue;
         color: $white !important;
         cursor: pointer;
         display: block;
         margin: auto;
         padding: 10px 14px;
         position: relative;
+        text-align: center;
         text-decoration: none;
         width: 160px;
 
@@ -1410,6 +1412,7 @@ section {
         }
 
         h2,
+        li,
         p,
         .cta {
             @include translate(0, 50px);
@@ -1426,6 +1429,10 @@ section {
             height: 0;
             margin: 0;
             width: 0;
+        }
+
+        li {
+            font-weight: $light;
         }
 
         .pattern {

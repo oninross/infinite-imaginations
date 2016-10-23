@@ -325,8 +325,8 @@
                             <div class="card">
                                 <div class="card-wrap">
                                     <div class="card-text">
-                                        <span class="card-title">Lorem ipsum dolor</span>
-                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
+                                        <span class="card-title"></span>
+                                        <span class="card-desc"></span>
 
                                         <div class="cta">
                                             See case study
@@ -338,7 +338,7 @@
                                         </div>
                                     </div>
 
-                                    <img src="http://placehold.it/480x270/" alt="">
+                                    <img src="" alt="">
                                 </div>
                             </div>
                         </a>
@@ -347,8 +347,8 @@
                             <div class="card">
                                 <div class="card-wrap">
                                     <div class="card-text">
-                                        <span class="card-title">Lorem ipsum dolor</span>
-                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
+                                        <span class="card-title"></span>
+                                        <span class="card-desc"></span>
 
                                         <div class="cta">
                                             See case study
@@ -360,7 +360,7 @@
                                         </div>
                                     </div>
 
-                                    <img src="http://placehold.it/480x270/" alt="">
+                                    <img src="" alt="">
                                 </div>
                             </div>
                         </a>
@@ -369,8 +369,8 @@
                             <div class="card">
                                 <div class="card-wrap">
                                     <div class="card-text">
-                                        <span class="card-title">Lorem ipsum dolor</span>
-                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
+                                        <span class="card-title"></span>
+                                        <span class="card-desc"></span>
 
                                         <div class="cta">
                                             See case study
@@ -382,29 +382,7 @@
                                         </div>
                                     </div>
 
-                                    <img src="http://placehold.it/480x270/" alt="">
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="/#/case-study/" class="card-link">
-                            <div class="card">
-                                <div class="card-wrap">
-                                    <div class="card-text">
-                                        <span class="card-title">Lorem ipsum dolor</span>
-                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
-
-                                        <div class="cta">
-                                            See case study
-
-                                            <div class="cta-icon">
-                                                <i class="icon icon-chevron-right"></i>
-                                                <i class="icon icon-chevron-right"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <img src="http://placehold.it/480x270/" alt="">
+                                    <img src="" alt="">
                                 </div>
                             </div>
                         </a>
@@ -431,8 +409,8 @@
                             <div class="card">
                                 <div class="card-wrap">
                                     <div class="card-text">
-                                        <span class="card-title">Lorem ipsum dolor</span>
-                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
+                                        <span class="card-title"></span>
+                                        <span class="card-desc"></span>
 
                                         <div class="cta">
                                             See case study
@@ -444,7 +422,7 @@
                                         </div>
                                     </div>
 
-                                    <img src="http://placehold.it/480x270/" alt="">
+                                    <img src="" alt="">
                                 </div>
                             </div>
                         </a>
@@ -453,8 +431,8 @@
                             <div class="card">
                                 <div class="card-wrap">
                                     <div class="card-text">
-                                        <span class="card-title">Lorem ipsum dolor</span>
-                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
+                                        <span class="card-title"></span>
+                                        <span class="card-desc"></span>
 
                                         <div class="cta">
                                             See case study
@@ -466,7 +444,7 @@
                                         </div>
                                     </div>
 
-                                    <img src="http://placehold.it/480x270/" alt="">
+                                    <img src="" alt="">
                                 </div>
                             </div>
                         </a>
@@ -475,8 +453,8 @@
                             <div class="card">
                                 <div class="card-wrap">
                                     <div class="card-text">
-                                        <span class="card-title">Lorem ipsum dolor</span>
-                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
+                                        <span class="card-title"></span>
+                                        <span class="card-desc"></span>
 
                                         <div class="cta">
                                             See case study
@@ -488,29 +466,7 @@
                                         </div>
                                     </div>
 
-                                    <img src="http://placehold.it/480x270/" alt="">
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="/#/case-study/" class="card-link">
-                            <div class="card">
-                                <div class="card-wrap">
-                                    <div class="card-text">
-                                        <span class="card-title">Lorem ipsum dolor</span>
-                                        <span class="card-desc">Nullam tincidunt mi mi, ac condimentum orci tempus vitae. </span>
-
-                                        <div class="cta">
-                                            See case study
-
-                                            <div class="cta-icon">
-                                                <i class="icon icon-chevron-right"></i>
-                                                <i class="icon icon-chevron-right"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <img src="http://placehold.it/480x270/" alt="">
+                                    <img src="" alt="">
                                 </div>
                             </div>
                         </a>
@@ -525,7 +481,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        <span class="text" data-text="">// case study: detail</span>
+                        <div class="text" data-text="// case study: ">// case study: <span></span></div>
 
                         <span class="bar">
                             <i class="icon icon-about"></i>
@@ -534,56 +490,56 @@
 
                     <div class="wrap">
                     	<div class="col-8 col-offset-2">
-                    		<div class="case-study__section">
+                    		<div class="case-study__section tldr">
 			                    <h2>TLDR;</h2>
 
 			                    <hr />
 
                                 <i class="pattern"></i>
 
-			                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
+			                    <p></p>
 
 			                    <a href="#" class="cta" data-text="visit website">visit website</a>
 		                   	</div>
 
-		                    <div class="case-study__section">
-								<h2>Objectives</h2>
+		                    <div class="case-study__section role">
+								<h2>Role</h2>
 
 								<hr />
 
                                 <i class="pattern"></i>
 
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
+								<p></p>
 							</div>
 
-							<div class="case-study__section">
+							<div class="case-study__section challenges">
 								<h2>Challenges</h2>
 
 								<hr />
 
                                 <i class="pattern"></i>
 
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
+								<p></p>
 							</div>
 
-							<div class="case-study__section">
+							<div class="case-study__section solutions">
 								<h2>Solutions</h2>
 
 								<hr />
 
                                 <i class="pattern"></i>
 
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
+								<p></p>
 							</div>
 
-							<div class="case-study__section">
+							<div class="case-study__section technology">
 								<h2>Technology Used</h2>
 
 								<hr />
 
                                 <i class="pattern"></i>
 
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus purus sed commodo sagittis. Sed orci quam, faucibus gravida velit lobortis, elementum consectetur massa. Nullam ipsum mauris, facilisis sed urna ac, vulputate varius ante. Aenean non mollis risus, id convallis nisl. Quisque condimentum sollicitudin ex, eget placerat risus commodo nec. Nunc id laoreet tortor. </p>
+								<p></p>
 							</div>
                     	</div>
                     </div>

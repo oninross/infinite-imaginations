@@ -13,6 +13,7 @@ var RR = (function (parent, $) {
         currentPage = 'hello',
         $data = 'hello',
         syncTime = 0,
+        caseStudies = [],
         bSkillsLabel = [],
         bHello,
         bAbout,
@@ -21,10 +22,11 @@ var RR = (function (parent, $) {
         bDesign,
         bContact,
         bCaseStudy,
+        bError,
         skillsWatcher,
         logosWatcher,
         nominationsWatcher,
-        bError, vh, vw;
+        ind, vh, vw;
 
     var setup = function () {
 
@@ -129,12 +131,19 @@ var RR = (function (parent, $) {
                     delay: 0.5
                 });
 
-                TweenMax.to($this.find('p'), 0.5, {
+                TweenMax.staggerTo($this.find('p'), 0.5, {
                     opacity: 1,
                     y: 0,
                     ease: Expo.easeOut,
                     delay: 0.75
-                });
+                }, 0.1);
+
+                TweenMax.staggerTo($this.find('li'), 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.5
+                }, 0.1);
 
                 TweenMax.to($this.find('.cta'), 0.5, {
                     opacity: 1,
@@ -196,9 +205,9 @@ var RR = (function (parent, $) {
         $.ajax({
             url: '/api/caseStudies',
             dataType: 'json',
-            contentType: "application/json; charset=utf-8",
+            contentType: 'application/json; charset=utf-8',
             success: function (data) {
-                console.log(data)
+                populateData(data);
             },
             error: function (error) {
                 RR.materialDesign.toaster('Whoops! Something went wrong! Error (' + error.status + ' ' + error.statusText + ')');
@@ -345,6 +354,100 @@ var RR = (function (parent, $) {
         }
     };
 
+    function populateData(json) {
+        var caseStudyCoding = $('.coding'),
+            caseStudyDesign = $('.design'),
+            caseStudyCard,
+            nthChild;
+
+        caseStudies = json.caseStudies;
+
+        for (var i = 0, l = caseStudies.length; i < l; i++) {
+            if (i == 0 || i <= 3) {
+                nthChild = i + 1;
+                caseStudyCard = caseStudyCoding.find('.card-link:nth-child(' + nthChild + ')');
+            } else {
+                nthChild = (i + 1) - 3;
+                caseStudyCard = caseStudyDesign.find('.card-link:nth-child(' + nthChild + ')');
+            }
+
+            caseStudyCard.data('id', i);
+            caseStudyCard.attr('href', caseStudies[i].url.local);
+            caseStudyCard.find('.card-title').text(caseStudies[i].title);
+            caseStudyCard.find('.card-desc').text(caseStudies[i].desc);
+        }
+    };
+
+    var getData = function (param) {
+        switch (param) {
+            case 'bhp-billiton':
+                ind = 0;
+                break;
+            case 'central-manpower-base':
+                ind = 1;
+                break;
+            case 'adelphi-digital':
+                ind = 2;
+                break;
+            case 'infinite-imaginations-beta':
+                ind = 3;
+                break;
+            case 'the-jewel-box':
+                ind = 4;
+                break;
+            case 'envirobot':
+                ind = 5;
+                break;
+        }
+
+        setData(ind);
+    };
+
+    function setData(ind) {
+        // caseStudies[ind]
+        var $caseStudy = $('.case-study'),
+            markup = '';
+
+        if (caseStudies[ind] == undefined) {
+            setTimeout(function () {
+                setData(ind);
+            }, 1000);
+        } else {
+            $caseStudy.find('h1 .text').text('// ' + caseStudies[ind].title);
+
+            $caseStudy.find('.tldr p').text(caseStudies[ind].tldr);
+
+            if (caseStudies[ind].url.live == null) {
+                $caseStudy.find('.tldr .cta').hide();
+            } else {
+                $caseStudy.find('.tldr .cta').attr('href', caseStudies[ind].url.live);
+            }
+
+            $caseStudy.find('.role p').text(caseStudies[ind].role);
+
+            markup = '';
+            for (var i = 0, l = caseStudies[ind].challenges.length; i < l; i++) {
+                markup += '<p>' + caseStudies[ind].challenges[i] + '</p>';
+            }
+
+            $caseStudy.find('.challenges').append(markup);
+
+            markup = '';
+            for (var i = 0, l = caseStudies[ind].solutions.length; i < l; i++) {
+                markup += '<p>' + caseStudies[ind].solutions[i] + '</p>';
+            }
+
+            $caseStudy.find('.solutions').append(markup);
+
+            markup = '';
+            for (var i = 0, l = caseStudies[ind].technology.length; i < l; i++) {
+                markup += '<li>' + caseStudies[ind].technology[i] + '</li>';
+            }
+
+            $caseStudy.find('.technology ul').html(markup);
+        }
+    };
+
     function switchSlide ($url) {
         $('.' + currentPage).hide();
 
@@ -428,7 +531,7 @@ var RR = (function (parent, $) {
                 currentPage = $url;
             }
         });
-    }
+    };
 
     function resetSlide(slide) {
         TweenMax.set('.' + slide, {
@@ -518,21 +621,25 @@ var RR = (function (parent, $) {
                 break;
 
             case 'case-study':
-                TweenMax.set('.case-study .case-study__section h2', {
+                TweenMax.set('.case-study__section h2', {
                     opacity: 0,
                     y: 50
                 });
 
-                TweenMax.set('.case-study .case-study__section hr', {
+                TweenMax.set('.case-study__section hr', {
                     width: 0
                 });
 
-                TweenMax.set('.case-study .case-study__section p', {
+                TweenMax.set('.case-study__section .pattern', {
+                    width: 0
+                });
+
+                TweenMax.set('.case-study__section p', {
                     opacity: 0,
                     y: 50
                 });
 
-                TweenMax.set('.case-study .case-study__section .cta', {
+                TweenMax.set('.case-study__section .cta', {
                     opacity: 0,
                     y: 50
                 });
@@ -545,7 +652,7 @@ var RR = (function (parent, $) {
     function enterHello() {
         $('.hello h1 .text').html('&nbsp;');
 
-        TweenMax.to('.hello .bar', 1, {
+        TweenMax.to('.hello .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -582,7 +689,7 @@ var RR = (function (parent, $) {
     };
 
     function enterAbout() {
-        TweenMax.to('.about .bar', 1, {
+        TweenMax.to('.about .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -735,7 +842,7 @@ var RR = (function (parent, $) {
     };
 
     function enterAchievements() {
-        TweenMax.to('.achievements .bar', 1, {
+        TweenMax.to('.achievements .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -794,7 +901,7 @@ var RR = (function (parent, $) {
     };
 
     function enterCoding() {
-        TweenMax.to('.coding .bar', 1, {
+        TweenMax.to('.coding .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -823,7 +930,7 @@ var RR = (function (parent, $) {
     };
 
     function enterDesign() {
-        TweenMax.to('.design .bar', 1, {
+        TweenMax.to('.design .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -852,7 +959,7 @@ var RR = (function (parent, $) {
     };
 
     function enterCaseStudy() {
-        TweenMax.to('.case-study .bar', 1, {
+        TweenMax.to('.case-study .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -875,7 +982,7 @@ var RR = (function (parent, $) {
     };
 
     function enterContact() {
-        TweenMax.to('.contact .bar', 1, {
+        TweenMax.to('.contact .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -905,7 +1012,7 @@ var RR = (function (parent, $) {
     };
 
     function enterError() {
-        TweenMax.to('.error .bar', 1, {
+        TweenMax.to('.error .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -955,6 +1062,7 @@ var RR = (function (parent, $) {
         setup: setup,
         exitCurrentSlide: exitCurrentSlide,
         setActiveNav: setActiveNav,
+        getData: getData,
         isMobile: isMobile,
         isTablet: isTablet,
         isDesktop: isDesktop
