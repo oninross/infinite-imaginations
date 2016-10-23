@@ -28,6 +28,8 @@ var RR = (function (parent, $) {
         logosWatcher,
         nominationsWatcher,
         caseStudyWatcher,
+        caseStudyItem,
+        nextCaseStudyItem,
         ind, vh, vw;
 
     var setup = function () {
@@ -138,6 +140,11 @@ var RR = (function (parent, $) {
             speed: 40
         });
 
+        bCaseStudy = baffle('.case-study h1 .text', {
+            characters: '█▓▒░',
+            speed: 40
+        });
+
         bContact = baffle('.contact h1 .text', {
             characters: '█▓▒░',
             speed: 40
@@ -178,156 +185,6 @@ var RR = (function (parent, $) {
         });
     };
 
-    var exitCurrentSlide = function ($url) {
-        TweenMax.to('.' + currentPage + ' h1', 0.5, {
-            opacity: 0,
-            y: -50,
-            ease: Expo.easeInOut
-        });
-
-        TweenMax.to('.' + currentPage + ' p', 0.5, {
-            opacity: 0,
-            y: -50,
-            ease: Expo.easeInOut,
-            delay: 0.1
-        });
-
-        TweenMax.to('.' + currentPage + ' hr', 0.5, {
-            opacity: 0,
-            y: -50,
-            ease: Expo.easeInOut,
-            delay: 0.2
-        });
-
-        if (currentPage == 'hello') {
-            TweenMax.staggerTo('.hello li', 0.5, {
-                opacity: 0,
-                y: -50,
-                ease: Expo.easeInOut,
-                delay: 0.2,
-                clearProps: 'all'
-            }, 0.1, function () {
-                switchSlide($url);
-            });
-        } else if (currentPage == 'about') {
-            TweenMax.staggerTo('.skills__bar', 0.5, {
-                opacity: 0,
-                y: -50,
-                ease: Expo.easeInOut,
-                delay: 0.2,
-                clearProps: 'all'
-            }, 0.1);
-
-            TweenMax.staggerTo('.logos li', 0.5, {
-                opacity: 0,
-                y: -50,
-                ease: Expo.easeInOut,
-                delay: 0.2,
-                clearProps: 'all'
-            }, 0.1, function () {
-                switchSlide($url);
-            });
-        } else if (currentPage == 'achievements') {
-            TweenMax.staggerTo('.nominations li', 0.5, {
-                opacity: 0,
-                y: -50,
-                ease: Expo.easeInOut,
-                delay: 0.2
-            }, 0.1, function () {
-                $('.nominations li').attr('style', '');
-                switchSlide($url);
-            });
-
-            TweenMax.to('.achievements a', 0.5, {
-                opacity: 0,
-                y: -50,
-                ease: Expo.easeInOut,
-                delay: 0.2,
-                clearProps: 'all'
-            });
-        } else if (currentPage == 'coding') {
-            TweenMax.staggerTo('.coding .card', 0.5, {
-                opacity: 0,
-                y: -50,
-                ease: Expo.easeInOut,
-                delay: 0.2,
-                clearProps: 'all'
-            }, 0.1, function () {
-                switchSlide($url);
-            });
-        } else if (currentPage == 'design') {
-            TweenMax.staggerTo('.design .card', 0.5, {
-                opacity: 0,
-                y: -50,
-                ease: Expo.easeInOut,
-                delay: 0.2,
-                clearProps: 'all'
-            }, 0.1, function () {
-                switchSlide($url);
-            });
-        } else if (currentPage == 'case-study') {
-            TweenMax.staggerTo('.case-study .pattern', 0.5, {
-                opacity: 0,
-                y: -50,
-                ease: Expo.easeInOut,
-                delay: 0.2,
-                clearProps: 'all'
-            }, 0.1);
-
-            TweenMax.staggerTo('.case-study h2', 0.5, {
-                opacity: 0,
-                y: -50,
-                ease: Expo.easeInOut,
-                delay: 0.3,
-                clearProps: 'all'
-            }, 0.1);
-
-            TweenMax.staggerTo('.case-study h3', 0.5, {
-                opacity: 0,
-                y: -50,
-                ease: Expo.easeInOut,
-                delay: 0.4,
-                clearProps: 'all'
-            }, 0.1);
-
-            TweenMax.to('.case-study a', 0.5, {
-                opacity: 0,
-                y: -50,
-                ease: Expo.easeInOut,
-                delay: 0.3,
-                clearProps: 'all',
-                onComplete: function () {
-                    switchSlide($url);
-                }
-            });
-
-            TweenMax.staggerTo('.case-study p, .case-study li', 0.5, {
-                opacity: 0,
-                y: -50,
-                ease: Expo.easeInOut,
-                delay: 0.4,
-                clearProps: 'all'
-            }, 0.1);
-        } else if (currentPage == 'contact') {
-            TweenMax.staggerTo('.contact-icons li', 0.5, {
-                opacity: 0,
-                y: -50,
-                ease: Expo.easeInOut,
-                delay: 0.3,
-                clearProps: 'all'
-            }, 0.1, function () {
-                switchSlide($url);
-            });
-        } else if (currentPage == 'error') {
-            TweenMax.to('element', 0.5, {
-                delay: 0.2,
-                onComplete: function () {
-                    switchSlide($url);
-                }
-            });
-        }
-    };
-
     function createCaseStudyScrollMonitor() {
         $('.case-study__section').each(function (i, el) {
             var $this = $(el);
@@ -340,6 +197,12 @@ var RR = (function (parent, $) {
                     y: 0,
                     ease: Expo.easeOut
                 });
+
+                TweenMax.staggerTo($this.find('.col'), 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut
+                }, 0.1);
 
                 TweenMax.staggerTo($this.find('h3'), 0.5, {
                     opacity: 1,
@@ -396,21 +259,22 @@ var RR = (function (parent, $) {
 
         caseStudies = json.caseStudies;
 
-        for (var i = 0, l = caseStudies.length; i < l; i++) {
+        $('.card-link').each(function (i, v) {
+            var $this = $(this);
+
             if (i == 0 || i < 3) {
                 nthChild = i + 1;
-                caseStudyCard = caseStudyCoding.find('.card-link:nth-child(' + nthChild + ')');
             } else {
                 nthChild = (i + 1) - 3;
-                caseStudyCard = caseStudyDesign.find('.card-link:nth-child(' + nthChild + ')');
             }
 
-            caseStudyCard.attr('href', caseStudies[i].url.local);
-            caseStudyCard.find('img').attr('src', caseStudies[i].images.thumb);
-            caseStudyCard.find('img').attr('alt', caseStudies[i].title);
-            caseStudyCard.find('.card-title').text(caseStudies[i].title);
-            caseStudyCard.find('.card-desc').text(caseStudies[i].desc);
-        }
+            $this.attr('href', caseStudies[i].url.local);
+            $this.data('original', caseStudies[i].images.thumb);
+            $this.find('img').attr('src', caseStudies[i].images.thumb);
+            $this.find('img').attr('alt', caseStudies[i].title);
+            $this.find('.card-title').text(caseStudies[i].title);
+            $this.find('.card-desc').text(caseStudies[i].desc);
+        });
     };
 
     var getData = function (param) {
@@ -442,19 +306,14 @@ var RR = (function (parent, $) {
         // caseStudies[ind]
         var $caseStudy = $('.case-study'),
             caseStudyTemp = doT.template($('#case-study-template').html()),
-            obj = {},
-            caseStudyItem,
-            nextCaseStudyItem;
+            obj = {};
 
         if (caseStudies[ind] == undefined) {
             setTimeout(function () {
                 setData(ind);
             }, 1000);
         } else {
-            console.log(ind)
-
-            nextInd = nextInd > caseStudies.length ? 0 : ind + 1;
-
+            nextInd = (ind + 1) == caseStudies.length ? 0 : ind + 1;
             caseStudyItem = caseStudies[ind];
             nextCaseStudyItem = caseStudies[nextInd];
 
@@ -474,18 +333,7 @@ var RR = (function (parent, $) {
                 }
             };
 
-            $('.case-study .text')
-                .data('text', '// case study: ' + caseStudyItem.title)
-                .text('// case study: ' + caseStudyItem.title);
-
-            bCaseStudy = baffle('.case-study h1 .text', {
-                characters: '█▓▒░',
-                speed: 40
-            });
-
             $('.case-study__wrap').html(caseStudyTemp(obj));
-
-            createCaseStudyScrollMonitor();
         }
     };
 
@@ -515,12 +363,16 @@ var RR = (function (parent, $) {
             ease: Expo.easeInOut
         });
 
-        TweenMax.to(window, syncTime, {
-            scrollTo: {
-                y: 0
-            },
-            ease: Expo.easeInOut
-        });
+        if ($url == 'case-study') {
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+        } else {
+            TweenMax.to(window, syncTime, {
+                scrollTo: {
+                    y: 0
+                },
+                ease: Expo.easeInOut
+            });
+        }
 
         TweenMax.to('.element-clone .icon', syncTime, {
             opacity: 0,
@@ -662,7 +514,17 @@ var RR = (function (parent, $) {
                 break;
 
             case 'case-study':
+                TweenMax.set('.case-study', {
+                    opacity: 1,
+                    y: 0
+                });
+
                 TweenMax.set('.case-study__section h2', {
+                    opacity: 0,
+                    y: 50
+                });
+
+                TweenMax.set('.case-study__section h3', {
                     opacity: 0,
                     y: 50
                 });
@@ -686,8 +548,6 @@ var RR = (function (parent, $) {
                 });
                 break;
         }
-
-        scrollMonitor.recalculateLocations();
     };
 
     function enterHello() {
@@ -970,14 +830,18 @@ var RR = (function (parent, $) {
     };
 
     function enterCaseStudy() {
+        createCaseStudyScrollMonitor();
+
         TweenMax.to('.case-study .bar', 0.75, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bCaseStudy.start().reveal(750, 750);
-                $('.case-study h1 .text').addClass('glitch');
+                bCaseStudy.text(function () {
+                    return '// case study: ' + caseStudyItem.title;
+                }).start().reveal(750, 750);
 
-                scrollMonitor.recalculateLocations();
+                $('.case-study h1 .text').addClass('glitch');
+                caseStudyWatcher.recalculateLocation();
             }
         });
 
@@ -1043,6 +907,127 @@ var RR = (function (parent, $) {
             ease: Expo.easeOut,
             delay: 0.75
         });
+    };
+
+    var exitCurrentSlide = function ($url) {
+        if (currentPage != 'case-study') {
+            TweenMax.to('.' + currentPage + ' h1', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut
+            });
+
+            TweenMax.to('.' + currentPage + ' p', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.1
+            });
+
+            TweenMax.to('.' + currentPage + ' hr', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.2
+            });
+        }
+
+        if (currentPage == 'hello') {
+            TweenMax.staggerTo('.hello li', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.2,
+                clearProps: 'all'
+            }, 0.1, function () {
+                switchSlide($url);
+            });
+        } else if (currentPage == 'about') {
+            TweenMax.staggerTo('.skills__bar', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.2,
+                clearProps: 'all'
+            }, 0.1);
+
+            TweenMax.staggerTo('.logos li', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.2,
+                clearProps: 'all'
+            }, 0.1, function () {
+                switchSlide($url);
+            });
+        } else if (currentPage == 'achievements') {
+            TweenMax.staggerTo('.nominations li', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.2
+            }, 0.1, function () {
+                $('.nominations li').attr('style', '');
+                switchSlide($url);
+            });
+
+            TweenMax.to('.achievements a', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.2,
+                clearProps: 'all'
+            });
+        } else if (currentPage == 'coding') {
+            TweenMax.staggerTo('.coding .card', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.2,
+                clearProps: 'all'
+            }, 0.1, function () {
+                switchSlide($url);
+            });
+        } else if (currentPage == 'design') {
+            TweenMax.staggerTo('.design .card', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.2,
+                clearProps: 'all'
+            }, 0.1, function () {
+                switchSlide($url);
+            });
+        } else if (currentPage == 'case-study') {
+            destroyCaseStudyScrollMonitor();
+
+            TweenMax.to('.case-study', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.2,
+                onComplete: function () {
+                    switchSlide($url);
+                }
+            });
+        } else if (currentPage == 'contact') {
+            TweenMax.staggerTo('.contact-icons li', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.3,
+                clearProps: 'all'
+            }, 0.1, function () {
+                switchSlide($url);
+            });
+        } else if (currentPage == 'error') {
+            TweenMax.to('element', 0.5, {
+                delay: 0.2,
+                onComplete: function () {
+                    switchSlide($url);
+                }
+            });
+        }
     };
 
     var setActiveNav = function (navEl) {

@@ -253,17 +253,20 @@ img {
     .card {
         &-link {
             margin-bottom: 30px;
-            width: 50%;
+
+            &:only-child {
+                .card {
+                    height: 470px;
+                }
+            }
         }
     }
 }
 
-.coding {
-
-}
-
-.design {
-
+.case-study {
+    .line {
+        width: 130px;
+    }
 }
 
 .contact {

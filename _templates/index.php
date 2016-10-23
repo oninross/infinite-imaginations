@@ -321,71 +321,78 @@
                     </h1>
 
                     <div class="wrap">
-                        <a href="/#/case-study/" class="card-link">
-                            <div class="card">
-                                <div class="card-wrap">
-                                    <div class="card-text">
-                                        <span class="card-title"></span>
-                                        <span class="card-desc"></span>
+                        <div class="col col-6">
+                            <a href="/#/case-study/" class="card-link">
+                                <div class="card">
+                                    <div class="card-wrap">
+                                        <img src="" alt="" />
 
-                                        <div class="cta">
-                                            See case study
+                                        <div class="card-text">
+                                            <span class="card-title"></span>
+                                            <span class="card-desc"></span>
 
-                                            <div class="cta-icon">
-                                                <i class="icon icon-chevron-right"></i>
-                                                <i class="icon icon-chevron-right"></i>
+                                            <div class="cta">
+                                                See case study
+
+                                                <div class="cta-icon">
+                                                    <i class="icon icon-chevron-right"></i>
+                                                    <i class="icon icon-chevron-right"></i>
+                                                </div>
                                             </div>
                                         </div>
+
                                     </div>
-
-                                    <img src="" alt="">
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
 
-                        <a href="/#/case-study/" class="card-link">
-                            <div class="card">
-                                <div class="card-wrap">
-                                    <div class="card-text">
-                                        <span class="card-title"></span>
-                                        <span class="card-desc"></span>
+                        <div class="col col-6">
+                            <a href="/#/case-study/" class="card-link">
+                                <div class="card">
+                                    <div class="card-wrap">
+                                        <img src="" alt="" />
 
-                                        <div class="cta">
-                                            See case study
+                                        <div class="card-text">
+                                            <span class="card-title"></span>
+                                            <span class="card-desc"></span>
 
-                                            <div class="cta-icon">
-                                                <i class="icon icon-chevron-right"></i>
-                                                <i class="icon icon-chevron-right"></i>
+                                            <div class="cta">
+                                                See case study
+
+                                                <div class="cta-icon">
+                                                    <i class="icon icon-chevron-right"></i>
+                                                    <i class="icon icon-chevron-right"></i>
+                                                </div>
                                             </div>
                                         </div>
+
                                     </div>
-
-                                    <img src="" alt="">
                                 </div>
-                            </div>
-                        </a>
+                            </a>
 
-                        <a href="/#/case-study/" class="card-link">
-                            <div class="card">
-                                <div class="card-wrap">
-                                    <div class="card-text">
-                                        <span class="card-title"></span>
-                                        <span class="card-desc"></span>
+                            <a href="/#/case-study/" class="card-link">
+                                <div class="card">
+                                    <div class="card-wrap">
+                                        <img src="" alt="" />
 
-                                        <div class="cta">
-                                            See case study
+                                        <div class="card-text">
+                                            <span class="card-title"></span>
+                                            <span class="card-desc"></span>
 
-                                            <div class="cta-icon">
-                                                <i class="icon icon-chevron-right"></i>
-                                                <i class="icon icon-chevron-right"></i>
+                                            <div class="cta">
+                                                See case study
+
+                                                <div class="cta-icon">
+                                                    <i class="icon icon-chevron-right"></i>
+                                                    <i class="icon icon-chevron-right"></i>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <img src="" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -405,71 +412,78 @@
                     </h1>
 
                     <div class="wrap">
-                        <a href="/#/case-study/" class="card-link">
-                            <div class="card">
-                                <div class="card-wrap">
-                                    <div class="card-text">
-                                        <span class="card-title"></span>
-                                        <span class="card-desc"></span>
+                        <div class="col col-6">
+                            <a href="/#/case-study/" class="card-link">
+                                <div class="card">
+                                    <div class="card-wrap">
+                                        <img src="" alt="" />
 
-                                        <div class="cta">
-                                            See case study
+                                        <div class="card-text">
+                                            <span class="card-title"></span>
+                                            <span class="card-desc"></span>
 
-                                            <div class="cta-icon">
-                                                <i class="icon icon-chevron-right"></i>
-                                                <i class="icon icon-chevron-right"></i>
+                                            <div class="cta">
+                                                See case study
+
+                                                <div class="cta-icon">
+                                                    <i class="icon icon-chevron-right"></i>
+                                                    <i class="icon icon-chevron-right"></i>
+                                                </div>
                                             </div>
                                         </div>
+
                                     </div>
-
-                                    <img src="" alt="">
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
 
-                        <a href="/#/case-study/" class="card-link">
-                            <div class="card">
-                                <div class="card-wrap">
-                                    <div class="card-text">
-                                        <span class="card-title"></span>
-                                        <span class="card-desc"></span>
+                        <div class="col col-6">
+                            <a href="/#/case-study/" class="card-link">
+                                <div class="card">
+                                    <div class="card-wrap">
+                                        <img src="" alt="" />
 
-                                        <div class="cta">
-                                            See case study
+                                        <div class="card-text">
+                                            <span class="card-title"></span>
+                                            <span class="card-desc"></span>
 
-                                            <div class="cta-icon">
-                                                <i class="icon icon-chevron-right"></i>
-                                                <i class="icon icon-chevron-right"></i>
+                                            <div class="cta">
+                                                See case study
+
+                                                <div class="cta-icon">
+                                                    <i class="icon icon-chevron-right"></i>
+                                                    <i class="icon icon-chevron-right"></i>
+                                                </div>
                                             </div>
                                         </div>
+
                                     </div>
-
-                                    <img src="" alt="">
                                 </div>
-                            </div>
-                        </a>
+                            </a>
 
-                        <a href="/#/case-study/" class="card-link">
-                            <div class="card">
-                                <div class="card-wrap">
-                                    <div class="card-text">
-                                        <span class="card-title"></span>
-                                        <span class="card-desc"></span>
+                            <a href="/#/case-study/" class="card-link">
+                                <div class="card">
+                                    <div class="card-wrap">
+                                        <img src="" alt="" />
 
-                                        <div class="cta">
-                                            See case study
+                                        <div class="card-text">
+                                            <span class="card-title"></span>
+                                            <span class="card-desc"></span>
 
-                                            <div class="cta-icon">
-                                                <i class="icon icon-chevron-right"></i>
-                                                <i class="icon icon-chevron-right"></i>
+                                            <div class="cta">
+                                                See case study
+
+                                                <div class="cta-icon">
+                                                    <i class="icon icon-chevron-right"></i>
+                                                    <i class="icon icon-chevron-right"></i>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <img src="" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

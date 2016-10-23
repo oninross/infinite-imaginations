@@ -59,8 +59,6 @@ DEPENDENCIES
 05 Homepage
 ========================================================================== */
 .hello {
-    // @include reset-centering();
-
     nav {
         li {
             height: 146px;
@@ -83,13 +81,9 @@ DEPENDENCIES
     }
 }
 
-.about {
-    // @include reset-centering();
-}
+.about { }
 
 .achievements {
-    // @include reset-centering();
-
     .nominations {
         li {
             font-size: 0.8em;
@@ -102,33 +96,21 @@ DEPENDENCIES
     }
 }
 
-.case-studies {
-    // @include reset-centering();
+.case-studies { }
 
-    .card {
-        height: 250px;
+.case-study {
+    .line {
+        width: 212px;
     }
 }
 
-.coding {
-
-}
-
-.design {
-
-}
-
 .contact {
-    // @include reset-centering();
-
     h1 {
         font-size: 3.2em;
     }
 }
 
 .error {
-    // @include reset-centering();
-
     h1 {
         font-size: 3.2em;
     }

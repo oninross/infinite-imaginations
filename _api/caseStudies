@@ -112,8 +112,12 @@
             "category": "design",
             "tldr": "An interactive touch screen to showcase the different venues and the history about Mt. Fabre in different languages.",
             "role": "Interface Designer / Flash Developer Developer",
-            "challenges": "We were provided with a low-powered machine to drive the touch screen, and we needed to display a lot of information in the device.  We also had to make sure that the user interface was fool proof for users who didn’t know how to use a touch screen.",
-            "solutions": "Flash was still alive and pretty mainstream and Apple was our peg.  We managed to deliver large amounts of content in different languages using XML.  By following the principles of Apple, we managed to make the user interface easy to use for anyone.",
+            "challenges": [
+                "We were provided with a low-powered machine to drive the touch screen, and we needed to display a lot of information in the device.  We also had to make sure that the user interface was fool proof for users who didn’t know how to use a touch screen."
+            ],
+            "solutions": [
+                "Flash was still alive and pretty mainstream and Apple was our peg.  We managed to deliver large amounts of content in different languages using XML.  By following the principles of Apple, we managed to make the user interface easy to use for anyone."
+            ],
             "technology": [
                 "Flash ActionScript 3",
                 "TweenMax for ActionScript",

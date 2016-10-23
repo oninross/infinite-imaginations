@@ -42,8 +42,11 @@ var RR = (function (parent, $) {
 
         Path.map('#/case-study/:param').to(function() {
             RR.listeners.exitCurrentSlide('case-study');
-            RR.listeners.getData(this.params['param']);
-            // RR.listeners.setActiveNav('contact');
+
+            var param = this.params['param'];
+            setTimeout(function() {
+                RR.listeners.getData(param);
+            }, 750);
         });
 
         Path.map('#/contact/').to(function() {

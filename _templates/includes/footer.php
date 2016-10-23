@@ -86,16 +86,16 @@
             </div>
             {{? }}
 
-            <div class="case-study__navigation">
+            <div class="case-study__section navigation">
                 <div class="wrap">
                     <div class="col col-12">
                         <a href="{{! it.nextItem.url}}">
-                            <span>next: {{! it.nextItem.title }}</span>
+                            <div class="navigation-label">next: <span>{{! it.nextItem.title }}</span></div>
 
                             <i class="line"></i>
-                            <i class="col-shadow"></i>
+                            <i class="navigation-shadow"></i>
 
-                            <div class="col-icon">
+                            <div class="navigation-icon">
                                 <i class="icon icon-chevron-right"></i>
                                 <i class="icon icon-chevron-right"></i>
                             </div>
@@ -104,12 +104,12 @@
 
                     <div class="col col-12">
                         <a href="/#/{{! it.category }}/">
-                            <span>back to listing</span>
+                            <div class="navigation-label">back to listing</div>
 
                             <i class="line"></i>
-                            <i class="col-shadow"></i>
+                            <i class="navigation-shadow"></i>
 
-                            <div class="col-icon">
+                            <div class="navigation-icon">
                                 <i class="icon icon-chevron-right"></i>
                                 <i class="icon icon-chevron-right"></i>
                             </div>
