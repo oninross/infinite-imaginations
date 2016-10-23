@@ -13,6 +13,7 @@ var RR = (function (parent, $) {
         currentPage = 'hello',
         $data = 'hello',
         syncTime = 0,
+        nextInd = 0,
         caseStudies = [],
         bSkillsLabel = [],
         bHello,
@@ -442,14 +443,21 @@ var RR = (function (parent, $) {
         var $caseStudy = $('.case-study'),
             caseStudyTemp = doT.template($('#case-study-template').html()),
             obj = {},
-            caseStudyItem;
+            caseStudyItem,
+            nextCaseStudyItem;
 
         if (caseStudies[ind] == undefined) {
             setTimeout(function () {
                 setData(ind);
             }, 1000);
         } else {
+            console.log(ind)
+
+            nextInd = nextInd > caseStudies.length ? 0 : ind + 1;
+
             caseStudyItem = caseStudies[ind];
+            nextCaseStudyItem = caseStudies[nextInd];
+
             obj = {
                 tldr: caseStudyItem.tldr,
                 url: {
@@ -458,7 +466,12 @@ var RR = (function (parent, $) {
                 role: caseStudyItem.role,
                 challenges: caseStudyItem.challenges,
                 solutions: caseStudyItem.solutions,
-                technology: caseStudyItem.technology
+                technology: caseStudyItem.technology,
+                category: caseStudyItem.category,
+                nextItem: {
+                    url: nextCaseStudyItem.url.local,
+                    title: nextCaseStudyItem.title
+                }
             };
 
             $('.case-study .text')

@@ -85,6 +85,38 @@
                 {{~}}
             </div>
             {{? }}
+
+            <div class="case-study__navigation">
+                <div class="wrap">
+                    <div class="col col-12">
+                        <a href="{{! it.nextItem.url}}">
+                            <span>next: {{! it.nextItem.title }}</span>
+
+                            <i class="line"></i>
+                            <i class="col-shadow"></i>
+
+                            <div class="col-icon">
+                                <i class="icon icon-chevron-right"></i>
+                                <i class="icon icon-chevron-right"></i>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col col-12">
+                        <a href="/#/{{! it.category }}/">
+                            <span>back to listing</span>
+
+                            <i class="line"></i>
+                            <i class="col-shadow"></i>
+
+                            <div class="col-icon">
+                                <i class="icon icon-chevron-right"></i>
+                                <i class="icon icon-chevron-right"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </script>
 
         <!-- build:js //ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js -->
