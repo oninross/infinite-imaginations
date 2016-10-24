@@ -12,7 +12,7 @@ var RR = (function (parent, $) {
         $header = $('.header'),
         currentPage = 'hello',
         $data = 'hello',
-        syncTime = 0,
+        syncTime = 0.5,
         nextInd = 0,
         caseStudies = [],
         bSkillsLabel = [],
@@ -35,7 +35,7 @@ var RR = (function (parent, $) {
     var setup = function () {
 
         // Hello Animation
-        syncTime = isMobile() == true ? 1 : 0.75;
+        // syncTime = isMobile() == true ? 1 : 0.75;
 
         TweenMax.to('.logo', 0.5, {
             opacity: 1,
@@ -337,7 +337,7 @@ var RR = (function (parent, $) {
         }
     };
 
-    function switchSlide ($url) {
+    function switchSlide($url) {
         $('.' + currentPage).hide();
 
         if ($url == '') {
@@ -355,7 +355,7 @@ var RR = (function (parent, $) {
             .find('h1 .text').html('&nbsp;');
 
         var $gotoElem = $('.' + $url + ' h1');
-        TweenMax.to('.element-clone', syncTime  , {
+        TweenMax.to('.element-clone', syncTime, {
             left: $gotoElem.offset().left,
             top: $gotoElem.offset().top,
             height: $gotoElem.outerHeight(),
