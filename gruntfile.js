@@ -289,6 +289,21 @@ module.exports = function(grunt) {
                     { expand: true, cwd: 'dist', src: ['**/*.php'], dest: 'dist', ext: '.html' }
                 ]
             }
+        },
+
+        /**
+         * Converts PHP to HTML
+         */
+        compress: {
+            main: {
+                options: {
+                mode: 'gzip'
+            },
+            expand: true,
+            cwd: 'dist/',
+            src: ['**/*'],
+            dest: 'dist/'
+            }
         }
     });
 
@@ -307,6 +322,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-sync');
     grunt.loadNpmTasks('grunt-php2html');
+    grunt.loadNpmTasks('grunt-contrib-compress');
 
     /**
      * Default task
@@ -355,6 +371,7 @@ module.exports = function(grunt) {
         'copy:assets',
         'processhtml',
         'php2html',
-        'clean:www'
+        'clean:www',
+        'compress'
     ]);
 };
