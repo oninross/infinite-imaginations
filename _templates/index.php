@@ -149,7 +149,7 @@
                     <hr />
 
                     <div class="logos">
-                        <p>Some of the company projects that I have worked on:</p>
+                        <p>Some of the companies I’ve worked on projects for:</p>
 
                         <ul>
                             <li><img src="/assets/infiniteimaginations/images/svg/logo-ogilvy.svg" alt="OgilvyOne"></li>

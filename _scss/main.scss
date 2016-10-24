@@ -287,6 +287,17 @@ svg.ripple {
     }
 }
 
+.no-objectfit {
+    .card-wrap {
+        background-size: cover;
+        background-position: center;
+
+        img {
+            display: none;
+        }
+    }
+}
+
 /* =======================================================================
 02 Layout
 ========================================================================== */

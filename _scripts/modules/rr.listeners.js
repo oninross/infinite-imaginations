@@ -12,7 +12,7 @@ var RR = (function (parent, $) {
         $header = $('.header'),
         currentPage = 'hello',
         $data = 'hello',
-        syncTime = 0.25,
+        syncTime = 0.5,
         nextInd = 0,
         caseStudies = [],
         bSkillsLabel = [],
@@ -99,11 +99,37 @@ var RR = (function (parent, $) {
                 setTimeout(function () {
                     RR.menu.tlHoverReverse();
                 }, 500);
+
+                RR.gaListeners.gaClickEvent('Menu', $data);
+            } else {
+                RR.gaListeners.gaClickEvent('Hello: Nav', $data);
             }
         });
 
         $('.header .logo a').on('click', function () {
             $data = 'hello';
+
+            RR.gaListeners.gaClickEvent('Logo', null);
+        });
+
+        $('p a').on('click', function () {
+            RR.gaListeners.gaClickEvent('Link', $(this).data('text'));
+        });
+
+        $('.achievements a').on('click', function () {
+            RR.gaListeners.gaClickEvent('Link', 'infinite imaginations: BETA');
+        });
+
+        $('.case-study').on('click', '.navigation a', function () {
+            if ($(this).find('span').length) {
+                RR.gaListeners.gaClickEvent('Next', $(this).find('.navigation-label span').text());
+            } else {
+                RR.gaListeners.gaClickEvent('Next', $(this).find('.navigation-label').text());
+            }
+        });
+
+        $('.contact-icons a').click(function () {
+            RR.gaListeners.gaClickEvent('Contact', $(this).find('.vh').text());
         });
 
 
@@ -273,6 +299,8 @@ var RR = (function (parent, $) {
             $this.find('img').attr('alt', caseStudies[i].title);
             $this.find('.card-title').text(caseStudies[i].title);
             $this.find('.card-desc').text(caseStudies[i].desc);
+        }).on('click', function () {
+            RR.gaListeners.gaClickEvent('Case Studies', $(this).find('.card-title').text());
         });
     };
 

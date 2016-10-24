@@ -13,35 +13,42 @@ var RR = (function (parent, $) {
         Path.map('#/hello/').to(function () {
             RR.listeners.exitCurrentSlide('hello');
             RR.listeners.setActiveNav('hello');
+            RR.gaListeners.gaPageView('hello');
         });
 
         Path.map('#/about/').to(function () {
             RR.listeners.exitCurrentSlide('about');
             RR.listeners.setActiveNav('about');
+            RR.gaListeners.gaPageView('about');
         });
 
         Path.map('#/achievements/').to(function () {
             RR.listeners.exitCurrentSlide('achievements');
             RR.listeners.setActiveNav('achievements');
+            RR.gaListeners.gaPageView('achievements');
         });
 
         Path.map('#/coding/').to(function () {
             RR.listeners.exitCurrentSlide('coding');
             RR.listeners.setActiveNav('coding');
+            RR.gaListeners.gaPageView('coding');
         });
 
         Path.map('#/design/').to(function () {
             RR.listeners.exitCurrentSlide('design');
             RR.listeners.setActiveNav('design');
+            RR.gaListeners.gaPageView('design');
         });
 
         Path.map('#/design/').to(function () {
             RR.listeners.exitCurrentSlide('design');
             RR.listeners.setActiveNav('design');
+            RR.gaListeners.gaPageView('design');
         });
 
         Path.map('#/case-study/:param').to(function () {
             RR.listeners.exitCurrentSlide('case-study');
+            RR.gaListeners.gaPageView('case-study');
 
             var param = this.params['param'];
 
@@ -53,10 +60,12 @@ var RR = (function (parent, $) {
         Path.map('#/contact/').to(function () {
             RR.listeners.exitCurrentSlide('contact');
             RR.listeners.setActiveNav('contact');
+            RR.gaListeners.gaPageView('contact');
         });
 
         Path.rescue(function () {
             RR.listeners.exitCurrentSlide('error');
+            RR.gaListeners.gaPageView('contact');
         });
 
         // Path.map("#/users/:id").enter(updateAnalytics).to(function (){
