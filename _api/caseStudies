@@ -2,7 +2,7 @@
     "caseStudies": [
         {
             "title": "BHP Billiton",
-            "desc": "BHP Billiton - Description",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "category": "coding",
             "tldr": "A redesign and rebuild the corporate website for the client and the first modular/component build for Adelphi Digital.",
             "role": "Front-end Developer / UX Consultant",
@@ -23,7 +23,7 @@
             ],
             "images": {
                 "case-study": [],
-                "thumb": "http://placehold.it/480x270/"
+                "thumb": "/assets/infiniteimaginations/images/placeholder.jpg"
             },
             "url": {
                 "live": null,
@@ -32,7 +32,7 @@
         },
         {
             "title": "Central Manpower Base",
-            "desc": "Central Manpower - Description Base",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "category": "coding",
             "tldr": "Redesign, rebuild and enhance the user experience of a static brochure site for a government client in Singapore.",
             "role": "Front-end Developer / UX Consultant",
@@ -49,7 +49,7 @@
             ],
             "images": {
                 "case-study": [],
-                "thumb": "http://placehold.it/480x270/"
+                "thumb": "/assets/infiniteimaginations/images/cmpb.jpg"
             },
             "url": {
                 "live": null,
@@ -58,7 +58,7 @@
         },
         {
             "title": "Adelphi Digital",
-            "desc": "Adelphi Digital - Description",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "category": "coding",
             "tldr": "Develop the company website in 4 days",
             "role": "Front-end Developer / UX Consultant",
@@ -73,7 +73,7 @@
             ],
             "images": {
                 "case-study": [],
-                "thumb": "http://placehold.it/480x270/"
+                "thumb": "/assets/infiniteimaginations/images/adelphi-digital.jpg"
             },
             "url": {
                 "live": null,
@@ -82,7 +82,7 @@
         },
         {
             "title": "infinite imaginations BETA",
-            "desc": "infinite imaginations - Description BETA",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "category": "design",
             "tldr": "A revolutionary and cutting edge website in design and technology that utilizes existing resources in the internet that were barely known to the public.",
             "role": "Front-end Developer / Designer",
@@ -99,16 +99,16 @@
             ],
             "images": {
                 "case-study": [],
-                "thumb": "http://placehold.it/480x270/"
+                "thumb": "/assets/infiniteimaginations/images/infinite-imaginations-beta.jpg"
             },
             "url": {
                 "live": null,
-                "local": "/#/case-study/infinite-imaginations-beta"
+                "local": "/#/case-study/infinite-imaginations-beta.jpg"
             }
         },
         {
             "title": "The Jewel Box",
-            "desc": "The Jewel - Description Box",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "category": "design",
             "tldr": "An interactive touch screen to showcase the different venues and the history about Mt. Fabre in different languages.",
             "role": "Interface Designer / Flash Developer Developer",
@@ -125,7 +125,7 @@
             ],
             "images": {
                 "case-study": [],
-                "thumb": "http://placehold.it/480x270/"
+                "thumb": "/assets/infiniteimaginations/images/the-jewel-box.jpg"
             },
             "url": {
                 "live": null,
@@ -134,7 +134,7 @@
         },
         {
             "title": "Envirobot",
-            "desc": "Envirobot - Description",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "category": "design",
             "tldr": "An interactive touchscreen built into the chassis of a remote controlled robot circulating around Singapore high schools.",
             "role": "Front-end Developer / UX Consultant",
@@ -148,7 +148,7 @@
             ],
             "images": {
                 "case-study": [],
-                "thumb": "http://placehold.it/480x270/"
+                "thumb": "/assets/infiniteimaginations/images/envirobot.jpg"
             },
             "url": {
                 "live": null,
