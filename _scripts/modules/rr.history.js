@@ -10,55 +10,56 @@ var RR = (function (parent, $) {
     var setup = function () {
         Path.root("#/hello/");
 
-        Path.map('#/hello/').to(function() {
+        Path.map('#/hello/').to(function () {
             RR.listeners.exitCurrentSlide('hello');
             RR.listeners.setActiveNav('hello');
         });
 
-        Path.map('#/about/').to(function() {
+        Path.map('#/about/').to(function () {
             RR.listeners.exitCurrentSlide('about');
             RR.listeners.setActiveNav('about');
         });
 
-        Path.map('#/achievements/').to(function() {
+        Path.map('#/achievements/').to(function () {
             RR.listeners.exitCurrentSlide('achievements');
             RR.listeners.setActiveNav('achievements');
         });
 
-        Path.map('#/coding/').to(function() {
+        Path.map('#/coding/').to(function () {
             RR.listeners.exitCurrentSlide('coding');
             RR.listeners.setActiveNav('coding');
         });
 
-        Path.map('#/design/').to(function() {
+        Path.map('#/design/').to(function () {
             RR.listeners.exitCurrentSlide('design');
             RR.listeners.setActiveNav('design');
         });
 
-        Path.map('#/design/').to(function() {
+        Path.map('#/design/').to(function () {
             RR.listeners.exitCurrentSlide('design');
             RR.listeners.setActiveNav('design');
         });
 
-        Path.map('#/case-study/:param').to(function() {
+        Path.map('#/case-study/:param').to(function () {
             RR.listeners.exitCurrentSlide('case-study');
 
             var param = this.params['param'];
-            setTimeout(function() {
+
+            setTimeout(function () {
                 RR.listeners.getData(param);
-            }, 750);
+            }, 500);
         });
 
-        Path.map('#/contact/').to(function() {
+        Path.map('#/contact/').to(function () {
             RR.listeners.exitCurrentSlide('contact');
             RR.listeners.setActiveNav('contact');
         });
 
-        Path.rescue(function() {
+        Path.rescue(function () {
             RR.listeners.exitCurrentSlide('error');
         });
 
-        // Path.map("#/users/:id").enter(updateAnalytics).to(function(){
+        // Path.map("#/users/:id").enter(updateAnalytics).to(function (){
             // Code here
         // });
 
@@ -66,7 +67,7 @@ var RR = (function (parent, $) {
     };
 
     // Define our update method.
-    function updateAnalytics(){
+    function updateAnalytics() {
         // ga('send', 'pageview', document.location.href);
     }
 
@@ -81,5 +82,5 @@ var RR = (function (parent, $) {
 
 jQuery(function ($) {
     // Self-init Call
-    RR.history.setup();
+    RR.history.setup ();
 });

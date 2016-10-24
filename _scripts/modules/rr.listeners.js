@@ -12,7 +12,7 @@ var RR = (function (parent, $) {
         $header = $('.header'),
         currentPage = 'hello',
         $data = 'hello',
-        syncTime = 0.5,
+        syncTime = 0.25,
         nextInd = 0,
         caseStudies = [],
         bSkillsLabel = [],
@@ -173,8 +173,7 @@ var RR = (function (parent, $) {
             }
         });
 
-
-        // Blarg
+        // Window scroll
         $window.on('scroll', function () {
             // opacity = (document.body.scrollTop / 100).toFixed(2);
             if (document.body.scrollTop >= 20) {
@@ -355,7 +354,7 @@ var RR = (function (parent, $) {
             .find('h1 .text').html('&nbsp;');
 
         var $gotoElem = $('.' + $url + ' h1');
-        TweenMax.to('.element-clone', syncTime, {
+        TweenMax.to('.element-clone', 0.5, {
             left: $gotoElem.offset().left,
             top: $gotoElem.offset().top,
             height: $gotoElem.outerHeight(),
@@ -392,6 +391,7 @@ var RR = (function (parent, $) {
                     case 'hello':
                         enterHello();
                         break;
+
                     case 'about':
                         enterAbout();
                         break;
@@ -553,7 +553,7 @@ var RR = (function (parent, $) {
     function enterHello() {
         $('.hello h1 .text').html('&nbsp;');
 
-        TweenMax.to('.hello .bar', 0.75, {
+        TweenMax.to('.hello .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -562,20 +562,20 @@ var RR = (function (parent, $) {
             }
         });
 
-        TweenMax.to('.hello p', 0.75, {
+        TweenMax.to('.hello p', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
             delay: 0.25
         });
 
-        TweenMax.to('.hello hr', 1, {
+        TweenMax.to('.hello hr', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             delay: 0.5
         });
 
-        TweenMax.staggerTo('.hello li', 1, {
+        TweenMax.staggerTo('.hello li', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
@@ -584,7 +584,7 @@ var RR = (function (parent, $) {
     };
 
     function enterAbout() {
-        TweenMax.to('.about .bar', 0.75, {
+        TweenMax.to('.about .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -593,12 +593,12 @@ var RR = (function (parent, $) {
             }
         });
 
-        TweenMax.to('.about h1 .icon', 1.5, {
+        TweenMax.to('.about h1 .icon', 0.5, {
             opacity: 1,
             ease: Expo.easeOut
         });
 
-        TweenMax.to('.about .col-l p', 0.75, {
+        TweenMax.to('.about .col-l p', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
@@ -607,10 +607,10 @@ var RR = (function (parent, $) {
 
         if (isMobile()) {
             skillsWatcher.enterViewport(function () {
-                TweenMax.staggerTo('.skills__bar', 0.75, {
+                TweenMax.staggerTo('.skills__bar', 0.5, {
                     opacity: 1,
                     y: 0,
-                    ease: Expo.easeOut,
+                    ease: Expo.easeOut
                 }, 0.1);
 
                 $('.skills__bar').each(function (i) {
@@ -629,13 +629,13 @@ var RR = (function (parent, $) {
                         });
                     }, 250 * i);
 
-                    TweenMax.to($this, 1, {
+                    TweenMax.to($this, 0.75, {
                         width: $percent + '%',
                         ease: Expo.easeInOut,
                         delay: 0.25 * i
                     });
 
-                    TweenMax.to($this.find('.skills__label'), 1, {
+                    TweenMax.to($this.find('.skills__label'), 0.75, {
                         opacity: 1,
                         ease: Expo.easeInOut,
                         delay: 0.25 * i,
@@ -647,19 +647,19 @@ var RR = (function (parent, $) {
             });
 
             logosWatcher.enterViewport(function () {
-                TweenMax.to('.about hr', 1, {
+                TweenMax.to('.about hr', 0.5, {
                     width: '100%',
                     ease: Expo.easeOut
                 });
 
-                TweenMax.to('.logos p', 1, {
+                TweenMax.to('.logos p', 0.75, {
                     opacity: 1,
                     y: 0,
                     ease: Expo.easeOut,
                     delay: 0.25
                 });
 
-                TweenMax.staggerTo('.about .logos li', 1, {
+                TweenMax.staggerTo('.about .logos li', 0.5, {
                     opacity: 1,
                     y: 0,
                     ease: Expo.easeOut,
@@ -667,7 +667,7 @@ var RR = (function (parent, $) {
                 }, 0.1);
             });
         } else {
-            TweenMax.staggerTo('.skills__bar', 0.75, {
+            TweenMax.staggerTo('.skills__bar', 0.5, {
                 opacity: 1,
                 y: 0,
                 ease: Expo.easeOut,
@@ -691,13 +691,13 @@ var RR = (function (parent, $) {
                         });
                     }, 250 * i);
 
-                    TweenMax.to($this, 1, {
+                    TweenMax.to($this, 0.75, {
                         width: $percent + '%',
                         ease: Expo.easeInOut,
                         delay: 0.25 * i
                     });
 
-                    TweenMax.to($this.find('.skills__label'), 1, {
+                    TweenMax.to($this.find('.skills__label'), 0.5, {
                         opacity: 1,
                         ease: Expo.easeInOut,
                         delay: 0.25 * i,
@@ -708,20 +708,20 @@ var RR = (function (parent, $) {
                 });
             }, 750);
 
-            TweenMax.to('.about hr', 1, {
+            TweenMax.to('.about hr', 0.5, {
                 width: '100%',
                 ease: Expo.easeOut,
                 delay: 1
             });
 
-            TweenMax.to('.logos p', 1, {
+            TweenMax.to('.logos p', 0.5, {
                 opacity: 1,
                 y: 0,
                 ease: Expo.easeOut,
                 delay: 1.25
             });
 
-            TweenMax.staggerTo('.about .logos li', 1, {
+            TweenMax.staggerTo('.about .logos li', 0.5, {
                 opacity: 1,
                 y: 0,
                 ease: Expo.easeOut,
@@ -731,7 +731,7 @@ var RR = (function (parent, $) {
     };
 
     function enterAchievements() {
-        TweenMax.to('.achievements .bar', 0.75, {
+        TweenMax.to('.achievements .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -740,19 +740,19 @@ var RR = (function (parent, $) {
             }
         });
 
-        TweenMax.to('.achievements h1 .icon', 1.5, {
+        TweenMax.to('.achievements h1 .icon', 0.5, {
             opacity: 1,
             ease: Expo.easeOut
         });
 
-        TweenMax.to('.achievements .col-l p', 0.75, {
+        TweenMax.to('.achievements .col-l p', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
             delay: 0.5
         });
 
-        TweenMax.to('.achievements .col-l a', 0.75, {
+        TweenMax.to('.achievements .col-l a', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
@@ -761,7 +761,7 @@ var RR = (function (parent, $) {
 
         if (isMobile()) {
             nominationsWatcher.enterViewport(function () {
-                TweenMax.staggerTo('.nominations .ui-pattern', 0.75, {
+                TweenMax.staggerTo('.nominations .ui-pattern', 0.5, {
                     opacity: 1,
                     scale: 1,
                     ease: Expo.easeOut,
@@ -771,7 +771,7 @@ var RR = (function (parent, $) {
                 }, 0.1);
             });
         } else {
-            TweenMax.staggerTo('.nominations .ui-pattern', 0.75, {
+            TweenMax.staggerTo('.nominations .ui-pattern', 0.5, {
                 opacity: 1,
                 scale: 1,
                 ease: Expo.easeOut,
@@ -784,7 +784,7 @@ var RR = (function (parent, $) {
     };
 
     function enterCoding() {
-        TweenMax.to('.coding .bar', 0.75, {
+        TweenMax.to('.coding .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -793,12 +793,12 @@ var RR = (function (parent, $) {
             }
         });
 
-        TweenMax.to('.coding h1 .icon', 1.5, {
+        TweenMax.to('.coding h1 .icon', 0.5, {
             opacity: 1,
             ease: Expo.easeOut
         });
 
-        TweenMax.staggerTo('.coding .card', 0.75, {
+        TweenMax.staggerTo('.coding .card', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
@@ -807,7 +807,7 @@ var RR = (function (parent, $) {
     };
 
     function enterDesign() {
-        TweenMax.to('.design .bar', 0.75, {
+        TweenMax.to('.design .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -816,12 +816,12 @@ var RR = (function (parent, $) {
             }
         });
 
-        TweenMax.to('.design h1 .icon', 1.5, {
+        TweenMax.to('.design h1 .icon', 0.5, {
             opacity: 1,
             ease: Expo.easeOut
         });
 
-        TweenMax.staggerTo('.design .card', 0.75, {
+        TweenMax.staggerTo('.design .card', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
@@ -832,7 +832,7 @@ var RR = (function (parent, $) {
     function enterCaseStudy() {
         createCaseStudyScrollMonitor();
 
-        TweenMax.to('.case-study .bar', 0.75, {
+        TweenMax.to('.case-study .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -845,14 +845,14 @@ var RR = (function (parent, $) {
             }
         });
 
-        TweenMax.to('.case-study h1 .icon', 1.5, {
+        TweenMax.to('.case-study h1 .icon', 0.5, {
             opacity: 1,
             ease: Expo.easeOut
         });
     };
 
     function enterContact() {
-        TweenMax.to('.contact .bar', 0.75, {
+        TweenMax.to('.contact .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -861,19 +861,19 @@ var RR = (function (parent, $) {
             }
         });
 
-        TweenMax.to('.contact h1 .icon', 1.5, {
+        TweenMax.to('.contact h1 .icon', 0.5, {
             opacity: 1,
             ease: Expo.easeOut
         });
 
-        TweenMax.to('.contact p', 0.75, {
+        TweenMax.to('.contact p', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
             delay: 0.75
         });
 
-        TweenMax.staggerTo('.contact-icons li', 0.75, {
+        TweenMax.staggerTo('.contact-icons li', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
@@ -882,7 +882,7 @@ var RR = (function (parent, $) {
     };
 
     function enterError() {
-        TweenMax.to('.error .bar', 0.75, {
+        TweenMax.to('.error .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
@@ -896,12 +896,12 @@ var RR = (function (parent, $) {
             ease: Expo.easeOut
         });
 
-        TweenMax.to('.error h1 .icon', 1.5, {
+        TweenMax.to('.error h1 .icon', 0.5, {
             opacity: 1,
             ease: Expo.easeOut
         });
 
-        TweenMax.to('.error p', 0.75, {
+        TweenMax.to('.error p', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
