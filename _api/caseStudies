@@ -22,8 +22,8 @@
                 "JavaScript / jQuery / TweenMax"
             ],
             "images": {
-                "case-study": [],
-                "thumb": "/assets/infiniteimaginations/images/placeholder.jpg"
+                "large": "/assets/infiniteimaginations/images/large-placeholder.png",
+                "small": "/assets/infiniteimaginations/images/small-placeholder.jpg"
             },
             "url": {
                 "live": null,
@@ -48,8 +48,8 @@
                 "JavaScript / jQuery / TweenMax"
             ],
             "images": {
-                "case-study": [],
-                "thumb": "/assets/infiniteimaginations/images/cmpb.jpg"
+                "large": "/assets/infiniteimaginations/images/large-cmpb.png",
+                "small": "/assets/infiniteimaginations/images/small-cmpb.jpg"
             },
             "url": {
                 "live": null,
@@ -72,8 +72,8 @@
                 "JavaScript / jQuery / TweenMax"
             ],
             "images": {
-                "case-study": [],
-                "thumb": "/assets/infiniteimaginations/images/adelphi-digital.jpg"
+                "large": "/assets/infiniteimaginations/images/large-adelphi-digital.png",
+                "small": "/assets/infiniteimaginations/images/small-adelphi-digital.jpg"
             },
             "url": {
                 "live": null,
@@ -98,12 +98,12 @@
                 "JavaScript / jQuery / TweenMax"
             ],
             "images": {
-                "case-study": [],
-                "thumb": "/assets/infiniteimaginations/images/infinite-imaginations-beta.jpg"
+                "large": "/assets/infiniteimaginations/images/large-infinite-imaginations-beta.png",
+                "small": "/assets/infiniteimaginations/images/small-infinite-imaginations-beta.jpg"
             },
             "url": {
                 "live": null,
-                "local": "/#/case-study/infinite-imaginations-beta.jpg"
+                "local": "/#/case-study/infinite-imaginations-beta"
             }
         },
         {
@@ -124,8 +124,8 @@
                 "XML"
             ],
             "images": {
-                "case-study": [],
-                "thumb": "/assets/infiniteimaginations/images/the-jewel-box.jpg"
+                "large": "/assets/infiniteimaginations/images/large-the-jewel-box.png",
+                "small": "/assets/infiniteimaginations/images/small-the-jewel-box.jpg"
             },
             "url": {
                 "live": null,
@@ -147,8 +147,8 @@
                 "TweenMax for ActionScript"
             ],
             "images": {
-                "case-study": [],
-                "thumb": "/assets/infiniteimaginations/images/envirobot.jpg"
+                "large": "/assets/infiniteimaginations/images/large-envirobot.png",
+                "small": "/assets/infiniteimaginations/images/small-envirobot.jpg"
             },
             "url": {
                 "live": null,

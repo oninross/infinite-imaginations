@@ -35,8 +35,6 @@ var RR = (function (parent, $) {
     var setup = function () {
 
         // Hello Animation
-        // syncTime = isMobile() == true ? 1 : 0.75;
-
         TweenMax.to('.logo', 0.5, {
             opacity: 1,
             y: 0,
@@ -233,26 +231,26 @@ var RR = (function (parent, $) {
                     opacity: 1,
                     y: 0,
                     ease: Expo.easeOut,
-                    delay: 0.25
+                    delay: 0.1
                 }, 0.1);
 
                 TweenMax.to($this.find('hr'), 0.5, {
                     width: '100%',
                     ease: Expo.easeOut,
-                    delay: 0.25
+                    delay: 0.2
                 });
 
                 TweenMax.to($this.find('.pattern'), 0.5, {
                     width: '100%',
                     ease: Expo.easeOut,
-                    delay: 0.5
+                    delay: 0.3
                 });
 
                 TweenMax.staggerTo($this.find('p'), 0.5, {
                     opacity: 1,
                     y: 0,
                     ease: Expo.easeOut,
-                    delay: 0.5
+                    delay: 0.4
                 }, 0.1);
 
                 TweenMax.staggerTo($this.find('li'), 0.5, {
@@ -266,7 +264,7 @@ var RR = (function (parent, $) {
                     opacity: 1,
                     y: 0,
                     ease: Expo.easeOut,
-                    delay: 0.75
+                    delay: 0.6
                 });
             });
         });
@@ -294,8 +292,8 @@ var RR = (function (parent, $) {
             }
 
             $this.attr('href', caseStudies[i].url.local);
-            $this.data('original', caseStudies[i].images.thumb);
-            $this.find('img').attr('src', caseStudies[i].images.thumb);
+            $this.data('original', caseStudies[i].images.small);
+            $this.find('img').attr('src', caseStudies[i].images.small);
             $this.find('img').attr('alt', caseStudies[i].title);
             $this.find('.card-title').text(caseStudies[i].title);
             $this.find('.card-desc').text(caseStudies[i].desc);
@@ -345,6 +343,8 @@ var RR = (function (parent, $) {
             nextCaseStudyItem = caseStudies[nextInd];
 
             obj = {
+                title: caseStudyItem.title,
+                image: caseStudyItem.images.large,
                 tldr: caseStudyItem.tldr,
                 url: {
                     live: caseStudyItem.url.live
@@ -480,6 +480,11 @@ var RR = (function (parent, $) {
             opacity: 0
         });
 
+        TweenMax.set('.' + slide + ' h2', {
+            opacity: 0,
+            y: 50
+        });
+
         TweenMax.set('.' + slide + ' p', {
             opacity: 0,
             y: 50
@@ -594,20 +599,20 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.25
+            delay: 0.1
         });
 
         TweenMax.to('.hello hr', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
-            delay: 0.5
+            delay: 0.2
         });
 
         TweenMax.staggerTo('.hello li', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.3
         }, 0.1);
     };
 
@@ -630,11 +635,17 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.5
+            delay: 0.1
         });
 
         if (isMobile()) {
             skillsWatcher.enterViewport(function () {
+                TweenMax.to('.about h2', 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut
+                });
+
                 TweenMax.staggerTo('.skills__bar', 0.5, {
                     opacity: 1,
                     y: 0,
@@ -695,11 +706,18 @@ var RR = (function (parent, $) {
                 }, 0.1);
             });
         } else {
+            TweenMax.to('.about h2', 0.5, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeOut,
+                delay: 0.2
+            });
+
             TweenMax.staggerTo('.skills__bar', 0.5, {
                 opacity: 1,
                 y: 0,
                 ease: Expo.easeOut,
-                delay: 0.75
+                delay: 0.3
             }, 0.1);
 
             setTimeout(function () {
@@ -722,38 +740,38 @@ var RR = (function (parent, $) {
                     TweenMax.to($this, 0.75, {
                         width: $percent + '%',
                         ease: Expo.easeInOut,
-                        delay: 0.25 * i
+                        delay: 0.1 * i
                     });
 
                     TweenMax.to($this.find('.skills__label'), 0.5, {
                         opacity: 1,
                         ease: Expo.easeInOut,
-                        delay: 0.25 * i,
+                        delay: 0.1 * i,
                         onStart: function () {
                             bSkillsLabel[i].start().reveal(750, 750);
                         }
                     });
                 });
-            }, 750);
+            }, 200);
 
             TweenMax.to('.about hr', 0.5, {
                 width: '100%',
                 ease: Expo.easeOut,
-                delay: 1
+                delay: 0.4
             });
 
             TweenMax.to('.logos p', 0.5, {
                 opacity: 1,
                 y: 0,
                 ease: Expo.easeOut,
-                delay: 1.25
+                delay: 0.5
             });
 
             TweenMax.staggerTo('.about .logos li', 0.5, {
                 opacity: 1,
                 y: 0,
                 ease: Expo.easeOut,
-                delay: 1.5
+                delay: 0.6
             }, 0.1);
         }
     };
@@ -777,18 +795,24 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.5
+            delay: 0.1
         });
 
         TweenMax.to('.achievements .col-l a', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.2
         });
 
         if (isMobile()) {
             nominationsWatcher.enterViewport(function () {
+                TweenMax.to('.achievements h2', 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut
+                });
+
                 TweenMax.staggerTo('.nominations .ui-pattern', 0.5, {
                     opacity: 1,
                     scale: 1,
@@ -799,11 +823,18 @@ var RR = (function (parent, $) {
                 }, 0.1);
             });
         } else {
+            TweenMax.to('.achievements h2', 0.5, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeOut,
+                delay: 0.3
+            });
+
             TweenMax.staggerTo('.nominations .ui-pattern', 0.5, {
                 opacity: 1,
                 scale: 1,
                 ease: Expo.easeOut,
-                delay: 0.75,
+                delay: 0.4,
                 onStart: function () {
                     $(this.target).parent().parent().addClass('init');
                 }
@@ -830,7 +861,7 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.1
         }, 0.1);
     };
 
@@ -853,7 +884,7 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.1
         }, 0.1);
     };
 
@@ -898,14 +929,14 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.1
         });
 
         TweenMax.staggerTo('.contact-icons li', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 1
+            delay: 0.2
         }, 0.1);
     };
 
@@ -933,7 +964,7 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.1
         });
     };
 
@@ -946,6 +977,13 @@ var RR = (function (parent, $) {
             });
 
             TweenMax.to('.' + currentPage + ' p', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.1
+            });
+
+            TweenMax.to('.' + currentPage + ' h2', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,

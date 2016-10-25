@@ -574,6 +574,10 @@ p {
     }
 
     .element-box {
+        &:before {
+            display: none;
+        }
+
         .text {
             padding: 0;
         }
@@ -648,6 +652,7 @@ section {
         padding: 15px 30px 15px 15px;
         position: relative;
         text-overflow: clip;
+        z-index: 1;
 
         .icon {
             bottom: 0;
@@ -659,6 +664,16 @@ section {
             top: 0;
             right: 15px;
         }
+    }
+
+    h2 {
+        @include translate(0, 50px);
+
+        margin-top: 0;
+        margin-bottom: 20px;
+        opacity: 0;
+        position: relative;
+        z-index: 1;
     }
 
     p {
@@ -1043,6 +1058,7 @@ section {
             padding: 14px;
             vertical-align: top;
             width: 41%;
+            z-index: 1;
 
             &.init {
                 .ui-corner {
@@ -1583,6 +1599,7 @@ section {
         }
 
         &-label {
+            line-height: 1;
             position: relative;
             z-index: 10;
 
@@ -1670,13 +1687,12 @@ section {
 
         background-color: $matte-black;
         bottom: 0;
-        display: block;
+        display: none;
         height: 1px;
         right: 20px;
         margin: auto;
         position: absolute;
         top: 0;
-        width: 50px;
         z-index: 10;
     }
 }

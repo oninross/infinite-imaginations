@@ -15,6 +15,8 @@
             <div class="case-study__section tldr">
                 <div class="wrap">
                     <div class="col col-12">
+                        <img src="{{! it.image }}" alt="{{! it.title }}">
+
                         <h2>TLDR;</h2>
 
                         <hr />
