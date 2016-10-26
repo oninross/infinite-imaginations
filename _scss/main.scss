@@ -673,6 +673,8 @@ section {
     }
 
     .text {
+        color: $white;
+        position: relative;
         z-index: 5;
     }
 }
@@ -778,18 +780,17 @@ section {
         position: relative;
         text-decoration: none;
 
-        &:before {
-            background-color: $matte-black;
-            content: '';
-            left: 5px;
-            height: 8px;
-            position: absolute;
-            top: 5px;
-            width: 8px;
-        }
+        // &:before {
+        //     background-color: $matte-black;
+        //     content: '';
+        //     left: 5px;
+        //     height: 8px;
+        //     position: absolute;
+        //     top: 5px;
+        //     width: 8px;
+        // }
 
-        &.active,
-        &:hover {
+        &.active {
             border: 3px solid $blue;
             margin: 0;
             padding: 0;
@@ -845,15 +846,12 @@ section {
         background-color: $blue;
         overflow: hidden;
         position: absolute;
+        z-index: 10;
 
         a {
             border: 3px solid $blue;
             margin: 0;
             padding: 0;
-
-            &:before {
-                display: none;
-            }
         }
 
         .text {
@@ -870,14 +868,31 @@ section {
 }
 
 @media (max-width: $bpMaxMobile) and (orientation: landscape) {
-    .hello nav {
+    .primary-nav {
         li {
-            height: 15vw;
-            margin-bottom: 0;
-            width: 20%;
+            height: 27vw;
+            width: 33.333333%;
 
-            &:last-child {
-                width: 20%;
+            &:nth-child(3) {
+                -webkit-transition-delay: 0.1s;
+                        transition-delay: 0.1s;
+            }
+
+            &:nth-child(2),
+            &:nth-child(6) {
+                -webkit-transition-delay: 0.2s;
+                        transition-delay: 0.2s;
+            }
+
+            &:nth-child(1),
+            &:nth-child(5) {
+                -webkit-transition-delay: 0.3s;
+                        transition-delay: 0.3s;
+            }
+
+            &:nth-child(4) {
+                -webkit-transition-delay: 0.4s;
+                        transition-delay: 0.4s;
             }
         }
 

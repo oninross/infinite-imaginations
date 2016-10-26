@@ -12,7 +12,7 @@ var RR = (function (parent, $) {
         $header = $('.header'),
         currentPage = 'hello',
         $data = 'hello',
-        syncTime = 0.25,
+        syncTime = 0.4,
         nextInd = 0,
         caseStudies = [],
         bSkillsLabel = [],
@@ -35,7 +35,6 @@ var RR = (function (parent, $) {
     var setup = function () {
 
         // Hello Animation
-        // syncTime = isMobile() == true ? 1 : 0.75;
 
         TweenMax.to('.logo', 0.5, {
             opacity: 1,
@@ -354,7 +353,7 @@ var RR = (function (parent, $) {
             .find('h1 .text').html('&nbsp;');
 
         var $gotoElem = $('.' + $url + ' h1');
-        TweenMax.to('.element-clone', 0.5, {
+        TweenMax.to('.element-clone', syncTime, {
             left: $gotoElem.offset().left,
             top: $gotoElem.offset().top,
             height: $gotoElem.outerHeight(),
@@ -482,6 +481,8 @@ var RR = (function (parent, $) {
                 break;
 
             case 'achievements':
+                $('.achievements .nominations li').removeClass('init');
+
                 TweenMax.set('.achievements .col-l a', {
                     opacity: 0,
                     y: 50
@@ -495,8 +496,6 @@ var RR = (function (parent, $) {
                     opacity: 1,
                     y: 0
                 });
-
-                $('.achievements .nominations li').removeClass('init');
                 break;
 
             case 'coding':
@@ -553,12 +552,20 @@ var RR = (function (parent, $) {
     function enterHello() {
         $('.hello h1 .text').html('&nbsp;');
 
+        TweenMax.to('.hello h1', 0.5, {
+            'borderLeft' : '15px solid #2196f3'
+        });
+
         TweenMax.to('.hello .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
                 bHello.start().reveal(750, 750);
                 $('.hello h1 .text').addClass('glitch');
+
+                setTimeout(function () {
+                    $('.hello h1 .text').removeClass('glitch');
+                }, 5000);
             }
         });
 
@@ -590,6 +597,10 @@ var RR = (function (parent, $) {
             onComplete: function () {
                 bAbout.start().reveal(750, 750);
                 $('.about h1 .text').addClass('glitch');
+
+                setTimeout(function () {
+                    $('.about h1 .text').removeClass('glitch');
+                }, 5000);
             }
         });
 
@@ -737,6 +748,10 @@ var RR = (function (parent, $) {
             onComplete: function () {
                 bAchievements.start().reveal(750, 750);
                 $('.achievements h1 .text').addClass('glitch');
+
+                setTimeout(function () {
+                    $('.achievements h1 .text').removeClass('glitch');
+                }, 5000);
             }
         });
 
@@ -790,6 +805,10 @@ var RR = (function (parent, $) {
             onComplete: function () {
                 bCoding.start().reveal(750, 750);
                 $('.coding h1 .text').addClass('glitch');
+
+                setTimeout(function () {
+                    $('.coding h1 .text').removeClass('glitch');
+                }, 5000);
             }
         });
 
@@ -813,6 +832,10 @@ var RR = (function (parent, $) {
             onComplete: function () {
                 bDesign.start().reveal(750, 750);
                 $('.design h1 .text').addClass('glitch');
+
+                setTimeout(function () {
+                    $('.design h1 .text').removeClass('glitch');
+                }, 5000);
             }
         });
 
@@ -841,6 +864,10 @@ var RR = (function (parent, $) {
                 }).start().reveal(750, 750);
 
                 $('.case-study h1 .text').addClass('glitch');
+
+                setTimeout(function () {
+                    $('.case-study h1 .text').removeClass('glitch');
+                }, 5000);
                 caseStudyWatcher.recalculateLocation();
             }
         });
@@ -858,6 +885,10 @@ var RR = (function (parent, $) {
             onComplete: function () {
                 bContact.start().reveal(750, 750);
                 $('.contact h1 .text').addClass('glitch');
+
+                setTimeout(function () {
+                    $('.contact h1 .text').removeClass('glitch');
+                }, 5000);
             }
         });
 
@@ -888,6 +919,10 @@ var RR = (function (parent, $) {
             onComplete: function () {
                 bError.start().reveal(750, 750);
                 $('.error h1 .text').addClass('glitch');
+
+                setTimeout(function () {
+                    $('.error h1 .text').removeClass('glitch');
+                }, 5000);
             }
         });
 
