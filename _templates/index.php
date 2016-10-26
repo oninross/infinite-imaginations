@@ -100,6 +100,8 @@
                         </div>
 
                         <div class="col-r col-6">
+                            <h2>Skillset Breakdown</h2>
+
                             <div class="skills">
                                 <div class="skills__bar" data-percent="95.0">
                                     <div class="skills__label">HTML5 / HTML</div>
@@ -149,7 +151,7 @@
                     <hr />
 
                     <div class="logos">
-                        <p>Some of the company projects that I have worked on:</p>
+                        <p>Some of the companies I’ve worked on projects for:</p>
 
                         <ul>
                             <li><img src="/assets/infiniteimaginations/images/svg/logo-ogilvy.svg" alt="OgilvyOne"></li>
@@ -190,6 +192,8 @@
                         </div>
 
                         <div class="col-r col-6">
+                            <h2>Recognitions</h2>
+
                             <div class="nominations">
                                 <ul>
                                     <li>

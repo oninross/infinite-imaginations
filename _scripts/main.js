@@ -43,7 +43,7 @@ function debounce(func, wait, immediate) {
 
         /* Background-size: cover Fallback */
         (function () {
-            if ($('.no-bgsizecover').length) {
+            if (!Modernizr.backgroundsize) {
                 $('.backstretch').each(function () {
                     var $this = $(this),
                         $dataOriginal = $this.data('original');
@@ -53,49 +53,21 @@ function debounce(func, wait, immediate) {
             }
         })();
 
+        /* object-fit: cover fallback */
+        (function () {
+            if (!Modernizr.objectfit) {
+                setTimeout(function() {
+                    $('.card-wrap').each(function () {
+                        var $this = $(this),
+                            $parent = $this.parent(),
+                            $img = $this.find('img');
 
-        /* JRespond Breakpoints */
-        var jRes = jRespond([
-            {
-                label: 'mobile',
-                enter: 0,
-                exit: 767
-            },{
-                label: 'tablet',
-                enter: 768,
-                exit: 1023
-            },{
-                label: 'desktop',
-                enter: 1024,
-                exit: 10000
+                        $this.css({
+                            'background-image' :'url(' + $img.attr('src') + ')'
+                        });
+                    });
+                }, 700);
             }
-        ]);
-
-        /* JRespond Functions(Desktop) */
-        jRes.addFunc({
-            breakpoint: ['desktop'],
-            enter: function () {
-            },
-            exit: function () {
-            }
-        });
-
-        /* JRespond Functions(Tablet) */
-        jRes.addFunc({
-            breakpoint: ['tablet'],
-            enter: function () {
-            },
-            exit: function () {
-            }
-        });
-
-        /* JRespond Functions(Mobile) */
-        jRes.addFunc({
-            breakpoint: ['mobile'],
-            enter: function () {
-            },
-            exit: function () {
-            }
-        });
+        })();
     });
 }(jQuery));

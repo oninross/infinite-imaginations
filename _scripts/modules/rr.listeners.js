@@ -12,7 +12,7 @@ var RR = (function (parent, $) {
         $header = $('.header'),
         currentPage = 'hello',
         $data = 'hello',
-        syncTime = 0.4,
+        syncTime = 0.5,
         nextInd = 0,
         caseStudies = [],
         bSkillsLabel = [],
@@ -35,7 +35,6 @@ var RR = (function (parent, $) {
     var setup = function () {
 
         // Hello Animation
-
         TweenMax.to('.logo', 0.5, {
             opacity: 1,
             y: 0,
@@ -98,11 +97,37 @@ var RR = (function (parent, $) {
                 setTimeout(function () {
                     RR.menu.tlHoverReverse();
                 }, 500);
+
+                // RR.gaListeners.gaClickEvent('Menu', $data);
+            } else {
+                RR.gaListeners.gaClickEvent('Hello: Nav', $data);
             }
         });
 
         $('.header .logo a').on('click', function () {
             $data = 'hello';
+
+            RR.gaListeners.gaClickEvent('Logo', null);
+        });
+
+        $('p a').on('click', function () {
+            RR.gaListeners.gaClickEvent('Link', $(this).data('text'));
+        });
+
+        $('.achievements a').on('click', function () {
+            RR.gaListeners.gaClickEvent('Link', 'infinite imaginations: BETA');
+        });
+
+        $('.case-study').on('click', '.navigation a', function () {
+            if ($(this).find('span').length) {
+                RR.gaListeners.gaClickEvent('Next', $(this).find('.navigation-label span').text());
+            } else {
+                RR.gaListeners.gaClickEvent('Next', $(this).find('.navigation-label').text());
+            }
+        });
+
+        $('.contact-icons a').click(function () {
+            RR.gaListeners.gaClickEvent('Contact', $(this).find('.vh').text());
         });
 
 
@@ -173,13 +198,28 @@ var RR = (function (parent, $) {
         });
 
         // Window scroll
+        var st, $headerHeight, lastScrollTop;
+
         $window.on('scroll', function () {
-            // opacity = (document.body.scrollTop / 100).toFixed(2);
-            if (document.body.scrollTop >= 20) {
-                $header.addClass('dark shadow-z2');
+            st = $(this).scrollTop();
+            $headerHeight = $header.height();
+            lastScrollTop;
+
+            if (st > lastScrollTop) {
+                // scroll down
+                if (document.body.scrollTop >= 20) {
+                    $header.addClass('dark hide shadow-z2');
+                }
             } else {
-                $header.removeClass('dark shadow-z2');
+                // scroll up
+                if (st <= $headerHeight) {
+                    $header.removeClass('dark shadow-z2');
+                } else {
+                    $header.removeClass('hide');
+                }
             }
+
+            lastScrollTop = st;
         });
     };
 
@@ -206,26 +246,26 @@ var RR = (function (parent, $) {
                     opacity: 1,
                     y: 0,
                     ease: Expo.easeOut,
-                    delay: 0.25
+                    delay: 0.1
                 }, 0.1);
 
                 TweenMax.to($this.find('hr'), 0.5, {
                     width: '100%',
                     ease: Expo.easeOut,
-                    delay: 0.25
+                    delay: 0.2
                 });
 
                 TweenMax.to($this.find('.pattern'), 0.5, {
                     width: '100%',
                     ease: Expo.easeOut,
-                    delay: 0.5
+                    delay: 0.3
                 });
 
                 TweenMax.staggerTo($this.find('p'), 0.5, {
                     opacity: 1,
                     y: 0,
                     ease: Expo.easeOut,
-                    delay: 0.5
+                    delay: 0.4
                 }, 0.1);
 
                 TweenMax.staggerTo($this.find('li'), 0.5, {
@@ -239,7 +279,7 @@ var RR = (function (parent, $) {
                     opacity: 1,
                     y: 0,
                     ease: Expo.easeOut,
-                    delay: 0.75
+                    delay: 0.6
                 });
             });
         });
@@ -267,22 +307,27 @@ var RR = (function (parent, $) {
             }
 
             $this.attr('href', caseStudies[i].url.local);
-            $this.data('original', caseStudies[i].images.thumb);
-            $this.find('img').attr('src', caseStudies[i].images.thumb);
+            $this.data('original', caseStudies[i].images.small);
+            $this.find('img').attr('src', caseStudies[i].images.small);
             $this.find('img').attr('alt', caseStudies[i].title);
             $this.find('.card-title').text(caseStudies[i].title);
             $this.find('.card-desc').text(caseStudies[i].desc);
+        }).on('click', function () {
+            RR.gaListeners.gaClickEvent('Case Studies', $(this).find('.card-title').text());
         });
     };
 
     var getData = function (param) {
         switch (param) {
-            case 'bhp-billiton':
+            case 'placeholder':
                 ind = 0;
                 break;
-            case 'central-manpower-base':
-                ind = 1;
-                break;
+            // case 'bhp-billiton':
+            //     ind = 0;
+            //     break;
+            // case 'central-manpower-base':
+            //     ind = 1;
+            //     break;
             case 'adelphi-digital':
                 ind = 2;
                 break;
@@ -316,6 +361,8 @@ var RR = (function (parent, $) {
             nextCaseStudyItem = caseStudies[nextInd];
 
             obj = {
+                title: caseStudyItem.title,
+                image: caseStudyItem.images.large,
                 tldr: caseStudyItem.tldr,
                 url: {
                     live: caseStudyItem.url.live
@@ -330,6 +377,9 @@ var RR = (function (parent, $) {
                     title: nextCaseStudyItem.title
                 }
             };
+
+            $('.primary-nav .active').removeClass('active');
+            $('.primary-nav a[data-name="' + caseStudyItem.category + '"]').addClass('active');
 
             $('.case-study__wrap').html(caseStudyTemp(obj));
         }
@@ -449,6 +499,11 @@ var RR = (function (parent, $) {
 
         TweenMax.set('.' + slide + ' .bar .icon', {
             opacity: 0
+        });
+
+        TweenMax.set('.' + slide + ' h2', {
+            opacity: 0,
+            y: 50
         });
 
         TweenMax.set('.' + slide + ' p', {
@@ -573,20 +628,20 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.25
+            delay: 0.1
         });
 
         TweenMax.to('.hello hr', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
-            delay: 0.5
+            delay: 0.2
         });
 
         TweenMax.staggerTo('.hello li', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.3
         }, 0.1);
     };
 
@@ -613,11 +668,17 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.5
+            delay: 0.1
         });
 
         if (isMobile()) {
             skillsWatcher.enterViewport(function () {
+                TweenMax.to('.about h2', 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut
+                });
+
                 TweenMax.staggerTo('.skills__bar', 0.5, {
                     opacity: 1,
                     y: 0,
@@ -678,11 +739,18 @@ var RR = (function (parent, $) {
                 }, 0.1);
             });
         } else {
+            TweenMax.to('.about h2', 0.5, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeOut,
+                delay: 0.2
+            });
+
             TweenMax.staggerTo('.skills__bar', 0.5, {
                 opacity: 1,
                 y: 0,
                 ease: Expo.easeOut,
-                delay: 0.75
+                delay: 0.3
             }, 0.1);
 
             setTimeout(function () {
@@ -705,38 +773,38 @@ var RR = (function (parent, $) {
                     TweenMax.to($this, 0.75, {
                         width: $percent + '%',
                         ease: Expo.easeInOut,
-                        delay: 0.25 * i
+                        delay: 0.1 * i
                     });
 
                     TweenMax.to($this.find('.skills__label'), 0.5, {
                         opacity: 1,
                         ease: Expo.easeInOut,
-                        delay: 0.25 * i,
+                        delay: 0.1 * i,
                         onStart: function () {
                             bSkillsLabel[i].start().reveal(750, 750);
                         }
                     });
                 });
-            }, 750);
+            }, 200);
 
             TweenMax.to('.about hr', 0.5, {
                 width: '100%',
                 ease: Expo.easeOut,
-                delay: 1
+                delay: 0.4
             });
 
             TweenMax.to('.logos p', 0.5, {
                 opacity: 1,
                 y: 0,
                 ease: Expo.easeOut,
-                delay: 1.25
+                delay: 0.5
             });
 
             TweenMax.staggerTo('.about .logos li', 0.5, {
                 opacity: 1,
                 y: 0,
                 ease: Expo.easeOut,
-                delay: 1.5
+                delay: 0.6
             }, 0.1);
         }
     };
@@ -764,18 +832,24 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.5
+            delay: 0.1
         });
 
         TweenMax.to('.achievements .col-l a', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.2
         });
 
         if (isMobile()) {
             nominationsWatcher.enterViewport(function () {
+                TweenMax.to('.achievements h2', 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut
+                });
+
                 TweenMax.staggerTo('.nominations .ui-pattern', 0.5, {
                     opacity: 1,
                     scale: 1,
@@ -786,11 +860,18 @@ var RR = (function (parent, $) {
                 }, 0.1);
             });
         } else {
+            TweenMax.to('.achievements h2', 0.5, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeOut,
+                delay: 0.3
+            });
+
             TweenMax.staggerTo('.nominations .ui-pattern', 0.5, {
                 opacity: 1,
                 scale: 1,
                 ease: Expo.easeOut,
-                delay: 0.75,
+                delay: 0.4,
                 onStart: function () {
                     $(this.target).parent().parent().addClass('init');
                 }
@@ -821,7 +902,7 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.1
         }, 0.1);
     };
 
@@ -848,7 +929,7 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.1
         }, 0.1);
     };
 
@@ -901,14 +982,14 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.1
         });
 
         TweenMax.staggerTo('.contact-icons li', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 1
+            delay: 0.2
         }, 0.1);
     };
 
@@ -940,7 +1021,7 @@ var RR = (function (parent, $) {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
-            delay: 0.75
+            delay: 0.1
         });
     };
 
@@ -953,6 +1034,13 @@ var RR = (function (parent, $) {
             });
 
             TweenMax.to('.' + currentPage + ' p', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.1
+            });
+
+            TweenMax.to('.' + currentPage + ' h2', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,

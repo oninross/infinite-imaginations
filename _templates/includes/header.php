@@ -55,14 +55,6 @@
         <link href="/assets/infiniteimaginations/css/main.css" rel="stylesheet">
         <link href="/assets/infiniteimaginations/css/responsive.css" rel="stylesheet">
         <!-- /build -->
-
-        <!--[if lt IE 9]>
-            <link rel="stylesheet" href = "/assets/infiniteimaginations/css/ie.css">
-            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
-        <![endif]-->
-
-        <script src="/assets/infiniteimaginations/js/vendor/modernizr.js"></script>
     </head>
     <body>
         <header class="header" role="header">

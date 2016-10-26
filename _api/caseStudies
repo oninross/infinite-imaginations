@@ -1,20 +1,17 @@
 {
     "caseStudies": [
         {
-            "title": "BHP Billiton",
-            "desc": "BHP Billiton - Description",
+            "title": "Lorem ipsum dolor sit amet",
+            "desc": "Nullam fringilla, leo eu fringilla convallis, massa orci luctus.",
             "category": "coding",
-            "tldr": "A redesign and rebuild the corporate website for the client and the first modular/component build for Adelphi Digital.",
+            "tldr": "A redesign and rebuild the corporate website for the client and the first modular/component build for Adelphi Digital.A redesign and rebuild the corporate website for the client and the first modular/component build for Adelphi Digital.",
+            "tldr": "Vestibulum iaculis nisl fermentum dui ullamcorper, id vestibulum ante mattis. Curabitur pulvinar aliquam vehicula. Aenean vehicula maximus sem. Suspendisse in est iaculis, tempor dolor sit amet, commodo nibh. Aliquam sed orci ut turpis.",
             "role": "Front-end Developer / UX Consultant",
             "challenges": [
-                "The designs provided had a lot of similar looking components when you counted them all, it would be a huge number.",
-                "We encountered user experience/usability issue with one of the components while we were prototyping the website.",
-                "The grid system for responsive websites along with a modular build can be sometimes troublesome to educate and explain. "
+                "Quisque commodo lacus ut ante tempus interdum. Donec tempus felis nec tristique lacinia. Aenean laoreet velit in vulputate porta. Morbi vitae lacus mollis, mattis neque sed, iaculis felis. Ut mollis lorem id ligula elementum, et rhoncus nisi viverra. Ut dapibus, tellus in porta blandit, felis purus accumsan mauris, ut gravida eros tortor at purus."
             ],
             "solutions": [
-                "We managed to slim down the number of components by combining the similar ones and simply extending them with a few lines of code.  Imagine 1 markup serving 4 different looking banners.",
-                "While building the prototype for the project, you will tend to discover something wrong along the way.  We communicated with the client with the issue and we managed to give suggestions to solve the issue.",
-                "Initially, we came up with a component builder for the project.  A simple front-end framework where the client can drag and drop components to the stage.  Then it evolved to a paper prototype where the client can easily visualize how a page would look like when they have placed the necessary components."
+                "Sed placerat nibh sed justo consectetur, at placerat libero rhoncus. In et faucibus urna. Nullam aliquam sodales ante, id auctor ipsum sodales sit amet. Nulla facilisi. Nullam suscipit dolor sit amet consequat condimentum."
             ],
             "technology": [
                 "HTML / HTML5",
@@ -22,25 +19,26 @@
                 "JavaScript / jQuery / TweenMax"
             ],
             "images": {
-                "case-study": [],
-                "thumb": "http://placehold.it/480x270/"
+                "large": "/assets/infiniteimaginations/images/large-placeholder.png",
+                "small": "/assets/infiniteimaginations/images/small-placeholder.jpg"
             },
             "url": {
                 "live": null,
-                "local": "/#/case-study/bhp-billiton"
+                "local": "/#/case-study/placeholder"
             }
         },
         {
-            "title": "Central Manpower Base",
-            "desc": "Central Manpower - Description Base",
+            "title": "Lorem ipsum dolor sit amet",
+            "desc": "Nullam fringilla, leo eu fringilla convallis, massa orci luctus.",
             "category": "coding",
-            "tldr": "Redesign, rebuild and enhance the user experience of a static brochure site for a government client in Singapore.",
+            "tldr": "A redesign and rebuild the corporate website for the client and the first modular/component build for Adelphi Digital.A redesign and rebuild the corporate website for the client and the first modular/component build for Adelphi Digital.",
+            "tldr": "Vestibulum iaculis nisl fermentum dui ullamcorper, id vestibulum ante mattis. Curabitur pulvinar aliquam vehicula. Aenean vehicula maximus sem. Suspendisse in est iaculis, tempor dolor sit amet, commodo nibh. Aliquam sed orci ut turpis.",
             "role": "Front-end Developer / UX Consultant",
             "challenges": [
-                "There were a lot of important infographics and flowcharts that needed to be displayed in mobile, tablet and desktop.  It was important to the client that these information would reach their users."
+                "Quisque commodo lacus ut ante tempus interdum. Donec tempus felis nec tristique lacinia. Aenean laoreet velit in vulputate porta. Morbi vitae lacus mollis, mattis neque sed, iaculis felis. Ut mollis lorem id ligula elementum, et rhoncus nisi viverra. Ut dapibus, tellus in porta blandit, felis purus accumsan mauris, ut gravida eros tortor at purus."
             ],
             "solutions": [
-                "We made the impossible possible.  We have made infographics and flowcharts responsive.  No matter what screen size, no matter what device, the information is delivered to the users."
+                "Sed placerat nibh sed justo consectetur, at placerat libero rhoncus. In et faucibus urna. Nullam aliquam sodales ante, id auctor ipsum sodales sit amet. Nulla facilisi. Nullam suscipit dolor sit amet consequat condimentum."
             ],
             "technology": [
                 "HTML / HTML5",
@@ -48,17 +46,17 @@
                 "JavaScript / jQuery / TweenMax"
             ],
             "images": {
-                "case-study": [],
-                "thumb": "http://placehold.it/480x270/"
+                "large": "/assets/infiniteimaginations/images/large-placeholder.png",
+                "small": "/assets/infiniteimaginations/images/small-placeholder.jpg"
             },
             "url": {
                 "live": null,
-                "local": "/#/case-study/central-manpower-base"
+                "local": "/#/case-study/placeholder"
             }
         },
         {
             "title": "Adelphi Digital",
-            "desc": "Adelphi Digital - Description",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "category": "coding",
             "tldr": "Develop the company website in 4 days",
             "role": "Front-end Developer / UX Consultant",
@@ -72,8 +70,8 @@
                 "JavaScript / jQuery / TweenMax"
             ],
             "images": {
-                "case-study": [],
-                "thumb": "http://placehold.it/480x270/"
+                "large": "/assets/infiniteimaginations/images/large-adelphi-digital.png",
+                "small": "/assets/infiniteimaginations/images/small-adelphi-digital.jpg"
             },
             "url": {
                 "live": null,
@@ -82,7 +80,7 @@
         },
         {
             "title": "infinite imaginations BETA",
-            "desc": "infinite imaginations - Description BETA",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "category": "design",
             "tldr": "A revolutionary and cutting edge website in design and technology that utilizes existing resources in the internet that were barely known to the public.",
             "role": "Front-end Developer / Designer",
@@ -98,8 +96,8 @@
                 "JavaScript / jQuery / TweenMax"
             ],
             "images": {
-                "case-study": [],
-                "thumb": "http://placehold.it/480x270/"
+                "large": "/assets/infiniteimaginations/images/large-infinite-imaginations-beta.png",
+                "small": "/assets/infiniteimaginations/images/small-infinite-imaginations-beta.jpg"
             },
             "url": {
                 "live": null,
@@ -108,7 +106,7 @@
         },
         {
             "title": "The Jewel Box",
-            "desc": "The Jewel - Description Box",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "category": "design",
             "tldr": "An interactive touch screen to showcase the different venues and the history about Mt. Fabre in different languages.",
             "role": "Interface Designer / Flash Developer Developer",
@@ -124,8 +122,8 @@
                 "XML"
             ],
             "images": {
-                "case-study": [],
-                "thumb": "http://placehold.it/480x270/"
+                "large": "/assets/infiniteimaginations/images/large-the-jewel-box.png",
+                "small": "/assets/infiniteimaginations/images/small-the-jewel-box.jpg"
             },
             "url": {
                 "live": null,
@@ -134,7 +132,7 @@
         },
         {
             "title": "Envirobot",
-            "desc": "Envirobot - Description",
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "category": "design",
             "tldr": "An interactive touchscreen built into the chassis of a remote controlled robot circulating around Singapore high schools.",
             "role": "Front-end Developer / UX Consultant",
@@ -147,8 +145,8 @@
                 "TweenMax for ActionScript"
             ],
             "images": {
-                "case-study": [],
-                "thumb": "http://placehold.it/480x270/"
+                "large": "/assets/infiniteimaginations/images/large-envirobot.png",
+                "small": "/assets/infiniteimaginations/images/small-envirobot.jpg"
             },
             "url": {
                 "live": null,

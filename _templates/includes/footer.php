@@ -15,6 +15,8 @@
             <div class="case-study__section tldr">
                 <div class="wrap">
                     <div class="col col-12">
+                        <img src="{{! it.image }}" alt="{{! it.title }}">
+
                         <h2>TLDR;</h2>
 
                         <hr />
@@ -119,8 +121,8 @@
             </div>
         </script>
 
-        <!-- build:js //ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js -->
-        <script src="/assets/infiniteimaginations/js/vendor/jquery-1.11.3.min.js"></script>
+        <!-- build:js //ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js -->
+        <script src="/assets/infiniteimaginations/js/vendor/jquery-1.12.4.min.js"></script>
         <!-- /build -->
 
         <!--[if lt IE 9]>
@@ -132,16 +134,5 @@
         <script src="/assets/infiniteimaginations/js/modules.js"></script>
         <script src="/assets/infiniteimaginations/js/main.js"></script>
         <!-- /build -->
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            // function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            // e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            // e.src='https://www.google-analytics.com/analytics.js';
-            // r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            // ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
-
     </body>
 </html>
