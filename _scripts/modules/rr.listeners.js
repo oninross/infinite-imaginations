@@ -304,12 +304,15 @@ var RR = (function (parent, $) {
 
     var getData = function (param) {
         switch (param) {
-            case 'bhp-billiton':
+            case 'placeholder':
                 ind = 0;
                 break;
-            case 'central-manpower-base':
-                ind = 1;
-                break;
+            // case 'bhp-billiton':
+            //     ind = 0;
+            //     break;
+            // case 'central-manpower-base':
+            //     ind = 1;
+            //     break;
             case 'adelphi-digital':
                 ind = 2;
                 break;

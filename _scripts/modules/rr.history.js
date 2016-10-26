@@ -68,10 +68,6 @@ var RR = (function (parent, $) {
             RR.gaListeners.gaPageView('contact');
         });
 
-        // Path.map("#/users/:id").enter(updateAnalytics).to(function (){
-            // Code here
-        // });
-
         Path.listen();
     };
 
