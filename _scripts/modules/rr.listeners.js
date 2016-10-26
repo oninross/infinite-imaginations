@@ -51,23 +51,25 @@ var RR = (function (parent, $) {
 
 
         // Hello Section: nav animations
-        $('.hello nav a').on('mouseover', function (e) {
-            e.preventDefault();
+        if (isDesktop()) {
+            $('.hello nav a, .primary-nav a').on('mouseover', function (e) {
+                e.preventDefault();
 
-            TweenMax.to($(this).find('.text'), 0.25, {
-                autoAlpha: 0,
-                scale: 1.5,
-                ease: Expo.easeOut
-            });
-        }).on('mouseout', function (e) {
-            e.preventDefault();
+                TweenMax.to($(this).find('.text'), 0.25, {
+                    autoAlpha: 0,
+                    scale: 1.5,
+                    ease: Expo.easeOut
+                });
+            }).on('mouseout', function (e) {
+                e.preventDefault();
 
-            TweenMax.to($(this).find('.text'), 0.25, {
-                autoAlpha: 1,
-                scale: 1,
-                ease: Expo.easeOut
+                TweenMax.to($(this).find('.text'), 0.25, {
+                    autoAlpha: 1,
+                    scale: 1,
+                    ease: Expo.easeOut
+                });
             });
-        });
+        }
 
 
         // Navigation Listeners
@@ -197,9 +199,19 @@ var RR = (function (parent, $) {
             }
         });
 
+
+        // some funky stuff
+        var title = $(document).find('title').text(),
+            altTitle = 'Don\'t, just leave yet!',
+            $docTitle = $(document).find('title');
+
+        document.addEventListener('visibilitychange', function() {
+            document.hidden ? $docTitle.text(altTitle) : $docTitle.text(title)
+        })
+
+
         // Window scroll
         var st, $headerHeight, lastScrollTop;
-
         $window.on('scroll', function () {
             st = $(this).scrollTop();
             $headerHeight = $header.height();
@@ -311,7 +323,6 @@ var RR = (function (parent, $) {
             $this.find('img').attr('src', caseStudies[i].images.small);
             $this.find('img').attr('alt', caseStudies[i].title);
             $this.find('.card-title').text(caseStudies[i].title);
-            $this.find('.card-desc').text(caseStudies[i].desc);
         }).on('click', function () {
             RR.gaListeners.gaClickEvent('Case Studies', $(this).find('.card-title').text());
         });

@@ -3,13 +3,12 @@
 <!--[if IE 8]><html class="no-js is-ie lt-ie9 lt-ie10" lang="en"> <![endif]-->
 <!--[if IE 9]><html class="no-js is-ie lt-ie10" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
-    <head>
+    <head itemscope itemtype="http://schema.org/WebSite">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <meta name="description" content="">
 
-        <title>infinite imaginations | because i can</title>
+        <title>infinite imaginations | UX Front-end Developer</title>
 
         <link rel="mask-icon" href="/favicon.svg" color="#292929">
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -26,43 +25,46 @@
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/manifest.json">
+
+        <meta name="google-site-verification" content="">
+
         <meta name="msapplication-TileColor" content="#292929">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#292929">
 
         <meta name="robots" content="follow">
-        <meta name="author" content="Nino Ross Rodriguez">
+        <meta name="author" content="Niño Ross Rodriguez">
         <meta name="copyright" content="2016">
-        <meta name="description" content="UX Developer based in Singapore with eight years of industry experience.  I specialize in developing responsive front-end websites done in HTML5, CSS3 and JavaScript.">
-        <meta name="keywords" content="nino ross rodriguez, infinite imaginations, web design, web develop, front-end, responsive, responsive web design, website, user experience, html, html5, css, css3, less, twitter bootstrap, javascript, jquery, json, angularJS, actionscript, flash" />
+        <meta name="description" content="I'm Niño Ross Rodriguez, a Senior User Experience (UX) Developer with eight years of industry experience, specializing in developing pixel perfect websites quickly without sacrificing code quality and ensuring that users have the best UX they can get in a site.">
+        <meta name="keywords" content="niño ross rodriguez, infinite imaginations, UX, user experience, web develop, front-end, responsive, responsive web design, web design, html, html5, css, css3, scss, twitter bootstrap, javascript, jquery, json, angularJS, actionscript, flash" />
 
-        <meta property="og:title" content="infinite imaginations | because i can">
-        <meta property="og:type" content="">
-        <meta property="og:url" content="">
-        <meta property="og:image" content="">
+        <meta property="og:title" content="infinite imaginations | UX Front-end Developer">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://www.infiniteimaginations.co">
+        <meta property="og:image" content="http://www.infiniteimaginations.co/share-image.jpg">
         <meta property="og:description" content="UX Developer based in Singapore with eight years of industry experience.  I specialize in developing responsive front-end websites done in HTML5, CSS3 and JavaScript.">
         <meta property="og:site_name" content="infinite imaginations">
 
         <meta name="twitter:card" content="summary"/>
-        <meta name="twitter:creator" content="Nino Ross Rodriguez"/>
-        <meta name="twitter:url" content=""/>
+        <meta name="twitter:creator" content="Niño Ross Rodriguez"/>
+        <meta name="twitter:url" content="http://www.infiniteimaginations.co"/>
 
-        <meta name="twitter:title" content="infinite imaginations | because i can"/>
+        <meta name="twitter:title" content="infinite imaginations | UX Front-end Developer"/>
         <meta name="twitter:description" content="UX Developer based in Singapore with eight years of industry experience.  I specialize in developing responsive front-end websites done in HTML5, CSS3 and JavaScript."/>
-        <meta name="twitter:image" content="" />
+        <meta name="twitter:image" content="http://www.infiniteimaginations.co/share-image.jpg" />
 
         <!-- build:css /assets/infiniteimaginations/css/main.min.css -->
         <link href="/assets/infiniteimaginations/css/main.css" rel="stylesheet">
         <link href="/assets/infiniteimaginations/css/responsive.css" rel="stylesheet">
         <!-- /build -->
     </head>
-    <body>
-        <header class="header" role="header">
+    <body itemscope itemtype="http://schema.org/WebPage">
+        <header class="header">
             <div class="logo">
-                <a href="/#/hello/" data-name="hello">
+                <a href="/#/hello/" data-name="hello" aria-label="Home">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                             width="181.499px" height="40px" viewBox="0.239 0.053 181.499 40" enable-background="new 0.239 0.053 181.499 40"
-                             xml:space="preserve">
+                        width="181.499px" height="40px" viewBox="0.239 0.053 181.499 40" enable-background="new 0.239 0.053 181.499 40"
+                        xml:space="preserve">
                         <g>
                             <polygon fill="#292929" points="49.651,20.053 42.592,4.759 35.533,4.759 42.592,20.053 35.533,35.347 42.592,35.347   "/>
                             <polygon fill="#292929" points="0.239,20.053 7.298,4.759 14.357,4.759 7.298,20.053 14.357,35.347 7.298,35.347   "/>
@@ -131,7 +133,7 @@
                 </a>
             </div>
 
-            <button class="menu" type="button">
+            <button class="menu" type="button" aria-label="Menu">
                 <span class="box tl"></span>
                 <span class="box tr"></span>
 
@@ -140,12 +142,12 @@
             </button>
 
             <div class="header-wrap">
-                <nav class="primary-nav">
+                <nav class="primary-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
                     <ul>
                         <li>
-                            <a href="/#/hello/" class="element-box" data-name="hello">
+                            <a href="/#/hello/" class="element-box" data-name="hello" rel="nofollow">
                                 <span class="text">
-                                    <span class="abbr">Ho</span>
+                                    <span class="abbr" aria-hidden="true">Ho</span>
                                     <span class="full">home</span>
                                 </span>
 
@@ -154,9 +156,9 @@
                         </li>
 
                         <li>
-                            <a href="/#/about/" class="element-box" data-name="about">
+                            <a href="/#/about/" class="element-box" data-name="about" rel="nofollow">
                                 <span class="text">
-                                    <span class="abbr">Ab</span>
+                                    <span class="abbr" aria-hidden="true">Ab</span>
                                     <span class="full">about</span>
                                 </span>
 
@@ -165,9 +167,9 @@
                         </li>
 
                         <li>
-                            <a href="/#/achievements/" class="element-box" data-name="achievements">
+                            <a href="/#/achievements/" class="element-box" data-name="achievements" rel="nofollow">
                                 <span class="text">
-                                    <span class="abbr">Ac</span>
+                                    <span class="abbr" aria-hidden="true">Ac</span>
                                     <span class="full">achievements</span>
                                 </span>
 
@@ -176,9 +178,9 @@
                         </li>
 
                         <li>
-                            <a href="/#/coding/" class="element-box" data-name="coding">
+                            <a href="/#/coding/" class="element-box" data-name="coding" rel="nofollow">
                                 <span class="text">
-                                    <span class="abbr">Co</span>
+                                    <span class="abbr" aria-hidden="true">Co</span>
                                     <span class="full">coding</span>
                                 </span>
 
@@ -187,9 +189,9 @@
                         </li>
 
                         <li>
-                            <a href="/#/design/" class="element-box" data-name="design">
+                            <a href="/#/design/" class="element-box" data-name="design" rel="nofollow">
                                 <span class="text">
-                                    <span class="abbr">De</span>
+                                    <span class="abbr" aria-hidden="true">De</span>
                                     <span class="full">design</span>
                                 </span>
 
@@ -198,9 +200,9 @@
                         </li>
 
                         <li>
-                            <a href="/#/contact/" class="element-box" data-name="contact">
+                            <a href="/#/contact/" class="element-box" data-name="contact" rel="nofollow">
                                 <span class="text">
-                                    <span class="abbr">Ct</span>
+                                    <span class="abbr" aria-hidden="true">Ct</span>
                                     <span class="full">contact</span>
                                 </span>
 

@@ -304,6 +304,20 @@ module.exports = function(grunt) {
             src: ['**/*'],
             dest: 'dist/'
             }
+        },
+
+        /**
+         * Minifies HTML
+         */
+        minifyHtml: {
+            options: {
+                cdata: true
+            },
+            dist: {
+                files: {
+                    'dist/index.html': 'dist/index.html'
+                }
+            }
         }
     });
 
@@ -323,6 +337,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-sync');
     grunt.loadNpmTasks('grunt-php2html');
     grunt.loadNpmTasks('grunt-contrib-compress');
+    grunt.loadNpmTasks('grunt-minify-html');
 
     /**
      * Default task
@@ -372,6 +387,7 @@ module.exports = function(grunt) {
         'processhtml',
         'php2html',
         'clean:www',
+        'minifyHtml',
         'compress'
     ]);
 };

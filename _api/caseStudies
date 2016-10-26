@@ -2,7 +2,6 @@
     "caseStudies": [
         {
             "title": "Lorem ipsum dolor sit amet",
-            "desc": "Nullam fringilla, leo eu fringilla convallis, massa orci luctus.",
             "category": "coding",
             "tldr": "A redesign and rebuild the corporate website for the client and the first modular/component build for Adelphi Digital.A redesign and rebuild the corporate website for the client and the first modular/component build for Adelphi Digital.",
             "tldr": "Vestibulum iaculis nisl fermentum dui ullamcorper, id vestibulum ante mattis. Curabitur pulvinar aliquam vehicula. Aenean vehicula maximus sem. Suspendisse in est iaculis, tempor dolor sit amet, commodo nibh. Aliquam sed orci ut turpis.",
@@ -29,7 +28,6 @@
         },
         {
             "title": "Lorem ipsum dolor sit amet",
-            "desc": "Nullam fringilla, leo eu fringilla convallis, massa orci luctus.",
             "category": "coding",
             "tldr": "A redesign and rebuild the corporate website for the client and the first modular/component build for Adelphi Digital.A redesign and rebuild the corporate website for the client and the first modular/component build for Adelphi Digital.",
             "tldr": "Vestibulum iaculis nisl fermentum dui ullamcorper, id vestibulum ante mattis. Curabitur pulvinar aliquam vehicula. Aenean vehicula maximus sem. Suspendisse in est iaculis, tempor dolor sit amet, commodo nibh. Aliquam sed orci ut turpis.",
@@ -56,7 +54,6 @@
         },
         {
             "title": "Adelphi Digital",
-            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "category": "coding",
             "tldr": "Develop the company website in 4 days",
             "role": "Front-end Developer / UX Consultant",
@@ -80,7 +77,6 @@
         },
         {
             "title": "infinite imaginations BETA",
-            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "category": "design",
             "tldr": "A revolutionary and cutting edge website in design and technology that utilizes existing resources in the internet that were barely known to the public.",
             "role": "Front-end Developer / Designer",
@@ -106,7 +102,6 @@
         },
         {
             "title": "The Jewel Box",
-            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "category": "design",
             "tldr": "An interactive touch screen to showcase the different venues and the history about Mt. Fabre in different languages.",
             "role": "Interface Designer / Flash Developer Developer",
@@ -132,7 +127,6 @@
         },
         {
             "title": "Envirobot",
-            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "category": "design",
             "tldr": "An interactive touchscreen built into the chassis of a remote controlled robot circulating around Singapore high schools.",
             "role": "Front-end Developer / UX Consultant",

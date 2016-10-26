@@ -4,7 +4,7 @@
     include('header.php');
 ?>
 
-<main id="main" role="document">
+<main id="main">
     <section class="hello">
         <div class="container">
             <div class="wrap">
@@ -23,7 +23,7 @@
                             <li>
                                 <a href="/#/about/" class="element-box" data-name="about">
                                     <span class="text">
-                                        <span class="abbr">Ab</span>
+                                        <span class="abbr" aria-hidden="true">Ab</span>
                                         <span class="full">about</span>
                                     </span>
 
@@ -34,7 +34,7 @@
                             <li>
                                 <a href="/#/achievements/" class="element-box" data-name="achievements">
                                     <span class="text">
-                                        <span class="abbr">Ac</span>
+                                        <span class="abbr" aria-hidden="true">Ac</span>
                                         <span class="full">achievements</span>
                                     </span>
 
@@ -45,7 +45,7 @@
                             <li>
                                 <a href="/#/coding/" class="element-box" data-name="coding">
                                     <span class="text">
-                                        <span class="abbr">Co</span>
+                                        <span class="abbr" aria-hidden="true">Co</span>
                                         <span class="full">coding</span>
                                     </span>
 
@@ -56,7 +56,7 @@
                             <li>
                                 <a href="/#/design/" class="element-box" data-name="design">
                                     <span class="text">
-                                        <span class="abbr">De</span>
+                                        <span class="abbr" aria-hidden="true">De</span>
                                         <span class="full">design</span>
                                     </span>
 
@@ -67,7 +67,7 @@
                             <li>
                                 <a href="/#/contact/" class="element-box" data-name="contact">
                                     <span class="text">
-                                        <span class="abbr">Ct</span>
+                                        <span class="abbr" aria-hidden="true">Ct</span>
                                         <span class="full">contact</span>
                                     </span>
 
@@ -182,12 +182,12 @@
                         <div class="col-l col-6">
                             <p>I have been fortunate enough to be featured in "Web Designer Magazine" when I least expected it. I also have received a few nominations and features in websites including Awwwards, One Page Mania, CSS Reel, Lemon Web Awards, CSS Awards, CSS Design Awards and CSS Awards over the past few years.</p>
 
-                            <a href="http://beta.infiniteimaginations.co" target="_blank">
+                            <a href="http://beta.infiniteimaginations.co" target="_blank" itemprop="url">
                                 <img src="/assets/infiniteimaginations/images/web-designer-magazine.png" alt="Featured in Web Designer Magazine">
                             </a>
 
                             <p>
-                                <a class="beta" href="http://beta.infiniteimaginations.co" target="_blank" data-text="beta.infiniteimaginations.co">beta.infiniteimaginations.co</a>
+                                <a class="beta" href="http://beta.infiniteimaginations.co" target="_blank" data-text="beta.infiniteimaginations.co" itemprop="url">beta.infiniteimaginations.co</a>
                             </p>
                         </div>
 
@@ -204,7 +204,7 @@
                                             <div class="ui-corner ui-corner__ur"></div>
                                             <div class="ui-corner ui-corner__bl"></div>
                                             <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern">
+                                            <div class="ui-pattern"></div>
                                         </div>
                                     </li>
 
@@ -216,7 +216,7 @@
                                             <div class="ui-corner ui-corner__ur"></div>
                                             <div class="ui-corner ui-corner__bl"></div>
                                             <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern">
+                                            <div class="ui-pattern"></div>
                                         </div>
                                     </li>
 
@@ -228,7 +228,7 @@
                                             <div class="ui-corner ui-corner__ur"></div>
                                             <div class="ui-corner ui-corner__bl"></div>
                                             <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern">
+                                            <div class="ui-pattern"></div>
                                         </div>
                                     </li>
 
@@ -240,7 +240,7 @@
                                             <div class="ui-corner ui-corner__ur"></div>
                                             <div class="ui-corner ui-corner__bl"></div>
                                             <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern">
+                                            <div class="ui-pattern"></div>
                                         </div>
                                     </li>
 
@@ -252,7 +252,7 @@
                                             <div class="ui-corner ui-corner__ur"></div>
                                             <div class="ui-corner ui-corner__bl"></div>
                                             <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern">
+                                            <div class="ui-pattern"></div>
                                         </div>
                                     </li>
 
@@ -264,7 +264,7 @@
                                             <div class="ui-corner ui-corner__ur"></div>
                                             <div class="ui-corner ui-corner__bl"></div>
                                             <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern">
+                                            <div class="ui-pattern"></div>
                                         </div>
                                     </li>
 
@@ -276,7 +276,7 @@
                                             <div class="ui-corner ui-corner__ur"></div>
                                             <div class="ui-corner ui-corner__bl"></div>
                                             <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern">
+                                            <div class="ui-pattern"></div>
                                         </div>
                                     </li>
 
@@ -288,7 +288,7 @@
                                             <div class="ui-corner ui-corner__ur"></div>
                                             <div class="ui-corner ui-corner__bl"></div>
                                             <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern">
+                                            <div class="ui-pattern"></div>
                                         </div>
                                     </li>
 
@@ -300,7 +300,7 @@
                                             <div class="ui-corner ui-corner__ur"></div>
                                             <div class="ui-corner ui-corner__bl"></div>
                                             <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern">
+                                            <div class="ui-pattern"></div>
                                         </div>
                                     </li>
                                 </ul>
@@ -325,15 +325,14 @@
                     </h1>
 
                     <div class="wrap">
-                        <div class="col col-6">
-                            <a href="/#/case-study/" class="card-link">
+                        <div class="col col-6" itemscope itemtype="http://schema.org/CreativeWork">
+                            <a href="/#/case-study/" class="card-link" itemprop="url">
                                 <div class="card">
                                     <div class="card-wrap">
-                                        <img src="" alt="" />
+                                        <img src="/assets/infiniteimaginations/images/pixel.gif" alt="image" />
 
                                         <div class="card-text">
-                                            <span class="card-title"></span>
-                                            <span class="card-desc"></span>
+                                            <span class="card-title" aria-hidden="true" itemprop="name"></span>
 
                                             <div class="cta">
                                                 See case study
@@ -344,21 +343,19 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </a>
                         </div>
 
-                        <div class="col col-6">
-                            <a href="/#/case-study/" class="card-link">
+                        <div class="col col-6" itemscope itemtype="http://schema.org/CreativeWork">
+                            <a href="/#/case-study/" class="card-link" itemprop="url">
                                 <div class="card">
                                     <div class="card-wrap">
-                                        <img src="" alt="" />
+                                        <img src="/assets/infiniteimaginations/images/pixel.gif" alt="image" />
 
                                         <div class="card-text">
-                                            <span class="card-title"></span>
-                                            <span class="card-desc"></span>
+                                            <span class="card-title" aria-hidden="true" itemprop="name"></span>
 
                                             <div class="cta">
                                                 See case study
@@ -369,19 +366,17 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </a>
 
-                            <a href="/#/case-study/" class="card-link">
+                            <a href="/#/case-study/" class="card-link" itemprop="url">
                                 <div class="card">
                                     <div class="card-wrap">
-                                        <img src="" alt="" />
+                                        <img src="/assets/infiniteimaginations/images/pixel.gif" alt="image" />
 
                                         <div class="card-text">
-                                            <span class="card-title"></span>
-                                            <span class="card-desc"></span>
+                                            <span class="card-title" aria-hidden="true" itemprop="name"></span>
 
                                             <div class="cta">
                                                 See case study
@@ -392,7 +387,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </a>
@@ -416,15 +410,14 @@
                     </h1>
 
                     <div class="wrap">
-                        <div class="col col-6">
-                            <a href="/#/case-study/" class="card-link">
+                        <div class="col col-6" itemscope itemtype="http://schema.org/CreativeWork">
+                            <a href="/#/case-study/" class="card-link" itemprop="url">
                                 <div class="card">
                                     <div class="card-wrap">
-                                        <img src="" alt="" />
+                                        <img src="/assets/infiniteimaginations/images/pixel.gif" alt="image" />
 
                                         <div class="card-text">
-                                            <span class="card-title"></span>
-                                            <span class="card-desc"></span>
+                                            <span class="card-title" aria-hidden="true" itemprop="name"></span>
 
                                             <div class="cta">
                                                 See case study
@@ -435,21 +428,19 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </a>
                         </div>
 
-                        <div class="col col-6">
-                            <a href="/#/case-study/" class="card-link">
+                        <div class="col col-6" itemscope itemtype="http://schema.org/CreativeWork">
+                            <a href="/#/case-study/" class="card-link" itemprop="url">
                                 <div class="card">
                                     <div class="card-wrap">
-                                        <img src="" alt="" />
+                                        <img src="/assets/infiniteimaginations/images/pixel.gif" alt="image" />
 
                                         <div class="card-text">
-                                            <span class="card-title"></span>
-                                            <span class="card-desc"></span>
+                                            <span class="card-title" aria-hidden="true" itemprop="name"></span>
 
                                             <div class="cta">
                                                 See case study
@@ -460,19 +451,17 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </a>
 
-                            <a href="/#/case-study/" class="card-link">
+                            <a href="/#/case-study/" class="card-link" itemprop="url">
                                 <div class="card">
                                     <div class="card-wrap">
-                                        <img src="" alt="" />
+                                        <img src="/assets/infiniteimaginations/images/pixel.gif" alt="image" />
 
                                         <div class="card-text">
-                                            <span class="card-title"></span>
-                                            <span class="card-desc"></span>
+                                            <span class="card-title" aria-hidden="true" itemprop="name"></span>
 
                                             <div class="cta">
                                                 See case study
@@ -483,7 +472,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </a>
@@ -499,7 +487,7 @@
             <div class="wrap">
                 <div class="col-12">
                     <h1>
-                        <div class="text" data-text="// case study: ">// case study: </div>
+                        <span class="text" data-text="// case study: ">// case study: </span>
 
                         <span class="bar">
                             <i class="icon icon-about"></i>
@@ -531,33 +519,33 @@
                     <p>I am always up for anything geeky. ^_^</p>
 
                     <div class="contact-icons">
-                        <ul>
+                        <ul itemscope itemtype="http://schema.org/Organization">
                             <li>
-                                <a href="mailto:oninross@gmail.com">
+                                <a href="mailto:oninross@gmail.com" rel="noopener">
                                     <span class="vh">eMail</span>
                                     <i class="icon icon-email"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://sg.linkedin.com/in/ninorossrodriguez" target="_blank">
+                                <a href="https://sg.linkedin.com/in/ninorossrodriguez" target="_blank" itemprop="sameAs" rel="noopener">
                                     <span class="vh">LinkedIn</span>
                                     <i class="icon icon-linkedin"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/oninross" target="_blank">
+                                <a href="https://github.com/oninross" target="_blank" itemprop="sameAs" rel="noopener">
                                     <span class="vh">GitHub</span>
                                     <i class="icon icon-github"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.facebook.com/oninross" target="_blank">
+                                <a href="https://www.facebook.com/oninross" target="_blank" itemprop="sameAs" rel="noopener">
                                     <span class="vh">Facebook</span>
                                     <i class="icon icon-facebook"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/oninross/" target="_blank">
+                                <a href="https://www.instagram.com/oninross/" target="_blank" itemprop="sameAs" rel="noopener">
                                     <span class="vh">Instagram</span>
                                     <i class="icon icon-instagram"></i>
                                 </a>
