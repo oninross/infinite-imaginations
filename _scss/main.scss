@@ -428,15 +428,22 @@ p {
         background-color: $matte-black;
 
         svg {
-            path,
             polygon {
                 fill: $white;
+            }
+
+            path {
+                opacity: 0;
             }
         }
 
         .menu .box {
             background-color: $white;
         }
+    }
+
+    &.hide {
+        top: -75px;
     }
 }
 
@@ -447,9 +454,13 @@ p {
     position: absolute;
     z-index: 1;
 
-    img {
-        max-width: 150px;
-        margin: 0;
+    svg {
+        polygon,
+        path {
+            @include transition(opacity, $animTime, $easeOutExpo);
+
+            opacity: 1;
+        }
     }
 }
 

@@ -98,7 +98,7 @@ var RR = (function (parent, $) {
                     RR.menu.tlHoverReverse();
                 }, 500);
 
-                RR.gaListeners.gaClickEvent('Menu', $data);
+                // RR.gaListeners.gaClickEvent('Menu', $data);
             } else {
                 RR.gaListeners.gaClickEvent('Hello: Nav', $data);
             }
@@ -198,13 +198,28 @@ var RR = (function (parent, $) {
         });
 
         // Window scroll
+        var st, $headerHeight, lastScrollTop;
+
         $window.on('scroll', function () {
-            // opacity = (document.body.scrollTop / 100).toFixed(2);
-            if (document.body.scrollTop >= 20) {
-                $header.addClass('dark shadow-z2');
+            st = $(this).scrollTop();
+            $headerHeight = $header.height();
+            lastScrollTop;
+
+            if (st > lastScrollTop) {
+                // scroll down
+                if (document.body.scrollTop >= 20) {
+                    $header.addClass('dark hide shadow-z2');
+                }
             } else {
-                $header.removeClass('dark shadow-z2');
+                // scroll up
+                if (st <= $headerHeight) {
+                    $header.removeClass('dark shadow-z2');
+                } else {
+                    $header.removeClass('hide');
+                }
             }
+
+            lastScrollTop = st;
         });
     };
 
@@ -362,6 +377,9 @@ var RR = (function (parent, $) {
                     title: nextCaseStudyItem.title
                 }
             };
+
+            $('.primary-nav .active').removeClass('active');
+            $('.primary-nav a[data-name="' + caseStudyItem.category + '"]').addClass('active');
 
             $('.case-study__wrap').html(caseStudyTemp(obj));
         }
