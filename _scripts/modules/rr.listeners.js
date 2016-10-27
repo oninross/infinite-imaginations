@@ -89,7 +89,8 @@ var RR = (function (parent, $) {
             // Set box same position as nav element
             TweenMax.set('.element-clone', {
                 left: $this.offset().left,
-                top: $this.offset().top
+                top: $this.offset().top,
+                boxShadow: '0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)'
             });
 
             // Mobile menu click
@@ -205,7 +206,7 @@ var RR = (function (parent, $) {
             altTitle = 'Don\'t, just leave yet!',
             $docTitle = $(document).find('title');
 
-        document.addEventListener('visibilitychange', function() {
+        document.addEventListener('visibilitychange', function () {
             document.hidden ? $docTitle.text(altTitle) : $docTitle.text(title)
         })
 
@@ -419,6 +420,7 @@ var RR = (function (parent, $) {
             top: $gotoElem.offset().top,
             height: $gotoElem.outerHeight(),
             width: 15,
+            boxShadow: '0',
             ease: Expo.easeInOut
         });
 
