@@ -28,7 +28,6 @@
         {
             "title": "Lorem ipsum dolor sit amet",
             "category": "coding",
-            "tldr": "A redesign and rebuild the corporate website for the client and the first modular/component build for Adelphi Digital.A redesign and rebuild the corporate website for the client and the first modular/component build for Adelphi Digital.",
             "tldr": "Vestibulum iaculis nisl fermentum dui ullamcorper, id vestibulum ante mattis. Curabitur pulvinar aliquam vehicula. Aenean vehicula maximus sem. Suspendisse in est iaculis, tempor dolor sit amet, commodo nibh. Aliquam sed orci ut turpis.",
             "role": "Front-end Developer / UX Consultant",
             "challenges": [
@@ -59,7 +58,9 @@
             "challenges": [
                 "Everything was being done in one stream simultaneously.  We had one approved template design, the other templates were either still being designed or being revised, and I was the only front-ender to convert everything to HTML."
             ],
-            "solutions": "I had to make sure that the core framework of the website was robust yet flexible to fit any kind of content based from the design, and easy enough for the team to take over and populate the content.  It was just pure hard-work, passion and motivation that pushed us all to finish the website.",
+            "solutions": [
+                "I had to make sure that the core framework of the website was robust yet flexible to fit any kind of content based from the design, and easy enough for the team to take over and populate the content.  It was just pure hard-work, passion and motivation that pushed us all to finish the website."
+            ],
             "technology": [
                 "HTML / HTML5",
                 "CSS / CSS3",
@@ -132,7 +133,9 @@
             "challenges": [
                 "The iPad was already out in the market and users will expect a smooth user experience.  Touch screens on a Windows machine was just a simple tap here and a tap there.  We needed to make the application interesting enough for students to engage with it."
             ],
-            "solutions": "We took Apple as our basis for all the interaction and design guidelines.  We made sure that the design will be appealing to the student and yet intuitive enough for them to know how to use it.  Most of the time, I just had fun animating and creating the application.  It was probably one of the most funnest projects that I have worked on because we had the freedom to pour our creative juices into the project. ",
+            "solutions": [
+                "We took Apple as our basis for all the interaction and design guidelines.  We made sure that the design will be appealing to the student and yet intuitive enough for them to know how to use it.  Most of the time, I just had fun animating and creating the application.  It was probably one of the most funnest projects that I have worked on because we had the freedom to pour our creative juices into the project. "
+            ],
             "technology": [
                 "Flash ActionScript 3",
                 "TweenMax for ActionScript"
