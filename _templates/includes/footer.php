@@ -26,7 +26,7 @@
                         <p>{{! it.tldr }}</p>
 
                         {{? it.url.live }}
-                        <a href="{{! it.url.live }}" class="cta" data-text="visit website">visit website</a>
+                        <a href="{{! it.url.live }}" class="cta" data-text="visit website" target="_blank">visit website</a>
                         {{? }}
                     </div>
 
