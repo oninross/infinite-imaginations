@@ -20,7 +20,7 @@ var RR = (function (parent, $) {
     var gaPageView = function (title) {
         ga('set', {
             page: 'page',
-            title: title
+            title: '/' + title
         });
 
         ga('send', 'pageview');
@@ -31,8 +31,8 @@ var RR = (function (parent, $) {
 
     var gaClickEvent = function (c, l) {
         // ga('send', 'event', 'category', 'action', 'label', 'value');
-        ga('send', 'event', c, 'click', l);
         // ex: ga('send', 'event', 'image', 'click', 'image click', 'filename.jpg');
+        ga('send', 'event', c, 'click', l);
     };
 
     // Export module method
