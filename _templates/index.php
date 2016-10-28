@@ -95,7 +95,7 @@
 
                     <div class="wrap">
                         <div class="col-l col-6">
-                            <p>As a <strong>Senior UX Developer</strong>, I love being challenged.  I like to <strong>create</strong> solutions to user experience problems, <strong>imagine</strong> fun interaction and animation, and <strong>developing</strong> the best web experience.</p>
+                            <p>As a <strong>Senior UX Developer</strong>, I love being challenged.  I like to <strong>create</strong> solutions to user experience problems, <strong>imagine</strong> fun interaction and animation, and <strong>develop</strong> the best web experience.</p>
                             <p>Most of the time I hand-code everything from scratch using my <a href="https://www.github.com/oninross/firestarter" target="_blank" data-text="Firestarter framework">Firestarter framework.</a>  I use HTML5 Boilerplate and Twitter Bootstrap for rapid development if it is only necessary.</p>
                         </div>
 

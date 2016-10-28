@@ -1527,6 +1527,8 @@ section {
     }
 
     .cta {
+        @include no-transition();
+
         background-color: $matte-black;
         color: $white !important;
         cursor: pointer;

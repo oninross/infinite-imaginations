@@ -3,7 +3,7 @@
         {
             "title": "Elements",
             "category": "coding",
-            "tldr": "Created an offline Progressive Web Application (PWA) of the periodic table of elements displaying the different information of the element.",
+            "tldr": "Created an offline Progressive Web Application (PWA) of the periodic table of elements displaying the different information of an element.",
             "role": "Front-end Developer / Interface Designer",
             "challenges": [
                 "Mobile apps are restricted to their respective app stores.  Creating tools that will be useful to everyone if there was no barrier.  I needed to deliver the content to the users quick and easy without any barriers."
@@ -53,10 +53,10 @@
         {
             "title": "Adelphi Digital",
             "category": "coding",
-            "tldr": "Adelphi Digital needed a new website that is responsive to cater its new content.  We also needed to make a clear statement to the world, <strong><em>\"we are going to create a complete agency website in 4 days.\"</em></strong>",
+            "tldr": "Adelphi Digital needed a new responsive website to cater its new content.  We also needed to make a clear statement to the world, <strong><em>\"we are going to create a complete agency website in 4 days.\"</em></strong>",
             "role": "Front-end Developer",
             "challenges": [
-                "Everything was being done in one stream simultaneously.  We had one approved template design, the other templates were either still being designed or being revised, and I was the only front-ender to convert everything to HTML."
+                "Everything was being done in one stream simultaneously.  We only had one approved template design, the other templates were either still being designed or being revised, and I was the only front-ender to convert everything to HTML."
             ],
             "solutions": [
                 "I had to make sure that the core framework of the website was robust yet flexible to fit any kind of content based from the design, and easy enough for the team to take over and populate the content.  It was just pure hard-work, passion and motivation that pushed us all to finish the website."
@@ -78,7 +78,7 @@
         {
             "title": "infinite imaginations BETA",
             "category": "design",
-            "tldr": "A revolutionary and cutting edge website in design and technology where everyone barely knew about the existing resources in the internet the possibilities that it can do.",
+            "tldr": "A revolutionary and cutting edge website in design and technology, where most developers barely knew about the existing resources in the internet and the possibilities that it can do.",
             "role": "Front-end Developer / Designer",
             "challenges": [
                 "The main objective was to animate the website using plain HTML.  The site was previously done in Flash and I needed to convert it to HTML.  Oh yeah, I was a noob in coding HTML."

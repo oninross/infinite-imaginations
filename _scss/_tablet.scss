@@ -133,6 +133,15 @@ img {
         .full {
             font-size: 1em;
         }
+
+        .icon {
+            font-size: 3.75em;
+
+            &:before {
+                height: 75px;
+                width: 75px;
+            }
+        }
     }
 }
 
@@ -190,6 +199,15 @@ img {
         display: block;
         font-size: 0.55em;
     }
+
+    .icon {
+        font-size: 2.8em;
+
+        &:before {
+            height: 56px;
+            width: 56px;
+        }
+    }
 }
 
 .about {
@@ -207,9 +225,7 @@ img {
             top: 3px;
         }
 
-        &__percent{
-            display: block;
-        }
+
     }
 
     .logos {
