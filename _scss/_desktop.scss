@@ -47,8 +47,16 @@ DEPENDENCIES
 ========================================================================== */
 .primary-nav {
     .element-box {
-        .abbr {
-            font-size: 3.400em;
+        // .abbr {
+        //     font-size: 3.400em;
+        // }
+        .icon {
+            font-size: 2.8em;
+
+            &:before {
+                height: 56px;
+                width: 56px;
+            }
         }
     }
 }

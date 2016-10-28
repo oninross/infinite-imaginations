@@ -113,6 +113,22 @@ var RR = (function (parent, $) {
             RR.gaListeners.gaClickEvent('Logo', null);
         });
 
+        $('section h1 .icon').on('click', function () {
+            TweenMax.fromTo(this, 0.5, {
+                x: -1
+            },
+            {
+                x: 1,
+                ease: RoughEase.ease.config({
+                    strength: 4,
+                    points: 50,
+                    template: Linear.easeNone,
+                    randomize: false
+                }),
+                clearProps: "x"
+            })
+        })
+
         $('p a').on('click', function () {
             RR.gaListeners.gaClickEvent('Link', $(this).data('text'));
         });
