@@ -318,6 +318,12 @@ module.exports = function(grunt) {
                     'dist/index.html': 'dist/index.html'
                 }
             }
+        },
+
+        'json-minify': {
+            build: {
+                files: 'dist/api/*'
+            }
         }
     });
 
@@ -338,6 +344,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-php2html');
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-minify-html');
+    grunt.loadNpmTasks('grunt-json-minify');
 
     /**
      * Default task
@@ -388,6 +395,7 @@ module.exports = function(grunt) {
         'php2html',
         'clean:www',
         'minifyHtml',
-        'compress'
+        'json-minify',
+        'compress',
     ]);
 };
