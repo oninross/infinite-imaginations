@@ -1768,18 +1768,9 @@ section {
             }
 
             a {
-                @include scale(1);
-
-                @include transition(all, $animTime, $easeOutExpo);
-
                 display: block;
                 font-size: 2.0em;
-                position: relative;
                 text-decoration: none;
-
-                &:hover {
-                    @include scale(1.25);
-                }
             }
         }
     }

@@ -145,6 +145,22 @@ DEPENDENCIES
     h1 {
         font-size: 3.2em;
     }
+
+    &-icons {
+        ul {
+            a {
+                @include scale(1);
+
+                @include transition(all, $animTime, $easeOutExpo);
+
+                position: relative;
+
+                &:hover {
+                    @include scale(1.25);
+                }
+            }
+        }
+    }
 }
 
 .error {
