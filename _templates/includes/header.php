@@ -26,7 +26,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/manifest.json">
 
-        <meta name="google-site-verification" content="">
+        <meta name="google-site-verification" content="oXearTxGSlotNgqnSGdz9E5lE8B73H42x5KWm2MqYk8" />
 
         <meta name="msapplication-TileColor" content="#383838">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">

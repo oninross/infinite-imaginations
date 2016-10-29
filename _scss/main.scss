@@ -407,7 +407,7 @@ p {
 
     background-color: $material-background;
     height: 75px;
-    padding: 17px;
+    padding: 17px 20px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -526,7 +526,7 @@ p {
 
         margin-top: 70px;
         overflow-y: scroll;
-        padding-top: 20px;
+        padding: 20px 5px;
         position: relative;
         text-align: center;
 
@@ -558,7 +558,7 @@ p {
         height: 40vw;
         opacity: 0;
         margin-bottom: 30px;
-        padding: 0 $gutter;
+        padding: 0 15px;
         position: relative;
         width: 50%;
         z-index: 1;
@@ -1058,8 +1058,10 @@ section {
 .achievements {
     .beta {
         display: block !important;
+        font-size: 0.9em;
         margin: auto;
-        width: 290px;
+        max-width: 290px;
+        width: 100%;
     }
 
     .col-l {
@@ -1077,23 +1079,23 @@ section {
 
     .nominations {
         ul {
+            @extend .clearfix;
             @include normalise-list;
 
-            margin: 0 -12.5px;
+            margin: 0 -10px;
         }
 
         li {
-            @include inline-block;
-
+            float: left;
             font-size: 0.8em;
             font-weight: $bold;
             height: 145px;
             line-height: 1.125;
-            margin: 0 12.5px 25px;
+            margin: 0 10px 25px;
             position: relative;
             padding: 14px;
             vertical-align: top;
-            width: 41%;
+            width: 42.85%;
             z-index: 1;
 
             &.init {
@@ -1121,7 +1123,7 @@ section {
 
             display: block;
             opacity: 0;
-            padding: 0 10px;
+            padding: 0;
         }
     }
 
@@ -1539,7 +1541,7 @@ section {
         color: $white !important;
         cursor: pointer;
         display: block;
-        margin: 0 auto 20px;
+        margin: 0 auto 40px;
         padding: 10px 14px;
         position: relative;
         text-align: center;
