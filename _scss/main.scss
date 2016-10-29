@@ -1101,17 +1101,11 @@ section {
                 .ui-corner {
                     @include translate(0, 0);
 
-                    -webkit-transition-delay: 0.1s;
-                            transition-delay: 0.1s;
-
                     opacity: 1;
                 }
 
                 .title {
                     @include translate(0, -50%);
-
-                    -webkit-transition-delay: 0.2s;
-                            transition-delay: 0.2s;
 
                     opacity: 1;
                 }
@@ -1122,6 +1116,9 @@ section {
             @include transition(all, $animTime + 0.25s, $easeOutExpo);
             @include vertically-centering-the-unknown();
             @include translate(0, 0);
+
+            -webkit-transition-delay: 0.2s;
+                    transition-delay: 0.2s;
 
             display: block;
             opacity: 0;
@@ -1144,6 +1141,9 @@ section {
 
         &-corner {
             @include transition(all, $animTime + 0.25s, $easeOutExpo);
+
+            -webkit-transition-delay: 0.1s;
+                    transition-delay: 0.1s;
 
             opacity: 0;
             position: absolute;
