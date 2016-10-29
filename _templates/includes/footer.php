@@ -105,7 +105,7 @@
                     </div>
 
                     <div class="col col-12">
-                        <a href="/#/{{! it.category }}/">
+                        <a class="js-back-to-listing" href="/#/{{! it.category }}/">
                             <div class="navigation-label">back to listing</div>
 
                             <i class="line"></i>

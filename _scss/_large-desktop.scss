@@ -52,6 +52,10 @@ DEPENDENCIES
 /* =======================================================================
 05 Homepage
 ========================================================================== */
+.hello {
+    @include vertically-centering-the-unknown();
+}
+
 .about {
     @include vertically-centering-the-unknown();
 }

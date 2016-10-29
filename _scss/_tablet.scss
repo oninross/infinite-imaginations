@@ -229,8 +229,6 @@ img {
 }
 
 .achievements {
-    @include vertically-centering-the-unknown();
-
     width: 100%;
 
     h1 {

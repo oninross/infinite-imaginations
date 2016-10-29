@@ -448,7 +448,10 @@ var RR = (function (parent, $) {
                 scrollTo: {
                     y: 0
                 },
-                ease: Expo.easeInOut
+                ease: Expo.easeInOut,
+                onComplete: function () {
+                    $header.removeClass('dark shadow-z2');
+                }
             });
         }
 
