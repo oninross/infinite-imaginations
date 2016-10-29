@@ -45,109 +45,23 @@ DEPENDENCIES
 /* =======================================================================
 04 Main Navigation
 ========================================================================== */
-.primary-nav {
-    .element-box {
-        // .abbr {
-        //     font-size: 3.400em;
-        // }
-        .icon {
-            font-size: 2.8em;
 
-            &:before {
-                height: 56px;
-                width: 56px;
-            }
-        }
-    }
-}
 
 
 
 /* =======================================================================
 05 Homepage
 ========================================================================== */
-.hello {
-    nav {
-        li {
-            height: 146px;
-            width: 20%;
-
-            &:last-child {
-                width: 20%;
-            }
-        }
-    }
-}
-
-.element {
-    &-box {
-        &:hover {
-            border: 3px solid $blue;
-            margin: 0;
-            padding: 0;
-
-            .icon {
-                @include scale(1);
-
-                opacity: 1;
-            }
-        }
-
-        .abbr {
-            font-size: 3.350em;
-        }
-
-        .full {
-            font-size: 0.8em;
-        }
-    }
-}
-
 .about {
-    @include reset-centering();
-
-    .skills {
-        &__percent{
-            display: block;
-        }
-    }
+    @include vertically-centering-the-unknown();
 }
 
 .achievements {
-    @include reset-centering();
-
-    .nominations {
-        li {
-            font-size: 0.8em;
-            width: 27.25%;
-
-            &:last-child {
-                @include inline-block;
-            }
-        }
-    }
+    @include vertically-centering-the-unknown();
 }
 
 .case-studies {
-    @include reset-centering();
-}
-
-.case-study {
-    .line {
-        width: 212px;
-    }
-}
-
-.contact {
-    h1 {
-        font-size: 3.2em;
-    }
-}
-
-.error {
-    h1 {
-        font-size: 3.2em;
-    }
+    @include vertically-centering-the-unknown();
 }
 
 
