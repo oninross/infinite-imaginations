@@ -350,12 +350,9 @@ var RR = (function (parent, $) {
             case 'elements':
                 ind = 0;
                 break;
-            case 'placeholder':
+            case 'physical-web':
                 ind = 1;
                 break;
-            // case 'central-manpower-base':
-            //     ind = 1;
-            //     break;
             case 'adelphi-digital':
                 ind = 2;
                 break;
@@ -368,6 +365,10 @@ var RR = (function (parent, $) {
             case 'envirobot':
                 ind = 5;
                 break;
+            default:
+                window.location.href = '#/error';
+                break;
+
         }
 
         setData(ind);

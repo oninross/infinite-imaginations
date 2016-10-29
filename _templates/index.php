@@ -14,7 +14,7 @@
                         <span class="bar"></span>
                     </h1>
 
-                    <p>I'm <a href="/#/about/" data-text="Niño Ross Rodriguez,"><span>Niño Ross Rodriguez,</span></a> a Senior User Experience (UX) Developer with eight years of industry experience, specializing in developing pixel perfect websites quickly without sacrificing code quality and ensuring that users have the best UX they can get in a site. Get to know a bit more <a href="/#/about/" data-text="about my skills"><span>about my skills</span></a> or feel free to look around my <a href="/#/coding/" data-text="coding"><span>coding</span></a> and <a href="/#/design/" data-text="design"><span>design</span></a> works.</p>
+                    <p>I'm <a href="/#/about/" data-text="Niño Ross Rodriguez,"><span>Niño Ross Rodriguez,</span></a> a Senior User Experience (UX) Developer with nine years of industry experience, specializing in developing pixel perfect websites quickly without sacrificing code quality and ensuring that users have the best UX they can get in a site. Get to know a bit more <a href="/#/about/" data-text="about my skills"><span>about my skills</span></a> or feel free to look around my <a href="/#/coding/" data-text="coding"><span>coding</span></a> and <a href="/#/design/" data-text="design"><span>design</span></a> works.</p>
 
                     <hr />
 
@@ -180,7 +180,7 @@
 
                     <div class="wrap">
                         <div class="col-l col-6">
-                            <p>I have been fortunate enough to be featured in "Web Designer Magazine" when I least expected it. I also have received a few nominations and features in websites including Awwwards, One Page Mania, CSS Reel, Lemon Web Awards, CSS Awards, CSS Design Awards and CSS Awards over the past few years.</p>
+                            <p>I have been fortunate enough to be featured in <strong>Web Designer Magazine</strong> when I least expected it. I also have received a few nominations and features in websites including Awwwards, One Page Mania, CSS Reel, CSS Awards, CSS Design Awards and Lemon Web Awards over the past few years.</p>
 
                             <a href="http://beta.infiniteimaginations.co" target="_blank" itemprop="url">
                                 <img src="/assets/infiniteimaginations/images/web-designer-magazine.png" alt="Featured in Web Designer Magazine">
@@ -329,7 +329,7 @@
                             <a href="/#/case-study/" class="card-link" itemprop="url">
                                 <div class="card">
                                     <div class="card-wrap">
-                                        <img src="/assets/infiniteimaginations/images/pixel.gif" alt="image" />
+                                        <img src="/assets/infiniteimaginations/images/pixel.jpg" alt="image" />
 
                                         <div class="card-text">
                                             <span class="card-title" aria-hidden="true" itemprop="name"></span>
@@ -352,7 +352,7 @@
                             <a href="/#/case-study/" class="card-link" itemprop="url">
                                 <div class="card">
                                     <div class="card-wrap">
-                                        <img src="/assets/infiniteimaginations/images/pixel.gif" alt="image" />
+                                        <img src="/assets/infiniteimaginations/images/pixel.jpg" alt="image" />
 
                                         <div class="card-text">
                                             <span class="card-title" aria-hidden="true" itemprop="name"></span>
@@ -373,7 +373,7 @@
                             <a href="/#/case-study/" class="card-link" itemprop="url">
                                 <div class="card">
                                     <div class="card-wrap">
-                                        <img src="/assets/infiniteimaginations/images/pixel.gif" alt="image" />
+                                        <img src="/assets/infiniteimaginations/images/pixel.jpg" alt="image" />
 
                                         <div class="card-text">
                                             <span class="card-title" aria-hidden="true" itemprop="name"></span>
@@ -414,7 +414,7 @@
                             <a href="/#/case-study/" class="card-link" itemprop="url">
                                 <div class="card">
                                     <div class="card-wrap">
-                                        <img src="/assets/infiniteimaginations/images/pixel.gif" alt="image" />
+                                        <img src="/assets/infiniteimaginations/images/pixel.jpg" alt="image" />
 
                                         <div class="card-text">
                                             <span class="card-title" aria-hidden="true" itemprop="name"></span>
@@ -437,7 +437,7 @@
                             <a href="/#/case-study/" class="card-link" itemprop="url">
                                 <div class="card">
                                     <div class="card-wrap">
-                                        <img src="/assets/infiniteimaginations/images/pixel.gif" alt="image" />
+                                        <img src="/assets/infiniteimaginations/images/pixel.jpg" alt="image" />
 
                                         <div class="card-text">
                                             <span class="card-title" aria-hidden="true" itemprop="name"></span>
@@ -458,7 +458,7 @@
                             <a href="/#/case-study/" class="card-link" itemprop="url">
                                 <div class="card">
                                     <div class="card-wrap">
-                                        <img src="/assets/infiniteimaginations/images/pixel.gif" alt="image" />
+                                        <img src="/assets/infiniteimaginations/images/pixel.jpg" alt="image" />
 
                                         <div class="card-text">
                                             <span class="card-title" aria-hidden="true" itemprop="name"></span>

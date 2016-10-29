@@ -35,14 +35,14 @@
         <meta name="robots" content="follow">
         <meta name="author" content="Niño Ross Rodriguez">
         <meta name="copyright" content="2016">
-        <meta name="description" content="I'm Niño Ross Rodriguez, a Senior User Experience (UX) Developer with eight years of industry experience, specializing in developing pixel perfect websites quickly without sacrificing code quality and ensuring that users have the best UX they can get in a site.">
+        <meta name="description" content="I'm Niño Ross Rodriguez, a Senior User Experience (UX) Developer with nine years of industry experience, specializing in developing pixel perfect websites quickly without sacrificing code quality and ensuring that users have the best UX they can get in a site.">
         <meta name="keywords" content="niño ross rodriguez, infinite imaginations, UX, user experience, web develop, front-end, responsive, responsive web design, web design, html, html5, css, css3, scss, twitter bootstrap, javascript, jquery, json, angularJS, actionscript, flash" />
 
         <meta property="og:title" content="infinite imaginations | UX Front-end Developer">
         <meta property="og:type" content="website">
         <meta property="og:url" content="http://www.infiniteimaginations.co">
         <meta property="og:image" content="http://www.infiniteimaginations.co/share-image.jpg">
-        <meta property="og:description" content="UX Developer based in Singapore with eight years of industry experience.  I specialize in developing responsive front-end websites done in HTML5, CSS3 and JavaScript.">
+        <meta property="og:description" content="UX Developer based in Singapore with nine years of industry experience.  I specialize in developing responsive front-end websites done in HTML5, CSS3 and JavaScript.">
         <meta property="og:site_name" content="infinite imaginations">
 
         <meta name="twitter:card" content="summary"/>
@@ -50,7 +50,7 @@
         <meta name="twitter:url" content="http://www.infiniteimaginations.co"/>
 
         <meta name="twitter:title" content="infinite imaginations | UX Front-end Developer"/>
-        <meta name="twitter:description" content="UX Developer based in Singapore with eight years of industry experience.  I specialize in developing responsive front-end websites done in HTML5, CSS3 and JavaScript."/>
+        <meta name="twitter:description" content="UX Developer based in Singapore with nine years of industry experience.  I specialize in developing responsive front-end websites done in HTML5, CSS3 and JavaScript."/>
         <meta name="twitter:image" content="http://www.infiniteimaginations.co/share-image.jpg" />
 
         <!-- build:css /assets/infiniteimaginations/css/main.min.css -->
@@ -63,7 +63,7 @@
             <div class="logo">
                 <a href="/#/hello/" data-name="hello" aria-label="Home">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        width="181.499px" height="40px" viewBox="0.239 0.053 181.499 40" enable-background="new 0.239 0.053 181.499 40"
+                        width="181.499px" hnine="40px" viewBox="0.239 0.053 181.499 40" enable-background="new 0.239 0.053 181.499 40"
                         xml:space="preserve">
                         <g>
                             <polygon fill="#383838" points="49.651,20.053 42.592,4.759 35.533,4.759 42.592,20.053 35.533,35.347 42.592,35.347   "/>

@@ -3,13 +3,13 @@
         {
             "title": "Elements",
             "category": "coding",
-            "tldr": "Created an offline Progressive Web Application (PWA) of the periodic table of elements displaying the different information of an element.",
+            "tldr": "An offline Progressive Web Application (PWA) of the periodic table of elements displaying the different information of the element.",
             "role": "Front-end Developer / Interface Designer",
             "challenges": [
-                "Mobile apps are restricted to their respective app stores.  Creating tools that will be useful to everyone if there was no barrier.  I needed to deliver the content to the users quick and easy without any barriers."
+                "Mobile apps are restricted to their respective app stores.  Creating tools will be more useful to everyone if there were no barriers.  I needed to deliver the content to the users quick and easy."
             ],
             "solutions": [
-                "Elements is a progressive web app with a responsive mobile site in its core.  Users can visit the page in their mobile devices, tablets and or desktops to view the periodic table of elements.  Chrome in Android will be prompted with a notification if they want to “pin” the page in their home screens.  The icon in turn looks like an app, opens up like an app, and behaves like an app.  The best part is that even if there is no internet connection, users can still view use the app."
+                "Elements is a progressive web app with a responsive mobile site in its core. Users can visit the page in their mobile devices, tablets and or desktops to view the periodic table of elements.  Users in Chrome Android will be prompted with a notification if they want to “pin” the page in their home screens. The icon in turn looks like an app, opens up like an app, and behaves like an app. The best part is that even if there is no internet connection, users can still view use the app."
             ],
             "technology": [
                 "HTML / HTML5",
@@ -26,15 +26,15 @@
             }
         },
         {
-            "title": "Lorem ipsum dolor sit amet",
+            "title": "Physical Web and Beacons",
             "category": "coding",
-            "tldr": "Vestibulum iaculis nisl fermentum dui ullamcorper, id vestibulum ante mattis. Curabitur pulvinar aliquam vehicula. Aenean vehicula maximus sem. Suspendisse in est iaculis, tempor dolor sit amet, commodo nibh. Aliquam sed orci ut turpis.",
+            "tldr": "Delivering hassle free of instant on demand information to the user by using the beacons and the Physical Web.",
             "role": "Front-end Developer / UX Consultant",
             "challenges": [
-                "Quisque commodo lacus ut ante tempus interdum. Donec tempus felis nec tristique lacinia. Aenean laoreet velit in vulputate porta. Morbi vitae lacus mollis, mattis neque sed, iaculis felis. Ut mollis lorem id ligula elementum, et rhoncus nisi viverra. Ut dapibus, tellus in porta blandit, felis purus accumsan mauris, ut gravida eros tortor at purus."
+                "Information can be at times be troublesome to the users.  Most of it is through the use of apps.  Apps are restricted by their own manufacturers and most of the time the app the users need are not supported by their devices."
             ],
             "solutions": [
-                "Sed placerat nibh sed justo consectetur, at placerat libero rhoncus. In et faucibus urna. Nullam aliquam sodales ante, id auctor ipsum sodales sit amet. Nulla facilisi. Nullam suscipit dolor sit amet consequat condimentum."
+                "Through the use of beacons, information can be delivered to the users easily.  There wouldn’t be a need of searching through millions of apps in the app store and downloading anymore.  Beacons transmit Eddystone URLs regularly to nearby mobile devices where the user can just tap the notification bringing them to a page with the relevant information.  It could be a web app telling the users the bus schedule of a particular bus stop or it could be a simple wayfinder in a museum or shopping mall.  The limitations are endless."
             ],
             "technology": [
                 "HTML / HTML5",
@@ -42,12 +42,12 @@
                 "JavaScript / jQuery / TweenMax"
             ],
             "images": {
-                "large": "/assets/infiniteimaginations/images/large-placeholder.png",
-                "small": "/assets/infiniteimaginations/images/small-placeholder.jpg"
+                "large": "/assets/infiniteimaginations/images/large-physical-web.png",
+                "small": "/assets/infiniteimaginations/images/small-physical-web.jpg"
             },
             "url": {
                 "live": null,
-                "local": "/#/case-study/placeholder"
+                "local": "/#/case-study/physical-web"
             }
         },
         {
@@ -56,10 +56,10 @@
             "tldr": "Adelphi Digital needed a new responsive website to cater its new content.  We also needed to make a clear statement to the world, <strong><em>\"we are going to create a complete agency website in 4 days.\"</em></strong>",
             "role": "Front-end Developer",
             "challenges": [
-                "Everything was being done in one stream simultaneously.  We only had one approved template design, the other templates were either still being designed or being revised, and I was the only front-ender to convert everything to HTML."
+                "Everything was being done in one stream simultaneously.  We had one approved template design, the other templates were either still being designed or being revised, and I was the only front-ender to convert everything to HTML."
             ],
             "solutions": [
-                "I had to make sure that the core framework of the website was robust yet flexible to fit any kind of content based from the design, and easy enough for the team to take over and populate the content.  It was just pure hard-work, passion and motivation that pushed us all to finish the website."
+                "A revolutionary and cutting edge website in design and technology where everyone barely knew about the existing resources in the internet the possibilities that it can do."
             ],
             "technology": [
                 "HTML / HTML5",
@@ -96,14 +96,14 @@
                 "small": "/assets/infiniteimaginations/images/small-infinite-imaginations-beta.jpg"
             },
             "url": {
-                "live": null,
+                "live": "http://beta.infiniteimaginations.co",
                 "local": "/#/case-study/infinite-imaginations-beta"
             }
         },
         {
             "title": "The Jewel Box",
             "category": "design",
-            "tldr": "An interactive touch screen to showcase the different venues and the history about Mt. Fabre in different languages.",
+            "tldr": "An interactive touch screen to showcase the different venues and history about Mt. Fabre in different languages.",
             "role": "Interface Designer / Flash Developer",
             "challenges": [
                 "We were provided with a low-powered machine to drive the touch screen, and we needed to display a lot of information in the device.  We also had to make sure that the interface was user-friendly for users who didn’t know how to use a touch screen."
@@ -134,7 +134,7 @@
                 "The iPad was already out in the market and users will expect a smooth user experience.  Touch screens on a Windows machine was just a simple tap here and a tap there.  We needed to make the application interesting enough for students to engage with it."
             ],
             "solutions": [
-                "We took Apple as our basis for all the interaction and design guidelines.  We made sure that the design will be appealing to the student and yet intuitive enough for them to know how to use it.  Most of the time, I just had fun animating and creating the application.  It was probably one of the most funnest projects that I have worked on because we had the freedom to pour our creative juices into the project. "
+                "We took Apple as our basis for all the interaction and design guidelines.  We made sure that the design will be appealing to the student and yet intuitive enough for them to know how to use it.  Most of the time, I just had fun animating and creating the application.  It was probably one of the most funnest projects that I have worked on because we had the freedom to pour our creative juices into the project."
             ],
             "technology": [
                 "Flash ActionScript 3",
