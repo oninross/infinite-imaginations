@@ -13,18 +13,12 @@ var RR = (function (parent, $) {
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-63786641-1', 'auto');      // DEVELOPMENT
-        // ga('create', 'UA-77788698-2', 'auto');   // PRODUCTION
-        // ga('send', 'pageview');
+        // Development: UA-63786641-1
+        // Production: UA-77788698-2
+        ga('create', 'UA-63786641-1', 'auto');
     };
 
     var gaPageView = function () {
-        // ga('set', {
-        //     page: 'page',
-        //     title: '/' + title
-        // });
-        // ga('send', 'pageview');
-
         ga('send', 'pageview', document.location.hash);
     };
 

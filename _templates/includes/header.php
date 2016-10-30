@@ -63,7 +63,7 @@
             <div class="logo">
                 <a href="/#/hello/" data-name="hello" aria-label="Home">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        width="181.499px" hnine="40px" viewBox="0.239 0.053 181.499 40" enable-background="new 0.239 0.053 181.499 40"
+                        width="181.499px" height="40px" viewBox="0.239 0.053 181.499 40" enable-background="new 0.239 0.053 181.499 40"
                         xml:space="preserve">
                         <g>
                             <polygon fill="#383838" points="49.651,20.053 42.592,4.759 35.533,4.759 42.592,20.053 35.533,35.347 42.592,35.347   "/>
