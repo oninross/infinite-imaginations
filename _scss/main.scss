@@ -255,6 +255,16 @@ button {
     color: #a9a9a9;
 }
 
+::-moz-selection {
+    background: $blue;
+    color: $white;
+}
+
+::selection {
+    background: $blue;
+    color: $white;
+}
+
 %clearfix {
     @include clearfix;
 }
