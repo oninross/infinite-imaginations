@@ -15,16 +15,17 @@ var RR = (function (parent, $) {
 
         ga('create', 'UA-63786641-1', 'auto');      // DEVELOPMENT
         // ga('create', 'UA-77788698-2', 'auto');   // PRODUCTION
-        ga('send', 'pageview');
+        // ga('send', 'pageview');
     };
 
-    var gaPageView = function (title) {
-        ga('set', {
-            page: 'page',
-            title: '/' + title
-        });
+    var gaPageView = function () {
+        // ga('set', {
+        //     page: 'page',
+        //     title: '/' + title
+        // });
+        // ga('send', 'pageview');
 
-        ga('send', 'pageview');
+        ga('send', 'pageview', document.location.hash);
     };
 
     var cat = null,

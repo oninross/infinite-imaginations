@@ -443,6 +443,7 @@ var RR = (function (parent, $) {
 
         if ($url == 'case-study') {
             document.body.scrollTop = document.documentElement.scrollTop = 0;
+            $header.removeClass('dark hide shadow-z2');
         } else {
             TweenMax.to(window, syncTime, {
                 scrollTo: {
@@ -450,7 +451,7 @@ var RR = (function (parent, $) {
                 },
                 ease: Expo.easeInOut,
                 onComplete: function () {
-                    $header.removeClass('dark shadow-z2');
+                    $header.removeClass('dark hide shadow-z2');
                 }
             });
         }

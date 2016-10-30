@@ -10,45 +10,38 @@ var RR = (function (parent, $) {
     var setup = function () {
         Path.root("#/hello/");
 
-        Path.map('#/hello/').to(function () {
+        Path.map('#/hello/').enter(updateAnalytics).to(function () {
             RR.listeners.exitCurrentSlide('hello');
             RR.listeners.setActiveNav('hello');
-            RR.gaListeners.gaPageView('hello');
         });
 
-        Path.map('#/about/').to(function () {
+        Path.map('#/about/').enter(updateAnalytics).to(function () {
             RR.listeners.exitCurrentSlide('about');
             RR.listeners.setActiveNav('about');
-            RR.gaListeners.gaPageView('about');
         });
 
-        Path.map('#/achievements/').to(function () {
+        Path.map('#/achievements/').enter(updateAnalytics).to(function () {
             RR.listeners.exitCurrentSlide('achievements');
             RR.listeners.setActiveNav('achievements');
-            RR.gaListeners.gaPageView('achievements');
         });
 
-        Path.map('#/coding/').to(function () {
+        Path.map('#/coding/').enter(updateAnalytics).to(function () {
             RR.listeners.exitCurrentSlide('coding');
             RR.listeners.setActiveNav('coding');
-            RR.gaListeners.gaPageView('coding');
         });
 
-        Path.map('#/design/').to(function () {
+        Path.map('#/design/').enter(updateAnalytics).to(function () {
             RR.listeners.exitCurrentSlide('design');
             RR.listeners.setActiveNav('design');
-            RR.gaListeners.gaPageView('design');
         });
 
-        Path.map('#/design/').to(function () {
+        Path.map('#/design/').enter(updateAnalytics).to(function () {
             RR.listeners.exitCurrentSlide('design');
             RR.listeners.setActiveNav('design');
-            RR.gaListeners.gaPageView('design');
         });
 
-        Path.map('#/case-study/:param').to(function () {
+        Path.map('#/case-study/:param').enter(updateAnalytics).to(function () {
             RR.listeners.exitCurrentSlide('case-study');
-            RR.gaListeners.gaPageView('case-study');
 
             var param = this.params['param'];
 
@@ -57,15 +50,13 @@ var RR = (function (parent, $) {
             }, 500);
         });
 
-        Path.map('#/contact/').to(function () {
+        Path.map('#/contact/').enter(updateAnalytics).to(function () {
             RR.listeners.exitCurrentSlide('contact');
             RR.listeners.setActiveNav('contact');
-            RR.gaListeners.gaPageView('contact');
         });
 
         Path.rescue(function () {
             RR.listeners.exitCurrentSlide('error');
-            RR.gaListeners.gaPageView('contact');
         });
 
         Path.listen();
@@ -73,7 +64,7 @@ var RR = (function (parent, $) {
 
     // Define our update method.
     function updateAnalytics() {
-        // ga('send', 'pageview', document.location.href);
+        RR.gaListeners.gaPageView();
     }
 
     // Export module method
