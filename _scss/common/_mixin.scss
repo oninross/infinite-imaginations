@@ -74,6 +74,13 @@
     -webkit-transition-timing-function: $easing;
 }
 
+@mixin no-transition() {
+    -webkit-transition: none !important;
+       -moz-transition: none !important;
+         -o-transition: none !important;
+            transition: none !important;
+}
+
 @mixin normalise-list() {
     padding: 0;
     margin: 0;
@@ -84,6 +91,15 @@
     background: transparent url('../images/sprite.png') no-repeat $x $y;
     height: $h;
     width: $w;
+}
+
+//CSS3 element transform
+@mixin translate ($val1: 0, $val2: 0) {
+    -webkit-transform: translate($val1, $val2);
+      -moz-transition: translate($val1, $val2);
+        -ms-transform: translate($val1, $val2);
+        -o-transition: translate($val1, $val2);
+            transform: translate($val1, $val2);
 }
 
 //CSS3 element rotation
@@ -145,6 +161,16 @@
             transform: translate(0,-50%);
     position: absolute;
     top: 50%;
+}
+
+@mixin reset-centering() {
+    -webkit-transform: none;
+      -moz-transition: none;
+        -ms-transform: none;
+        -o-transition: none;
+            transform: none;
+    position: static;
+    top: 0;
 }
 
 // Image Responsive

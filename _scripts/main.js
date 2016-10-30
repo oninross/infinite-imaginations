@@ -1,38 +1,6 @@
 /* global RR: true, TweenMax: true, jQuery: true, Modernizr: true, jRespond: true, Expo: true */
 /* jshint unused: false */
 
-/* requestAnimationFrame Shim */
-(function () {
-    'use strict';
-
-    var lastTime = 0;
-    var vendors = ['ms', 'moz', 'webkit', 'o'];
-    for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-        window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
-        window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
-    }
-
-    if (!window.requestAnimationFrame) {
-        window.requestAnimationFrame = function (callback, element) {
-            var currTime = new Date().getTime();
-            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-            var id = window.setTimeout(function () {
-                callback(currTime + timeToCall);
-            },
-                    timeToCall);
-            lastTime = currTime + timeToCall;
-            return id;
-        };
-    }
-
-    if (!window.cancelAnimationFrame) {
-        window.cancelAnimationFrame = function (id) {
-            clearTimeout(id);
-        };
-    }
-}());
-
-
 // Returns a function, that, as long as it continues to be invoked, will not
 // be triggered. The function will be called after it stops being called for
 // N milliseconds. If `immediate` is passed, trigger the function on the
@@ -63,31 +31,6 @@ function debounce(func, wait, immediate) {
  * to offer multiple easing options
 */
 
-// t: current time, b: begInnIng value, c: change In value, d: duration
-jQuery.easing['jswing'] = jQuery.easing['swing'];
-
-jQuery.extend(jQuery.easing, {
-    def: 'easeOutQuad',
-    easeOutExpo: function (x, t, b, c, d) {
-        return (t == d) ? b + c : c * (-Math.pow(2, -10 * t / d) + 1) + b;
-    },
-    easeInOutExpo: function (x, t, b, c, d) {
-        if (t == 0) {
-            return b;
-        }
-
-        if (t == d) {
-            return b + c;
-        }
-
-        if ((t /= d / 2) < 1) {
-            return c / 2 * Math.pow(2, 10 * (t - 1)) + b;
-        }
-
-        return c / 2 * (-Math.pow(2, -10 * --t) + 2) + b;
-    }
-});
-
 (function ($, undefined) {
     'use strict';
 
@@ -98,41 +41,9 @@ jQuery.extend(jQuery.easing, {
         // Set framerate to 60fps
         TweenMax.ticker.fps(60);
 
-        // Init Lazy Loading
-        $('.lazy').lazyload({
-            effect : 'fadeIn'
-        });
-
-
-        /* Placeholder Alternative */
-        (function () {
-            var $inputText = $('input[type="text"]');
-
-            if ($('.no-placeholder').length) {
-                $inputText
-                    .each(function () {
-                        var $this = $(this);
-                        $this.addClass('blur').attr('value', $this.attr('placeholder'));
-                    })
-                    .on('focus', function () {
-                        var $this = $(this);
-
-                        if ($this.val() == $this.attr('placeholder')) {
-                            $this.val('').removeClass('blur');
-                        }
-                    })
-                    .on('blur', function () {
-                        var $this = $(this);
-                        if ($this.val() == '') {
-                            $this.val($this.attr('placeholder')).addClass('blur');
-                        }
-                    });
-            }
-        })();
-
         /* Background-size: cover Fallback */
         (function () {
-            if ($('.no-bgsizecover').length) {
+            if (!Modernizr.backgroundsize) {
                 $('.backstretch').each(function () {
                     var $this = $(this),
                         $dataOriginal = $this.data('original');
@@ -142,55 +53,21 @@ jQuery.extend(jQuery.easing, {
             }
         })();
 
+        /* object-fit: cover fallback */
+        (function () {
+            if (!Modernizr.objectfit) {
+                setTimeout(function() {
+                    $('.card-wrap').each(function () {
+                        var $this = $(this),
+                            $parent = $this.parent(),
+                            $img = $this.find('img');
 
-        /* JRespond Breakpoints */
-        var jRes = jRespond([
-            {
-                label: 'mobile',
-                enter: 0,
-                exit: 767
-            },{
-                label: 'tablet',
-                enter: 768,
-                exit: 1023
-            },{
-                label: 'desktop',
-                enter: 1024,
-                exit: 10000
+                        $this.css({
+                            'background-image' :'url(' + $img.attr('src') + ')'
+                        });
+                    });
+                }, 700);
             }
-        ]);
-
-        /* JRespond Functions(Desktop) */
-        jRes.addFunc({
-            breakpoint: ['desktop'],
-            enter: function () {
-                RR.tableScrollbar.wrap();
-            },
-            exit: function () {
-                RR.tableScrollbar.unwrap();
-            }
-        });
-
-        /* JRespond Functions(Tablet) */
-        jRes.addFunc({
-            breakpoint: ['tablet'],
-            enter: function () {
-                RR.tableScrollbar.wrap();
-            },
-            exit: function () {
-                RR.tableScrollbar.unwrap();
-            }
-        });
-
-        /* JRespond Functions(Mobile) */
-        jRes.addFunc({
-            breakpoint: ['mobile'],
-            enter: function () {
-                RR.tableScrollbar.wrap();
-            },
-            exit: function () {
-                RR.tableScrollbar.unwrap();
-            }
-        });
+        })();
     });
 }(jQuery));

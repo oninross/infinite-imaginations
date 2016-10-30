@@ -30,3 +30,174 @@
 @media screen and (min-width: $bpMinDesktop), print {
     @import 'desktop';
 }
+
+@media screen and (min-width: $bpMinLargeDesktop), print {
+    @import 'large-desktop';
+}
+
+
+
+/* ======================================================================
+03 Print
+========================================================================== */
+@media print {
+    .header {
+        display: none;
+    }
+
+    #main {
+        margin-top: 0;
+    }
+
+    .hello {
+        nav {
+            display: none;
+        }
+
+        hr {
+            margin: 0;
+        }
+
+        .col-10 {
+            margin: 0;
+            width: 100%;
+        }
+    }
+
+    .about {
+        display: block;
+
+        .col-r {
+            display: none;
+        }
+
+        .logos {
+            display: none;
+        }
+    }
+
+    .achievements {
+        display: block;
+
+        .col-l {
+            a {
+                @include reset-centering();
+
+                opacity: 1;
+            }
+        }
+
+        .ui-corner {
+            @include reset-centering();
+
+            opacity: 1;
+        }
+
+        .ui {
+            display: none;
+        }
+
+        .nominations {
+            li {
+                height: auto;
+                padding: 0
+            }
+
+            .title {
+                @include reset-centering();
+
+                opacity: 1;
+            }
+        }
+    }
+
+    .contact {
+        display: block;
+
+        p {
+            text-align: left;
+        }
+
+        ul {
+            text-align: center;
+
+            li {
+                @include inline-block;
+
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+
+            a {
+                font-size: 0.8em;
+            }
+        }
+
+        &-icons {
+            text-align: left;
+        }
+    }
+
+    section {
+        h1 {
+            border-left: 0 !important;
+            font-size: 3.2em !important;
+            height: auto !important;
+            margin: 20px 0 10px !important;
+            padding: 0 !important;
+
+            .icon {
+                display: none !important;
+            }
+        }
+
+        hr {
+            display: none;
+        }
+
+        p {
+            @include reset-centering();
+
+            opacity: 1;
+        }
+
+        .col {
+            &-l,
+            &-r {
+                float: none;
+                width: 100%;
+            }
+        }
+    }
+
+    p {
+        font-size: 1.4em;
+        line-height: 1.25;
+
+        a {
+            padding: 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

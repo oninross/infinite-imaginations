@@ -74,20 +74,232 @@ img {
 /* =======================================================================
 03 Header
 ========================================================================== */
-@import 'components/mobileMenu/tablet';
+
 
 
 
 /* =======================================================================
 04 Main Navigation
 ========================================================================== */
+.primary-nav {
+    ul {
+        @include centering-the-unknown();
+
+        height: auto !important;
+        margin: auto;
+        margin-top: 0;
+        max-width: 640px;
+        overflow: hidden;
+        width: 100%;
+        z-index: 10;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    li {
+        height: 170px;
+        width: 33.333333%;
+
+        &:nth-child(3) {
+            -webkit-transition-delay: 0.1s;
+                    transition-delay: 0.1s;
+        }
+
+        &:nth-child(2),
+        &:nth-child(6) {
+            -webkit-transition-delay: 0.2s;
+                    transition-delay: 0.2s;
+        }
+
+        &:nth-child(1),
+        &:nth-child(5) {
+            -webkit-transition-delay: 0.3s;
+                    transition-delay: 0.3s;
+        }
+
+        &:nth-child(4) {
+            -webkit-transition-delay: 0.4s;
+                    transition-delay: 0.4s;
+        }
+    }
+
+    .element-box {
+        .abbr {
+            font-size: 2.600em;
+        }
+
+        .full {
+            font-size: 1em;
+        }
+    }
+}
+
 
 
 
 /* =======================================================================
 05 Homepage
 ========================================================================== */
+.hello {
+    @include vertically-centering-the-unknown();
 
+    width: 100%;
+
+    h1 {
+        font-size: 7em;
+        height: 120px;
+        padding: 25px;
+    }
+
+    p {
+        font-size: 2em;
+    }
+
+    nav {
+        display: block;
+
+        ul {
+            margin: 0 -10px;
+        }
+
+        li {
+            height: 102px;
+            padding: 0 10px;
+            width: 20%;
+
+            &:last-child {
+                width: 20%;
+            }
+        }
+    }
+
+    hr {
+        display: block;
+    }
+}
+
+.element-box {
+    padding: 20px 10px;
+
+    .abbr {
+        font-size: 2.350em;
+        margin-bottom: 5px;
+    }
+
+    .full {
+        display: block;
+        font-size: 0.55em;
+    }
+
+    .icon {
+        font-size: 2.8em;
+
+        &:before {
+            height: 56px;
+            width: 56px;
+        }
+    }
+}
+
+.about {
+    @include vertically-centering-the-unknown();
+
+    width: 100%;
+
+    h1 {
+        font-size: 3.2em;
+    }
+
+    .skills {
+        &__label {
+            font-size: 1.6em;
+            top: 3px;
+        }
+
+
+    }
+
+    .logos {
+        li {
+            width: auto;
+        }
+    }
+}
+
+.achievements {
+    width: 100%;
+
+    h1 {
+        font-size: 3.2em;
+    }
+
+    .nominations {
+        li {
+            font-size: 0.875em;
+            padding: 20px 10px;
+            width: 42.5%;
+
+            &:last-child {
+                display: none;
+            }
+        }
+
+        .title {
+            padding: 0 10px;
+        }
+    }
+}
+
+.case-studies {
+    @include vertically-centering-the-unknown();
+
+    width: 100%;
+
+    h1 {
+        font-size: 3.2em;
+    }
+
+    .card {
+        &-link {
+            margin-bottom: 30px;
+
+            &:only-child {
+                .card {
+                    height: 470px;
+                }
+            }
+        }
+    }
+}
+
+.case-study {
+    .line {
+        display: block;
+        width: 130px;
+    }
+}
+
+.contact {
+    @include vertically-centering-the-unknown();
+
+    width: 100%;
+
+    h1 {
+        font-size: 3.2em;
+    }
+}
+
+.error {
+    @include vertically-centering-the-unknown();
+
+    width: 100%;
+
+    h1 {
+        font-size: 3.2em;
+    }
+}
 
 
 /* =======================================================================

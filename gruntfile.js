@@ -29,9 +29,7 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    'dist/assets/<%= pkg.name %>/js/modules.min.js': ['<%= concat.modules.dest %>'],
-                    'dist/assets/<%= pkg.name %>/js/plugins.min.js': ['<%= concat.plugins.dest %>'],
-                    'dist/assets/<%= pkg.name %>/js/main.min.js': ['<%= copy.mainjs.dest %>']
+                    'dist/assets/<%= pkg.name %>/js/main.min.js': ['<%= concat.mainjs.dest %>']
                 }
             },
             vendor: {
@@ -68,6 +66,14 @@ module.exports = function(grunt) {
                     ],
                 dest: 'dist/assets/<%= pkg.name %>/js/modules.js'
             },
+            mainjs: {
+                src: [
+                        'dist/assets/<%= pkg.name %>/js/plugins.js',
+                        'dist/assets/<%= pkg.name %>/js/modules.js',
+                        'dist/assets/<%= pkg.name %>/js/main.js'
+                ],
+                dest: 'dist/assets/<%= pkg.name %>/js/<%= pkg.name %>.js'
+            },
             css: {
                 options: {
                     separator: ''
@@ -75,11 +81,12 @@ module.exports = function(grunt) {
                 src: [
                     '_styles/jquery.webui-popover.css',
                     '_styles/fancybox/jquery.fancybox.css',
-                    'dist/assets/<%= pkg.name %>/css/main.css'
+                    'dist/assets/<%= pkg.name %>/css/main.css',
+                    'dist/assets/<%= pkg.name %>/css/responsive.css'
                 ],
                 separator: '',
                 dest: 'dist/assets/<%= pkg.name %>/css/main.css'
-            },
+            }
         },
 
         /**
@@ -116,6 +123,16 @@ module.exports = function(grunt) {
             mainjs: {
                 src: '_scripts/main.js',
                 dest: 'dist/assets/<%= pkg.name %>/js/main.js'
+            },
+            assets: {
+                files: [
+                    { expand: true, cwd: 'dist/assets',  src: ['**/*'], dest: 'dist/assets' }
+                ]
+            },
+            api: {
+                files: [
+                    { expand: true, cwd: '_api',  src: ['**/*'], dest: 'dist/api' }
+                ]
             }
         },
 
@@ -123,7 +140,17 @@ module.exports = function(grunt) {
          * Clean Task
          */
         clean: {
-            build: ['dist/**'],
+            build: [
+                'dist/**'
+            ],
+            dist: [
+                'dist/assets/<%= pkg.name %>/css/*.css',
+                '!dist/assets/<%= pkg.name %>/css/*.min.css',
+                'dist/assets/<%= pkg.name %>/js/*.js',
+                '!dist/assets/<%= pkg.name %>/js/*.min.js',
+                'dist/assets/<%= pkg.name %>/js/modules/**',
+                'dist/assets/<%= pkg.name %>/js/plugins/**'
+            ],
             www: [
                 'dist/assets/<%= pkg.name %>/css/*.css',
                 '!dist/assets/<%= pkg.name %>/css/*.min.css',
@@ -171,9 +198,9 @@ module.exports = function(grunt) {
         watch: {
             js:{
                 files: [
-                    '_scripts/**/*.js', '_script/plugins/**/*', '_script/vendor/**/*'
+                    '_scripts/**/*.js', '_script/plugins/**/*', '_script/vendor/**/*', '_json/**/*'
                 ],
-                tasks:['concat', 'copy:mainjs'],
+                tasks:['concat', 'copy:mainjs', 'copy:api'],
                 options: {
                     livereload: true
                 }
@@ -184,7 +211,7 @@ module.exports = function(grunt) {
                 ],
                 tasks:['shell:sass', 'sync'],
                 options: {
-                    livereload: false
+                    livereload: true
                 }
             },
             css: {
@@ -259,12 +286,45 @@ module.exports = function(grunt) {
                     docroot: 'dist'
                 },
                 files: [
-                    { expand: true, cwd: 'dist', src: ['**/*.php'], dest: 'www', ext: '.html' }
+                    { expand: true, cwd: 'dist', src: ['**/*.php'], dest: 'dist', ext: '.html' }
                 ]
             }
+        },
+
+        /**
+         * Converts PHP to HTML
+         */
+        compress: {
+            main: {
+                options: {
+                mode: 'gzip'
+            },
+            expand: true,
+            cwd: 'dist/',
+            src: ['**/*'],
+            dest: 'dist/'
+            }
+        },
+
+        /**
+         * Minifies HTML
+         */
+        minifyHtml: {
+            options: {
+                cdata: true
+            },
+            dist: {
+                files: {
+                    'dist/index.html': 'dist/index.html'
+                }
+            }
+        },
+
+        'json-minify': {
+            build: {
+                files: 'dist/api/*'
+            }
         }
-
-
     });
 
     /**
@@ -282,6 +342,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-sync');
     grunt.loadNpmTasks('grunt-php2html');
+    grunt.loadNpmTasks('grunt-contrib-compress');
+    grunt.loadNpmTasks('grunt-minify-html');
+    grunt.loadNpmTasks('grunt-json-minify');
 
     /**
      * Default task
@@ -309,9 +372,11 @@ module.exports = function(grunt) {
         'shell:sass',
         'concat:css',
         'cssmin',
+        'concat:mainjs',
         'uglify',
         'imagemin',
-        'processhtml'
+        'processhtml',
+        'clean:dist'
     ]);
 
     grunt.registerTask('www', [
@@ -322,9 +387,15 @@ module.exports = function(grunt) {
         'shell:sass',
         'concat:css',
         'cssmin',
+        'concat:mainjs',
         'uglify',
         'imagemin',
+        'copy:assets',
         'processhtml',
-        'php2html'
+        'php2html',
+        'clean:www',
+        'minifyHtml',
+        'json-minify',
+        'compress',
     ]);
 };

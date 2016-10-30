@@ -1,14 +1,18 @@
 // Variable settings for grids and what not
-$default-font-size:     1.6em;
-$gutter:                15px;
-$gutterTablet:          15px;
+$default-font-size:     2em;
+$gutter:                20px;
+$gutterTablet:          20px;
 $gutterDesktop:         20px;
+
+// Animation Time
+$animTime:              0.5s;
 
 
 // Breakpoints
 $bpMaxMobile:           767px;
 $bpMinTablet:           768px;
 $bpMinDesktop:          1024px;
+$bpMinLargeDesktop:     1281px;
 
 
 // Colors from Google's Material Design
@@ -36,6 +40,12 @@ $white:                 #ffffff;
 
 $border-color:          #e0e0e0;
 $material-background:   #eee;
+
+
+$red:                   #cc0000;
+$blue:                  #2196f3;
+$black:                 #292929;
+$matte-black:           #383838;
 
 // Easing
 $easeOutExpo:           cubic-bezier(0.19, 1, 0.22, 1);
