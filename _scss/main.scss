@@ -363,7 +363,7 @@ p {
     color: $matte-black;
     font-size: 2em;
     font-weight: $light;
-    // font-family: 'EBGaramond-Regular', Georgia, serif;
+    font-family: 'EBGaramond-Regular', Georgia, serif;
 
     a {
         @include inline-block;
@@ -1072,6 +1072,14 @@ section {
         margin: auto;
         max-width: 290px;
         width: 100%;
+
+        &:before {
+            left: 44px !important;
+        }
+
+        &:after {
+            left: 54px !important;
+        }
     }
 
     .col-l {
@@ -1103,7 +1111,7 @@ section {
             line-height: 1.125;
             margin: 0 10px 25px;
             position: relative;
-            padding: 14px;
+            padding: 0;
             vertical-align: top;
             width: 42.85%;
             z-index: 1;
@@ -1133,7 +1141,8 @@ section {
 
             display: block;
             opacity: 0;
-            padding: 0;
+            padding: 0 20px;
+            text-align: center;
         }
     }
 

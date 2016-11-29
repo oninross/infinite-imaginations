@@ -652,9 +652,9 @@ var RR = (function (parent, $) {
                 bHello.start().reveal(750, 750);
                 $('.hello h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.hello h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.hello h1 .text').removeClass('glitch');
+                // }, 5000);
             }
         });
 
@@ -687,9 +687,9 @@ var RR = (function (parent, $) {
                 bAbout.start().reveal(750, 750);
                 $('.about h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.about h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.about h1 .text').removeClass('glitch');
+                // }, 5000);
             }
         });
 
@@ -851,9 +851,9 @@ var RR = (function (parent, $) {
                 bAchievements.start().reveal(750, 750);
                 $('.achievements h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.achievements h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.achievements h1 .text').removeClass('glitch');
+                // }, 5000);
             }
         });
 
@@ -921,9 +921,9 @@ var RR = (function (parent, $) {
                 bCoding.start().reveal(750, 750);
                 $('.coding h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.coding h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.coding h1 .text').removeClass('glitch');
+                // }, 5000);
             }
         });
 
@@ -948,9 +948,9 @@ var RR = (function (parent, $) {
                 bDesign.start().reveal(750, 750);
                 $('.design h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.design h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.design h1 .text').removeClass('glitch');
+                // }, 5000);
             }
         });
 
@@ -980,9 +980,9 @@ var RR = (function (parent, $) {
 
                 $('.case-study h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.case-study h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.case-study h1 .text').removeClass('glitch');
+                // }, 5000);
                 caseStudyWatcher.recalculateLocation();
             }
         });
@@ -1001,9 +1001,9 @@ var RR = (function (parent, $) {
                 bContact.start().reveal(750, 750);
                 $('.contact h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.contact h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.contact h1 .text').removeClass('glitch');
+                // }, 5000);
             }
         });
 
@@ -1035,9 +1035,9 @@ var RR = (function (parent, $) {
                 bError.start().reveal(750, 750);
                 $('.error h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.error h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.error h1 .text').removeClass('glitch');
+                // }, 5000);
             }
         });
 
