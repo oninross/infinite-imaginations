@@ -219,7 +219,7 @@ var RR = (function (parent, $) {
 
         // some funky stuff
         var title = $(document).find('title').text(),
-            altTitle = 'Don\'t, just leave yet!',
+            altTitle = 'Don\'t just leave yet!',
             $docTitle = $(document).find('title');
 
         document.addEventListener('visibilitychange', function () {
