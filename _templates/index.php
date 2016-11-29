@@ -197,6 +197,90 @@
                             <div class="nominations">
                                 <ul>
                                     <li>
+                                        <span class="title">Nominated in Awwwards 2016</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern"></div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">Design Nominee Site of the Day 2016</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern"></div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">Featured in CSS Mania 2016</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern"></div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">Nominated in CSS Winner 2016</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern"></div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">Nominated in CSS Reel 2016</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern"></div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">Nominated in CSS Light 2016</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern"></div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">Nominated in CSS Nectar 2016</span>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern"></div>
+                                        </div>
+                                    </li>
+
+                                    <li>
                                         <span class="title">Nominated in Awwwards 2014</span>
 
                                         <div class="ui">
@@ -210,90 +294,6 @@
 
                                     <li>
                                         <span class="title">Featured in Web Designer Magazine UK Issue 196</span>
-
-                                        <div class="ui">
-                                            <div class="ui-corner ui-corner__ul"></div>
-                                            <div class="ui-corner ui-corner__ur"></div>
-                                            <div class="ui-corner ui-corner__bl"></div>
-                                            <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern"></div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <span class="title">User Experience Certified by Udemy</span>
-
-                                        <div class="ui">
-                                            <div class="ui-corner ui-corner__ul"></div>
-                                            <div class="ui-corner ui-corner__ur"></div>
-                                            <div class="ui-corner ui-corner__bl"></div>
-                                            <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern"></div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <span class="title">Featured in One Page Mania 2014</span>
-
-                                        <div class="ui">
-                                            <div class="ui-corner ui-corner__ul"></div>
-                                            <div class="ui-corner ui-corner__ur"></div>
-                                            <div class="ui-corner ui-corner__bl"></div>
-                                            <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern"></div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <span class="title">Nominated in CSS Reel 2014</span>
-
-                                        <div class="ui">
-                                            <div class="ui-corner ui-corner__ul"></div>
-                                            <div class="ui-corner ui-corner__ur"></div>
-                                            <div class="ui-corner ui-corner__bl"></div>
-                                            <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern"></div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <span class="title">Nominee in Lemon Web Awards 2014</span>
-
-                                        <div class="ui">
-                                            <div class="ui-corner ui-corner__ul"></div>
-                                            <div class="ui-corner ui-corner__ur"></div>
-                                            <div class="ui-corner ui-corner__bl"></div>
-                                            <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern"></div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <span class="title">Nominee in CSS Awards 2014</span>
-
-                                        <div class="ui">
-                                            <div class="ui-corner ui-corner__ul"></div>
-                                            <div class="ui-corner ui-corner__ur"></div>
-                                            <div class="ui-corner ui-corner__bl"></div>
-                                            <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern"></div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <span class="title">Nominee in CSS Design Awards 2012</span>
-
-                                        <div class="ui">
-                                            <div class="ui-corner ui-corner__ul"></div>
-                                            <div class="ui-corner ui-corner__ur"></div>
-                                            <div class="ui-corner ui-corner__bl"></div>
-                                            <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern"></div>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <span class="title">Featured in CSS Awards 2012</span>
 
                                         <div class="ui">
                                             <div class="ui-corner ui-corner__ul"></div>
