@@ -101,7 +101,7 @@ var RR = (function (parent, $) {
                     RR.menu.tlHoverReverse();
                 }, 500);
 
-                // RR.gaListeners.gaClickEvent('Menu', $data);
+                RR.gaListeners.gaClickEvent('Menu: Nav', $data);
             } else {
                 RR.gaListeners.gaClickEvent('Hello: Nav', $data);
             }
