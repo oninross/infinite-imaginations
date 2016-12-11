@@ -217,8 +217,6 @@ img {
             font-size: 1.6em;
             top: 3px;
         }
-
-
     }
 
     .logos {
@@ -238,7 +236,6 @@ img {
     .nominations {
         li {
             font-size: 0.875em;
-            padding: 20px 10px;
             width: 42.5%;
 
             &:last-child {
@@ -247,7 +244,13 @@ img {
         }
 
         .title {
-            padding: 0 10px;
+            padding: 0 15px;
+        }
+    }
+
+    .ribbons {
+        li {
+            width: auto;
         }
     }
 }

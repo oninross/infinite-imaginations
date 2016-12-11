@@ -26,6 +26,7 @@ var RR = (function (parent, $) {
         bError,
         skillsWatcher,
         logosWatcher,
+        ribbonsWatcher,
         nominationsWatcher,
         caseStudyWatcher,
         caseStudyItem,
@@ -101,7 +102,7 @@ var RR = (function (parent, $) {
                     RR.menu.tlHoverReverse();
                 }, 500);
 
-                // RR.gaListeners.gaClickEvent('Menu', $data);
+                RR.gaListeners.gaClickEvent('Menu: Nav', $data);
             } else {
                 RR.gaListeners.gaClickEvent('Hello: Nav', $data);
             }
@@ -153,6 +154,7 @@ var RR = (function (parent, $) {
         // Magical Scroll Monitor
         skillsWatcher = scrollMonitor.create(document.getElementsByClassName('skills'), -100);
         logosWatcher = scrollMonitor.create(document.getElementsByClassName('logos'), -100);
+        ribbonsWatcher = scrollMonitor.create(document.getElementsByClassName('ribbons'), -100);
         nominationsWatcher = scrollMonitor.create(document.getElementsByClassName('nominations'), -100);
 
         createCaseStudyScrollMonitor();
@@ -219,7 +221,7 @@ var RR = (function (parent, $) {
 
         // some funky stuff
         var title = $(document).find('title').text(),
-            altTitle = 'Don\'t, just leave yet!',
+            altTitle = 'Don\'t just leave yet!',
             $docTitle = $(document).find('title');
 
         document.addEventListener('visibilitychange', function () {
@@ -652,9 +654,9 @@ var RR = (function (parent, $) {
                 bHello.start().reveal(750, 750);
                 $('.hello h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.hello h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.hello h1 .text').removeClass('glitch');
+                // }, 5000);
             }
         });
 
@@ -687,9 +689,9 @@ var RR = (function (parent, $) {
                 bAbout.start().reveal(750, 750);
                 $('.about h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.about h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.about h1 .text').removeClass('glitch');
+                // }, 5000);
             }
         });
 
@@ -851,9 +853,9 @@ var RR = (function (parent, $) {
                 bAchievements.start().reveal(750, 750);
                 $('.achievements h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.achievements h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.achievements h1 .text').removeClass('glitch');
+                // }, 5000);
             }
         });
 
@@ -893,6 +895,27 @@ var RR = (function (parent, $) {
                     }
                 }, 0.1);
             });
+
+            ribbonsWatcher.enterViewport(function () {
+                TweenMax.to('.achievements hr', 0.5, {
+                    width: '100%',
+                    ease: Expo.easeOut
+                });
+
+                TweenMax.to('.ribbons p', 0.75, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.25
+                });
+
+                TweenMax.staggerTo('.achievements .ribbons li', 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.5
+                }, 0.1);
+            });
         } else {
             TweenMax.to('.achievements h2', 0.5, {
                 opacity: 1,
@@ -910,6 +933,26 @@ var RR = (function (parent, $) {
                     $(this.target).parent().parent().addClass('init');
                 }
             }, 0.1);
+
+            TweenMax.to('.achievements hr', 0.5, {
+                width: '100%',
+                ease: Expo.easeOut,
+                delay: 0.4
+            });
+
+            TweenMax.to('.ribbons p', 0.5, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeOut,
+                delay: 0.5
+            });
+
+            TweenMax.staggerTo('.achievements .ribbons li', 0.5, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeOut,
+                delay: 0.6
+            }, 0.1);
         }
     };
 
@@ -921,9 +964,9 @@ var RR = (function (parent, $) {
                 bCoding.start().reveal(750, 750);
                 $('.coding h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.coding h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.coding h1 .text').removeClass('glitch');
+                // }, 5000);
             }
         });
 
@@ -948,9 +991,9 @@ var RR = (function (parent, $) {
                 bDesign.start().reveal(750, 750);
                 $('.design h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.design h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.design h1 .text').removeClass('glitch');
+                // }, 5000);
             }
         });
 
@@ -980,9 +1023,9 @@ var RR = (function (parent, $) {
 
                 $('.case-study h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.case-study h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.case-study h1 .text').removeClass('glitch');
+                // }, 5000);
                 caseStudyWatcher.recalculateLocation();
             }
         });
@@ -1001,9 +1044,9 @@ var RR = (function (parent, $) {
                 bContact.start().reveal(750, 750);
                 $('.contact h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.contact h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.contact h1 .text').removeClass('glitch');
+                // }, 5000);
             }
         });
 
@@ -1035,9 +1078,9 @@ var RR = (function (parent, $) {
                 bError.start().reveal(750, 750);
                 $('.error h1 .text').addClass('glitch');
 
-                setTimeout(function () {
-                    $('.error h1 .text').removeClass('glitch');
-                }, 5000);
+                // setTimeout(function () {
+                //     $('.error h1 .text').removeClass('glitch');
+                // }, 5000);
             }
         });
 
@@ -1125,7 +1168,6 @@ var RR = (function (parent, $) {
                 delay: 0.2
             }, 0.1, function () {
                 $('.nominations li').attr('style', '');
-                switchSlide($url);
             });
 
             TweenMax.to('.achievements a', 0.5, {
@@ -1134,6 +1176,16 @@ var RR = (function (parent, $) {
                 ease: Expo.easeInOut,
                 delay: 0.2,
                 clearProps: 'all'
+            });
+
+            TweenMax.staggerTo('.ribbons li', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.2,
+                clearProps: 'all'
+            }, 0.1, function () {
+                switchSlide($url);
             });
         } else if (currentPage == 'coding') {
             TweenMax.staggerTo('.coding .card', 0.5, {
