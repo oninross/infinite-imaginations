@@ -26,6 +26,7 @@ var RR = (function (parent, $) {
         bError,
         skillsWatcher,
         logosWatcher,
+        ribbonsWatcher,
         nominationsWatcher,
         caseStudyWatcher,
         caseStudyItem,
@@ -153,6 +154,7 @@ var RR = (function (parent, $) {
         // Magical Scroll Monitor
         skillsWatcher = scrollMonitor.create(document.getElementsByClassName('skills'), -100);
         logosWatcher = scrollMonitor.create(document.getElementsByClassName('logos'), -100);
+        ribbonsWatcher = scrollMonitor.create(document.getElementsByClassName('ribbons'), -100);
         nominationsWatcher = scrollMonitor.create(document.getElementsByClassName('nominations'), -100);
 
         createCaseStudyScrollMonitor();
@@ -893,6 +895,27 @@ var RR = (function (parent, $) {
                     }
                 }, 0.1);
             });
+
+            ribbonsWatcher.enterViewport(function () {
+                TweenMax.to('.achievements hr', 0.5, {
+                    width: '100%',
+                    ease: Expo.easeOut
+                });
+
+                TweenMax.to('.ribbons p', 0.75, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.25
+                });
+
+                TweenMax.staggerTo('.achievements .ribbons li', 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.5
+                }, 0.1);
+            });
         } else {
             TweenMax.to('.achievements h2', 0.5, {
                 opacity: 1,
@@ -909,6 +932,26 @@ var RR = (function (parent, $) {
                 onStart: function () {
                     $(this.target).parent().parent().addClass('init');
                 }
+            }, 0.1);
+
+            TweenMax.to('.achievements hr', 0.5, {
+                width: '100%',
+                ease: Expo.easeOut,
+                delay: 0.4
+            });
+
+            TweenMax.to('.ribbons p', 0.5, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeOut,
+                delay: 0.5
+            });
+
+            TweenMax.staggerTo('.achievements .ribbons li', 0.5, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeOut,
+                delay: 0.6
             }, 0.1);
         }
     };
@@ -1125,7 +1168,6 @@ var RR = (function (parent, $) {
                 delay: 0.2
             }, 0.1, function () {
                 $('.nominations li').attr('style', '');
-                switchSlide($url);
             });
 
             TweenMax.to('.achievements a', 0.5, {
@@ -1134,6 +1176,16 @@ var RR = (function (parent, $) {
                 ease: Expo.easeInOut,
                 delay: 0.2,
                 clearProps: 'all'
+            });
+
+            TweenMax.staggerTo('.ribbons li', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.2,
+                clearProps: 'all'
+            }, 0.1, function () {
+                switchSlide($url);
             });
         } else if (currentPage == 'coding') {
             TweenMax.staggerTo('.coding .card', 0.5, {
