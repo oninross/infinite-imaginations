@@ -257,7 +257,7 @@
                                     </li>
 
                                     <li>
-                                        <span class="title">Nominee<br/>CSS Winner 2016</span>
+                                        <span class="title">CSSW Star<br/>CSS Winner 2016</span>
 
                                         <div class="ui">
                                             <div class="ui-corner ui-corner__ul"></div>
@@ -317,8 +317,9 @@
                             <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/awwwards-user-approved.png" alt="Awwwards - User Approved" title="Awwwards - User Approved"></li>
                             <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/awwwards.svg" alt="Awwwards Nominee" title="Awwwards Nominee"></li>
                             <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssfox.svg" alt="CSS Fox - Fox Favorite" title="CSS Fox - Fox Favorite"></li>
+                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/bestcssaward.png" alt="Best CSS Awards - SOTD" title="Best CSS Awards - SOTD"></li>
                             <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssnectar.png" alt="CSS Nectar - Nominee" title="CSS Nectar - Nominee"></li>
-                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssawds.png" alt="CSS Awds - Nominee" title="CSS Awds - Nominee"></li>
+                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssawds.png" alt="CSS Awards - Nominee" title="CSS Awards - Nominee"></li>
                             <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/bestcss.png" alt="Best CSS - Nominee" title="Best CSS - Nominee"></li>
                             <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssa.png" alt="CSS Awards - Featured" title="CSS Awards - Featured"></li>
                             <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssda.png" alt="CSS Design Awards - Nominee" title="CSS Design Awards - Nominee"></li>
