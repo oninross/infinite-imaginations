@@ -8,14 +8,18 @@ var RR = (function (parent, $) {
     'use strict';
 
     var setup = function () {
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function (i,s,o,g,r,a,m) {
+            i.GoogleAnalyticsObject = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        // Development: UA-63786641-1
-        // Production: UA-77788698-2
-        ga('create', 'UA-63786641-1', 'auto');
+        ga('create', 'UA-63786641-1', 'auto');  // Development
+        // ga('create', 'UA-77788698-2', 'auto');  // Production
     };
 
     var gaPageView = function () {

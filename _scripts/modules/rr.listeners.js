@@ -871,7 +871,7 @@ var RR = (function (parent, $) {
             delay: 0.1
         });
 
-        TweenMax.to('.achievements .col-l a', 0.5, {
+        TweenMax.to('.achievements .col-l .link', 0.5, {
             opacity: 1,
             y: 0,
             ease: Expo.easeOut,
