@@ -238,6 +238,9 @@ img {
             font-size: 0.875em;
             width: 42.5%;
 
+            &:nth-child(9),
+            &:nth-child(10),
+            &:nth-child(11),
             &:last-child {
                 display: none;
             }

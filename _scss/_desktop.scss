@@ -124,6 +124,9 @@ DEPENDENCIES
             font-size: 0.8em;
             width: 27.25%;
 
+            &:nth-child(9),
+            &:nth-child(10),
+            &:nth-child(11),
             &:last-child {
                 @include inline-block;
             }
