@@ -364,7 +364,7 @@
                                     <li>
                                         <div class="title">
                                             Nominee
-                                            <div class="light">CS Awards 2013</div>
+                                            <div class="light">CSS Awards 2013</div>
                                         </div>
 
                                         <div class="ui">
