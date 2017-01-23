@@ -180,7 +180,7 @@
 
                     <div class="wrap">
                         <div class="col-l col-6">
-                            <p>I have been fortunate enough to be featured in <a href="http://www.webdesignerdepot.com/2017/01/the-best-new-portfolio-sites-january-2017/" target="_blank" itemprop="url" data-text="Web Designer Depot">Web Designer Depot</a> and <strong>Web Designer Magazine</strong> when I least expected it. I also have received User Approved from Awwwards, Fox Favorite from CSS Fox, Site of the Day from Design Nominees, and nominations from CSS Winner, CSS Nectar, CSS Reel, CSS Light, Best CSS Award, CSS Awrds, Web Guru Awards, One Page Mania, CSS Awards, CSS Design Awards and Lemon Web Awards over the past few years.</p>
+                            <p>I have been fortunate enough to be featured in <a href="http://www.webdesignerdepot.com/2017/01/the-best-new-portfolio-sites-january-2017/" target="_blank" itemprop="url" data-text="Web Designer Depot">Web Designer Depot</a> and <strong>Web Designer Magazine</strong> when I least expected it. I also have received User Approved from Awwwards, Fox Favorite from CSS Fox, Site of the Day from Design Nominees and Best CSS Award, Guru of the Day from Web Guru Awards, and nominations from CSS Winner, CSS Nectar, CSS Reel, CSS Light, Best CSS Award, CSS Awrds, Web Guru Awards, One Page Mania, CSS Awards, CSS Design Awards and Lemon Web Awards over the past few years.</p>
 
                             <a class="link" href="http://beta.infiniteimaginations.co" target="_blank" itemprop="url">
                                 <img src="/assets/infiniteimaginations/images/web-designer-magazine.png" alt="Featured in Web Designer Magazine">
@@ -289,7 +289,7 @@
                                     <li>
                                         <div class="title">
                                             Guru of the Day
-                                            <div class="light">Web Guru Awards 2013</div>
+                                            <div class="light">Web Guru Awards 2017</div>
                                         </div>
 
                                         <div class="ui">
