@@ -247,11 +247,6 @@ module.exports = function(grunt) {
          * Optimise image task
          */
         imagemin: {
-            options: {
-                cache: false,
-                optimizationLevel: 4,
-                pngquant: true
-            },
             target: {
                 files: [{
                     expand: true,
