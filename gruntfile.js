@@ -258,6 +258,30 @@ module.exports = function(grunt) {
         },
 
         /**
+         * Optimise image part deux
+         */
+        image: {
+            static: {
+                options: {
+                    pngquant: true,
+                    optipng: false,
+                    zopflipng: true,
+                    jpegRecompress: false,
+                    jpegoptim: true,
+                    mozjpeg: true,
+                    gifsicle: true,
+                    svgo: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: '_images/',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'dist/assets/<%= pkg.name %>/images'
+                }]
+            }
+        },
+
+        /**
          * Replaces CSS/JS with min
          */
         processhtml: {
@@ -334,6 +358,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-processhtml');
+    grunt.loadNpmTasks('grunt-image');
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-sync');
     grunt.loadNpmTasks('grunt-php2html');
@@ -369,7 +394,7 @@ module.exports = function(grunt) {
         'cssmin',
         'concat:mainjs',
         'uglify',
-        'imagemin',
+        'image',
         'processhtml',
         'clean:dist'
     ]);
@@ -384,13 +409,13 @@ module.exports = function(grunt) {
         'cssmin',
         'concat:mainjs',
         'uglify',
-        'imagemin',
+        'image',
         'copy:assets',
         'processhtml',
         'php2html',
         'clean:www',
         'minifyHtml',
         'json-minify',
-        'compress',
+        'compress'
     ]);
 };
