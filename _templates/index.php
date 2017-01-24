@@ -180,7 +180,7 @@
 
                     <div class="wrap">
                         <div class="col-l col-6">
-                            <p>I have been fortunate enough to be featured in <a href="http://www.webdesignerdepot.com/2017/01/the-best-new-portfolio-sites-january-2017/" target="_blank" itemprop="url" data-text="Web Designer Depot">Web Designer Depot</a> and <strong>Web Designer Magazine</strong> when I least expected it. I also have received User Approved from Awwwards, Fox Favorite from CSS Fox, Site of the Day from Design Nominees, and nominations from CSS Winner, CSS Nectar, CSS Reel, CSS Light, Best CSS Award, CSS Awrds, Web Guru Awards, One Page Mania, CSS Awards, CSS Design Awards and Lemon Web Awards over the past few years.</p>
+                            <p>I have been fortunate enough to be featured in <a href="http://www.webdesignerdepot.com/2017/01/the-best-new-portfolio-sites-january-2017/" target="_blank" itemprop="url" data-text="Web Designer Depot">Web Designer Depot</a> and <strong>Web Designer Magazine</strong> when I least expected it. I also have received User Approved from Awwwards, Fox Favorite from CSS Fox, Site of the Day from Design Nominees and Best CSS Award, Guru of the Day from Web Guru Awards, and nominations from CSS Winner, CSS Nectar, CSS Reel, CSS Light, Best CSS Award, CSS Awrds, Web Guru Awards, One Page Mania, CSS Awards, CSS Design Awards and Lemon Web Awards over the past few years.</p>
 
                             <a class="link" href="http://beta.infiniteimaginations.co" target="_blank" itemprop="url">
                                 <img src="/assets/infiniteimaginations/images/web-designer-magazine.png" alt="Featured in Web Designer Magazine">
@@ -288,6 +288,21 @@
 
                                     <li>
                                         <div class="title">
+                                            Guru of the Day
+                                            <div class="light">Web Guru Awards 2017</div>
+                                        </div>
+
+                                        <div class="ui">
+                                            <div class="ui-corner ui-corner__ul"></div>
+                                            <div class="ui-corner ui-corner__ur"></div>
+                                            <div class="ui-corner ui-corner__bl"></div>
+                                            <div class="ui-corner ui-corner__br"></div>
+                                            <div class="ui-pattern"></div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="title">
                                             Site of the Day
                                             <div class="light">Design Nominee 2016</div>
                                         </div>
@@ -360,21 +375,6 @@
                                             <div class="ui-pattern"></div>
                                         </div>
                                     </li>
-
-                                    <li>
-                                        <div class="title">
-                                            Nominee
-                                            <div class="light">CSS Awards 2013</div>
-                                        </div>
-
-                                        <div class="ui">
-                                            <div class="ui-corner ui-corner__ul"></div>
-                                            <div class="ui-corner ui-corner__ur"></div>
-                                            <div class="ui-corner ui-corner__bl"></div>
-                                            <div class="ui-corner ui-corner__br"></div>
-                                            <div class="ui-pattern"></div>
-                                        </div>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -386,15 +386,16 @@
                         <p>Some of the ribbons I have collected over the years:</p>
 
                         <ul>
-                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/awwwards-user-approved.png" alt="Awwwards - User Approved" title="Awwwards - User Approved"></li>
-                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/awwwards.svg" alt="Awwwards Nominee" title="Awwwards Nominee"></li>
-                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssfox.svg" alt="CSS Fox - Fox Favorite" title="CSS Fox - Fox Favorite"></li>
-                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/bestcssaward.png" alt="Best CSS Awards - SOTD" title="Best CSS Awards - SOTD"></li>
-                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssnectar.png" alt="CSS Nectar - Nominee" title="CSS Nectar - Nominee"></li>
-                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssawds.png" alt="CSS Awards - Nominee" title="CSS Awards - Nominee"></li>
-                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/bestcss.png" alt="Best CSS - Nominee" title="Best CSS - Nominee"></li>
-                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssa.png" alt="CSS Awards - Featured" title="CSS Awards - Featured"></li>
-                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssda.png" alt="CSS Design Awards - Nominee" title="CSS Design Awards - Nominee"></li>
+                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/awwwards-user-approved.png" alt="Awwwards - User Approved"></li>
+                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/awwwards.svg" alt="Awwwards Nominee"></li>
+                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssfox.svg" alt="CSS Fox - Fox Favorite"></li>
+                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/guruoftheday.jpg" alt="Web Guru Awards - Guru of the Day"></li>
+                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/bestcssaward.png" alt="Best CSS Awards - SOTD"></li>
+                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssnectar.png" alt="CSS Nectar - Nominee"></li>
+                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssawds.png" alt="CSS Awards - Nominee"></li>
+                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/bestcss.png" alt="Best CSS - Nominee"></li>
+                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssa.png" alt="CSS Awards - Featured"></li>
+                            <li class="ui-pattern"><img src="/assets/infiniteimaginations/images/ribbons/cssda.png" alt="CSS Design Awards - Nominee"></li>
                         </ul>
                     </div>
                 </div>
