@@ -34,7 +34,7 @@
 
         <meta name="robots" content="follow">
         <meta name="author" content="Niño Ross Rodriguez">
-        <meta name="copyright" content="2016">
+        <meta name="copyright" content="2017">
         <meta name="description" content="I'm Niño Ross Rodriguez, a Senior User Experience (UX) Developer with nine years of industry experience, specializing in developing pixel perfect websites quickly without sacrificing code quality and ensuring that users have the best UX they can get in a site.">
         <meta name="keywords" content="niño ross rodriguez, infinite imaginations, UX, user experience, web develop, front-end, responsive, responsive web design, web design, html, html5, css, css3, scss, twitter bootstrap, javascript, jquery, json, angularJS, actionscript, flash" />
 
@@ -42,7 +42,7 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="http://www.infiniteimaginations.co">
         <meta property="og:image" content="http://www.infiniteimaginations.co/share-image.jpg">
-        <meta property="og:description" content="UX Developer based in Singapore with nine years of industry experience.  I specialize in developing responsive front-end websites done in HTML5, CSS3 and JavaScript.">
+        <meta property="og:description" content="I'm Niño Ross Rodriguez, a Senior User Experience (UX) Developer with nine years of industry experience, specializing in developing pixel perfect websites quickly without sacrificing code quality and ensuring that users have the best UX they can get in a site.">
         <meta property="og:site_name" content="infinite imaginations">
 
         <meta name="twitter:card" content="summary"/>
@@ -50,7 +50,7 @@
         <meta name="twitter:url" content="http://www.infiniteimaginations.co"/>
 
         <meta name="twitter:title" content="infinite imaginations | UX Front-end Developer"/>
-        <meta name="twitter:description" content="UX Developer based in Singapore with nine years of industry experience.  I specialize in developing responsive front-end websites done in HTML5, CSS3 and JavaScript."/>
+        <meta name="twitter:description" content="I'm Niño Ross Rodriguez, a Senior User Experience (UX) Developer with nine years of industry experience, specializing in developing pixel perfect websites quickly without sacrificing code quality and ensuring that users have the best UX they can get in a site."/>
         <meta name="twitter:image" content="http://www.infiniteimaginations.co/share-image.jpg" />
 
         <!-- build:css /assets/infiniteimaginations/css/main.min.css -->
