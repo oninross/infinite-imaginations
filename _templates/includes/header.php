@@ -34,7 +34,7 @@
 
         <meta name="robots" content="follow">
         <meta name="author" content="Niño Ross Rodriguez">
-        <meta name="copyright" content="2016">
+        <meta name="copyright" content="2017">
         <meta name="description" content="I'm Niño Ross Rodriguez, a Senior User Experience (UX) Developer with nine years of industry experience, specializing in developing pixel perfect websites quickly without sacrificing code quality and ensuring that users have the best UX they can get in a site.">
         <meta name="keywords" content="niño ross rodriguez, infinite imaginations, UX, user experience, web develop, front-end, responsive, responsive web design, web design, html, html5, css, css3, scss, twitter bootstrap, javascript, jquery, json, angularJS, actionscript, flash" />
 
