@@ -24,13 +24,17 @@
 // cache, then increment the CACHE_VERSION value. It will kick off the service worker update
 // flow and the old cache(s) will be purged as part of the activate event handler when the
 // updated service worker is activated.
-var version = '2.0.0',
+var version = '1.0.0',
     now = Date.now(),
     OFFLINE_URL = 'offline/',
     urlsToPrefetch = [
         'assets/infiniteimaginations/css/main.css',
         'assets/infiniteimaginations/js/main.js',
         'assets/infiniteimaginations/css/fonts/icomoon.woff',
+        'assets/infiniteimaginations/css/fonts/HelveticaNeue.woff',
+        'assets/infiniteimaginations/css/fonts/HelveticaNeue-Light.woff',
+        'assets/infiniteimaginations/css/fonts/HelveticaNeue-Bold.woff',
+        'assets/infiniteimaginations/css/fonts/EBGaramond-Regular.woff',
         OFFLINE_URL,
         'index.html',
         '/'
