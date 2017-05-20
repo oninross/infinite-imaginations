@@ -2,7 +2,9 @@
 
 import baffle from 'baffle';
 import scrollTo from 'ScrollToPlugin';
-import { isDesktop } from '../../../_assets/infiniteimaginations/js/_helper.js'
+import GaListeners from '../galisteners/galisteners'
+import Navigation from '../../molecules/navigation/navigation'
+import { isDesktop, isMobile } from '../../../_assets/infiniteimaginations/js/_helper.js'
 import { toaster } from '../../../_assets/infiniteimaginations/js/_material.js'
 
 var $document = $(document),
@@ -29,11 +31,15 @@ var $document = $(document),
     caseStudyWatcher,
     caseStudyItem,
     nextCaseStudyItem,
-    ind, vh, vw;
+    ind, vh, vw,
+    that;
 
 export default class Listeners {
     constructor() {
-        var that = this;
+        var gaListeners = new GaListeners(),
+            navigation = new Navigation();
+
+        that = this;
 
         // Hello Animation
         TweenMax.to('.logo', 0.5, {
@@ -99,19 +105,19 @@ export default class Listeners {
                 $('.header .menu').trigger('click');
 
                 setTimeout(function () {
-                    RR.menu.tlHoverReverse();
+                    navigation.tlHoverReverse();
                 }, 500);
 
-                RR.gaListeners.gaClickEvent('Menu: Nav', $data);
+                gaListeners.gaClickEvent('Menu: Nav', $data);
             } else {
-                RR.gaListeners.gaClickEvent('Hello: Nav', $data);
+                gaListeners.gaClickEvent('Hello: Nav', $data);
             }
         });
 
         $('.header .logo a').on('click', function () {
             $data = 'hello';
 
-            RR.gaListeners.gaClickEvent('Logo', null);
+            gaListeners.gaClickEvent('Logo', null);
         });
 
         $('section h1 .icon').on('click', function () {
@@ -131,23 +137,23 @@ export default class Listeners {
         })
 
         $('p a').on('click', function () {
-            RR.gaListeners.gaClickEvent('Link', $(this).data('text'));
+            gaListeners.gaClickEvent('Link', $(this).data('text'));
         });
 
         $('.achievements a').on('click', function () {
-            RR.gaListeners.gaClickEvent('Link', 'infinite imaginations: BETA');
+            gaListeners.gaClickEvent('Link', 'infinite imaginations: BETA');
         });
 
         $('.case-study').on('click', '.navigation a', function () {
             if ($(this).find('span').length) {
-                RR.gaListeners.gaClickEvent('Next', $(this).find('.navigation-label span').text());
+                gaListeners.gaClickEvent('Next', $(this).find('.navigation-label span').text());
             } else {
-                RR.gaListeners.gaClickEvent('Next', $(this).find('.navigation-label').text());
+                gaListeners.gaClickEvent('Next', $(this).find('.navigation-label').text());
             }
         });
 
         $('.contact-icons a').click(function () {
-            RR.gaListeners.gaClickEvent('Contact', $(this).find('.vh').text());
+            gaListeners.gaClickEvent('Contact', $(this).find('.vh').text());
         });
 
 
@@ -343,7 +349,7 @@ export default class Listeners {
             $this.find('img').attr('alt', caseStudies[i].title);
             $this.find('.card-title').text(caseStudies[i].title);
         }).on('click', function () {
-            RR.gaListeners.gaClickEvent('Case Studies', $(this).find('.card-title').text());
+            gaListeners.gaClickEvent('Case Studies', $(this).find('.card-title').text());
         });
     }
 
@@ -373,7 +379,7 @@ export default class Listeners {
 
         }
 
-        setData(ind);
+        that.setData(ind);
     }
 
     setData(ind) {
@@ -417,7 +423,6 @@ export default class Listeners {
     }
 
     switchSlide($url) {
-        var that = this;
 
         $('.' + currentPage).hide();
 
@@ -1013,7 +1018,7 @@ export default class Listeners {
     }
 
     enterCaseStudy() {
-        createCaseStudyScrollMonitor();
+        that.createCaseStudyScrollMonitor();
 
         TweenMax.to('.case-study .bar', 0.5, {
             width: '100%',
@@ -1105,7 +1110,6 @@ export default class Listeners {
     }
 
     exitCurrentSlide($url) {
-        var that = this;
 
         if (currentPage != 'case-study') {
             TweenMax.to('.' + currentPage + ' h1', 0.5, {
@@ -1212,7 +1216,7 @@ export default class Listeners {
                 that.switchSlide($url);
             });
         } else if (currentPage == 'case-study') {
-            destroyCaseStudyScrollMonitor();
+            that.destroyCaseStudyScrollMonitor();
 
             TweenMax.to('.case-study', 0.5, {
                 opacity: 0,

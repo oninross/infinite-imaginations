@@ -12,6 +12,10 @@ var $document = $(document),
 
 export default class Navigation {
     constructor() {
+        var that = this;
+    }
+
+    init() {
         var that = this,
             tlClick = new TimelineMax(),
             tl = '.box.tl',
@@ -96,11 +100,11 @@ export default class Navigation {
         $window.on('resize scroll', debounce(function () {
             that.backgroundResize();
         }, 250));
-    };
+    }
 
     tlHoverReverse() {
         tlHover.reverse();
-    };
+    }
 
     backgroundResize() {
         vw = $window.outerWidth();
@@ -110,5 +114,5 @@ export default class Navigation {
             width: vw + 'px',
             height: vh + 'px'
         });
-    };
+    }
 }

@@ -25,12 +25,13 @@ let $window = $(window),
     $header = $('.header'),
     isMobileDevice = isMobile(),
     lastScrollTop = 0,
-    gaListeners = new Galisteners();
+    gaListeners = new Galisteners(),
+    navigation = new Navigation();
 
 $(() => {
     new Header();
-    new Navigation();
     new History();
+    navigation.init();
     gaListeners.init();
 
     ////////////////////////////
