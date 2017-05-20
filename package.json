@@ -7,6 +7,7 @@
     "dot": "^1.0.3",
     "gsap": "^1.19.0",
     "jquery": "~2.2.0",
+    "jquery-countto": "^1.2.0",
     "jquery-lazyload": "^1.9.7",
     "malihu-custom-scrollbar-plugin": "^3.1.5",
     "normalize.css": "~3.0.3",
@@ -80,7 +81,8 @@
     "ScrollToPlugin": "./node_modules/gsap/src/uncompressed/plugins/ScrollToPlugin.js",
     "mCustomScrollbar": "./node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js",
     "scrollMonitor": "./node_modules/scrollmonitor/scrollmonitor.js",
-    "pathjs": "./node_modules/pathjs/path.js"
+    "pathjs": "./node_modules/pathjs/path.js",
+    "countTo": "./node_modules/jquery-countto/jquery.countTo.js"
   },
   "browserify-shim": {
     "jquery": "jQuery",

@@ -2,6 +2,7 @@
 
 import baffle from 'baffle';
 import scrollTo from 'ScrollToPlugin';
+import countTo from 'countTo';
 import GaListeners from '../galisteners/galisteners'
 import Navigation from '../../molecules/navigation/navigation'
 import { isDesktop, isMobile } from '../../../_assets/infiniteimaginations/js/_helper.js'
