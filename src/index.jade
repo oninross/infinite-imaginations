@@ -1,116 +1,437 @@
 extends _layouts/base
 
 block content
-        section.container
+    section.hello
+        .container
+            .wrap
+                .col-10.col-offset-1
+                    h1
+                        span.text(data-text='Hello World...') Hello World...
+                        span.bar
+                    p
+                        | I'm
+                        a(href='/#/about/', data-text='Niño Ross Rodriguez,')
+                            span Niño Ross Rodriguez,
+                        |  a Senior User Experience (UX) Developer with nine years of industry experience, specializing in developing pixel perfect websites quickly without sacrificing code quality and ensuring that users have the best UX they can get in a site. Get to know a bit more
+                        a(href='/#/about/', data-text='about my skills')
+                            span about my skills
+                        |  or feel free to look around my
+                        a(href='/#/coding/', data-text='coding')
+                            span coding
+                        |  and
+                        a(href='/#/design/', data-text='design')
+                            span design
+                        |  works.
+                    hr
+                    nav
+                        ul
+                            li
+                                a.element-box(href='/#/about/', data-name='about')
+                                    span.text
+                                        span.abbr(aria-hidden='true') Ab
+                                        span.full about
+                                    span.icon.icon-about
+                            li
+                                a.element-box(href='/#/achievements/', data-name='achievements')
+                                    span.text
+                                        span.abbr(aria-hidden='true') Ac
+                                        span.full achievements
+                                    span.icon.icon-achievements
+                            li
+                                a.element-box(href='/#/coding/', data-name='coding')
+                                    span.text
+                                        span.abbr(aria-hidden='true') Co
+                                        span.full coding
+                                    span.icon.icon-coding
+                            li
+                                a.element-box(href='/#/design/', data-name='design')
+                                    span.text
+                                        span.abbr(aria-hidden='true') De
+                                        span.full design
+                                    span.icon.icon-design
+                            li
+                                a.element-box(href='/#/contact/', data-name='contact')
+                                    span.text
+                                        span.abbr(aria-hidden='true') Ct
+                                        span.full contact
+                                    span.icon.icon-contact
+    section.about
+        .container
             .wrap
                 .col-12
-                    article
-                        h1
-                            a#Firestarter_readme_0
-                            | Firestarter readme
-                        p Generated on using
-                            a(href='https://github.com/larsonjj/generator-yeogurt')  generator-yeogurt@1.5.3
-                        h2
-                            a#Description_5
-                            | Description
-                        p  A simple out of the box front-end templating base used for building new websites created and maintained by Nino Ross Rodriguez. Firestarter is not to compete with other frameworks, but more on to provide a very easy and structured framework for any developer to use.
-                        h2
-                            a#Technologies_used_10
-                            | Technologies used
-                        p JavaScript
+                    h1
+                        span.text(data-text='// about') // about
+                        span.bar
+                            i.icon.icon-about
+                    .wrap
+                        .col-l.col-6
+                            p
+                                | As a
+                                strong Senior UX Developer
+                                | , I love being challenged.  I like to
+                                strong create
+                                |  solutions to user experience problems,
+                                strong imagine
+                                |  fun interaction and animation, and
+                                strong develop
+                                |  the best web experience.
+                            p
+                                | Most of the time I hand-code everything from scratch using my
+                                a(href='https://www.github.com/oninross/firestarter', target='_blank', data-text='Firestarter framework') Firestarter framework.
+                                |   I use HTML5 Boilerplate and Twitter Bootstrap for rapid development if it is only necessary.
+                        .col-r.col-6
+                            h2 Skillset Breakdown
+                            .skills
+                                .skills__bar(data-percent='95.0')
+                                    .skills__label HTML5 / HTML
+                                    .skills__percent
+                                        span.skills__percent-number 00.0
+                                        span.skills__percent-unit %
+                                .skills__bar(data-percent='90.0')
+                                    .skills__label CSS3 / CSS
+                                    .skills__percent
+                                        span.skills__percent-number 00.0
+                                        span.skills__percent-unit %
+                                .skills__bar(data-percent='80.0')
+                                    .skills__label JavaScript / jQuery / TweenMax
+                                    .skills__percent
+                                        span.skills__percent-number 00.0
+                                        span.skills__percent-unit %
+                                .skills__bar(data-percent='70.0')
+                                    .skills__label ActionScript 3.0 / 2.0
+                                    .skills__percent
+                                        span.skills__percent-number 00.0
+                                        span.skills__percent-unit %
+                                .skills__bar(data-percent='90.0')
+                                    .skills__label Adobe PhotoShop
+                                    .skills__percent
+                                        span.skills__percent-number 00.0
+                                        span.skills__percent-unit %
+                                .skills__bar(data-percent='75.0')
+                                    .skills__label Web Design
+                                    .skills__percent
+                                        span.skills__percent-number 00.0
+                                        span.skills__percent-unit %
+                    hr
+                    .logos
+                        p Some of the companies I’ve worked on projects for:
                         ul
                             li
-                                a(href='http://browserify.org/') Browserify
-                                |  with ES6/2015 support through
-                                a(href='https://babeljs.io/')  Babel
+                                img(src='/assets/infiniteimaginations/images/svg/logo-ogilvy.svg', alt='OgilvyOne')
                             li
-                                a(href='https://nodejs.org/') Node
-                        p Testing
+                                img(src='/assets/infiniteimaginations/images/svg/logo-sony.svg', alt='Sony')
+                            li
+                                img(src='/assets/infiniteimaginations/images/svg/logo-singtel.svg', alt='SingTel')
+                            li
+                                img(src='/assets/infiniteimaginations/images/svg/logo-holiday-inn.svg', alt='Holiday Inn')
+                            li
+                                img(src='/assets/infiniteimaginations/images/svg/logo-abacus.svg', alt='Abacus')
+    section.achievements
+        .container
+            .wrap
+                .col-12
+                    h1
+                        span.text(data-text='// achievements') // achievements
+                        span.bar
+                            i.icon.icon-achievements
+                    .wrap
+                        .col-l.col-6
+                            p
+                                | I have been fortunate enough to be featured in
+                                a(href='http://www.webdesignerdepot.com/2017/01/the-best-new-portfolio-sites-january-2017/', target='_blank', itemprop='url', data-text='Web Designer Depot') Web Designer Depot
+                                |  and
+                                strong Web Designer Magazine
+                                |  when I least expected it. I also have received User Approved from Awwwards, Fox Favorite from CSS Fox, Site of the Day from Design Nominees and Best CSS Award, Guru of the Day from Web Guru Awards, and nominations from CSS Winner, CSS Nectar, CSS Reel, CSS Light, Best CSS Award, CSS Awrds, Web Guru Awards, One Page Mania, CSS Awards, CSS Design Awards and Lemon Web Awards over the past few years.
+                            a.link(href='http://beta.infiniteimaginations.co', target='_blank', itemprop='url')
+                                img(src='/assets/infiniteimaginations/images/web-designer-magazine.png', alt='Featured in Web Designer Magazine')
+                            p
+                                a.link.beta(href='http://beta.infiniteimaginations.co', target='_blank', data-text='beta.infiniteimaginations.co', itemprop='url') beta.infiniteimaginations.co
+                        .col-r.col-6
+                            h2 Recognitions
+                            .nominations
+                                ul
+                                    li
+                                        .title
+                                            | User Approved
+                                            .light Awwwards 2016
+                                        .ui
+                                            .ui-corner.ui-corner__ul
+                                            .ui-corner.ui-corner__ur
+                                            .ui-corner.ui-corner__bl
+                                            .ui-corner.ui-corner__br
+                                            .ui-pattern
+                                    li
+                                        .title
+                                            | Featured
+                                            .light Web Designer Depot
+                                        .ui
+                                            .ui-corner.ui-corner__ul
+                                            .ui-corner.ui-corner__ur
+                                            .ui-corner.ui-corner__bl
+                                            .ui-corner.ui-corner__br
+                                            .ui-pattern
+                                    li
+                                        .title
+                                            | Featured
+                                            .light Web Designer Magazine UK Issue 196
+                                        .ui
+                                            .ui-corner.ui-corner__ul
+                                            .ui-corner.ui-corner__ur
+                                            .ui-corner.ui-corner__bl
+                                            .ui-corner.ui-corner__br
+                                            .ui-pattern
+                                    li
+                                        .title
+                                            | Fox Favorite
+                                            .light Css Fox 2016
+                                        .ui
+                                            .ui-corner.ui-corner__ul
+                                            .ui-corner.ui-corner__ur
+                                            .ui-corner.ui-corner__bl
+                                            .ui-corner.ui-corner__br
+                                            .ui-pattern
+                                    li
+                                        .title
+                                            | CSSW Star
+                                            .light CSS Winner 2016
+                                        .ui
+                                            .ui-corner.ui-corner__ul
+                                            .ui-corner.ui-corner__ur
+                                            .ui-corner.ui-corner__bl
+                                            .ui-corner.ui-corner__br
+                                            .ui-pattern
+                                    li
+                                        .title
+                                            | Featured
+                                            .light CSS Mania 2016
+                                        .ui
+                                            .ui-corner.ui-corner__ul
+                                            .ui-corner.ui-corner__ur
+                                            .ui-corner.ui-corner__bl
+                                            .ui-corner.ui-corner__br
+                                            .ui-pattern
+                                    li
+                                        .title
+                                            | Guru of the Day
+                                            .light Web Guru Awards 2017
+                                        .ui
+                                            .ui-corner.ui-corner__ul
+                                            .ui-corner.ui-corner__ur
+                                            .ui-corner.ui-corner__bl
+                                            .ui-corner.ui-corner__br
+                                            .ui-pattern
+                                    li
+                                        .title
+                                            | Site of the Day
+                                            .light Design Nominee 2016
+                                        .ui
+                                            .ui-corner.ui-corner__ul
+                                            .ui-corner.ui-corner__ur
+                                            .ui-corner.ui-corner__bl
+                                            .ui-corner.ui-corner__br
+                                            .ui-pattern
+                                    li
+                                        .title
+                                            | Site of the Day
+                                            .light Best CSS Award
+                                        .ui
+                                            .ui-corner.ui-corner__ul
+                                            .ui-corner.ui-corner__ur
+                                            .ui-corner.ui-corner__bl
+                                            .ui-corner.ui-corner__br
+                                            .ui-pattern
+                                    li
+                                        .title
+                                            | Nominee
+                                            .light CSS Reel 2016
+                                        .ui
+                                            .ui-corner.ui-corner__ul
+                                            .ui-corner.ui-corner__ur
+                                            .ui-corner.ui-corner__bl
+                                            .ui-corner.ui-corner__br
+                                            .ui-pattern
+                                    li
+                                        .title
+                                            | Nominee
+                                            .light CSS Nectar 2016
+                                        .ui
+                                            .ui-corner.ui-corner__ul
+                                            .ui-corner.ui-corner__ur
+                                            .ui-corner.ui-corner__bl
+                                            .ui-corner.ui-corner__br
+                                            .ui-pattern
+                                    li
+                                        .title
+                                            | Nominee
+                                            .light Awwwards 2014
+                                        .ui
+                                            .ui-corner.ui-corner__ul
+                                            .ui-corner.ui-corner__ur
+                                            .ui-corner.ui-corner__bl
+                                            .ui-corner.ui-corner__br
+                                            .ui-pattern
+                    hr
+                    .ribbons
+                        p Some of the ribbons I have collected over the years:
                         ul
+                            li.ui-pattern
+                                img(src='/assets/infiniteimaginations/images/ribbons/awwwards-user-approved.png', alt='Awwwards - User Approved')
+                            li.ui-pattern
+                                img(src='/assets/infiniteimaginations/images/ribbons/awwwards.svg', alt='Awwwards Nominee')
+                            li.ui-pattern
+                                img(src='/assets/infiniteimaginations/images/ribbons/cssfox.svg', alt='CSS Fox - Fox Favorite')
+                            li.ui-pattern
+                                img(src='/assets/infiniteimaginations/images/ribbons/guruoftheday.jpg', alt='Web Guru Awards - Guru of the Day')
+                            li.ui-pattern
+                                img(src='/assets/infiniteimaginations/images/ribbons/bestcssaward.png', alt='Best CSS Awards - SOTD')
+                            li.ui-pattern
+                                img(src='/assets/infiniteimaginations/images/ribbons/cssnectar.png', alt='CSS Nectar - Nominee')
+                            li.ui-pattern
+                                img(src='/assets/infiniteimaginations/images/ribbons/cssawds.png', alt='CSS Awards - Nominee')
+                            li.ui-pattern
+                                img(src='/assets/infiniteimaginations/images/ribbons/bestcss.png', alt='Best CSS - Nominee')
+                            li.ui-pattern
+                                img(src='/assets/infiniteimaginations/images/ribbons/cssa.png', alt='CSS Awards - Featured')
+                            li.ui-pattern
+                                img(src='/assets/infiniteimaginations/images/ribbons/cssda.png', alt='CSS Design Awards - Nominee')
+    section.case-studies.coding
+        .container
+            .wrap
+                .col-12
+                    h1
+                        span.text(data-text='// coding') // coding
+                        span.bar
+                            i.icon.icon-coding
+                    .wrap
+                        .col.col-6(itemscope='', itemtype='http://schema.org/CreativeWork')
+                            a.card-link(href='/#/case-study/', itemprop='url')
+                                .card
+                                    .card-wrap
+                                        img(src='/assets/infiniteimaginations/images/pixel.jpg', alt='image')
+                                        .card-text
+                                            span.card-title(aria-hidden='true', itemprop='name')
+                                            .cta
+                                                | See case study
+                                                .cta-icon
+                                                    i.icon.icon-chevron-right
+                                                    i.icon.icon-chevron-right
+                        .col.col-6(itemscope='', itemtype='http://schema.org/CreativeWork')
+                            a.card-link(href='/#/case-study/', itemprop='url')
+                                .card
+                                    .card-wrap
+                                        img(src='/assets/infiniteimaginations/images/pixel.jpg', alt='image')
+                                        .card-text
+                                            span.card-title(aria-hidden='true', itemprop='name')
+                                            .cta
+                                                | See case study
+                                                .cta-icon
+                                                    i.icon.icon-chevron-right
+                                                    i.icon.icon-chevron-right
+                            a.card-link(href='/#/case-study/', itemprop='url')
+                                .card
+                                    .card-wrap
+                                        img(src='/assets/infiniteimaginations/images/pixel.jpg', alt='image')
+                                        .card-text
+                                            span.card-title(aria-hidden='true', itemprop='name')
+                                            .cta
+                                                | See case study
+                                                .cta-icon
+                                                    i.icon.icon-chevron-right
+                                                    i.icon.icon-chevron-right
+    section.case-studies.design
+        .container
+            .wrap
+                .col-12
+                    h1
+                        span.text(data-text='// design') // design
+                        span.bar
+                            i.icon.icon-design
+                    .wrap
+                        .col.col-6(itemscope='', itemtype='http://schema.org/CreativeWork')
+                            a.card-link(href='/#/case-study/', itemprop='url')
+                                .card
+                                    .card-wrap
+                                        img(src='/assets/infiniteimaginations/images/pixel.jpg', alt='image')
+                                        .card-text
+                                            span.card-title(aria-hidden='true', itemprop='name')
+                                            .cta
+                                                | See case study
+                                                .cta-icon
+                                                    i.icon.icon-chevron-right
+                                                    i.icon.icon-chevron-right
+                        .col.col-6(itemscope='', itemtype='http://schema.org/CreativeWork')
+                            a.card-link(href='/#/case-study/', itemprop='url')
+                                .card
+                                    .card-wrap
+                                        img(src='/assets/infiniteimaginations/images/pixel.jpg', alt='image')
+                                        .card-text
+                                            span.card-title(aria-hidden='true', itemprop='name')
+                                            .cta
+                                                | See case study
+                                                .cta-icon
+                                                    i.icon.icon-chevron-right
+                                                    i.icon.icon-chevron-right
+                            a.card-link(href='/#/case-study/', itemprop='url')
+                                .card
+                                    .card-wrap
+                                        img(src='/assets/infiniteimaginations/images/pixel.jpg', alt='image')
+                                        .card-text
+                                            span.card-title(aria-hidden='true', itemprop='name')
+                                            .cta
+                                                | See case study
+                                                .cta-icon
+                                                    i.icon.icon-chevron-right
+                                                    i.icon.icon-chevron-right
+    section.case-study
+        .container
+            .wrap
+                .col-12
+                    h1
+                        span.text(data-text='// case study: ') // case study:
+                        span.bar
+                            i.icon.icon-about
+                    .wrap
+                        .case-study__wrap.col-8.col-offset-2
+    section.contact
+        .container
+            .wrap
+                .col-12
+                    h1
+                        span.text(data-text='// contact') // contact
+                        span.bar
+                            i.icon.icon-contact
+                    p
+                        | If you want to have a chat about anything digital, UX, or collaborate, don't hesitate to connect with me.
+                    br
+                    p I am always up for anything geeky. ^_^
+                    .contact-icons
+                        ul(itemscope='', itemtype='http://schema.org/Organization')
                             li
-                                a(href='http://karma-runner.github.io/0.13/index.html') Karma
+                                a(href='mailto:oninross@gmail.com', rel='noopener')
+                                    span.vh eMail
+                                    i.icon.icon-email
                             li
-                                a(href='http://jasmine.github.io/') Jasmine
-                        p Styles
-                        ul
+                                a(href='https://sg.linkedin.com/in/ninorossrodriguez', target='_blank', itemprop='sameAs', rel='noopener')
+                                    span.vh LinkedIn
+                                    i.icon.icon-linkedin
                             li
-                                a(href='http://sass-lang.com/') Sass
-                                |  via (
-                                a(href='https://github.com/sass/node-sass') node-sass
-                                | )
-                        p Markup
-                        ul
+                                a(href='https://github.com/oninross', target='_blank', itemprop='sameAs', rel='noopener')
+                                    span.vh GitHub
+                                    i.icon.icon-github
                             li
-                                a(href='http://jade-lang.com/') Jade
-                        p Optimization
-                        ul
+                                a(href='https://www.facebook.com/oninross', target='_blank', itemprop='sameAs', rel='noopener')
+                                    span.vh Facebook
+                                    i.icon.icon-facebook
                             li
-                                a(href='https://github.com/imagemin/imagemin') Imagemin
-                            li
-                                a(href='https://github.com/mishoo/UglifyJS') Uglify
-                        p Server
-                        ul
-                            li
-                                a(href='http://www.browsersync.io/') BrowserSync
-                        p Linting
-                        ul
-                            li
-                                a(href='http://eslint.org/') ESlint
-                        p Automation
-                        ul
-                            li
-                                a(href='http://gulpjs.com') Gulp
-                        p Code  Management
-                        ul
-                            li
-                                a(href='http://editorconfig.org/') Editorconfig
-                            li
-                                a(href='https://git-scm.com/') Git
-                        h2
-                            a#Automated_tasks_44
-                            | Automated tasks
-                        p This project uses
-                            a  to run automated tasks for development and production builds.
-                            | The tasks are as follows:
-                        p
-                            code  gulp --production
-                            | : Same as
-                            code  gulp serve --production
-                            |  also run
-                            code  gulp test
-                            |  and  not boot up production server
-                        p
-                            code  gulp serve
-                            | : Compiles preprocessors and boots up development server
-                            code  gulp serve --open
-                            | : Same as
-                            code  gulp serve
-                            |  but will also open up site/app in your default browser
-                            code  gulp serve --production
-                            | : Same as
-                            code  gulp serve
-                            |  but will run all production tasks so you can view the site/app in it’s final optimized form
-                        p
-                            code  gulp test
-                            | : Lints all
-                            code  *.js
-                            |  file in the
-                            code  source
-                            |  folder using eslint and runs all
-                            code  *.test.js
-                            |  file unit tests through
-                            a(href='http://karma-runner.github.io/0.13/index.html')  Karma
-                            |  and Jasmine
-                            code  gulp test --watch
-                            | : Same as
-                            code  gulp test
-                            |  but will constantly watch
-                            code  *.test.js
-                            |  files and rerun tests when changes are detected
-                        p
-                            strong
-                                em
-                                    | Adding the
-                                    code  --debug
-                                    |  option to any gulp task displays extra debugging information (ex. data being loaded into your templates)
-
+                                a(href='https://www.instagram.com/oninross/', target='_blank', itemprop='sameAs', rel='noopener')
+                                    span.vh Instagram
+                                    i.icon.icon-instagram
+    section.error
+        .container
+            .wrap
+                .col-10.col-offset-1
+                    h1
+                        span.text(data-text='// oops!') // oops!
+                        span.bar
+                            i.icon.icon-warning
+                    p Sorry, the page you are looking for does not exist

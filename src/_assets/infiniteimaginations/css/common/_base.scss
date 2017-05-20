@@ -6,17 +6,15 @@ html {
 }
 
 body {
-    background: $material-background;
+    background-color: $material-background;
+    // font: 62.5%/1.618 'HelveticaNeue', Arial, sans-serif;
+
     font: 62.5%/1.618 sans-serif;
     font-family:
 /* 1 */ -apple-system, BlinkMacSystemFont,
 /* 2 */ "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
 /* 3 */ "Helvetica Neue", sans-serif;
     margin: 0 !important;
-
-    @include tablet {
-        font-family: 'HelveticaNeue';
-    }
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -285,18 +283,26 @@ svg.ripple {
     }
 }
 
+.no-objectfit {
+    .card-wrap {
+        background-size: cover;
+        background-position: center;
+
+        img {
+            display: none;
+        }
+    }
+}
+
 
 
 /* =======================================================================
 Layout
 ========================================================================== */
 #main {
-    margin-top: 45px;
-    position: relative;
+    @include transition(height, $animTime, $easeOutExpo);
 
-    @include desktop {
-        margin-top: 90px;
-    }
+    margin-top: 75px;
 }
 
 .backstretch {
@@ -306,43 +312,86 @@ Layout
     position: relative;
 }
 
-.breadcrumbs {
-    height: 100%;
-    margin: auto;
-    margin-bottom: 20px;
-    max-width: 960px;
-    padding: 0 $gutter;
+.glitch {
+    display: block;
     position: relative;
-    width: 100%;
 
-    li {
+    &:before,
+    &:after {
+        background: $matte-black;
+        content: attr(data-text);
+        clip: rect(0, 900px, 0, 0);
+        opacity: 0.5;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+    }
+
+    &:before {
+        animation: noise-anim-2 3s infinite linear alternate-reverse;
+        left: -3px;
+        text-shadow: 1px 0 cyan;
+    }
+
+    &:after {
+        animation: noise-anim-1 2s infinite linear alternate-reverse;
+        left: 3px;
+        text-shadow: -1px 0 red;
+    }
+}
+
+@keyframes noise-anim-1 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+        }
+    }
+}
+
+@keyframes noise-anim-2 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+        }
+    }
+}
+
+p {
+    color: $matte-black;
+    font-size: 2em;
+    font-weight: $light;
+    font-family: 'EBGaramond-Regular', serif;
+
+    a {
+        background-color: $matte-black;
+        color: $white;
         display: inline-block;
-        // font-size: 1em;
+        font-weight: $bold;
+        margin-bottom: 0;
+        padding: 2px 10px 4px;
+        position: relative;
+        z-index: 1;
 
-        a {
-            text-decoration: none;
+        &:hover {
+            @extend .glitch;
+        }
 
-            &:hover {
-                text-decoration: underline;
-            }
+        &:before,
+        &:after {
+            left: 0 !important;
+            top: 2px !important;
+        }
+
+        &:before {
+            left: 7px !important;
         }
 
         &:after {
-            @extend %icomoon;
-
-            content: "\e902";
-            // font-size: 1.2em;
-            margin: 0 10px;
-            position: relative;
-            top: 3px;
-        }
-
-        &:last-child {
-            font-weight: bold;
-
-            &:after {
-                content: "";
-            }
+            left: 13px !important;
         }
     }
 }

@@ -65,3 +65,9 @@
     position: absolute;
     top: 50%;
 }
+
+@mixin reset-centering() {
+    position: static;
+    transform: none;
+    top: 0;
+}
