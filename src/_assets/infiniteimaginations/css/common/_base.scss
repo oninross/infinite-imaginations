@@ -57,7 +57,6 @@ h6 {
 }
 
 menu, ol, ul {
-    // font-size: $default-font-size;
     margin-bottom: 20px;
     padding: 0 0 0 40px;
 
@@ -123,22 +122,6 @@ table {
     // }
 }
 
-code,
-kbd,
-pre,
-samp,
-cite {
-    // font-size: $default-font-size;
-
-    // code,
-    // kbd,
-    // pre,
-    // samp,
-    // cite {
-    //     font-size: 1em;
-    // }
-}
-
 img {
     display: block;
     height: auto;
@@ -168,20 +151,19 @@ p {
     font-size: $default-font-size;
     word-break: break-word;
 
-    // code, kbd, pre, samp, cite {
-    //     font-size: inherit;
-    // }
-
     a {
         font-size: 1em;
     }
 }
 
 a {
+    @include transition(all, $animTime, $easeOutExpo);
+
+    color: $matte-black;
     font-size: $default-font-size;
+    font-weight: $bold;
     margin-bottom: 10px;
     text-decoration: none;
-@include     transition(all, $animTime, $easeOutExpo);
 }
 
 hr {
@@ -292,6 +274,17 @@ svg.ripple {
             display: none;
         }
     }
+}
+
+.vh {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
 
 

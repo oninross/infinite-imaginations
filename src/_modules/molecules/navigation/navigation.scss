@@ -97,60 +97,13 @@
             width: 33.333333%;
         }
 
-        @include tablet {
-            height: 170px;
-            width: 33.333333%;
-        }
-
         &:nth-child(1) {
             transition-delay: 0.1s;
-        }
-
-        &:nth-child(3) {
-            @media (max-width: $bpMaxMobile) and (orientation: landscape) {
-                transition-delay: 0.1s;
-            }
-
-            @include tablet {
-                transition-delay: 0.1s;
-            }
-        }
-
-        &:nth-child(4) {
-            @media (max-width: $bpMaxMobile) and (orientation: landscape) {
-                transition-delay: 0.4s;
-            }
-
-            @include tablet {
-                transition-delay: 0.4s;
-            }
         }
 
         &:nth-child(1),
         &:nth-child(4) {
             transition-delay: 0.2s;
-        }
-
-        &:nth-child(1),
-        &:nth-child(5) {
-            @media (max-width: $bpMaxMobile) and (orientation: landscape) {
-                transition-delay: 0.3s;
-            }
-
-            @include tablet {
-                transition-delay: 0.3s;
-            }
-        }
-
-        &:nth-child(2),
-        &:nth-child(6) {
-            @media (max-width: $bpMaxMobile) and (orientation: landscape) {
-                transition-delay: 0.2s;
-            }
-
-            @include tablet {
-                transition-delay: 0.2s;
-            }
         }
 
         &:nth-child(3),
@@ -161,6 +114,30 @@
         &:nth-child(5) {
             transition-delay: 0.4s;
         }
+
+        @include tablet {
+            height: 170px;
+            width: 33.333333%;
+
+            &:nth-child(3) {
+                transition-delay: 0.1s;
+            }
+
+            &:nth-child(2),
+            &:nth-child(6) {
+                transition-delay: 0.2s;
+            }
+
+            &:nth-child(1),
+            &:nth-child(5) {
+                transition-delay: 0.3s;
+            }
+
+            &:nth-child(4) {
+                transition-delay: 0.4s;
+            }
+        }
+
     }
 
     a {

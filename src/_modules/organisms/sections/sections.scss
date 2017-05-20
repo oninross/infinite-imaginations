@@ -170,7 +170,7 @@ section {
             &:last-child {
                 width: 100%;
 
-                @inlude tablet {
+                @include tablet {
                     width: 20%;
                 }
             }
@@ -340,7 +340,7 @@ section {
 }
 
 .about {
-    @inlude tablet {
+    @include tablet {
         @include vertically-centering-the-unknown();
 
         width: 100%;
@@ -505,6 +505,7 @@ section {
             @include clearfix;
             @include normalise-list;
 
+            font-size: $default-font-size;
             margin: 0 -10px;
         }
 

@@ -1,15 +1,15 @@
 // Variable settings for grids and what not
-$default-font-size:     1.6em;
+$default-font-size:     2em;
 $gutter:                20px;
-$gutterTablet:          15px;
-$gutterDesktop:         15px;
+$gutterTablet:          20px;
+$gutterDesktop:         20px;
 
 
 // Breakpoints
 $bpMaxMobile:           767px;
 $bpMinTablet:           768px;
-$bpMinDesktop:          980px;
-$bpMaxDesktop:          1200px;
+$bpMinDesktop:          1024px;
+$bpMaxDesktop:          1600px;
 
 
 // Colors from Google's Material Design
