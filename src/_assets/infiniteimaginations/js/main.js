@@ -13,6 +13,9 @@ import Header from '../../../_modules/organisms/header/header';
 
 import Navigation from '../../../_modules/molecules/navigation/navigation';
 
+import History from '../../../_modules/atoms/history/history';
+import Galisteners from '../../../_modules/atoms/galisteners/galisteners';
+
 import { debounce, isMobile } from './_helper';
 import { toaster } from './_material';
 
@@ -21,11 +24,14 @@ let $window = $(window),
     $body = $('body'),
     $header = $('.header'),
     isMobileDevice = isMobile(),
-    lastScrollTop = 0;
+    lastScrollTop = 0,
+    gaListeners = new Galisteners();
 
 $(() => {
-    new Header();       // Activate Header modules logic
-    new Navigation();   // Activate Primary Nav modules logic
+    new Header();
+    new Navigation();
+    new History();
+    gaListeners.init();
 
     ////////////////////////////
     // Set framerate to 60fps //
@@ -44,7 +50,7 @@ $(() => {
 
 
 
-    console.log("I'm a firestarter!");
+    console.log("i am infinite imaginations!");
 });
 
 
