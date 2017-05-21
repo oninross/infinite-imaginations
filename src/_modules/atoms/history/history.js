@@ -4,12 +4,12 @@ import Path from 'pathjs';
 import GaListeners from '../galisteners/galisteners';
 import Listeners from '../listeners/listeners';
 
-var gaListeners = new GaListeners();
-var listeners = new Listeners();
+var gaListeners = new GaListeners(),
+    listeners = new Listeners();
 
 export default class History {
     constructor() {
-        var that = this;
+        let that = this;
 
         Path.root("#/hello/");
 
@@ -46,7 +46,7 @@ export default class History {
         Path.map('#/case-study/:param').enter(that.updateAnalytics).to(function () {
             listeners.exitCurrentSlide('case-study');
 
-            var param = this.params.param;
+            const param = this.params.param;
 
             setTimeout(function () {
                 listeners.getData(param);

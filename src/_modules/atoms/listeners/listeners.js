@@ -37,7 +37,7 @@ var $document = $(document),
 
 export default class Listeners {
     constructor() {
-        var gaListeners = new GaListeners(),
+        let gaListeners = new GaListeners(),
             navigation = new Navigation();
 
         that = this;
@@ -213,18 +213,21 @@ export default class Listeners {
 
 
         // Load ajax
-        $.ajax({
-            url: '/api/caseStudies',
-            dataType: 'json',
-            contentType: 'application/json; charset=utf-8',
-            success: function (data) {
-                that.populateData(data);
-            },
-            error: function (error) {
-                toaster('Whoops! Something went wrong! Error (' + error.status + ' ' + error.statusText + ')');
-            }
-        });
+        fetch('/api/caseStudies')
+            .then(function(response) {  
+                if (response.status !== 200) {  
+                    toaster('Whoops! Looks like there was a problem. Status Code: ' + response.status);
+                    return;  
+                }
 
+                // Examine the text in the response  
+                response.json().then(function(data) {  
+                    that.populateData(data);
+                });  
+            })  
+            .catch(function(err) {  
+                console.log('Fetch Error :-S', err);  
+            });
 
         // some funky stuff
         var title = $(document).find('title').text(),
@@ -424,7 +427,6 @@ export default class Listeners {
     }
 
     switchSlide($url) {
-
         $('.' + currentPage).hide();
 
         if ($url == '') {
