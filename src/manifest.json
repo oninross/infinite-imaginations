@@ -1,7 +1,7 @@
 {
    "lang": "en",
    "name": "infinite imaginations",
-   "short_name": "infinite imaginations",
+   "short_name": "infinite",
    "description": "",
    "start_url": "./index.html",
    "display": "standalone",
@@ -42,6 +42,12 @@
         {
             "src": "/assets/infiniteimaginations/images/favicon/android-icon-192x192.png",
             "sizes": "192x192",
+            "type": "image/png",
+            "density": "4.0"
+        },
+        {
+            "src": "/assets/infiniteimaginations/images/favicon/android-icon-512x512.png",
+            "sizes": "512x512",
             "type": "image/png",
             "density": "4.0"
         }
