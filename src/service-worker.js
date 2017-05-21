@@ -26,7 +26,6 @@
 // updated service worker is activated.
 var version = '1.0.0',
     now = Date.now(),
-    OFFLINE_URL = 'offline/',
     urlsToPrefetch = [
         'assets/infiniteimaginations/css/main.css',
         'assets/infiniteimaginations/js/main.js',
@@ -35,7 +34,6 @@ var version = '1.0.0',
         'assets/infiniteimaginations/css/fonts/HelveticaNeue-Light.woff',
         'assets/infiniteimaginations/css/fonts/HelveticaNeue-Bold.woff',
         'assets/infiniteimaginations/css/fonts/EBGaramond-Regular.woff',
-        OFFLINE_URL,
         'index.html',
         '/'
     ],
@@ -151,7 +149,7 @@ self.addEventListener('fetch', function (event) {
                 // It will return a normal response object that has the appropriate error code set.
                 console.error('Fetching failed:', error);
 
-                return caches.match(OFFLINE_URL);
+                return caches.match('index.html');
             });
         })
     );

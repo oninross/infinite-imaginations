@@ -16,17 +16,17 @@ export default class Galisteners {
             m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        // ga('create', 'UA-63786641-1', 'auto');  // Development
+        ga('create', 'UA-63786641-1', 'auto');  // Development
         // ga('create', 'UA-77788698-2', 'auto');  // Production
     }
 
     gaPageView() {
-        // ga('send', 'pageview', document.location.hash);
+        ga('send', 'pageview', document.location.hash);
     }
 
     gaClickEvent(c, l) {
         // ga('send', 'event', 'category', 'action', 'label', 'value');
         // ex: ga('send', 'event', 'image', 'click', 'image click', 'filename.jpg');
-        // ga('send', 'event', c, 'click', l);
+        ga('send', 'event', c, 'click', l);
     }
 }
