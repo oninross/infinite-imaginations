@@ -358,6 +358,7 @@ p {
     font-size: 2em;
     font-weight: $light;
     font-family: 'EBGaramond-Regular', serif;
+    margin-top: 0;
 
     a {
         background-color: $matte-black;
@@ -371,6 +372,8 @@ p {
 
         &:hover {
             @extend .glitch;
+
+            display: inline-block;
         }
 
         &:before,

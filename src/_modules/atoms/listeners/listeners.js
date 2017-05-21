@@ -584,7 +584,7 @@ export default class Listeners {
             case 'achievements':
                 $('.achievements .nominations li').removeClass('init');
 
-                TweenMax.set('.achievements .col-l a', {
+                TweenMax.set('.achievements .col-l .link', {
                     opacity: 0,
                     y: 50
                 });
@@ -1181,7 +1181,7 @@ export default class Listeners {
                 $('.nominations li').attr('style', '');
             });
 
-            TweenMax.to('.achievements a', 0.5, {
+            TweenMax.to('.achievements .link', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
