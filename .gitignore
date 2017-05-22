@@ -1,5 +1,6 @@
 .sass-cache/
 dist/
+tmp/
 build/
 node_modules/
 www/
