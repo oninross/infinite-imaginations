@@ -149,7 +149,7 @@ self.addEventListener('fetch', function (event) {
                 // It will return a normal response object that has the appropriate error code set.
                 console.error('Fetching failed:', error);
 
-                return false;
+                return caches.match('index.html');
             });
         })
     );

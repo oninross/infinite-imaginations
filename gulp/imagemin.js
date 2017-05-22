@@ -16,7 +16,8 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync) {
         progressive: true,
         optimizationLevel: 5,
         svgoPlugins: [{removeViewBox: false}],
-        use: [pngquant({speed: 10})]
+        use: [pngquant({speed: 10})],
+        verbose: true
       })))
       .pipe(gulp.dest(dest));
   });
