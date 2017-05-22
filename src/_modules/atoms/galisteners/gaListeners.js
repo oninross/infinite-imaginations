@@ -16,8 +16,8 @@ export default class Galisteners {
             m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        // ga('create', 'UA-63786641-1', 'auto');  // Development
-        ga('create', 'UA-77788698-2', 'auto');  // Production
+        ga('create', 'UA-63786641-1', 'auto');  // Development
+        // ga('create', 'UA-77788698-2', 'auto');  // Production
     }
 
     gaPageView() {
