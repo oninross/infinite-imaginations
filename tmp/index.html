@@ -47,6 +47,10 @@
   <meta name="twitter:title" content="infinite imaginations | UX Front-end Developer">
   <meta name="twitter:description" content="I'm Niño Ross Rodriguez, a Senior User Experience (UX) Developer with nine years of industry experience, specializing in developing pixel perfect websites quickly without sacrificing code quality and ensuring that users have the best UX they can get in a site.">
   <meta name="twitter:image" content="http://www.infiniteimaginations.co/share-image.jpg">
+  <style>
+    .circular,.loader{bottom:0;left:0;position:absolute;right:0;top:0;margin:auto}.loader{-webkit-box-shadow:0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.24);box-shadow:0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.24);background:#fff;border-radius:50%;height:50px;width:50px;z-index:10}.loader:before{content:'';display:block;padding-top:100%}.circular{-webkit-animation:rotate 2s linear infinite;animation:rotate 2s linear infinite;height:75%;-webkit-transform-origin:center center;transform-origin:center center;width:75%}.path{stroke-dasharray:1,200;stroke-dashoffset:0;-webkit-animation:dash 1.5s ease-in-out infinite,color 6s ease-in-out infinite;animation:dash 1.5s ease-in-out infinite,color 6s ease-in-out infinite;stroke-linecap:round}@-webkit-keyframes rotate{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes dash{0%{stroke-dasharray:1,200;stroke-dashoffset:0}50%{stroke-dasharray:89,200;stroke-dashoffset:-35}100%{stroke-dasharray:89,200;stroke-dashoffset:-124}}@keyframes dash{0%{stroke-dasharray:1,200;stroke-dashoffset:0}50%{stroke-dasharray:89,200;stroke-dashoffset:-35}100%{stroke-dasharray:89,200;stroke-dashoffset:-124}}@-webkit-keyframes color{0%,100%{stroke:#2196f3}}@keyframes color{0%,100%{stroke:#2196f3}}
+    
+  </style>
   <link rel="stylesheet" href="/assets/infiniteimaginations/css/main.css">
 </head>
 <body>
@@ -99,6 +103,11 @@
       </nav>
     </div>
   </header>
+  <div class="loader">
+    <svg viewbox="25 25 50 50" class="circular">
+      <circle cx="50" cy="50" r="18" fill="none" stroke-width="3" stroke-miterlimit="10" class="path"></circle>
+    </svg>
+  </div>
   <main id="main">
     <section class="hello">
       <div class="container">

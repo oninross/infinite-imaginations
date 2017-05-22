@@ -22077,8 +22077,8 @@ var Galisteners = function () {
                 m.parentNode.insertBefore(a, m);
             })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-            // ga('create', 'UA-63786641-1', 'auto');  // Development
-            ga('create', 'UA-77788698-2', 'auto'); // Production
+            ga('create', 'UA-63786641-1', 'auto'); // Development
+            // ga('create', 'UA-77788698-2', 'auto');  // Production
         }
     }, {
         key: 'gaPageView',
@@ -22276,6 +22276,15 @@ var Listeners = function () {
 
         that = this;
 
+        TweenMax.to('.loader', 1, {
+            opacity: 0,
+            scale: 0.75,
+            ease: Expo.easeOut,
+            onComplete: function onComplete() {
+                $('.loader').remove();
+            }
+        });
+
         // Hello Animation
         TweenMax.to('.logo', 0.5, {
             opacity: 1,
@@ -22442,18 +22451,16 @@ var Listeners = function () {
         });
 
         // Load ajax
-        fetch('/api/caseStudies').then(function (response) {
-            if (response.status !== 200) {
-                (0, _material.toaster)('Whoops! Looks like there was a problem. Status Code: ' + response.status);
-                return;
-            }
-
-            // Examine the text in the response  
-            response.json().then(function (data) {
+        $.ajax({
+            url: '/api/caseStudies',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            success: function success(data) {
                 that.populateData(data);
-            });
-        }).catch(function (err) {
-            console.log('Fetch Error :-S', err);
+            },
+            error: function error(_error) {
+                (0, _material.toaster)('Whoops! Something went wrong! Error (' + _error.status + ' ' + _error.statusText + ')');
+            }
         });
 
         // some funky stuff
