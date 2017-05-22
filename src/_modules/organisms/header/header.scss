@@ -1,0 +1,68 @@
+// header styles
+.header {
+    @include transition((background, top), $animTime, $easeOutExpo);
+
+    background-color: $material-background;
+    height: 75px;
+    padding: 17px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    &-wrap {
+        @include transition(visibilty, $animTime, $easeOutExpo);
+
+        height: 100%;
+        // opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        top: 0;
+        visibility: hidden;
+        width: 100%;
+
+        &.active {
+            // opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &.dark {
+        background-color: $matte-black;
+
+        svg {
+            polygon {
+                fill: $white;
+            }
+
+            path {
+                opacity: 0;
+            }
+        }
+
+        .menu .box {
+            background-color: $white;
+        }
+    }
+
+    &.hide {
+        top: -75px;
+    }
+}
+
+.logo {
+    opacity: 0;
+    position: absolute;
+    transform: translate(0, 50px);
+    z-index: 1;
+
+    svg {
+        polygon,
+        path {
+            @include transition(opacity, $animTime, $easeOutExpo);
+
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,371 @@
+/* =======================================================================
+Global
+========================================================================== */
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $material-background;
+    font: 62.5%/1.618 'HelveticaNeue', Arial, sans-serif;
+
+//     font: 62.5%/1.618 sans-serif;
+//     font-family:
+// /* 1 */ -apple-system, BlinkMacSystemFont,
+// /* 2 */ "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+// /* 3 */ "Helvetica Neue", sans-serif;
+    margin: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+address {
+    word-break: break-word;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+    margin-bottom: 10px;
+
+    a {
+        font-size: 1em;
+    }
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.6em;
+}
+
+h3 {
+    font-size: 2.4em;
+}
+
+h4 {
+    font-size: 2.2em;
+}
+
+h5 {
+    font-size: 2em;
+    font-style: italic;
+}
+
+h6 {
+    font-size: 1.8em;
+    font-style: italic;
+}
+
+menu, ol, ul {
+    margin-bottom: 20px;
+    padding: 0 0 0 40px;
+
+    li {
+        font-size: $default-font-size;
+
+        li {
+            font-size: 1em;
+        }
+
+        a {
+            font-size: 1em;
+        }
+    }
+}
+
+ol, ul {
+    margin: auto;
+
+    // code, kbd, pre, samp {
+    //     font-size: inherit;
+    // }
+}
+
+dl {
+    font-size: $default-font-size;
+}
+
+table {
+    background-color: transparent;
+    border: 1px solid $grey;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    width: 100%;
+
+    tr:nth-child(even) {
+        background: lighten( $grey, 25%);
+    }
+
+    th, td {
+        padding: 5px 10px;
+        vertical-align: top;
+    }
+
+    th {
+        background: darken( $grey, 10% );
+        color: $white;
+        font-size: 1.8em;
+        text-align: left;
+    }
+
+    td {
+        font-size: $default-font-size;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    // menu, ol, ul, p, a {
+    //     font-size: 1em;
+    // }
+}
+
+img {
+    display: block;
+    height: auto;
+    margin: 0 auto 10px;
+    max-width: 100%;
+    width: 100%;
+
+    @include tablet {
+        margin: 0 0 10px;
+        width: auto;
+    }
+}
+
+address {
+    font-size: $default-font-size;
+    margin: 0 0 10px;
+    word-break: break-word;
+}
+
+blockquote {
+    font-size: 1.8em;
+    font-weight: $light;
+    line-height: 1.25;
+}
+
+p {
+    font-size: $default-font-size;
+    word-break: break-word;
+
+    a {
+        font-size: 1em;
+    }
+}
+
+a {
+    color: $matte-black;
+    font-size: $default-font-size;
+    font-weight: $bold;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+hr {
+    margin: 40px 0;
+}
+
+button {
+    overflow: hidden;
+    position: relative;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.intro {
+    p {
+        font-size: 1.8em;
+        font-weight: bold;
+    }
+}
+
+::-ms-clear {
+    height: 22px;
+    width: 22px;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+    color: #a9a9a9;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+    color: #a9a9a9;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    color: #a9a9a9;
+    opacity: 1;
+}
+
+:-moz-placeholder { /* Firefox 4 - 18 */
+    color: #a9a9a9;
+    opacity: 1;
+}
+
+.btn {
+    @include transition(background, $animTime, $easeOutExpo);
+
+    background: $black;
+    border: 0;
+    border-radius: 3px;
+    color: $white;
+    font-size: $default-font-size;
+    padding: 10px;
+    width: auto;
+
+    &:hover {
+        background: lighten( $black, 10%);
+    }
+
+    svg.ripple circle {
+        fill: $white;
+    }
+
+    @include tablet {
+        width: auto;
+    }
+}
+
+svg.ripple {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+
+    circle {
+        fill: $white;
+        opacity: 0;
+    }
+}
+
+.no-objectfit {
+    .card-wrap {
+        background-size: cover;
+        background-position: center;
+
+        img {
+            display: none;
+        }
+    }
+}
+
+.vh {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+
+
+/* =======================================================================
+Layout
+========================================================================== */
+#main {
+    @include transition(height, $animTime, $easeOutExpo);
+
+    margin-top: 75px;
+}
+
+.backstretch {
+    background-color: $grey;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.glitch {
+    display: block;
+    position: relative;
+
+    &:before,
+    &:after {
+        background: $matte-black;
+        content: attr(data-text);
+        clip: rect(0, 900px, 0, 0);
+        opacity: 0.5;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+    }
+
+    &:before {
+        animation: noise-anim-2 3s infinite linear alternate-reverse;
+        left: -3px;
+        text-shadow: 1px 0 cyan;
+    }
+
+    &:after {
+        animation: noise-anim-1 2s infinite linear alternate-reverse;
+        left: 3px;
+        text-shadow: -1px 0 red;
+    }
+}
+
+@keyframes noise-anim-1 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+        }
+    }
+}
+
+@keyframes noise-anim-2 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+        }
+    }
+}
+
+p {
+    color: $matte-black;
+    font-size: 2em;
+    font-weight: $light;
+    font-family: 'EBGaramond-Regular', serif;
+    margin-top: 0;
+
+    a {
+        background-color: $matte-black;
+        color: $white;
+        display: inline-block;
+        font-weight: $bold;
+        margin-bottom: 0;
+        padding: 2px 10px 4px;
+        position: relative;
+        z-index: 1;
+
+        &:hover {
+            @extend .glitch;
+
+            display: inline-block;
+        }
+
+        &:before,
+        &:after {
+            left: 0 !important;
+            top: 2px !important;
+        }
+
+        &:before {
+            left: 7px !important;
+        }
+
+        &:after {
+            left: 13px !important;
+        }
+    }
+}
