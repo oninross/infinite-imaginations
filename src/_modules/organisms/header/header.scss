@@ -1,6 +1,6 @@
 // header styles
 .header {
-    @include transition(all, $animTime, $easeOutExpo);
+    @include transition((background, top), $animTime, $easeOutExpo);
 
     background-color: $material-background;
     height: 75px;

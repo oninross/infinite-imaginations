@@ -1,6 +1,6 @@
 // navigation styles
 .primary-nav {
-    @include transition(all, $animTime, $easeOutExpo);
+    @include transition((opacity, visibility), $animTime, $easeOutExpo);
 
     height: 100%;
     left: 0;
@@ -137,7 +137,6 @@
                 transition-delay: 0.4s;
             }
         }
-
     }
 
     a {
@@ -214,7 +213,7 @@
     .box {
         @include absolute-center;
 
-        @include transition(all, 0.25s, $easeOutExpo);
+        @include transition((top, right, bottom, left), 0.25s, $easeOutExpo);
 
         background-color: $matte-black;
         display: block;

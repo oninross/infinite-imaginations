@@ -157,8 +157,6 @@ p {
 }
 
 a {
-    @include transition(all, $animTime, $easeOutExpo);
-
     color: $matte-black;
     font-size: $default-font-size;
     font-weight: $bold;
@@ -209,22 +207,8 @@ button {
     opacity: 1;
 }
 
-// ::-webkit-scrollbar {
-//     height: 5px;
-//     width: 5px;
-// }
-
-// ::-webkit-scrollbar-thumb {
-//     background: rgba(0, 0, 0, 0.26);
-// }
-
-// ::-webkit-scrollbar-corner {
-//     background: 0;
-// }
-
-
 .btn {
-    @include transition(all, $animTime, $easeOutExpo);
+    @include transition(background, $animTime, $easeOutExpo);
 
     background: $black;
     border: 0;
@@ -236,12 +220,6 @@ button {
 
     &:hover {
         background: lighten( $black, 10%);
-    }
-
-    &.disabled {
-        background: lighten( $grey, 30%);
-        color: lighten( $grey, 10%);
-        cursor: not-allowed;
     }
 
     svg.ripple circle {

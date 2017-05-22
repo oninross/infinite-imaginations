@@ -875,8 +875,6 @@ section {
             z-index: 10;
 
             .cta {
-                @include transition(all, $animTime, $easeInOutExpo);
-
                 background-color: $matte-black;
                 color: $white;
                 margin-bottom: 0;
@@ -898,17 +896,6 @@ section {
             font-size: 1.325em;
             line-height: 1;
             margin-bottom: 10px;
-        }
-
-        &-desc {
-            @include transition(all, $animTime, $easeInOutExpo);
-
-            display: block;
-            font-size: 0.800em;
-            font-style: italic;
-            font-weight: $light;
-            line-height: 1;
-            margin-bottom: 20px;
         }
 
         &-link {
@@ -1080,18 +1067,11 @@ section {
         }
     }
 
-    .tldr {
-        &-sub {
-            li,
-            p {
-                font-size: 16px;
-            }
-        }
-    }
-
     .navigation {
+        margin-bottom: 20px;
+        
         a {
-            @include transition(all, $animTime, $easeInOutExpo);
+            @include transition(color, $animTime, $easeInOutExpo);
 
             background-color: $white;
             display: block;
@@ -1226,7 +1206,6 @@ section {
     }
 
     .col {
-        margin-bottom: 0;
         opacity: 0;
         transform: translate(0, 50px);
     }
