@@ -15,16 +15,7 @@
         ]
       },
       {
-        "source": "/assets/api/**/*",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=31536000"
-          }
-        ]
-      },
-      {
-        "source": "/service-worker.js",
+        "source": "/api/caseStudies",
         "headers": [
           {
             "key": "Cache-Control",
@@ -34,6 +25,15 @@
       },
       {
         "source": "/manifest.json",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "/service-worker.js",
         "headers": [
           {
             "key": "Cache-Control",
