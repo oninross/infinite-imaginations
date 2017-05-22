@@ -14,7 +14,6 @@ export default function(gulp, plugins, args, config, taskTarget, browserSync) {
       .pipe(plugins.changed(dest))
       .pipe(gulpif(args.production, plugins.imagemin({
         progressive: true,
-        optimizationLevel: 5,
         svgoPlugins: [{removeViewBox: false}],
         use: [pngquant({speed: 10})],
         verbose: true

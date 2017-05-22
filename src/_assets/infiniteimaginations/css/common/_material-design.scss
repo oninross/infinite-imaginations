@@ -24,9 +24,9 @@
 
 // Toaster
 .toaster-wrap {
-    bottom: 30px;
-    left: 30px;
-    max-width: 440px;
+    bottom: 20px;
+    left: 20px;
+    max-width: 280px;
     position: fixed;
     width: 100%;
     z-index: 1;
@@ -73,5 +73,9 @@
     .icon {
         display: block;
         font-size: 2em;
+    }
+
+    .container {
+        padding: 0;
     }
 }
