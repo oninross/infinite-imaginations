@@ -1,6 +1,6 @@
 {
   "name": "firestarter",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "dependencies": {
     "baffle": "^0.3.6",
     "browserify-shim": "^3.8.12",
