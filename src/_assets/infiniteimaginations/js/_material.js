@@ -32,12 +32,13 @@ $(() => {
 // Toaster  //
 //////////////
 let toasterInd = 0;
-let toaster = function (msg) {
+let toaster = function (msg = "Toaster message", ttl = 5, isReload = false) {
     // Alert Toaster
     let popupAlert = doT.template($('#toaster-template').html()),
         obj = {
             ind: toasterInd,
-            message: msg
+            message: msg,
+            isReload: isReload
         };
 
     if (!$('.toaster-wrap').length) {
@@ -54,20 +55,22 @@ let toaster = function (msg) {
         ease: Expo.easeOut
     });
 
-    TweenMax.to(toaster, 0.75, {
-        opacity: 0,
-        scale: 0.75,
-        ease: Expo.easeOut,
-        delay: 5,
-        onComplete: function () {
-            $(toaster).remove();
-        }
-    });
+    if (ttl !== 0) {
+        TweenMax.to(toaster, 0.75, {
+            opacity: 0,
+            scale: 0.75,
+            ease: Expo.easeOut,
+            delay: ttl,
+            onComplete: function () {
+                $(toaster).remove();
+            }
+        });
+    }
 
-    $(toaster).on('click', function (e) {
+    $(toaster).on('click', '.js-dismiss', function (e) {
         e.preventDefault();
 
-        TweenMax.to($(this), 0.75, {
+        TweenMax.to($(this).parent(), 0.75, {
             opacity: 0,
             scale: 0.75,
             ease: Expo.easeOut,
@@ -79,6 +82,11 @@ let toaster = function (msg) {
 
     toasterInd++;
 };
+
+$('body').on('click', '.js-refresh', function () {
+    console.log('asdasdasd')
+    window.location.reload();
+});
 
 
 

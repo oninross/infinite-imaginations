@@ -33,6 +33,10 @@
     position: fixed;
     width: 100%;
     z-index: 1;
+
+    @include tablet {
+        max-width: 380px;
+    }
 }
 
 .toaster {
@@ -56,21 +60,28 @@
         color: $white;
         font: 1.4em 'HelveticaNeue';
         margin: 0;
+        padding-right: 100px;
     }
 
     button {
-        @include absolute-center;
-
         background: none;
         border: 0;
+        bottom: 0;
         color: $white;
         height: 20px;
-        left: auto;
+        margin: auto;
         padding: 0;
         position: absolute;
-        right: 0;
+        right: 20px;
         top: 0;
         width: 20px;
+    }
+
+    .btn-refresh {
+        color: $yellow;
+        font-size: 1.3em;
+        right: 50px;
+        width: auto;
     }
 
     .icon {

@@ -20693,12 +20693,17 @@ $(function () {
 // Toaster  //
 //////////////
 var toasterInd = 0;
-var toaster = function toaster(msg) {
+var toaster = function toaster() {
+    var msg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "Toaster message";
+    var ttl = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5;
+    var isReload = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
     // Alert Toaster
     var popupAlert = doT.template($('#toaster-template').html()),
         obj = {
         ind: toasterInd,
-        message: msg
+        message: msg,
+        isReload: isReload
     };
 
     if (!$('.toaster-wrap').length) {
@@ -20715,20 +20720,22 @@ var toaster = function toaster(msg) {
         ease: Expo.easeOut
     });
 
-    TweenMax.to(toaster, 0.75, {
-        opacity: 0,
-        scale: 0.75,
-        ease: Expo.easeOut,
-        delay: 5,
-        onComplete: function onComplete() {
-            $(toaster).remove();
-        }
-    });
+    if (ttl !== 0) {
+        TweenMax.to(toaster, 0.75, {
+            opacity: 0,
+            scale: 0.75,
+            ease: Expo.easeOut,
+            delay: ttl,
+            onComplete: function onComplete() {
+                $(toaster).remove();
+            }
+        });
+    }
 
-    $(toaster).on('click', function (e) {
+    $(toaster).on('click', '.js-dismiss', function (e) {
         e.preventDefault();
 
-        TweenMax.to($(this), 0.75, {
+        TweenMax.to($(this).parent(), 0.75, {
             opacity: 0,
             scale: 0.75,
             ease: Expo.easeOut,
@@ -20740,6 +20747,11 @@ var toaster = function toaster(msg) {
 
     toasterInd++;
 };
+
+$('body').on('click', '.js-refresh', function () {
+    console.log('asdasdasd');
+    window.location.reload();
+});
 
 ///////////////////
 // Ripple Effect //
@@ -21379,10 +21391,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
    *   elem.style.WebkitBorderRadius
    * instead of something like the following (which is technically incorrect):
    *   elem.style.webkitBorderRadius
-     * WebKit ghosts their properties in lowercase but Opera & Moz do not.
+    * WebKit ghosts their properties in lowercase but Opera & Moz do not.
    * Microsoft uses a lowercase `ms` instead of the correct `Ms` in IE8+
    *   erik.eae.net/archives/2008/03/10/21.48.10/
-     * More here: github.com/Modernizr/Modernizr/issues/issue/21
+    * More here: github.com/Modernizr/Modernizr/issues/issue/21
    *
    * @access private
    * @returns {string} The string representing the vendor-specific style properties
@@ -22040,8 +22052,7 @@ if ('serviceWorker' in navigator) {
         console.log("navigator.serviceWorker.controller.onstatechange:: " + navigator.serviceWorker.controller.onstatechange);
         navigator.serviceWorker.controller.onstatechange = function (event) {
             if (event.target.state === 'redundant') {
-                (0, _material.toaster)('A new version of this app is available.'); // duration 0 indications shows the toast indefinitely.
-                window.location.reload();
+                (0, _material.toaster)('A new version of this app is available.', 0, true);
             }
         };
     }
