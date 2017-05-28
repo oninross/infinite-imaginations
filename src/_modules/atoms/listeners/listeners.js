@@ -42,6 +42,15 @@ export default class Listeners {
 
         that = this;
 
+        TweenMax.to('.loader', 1, {
+            opacity: 0,
+            scale: 0.75,
+            ease: Expo.easeOut,
+            onComplete: function () {
+                $('.loader').remove();
+            }
+        });
+
         // Hello Animation
         TweenMax.to('.logo', 0.5, {
             opacity: 1,
@@ -213,21 +222,17 @@ export default class Listeners {
 
 
         // Load ajax
-        fetch('/api/caseStudies')
-            .then(function(response) {  
-                if (response.status !== 200) {  
-                    toaster('Whoops! Looks like there was a problem. Status Code: ' + response.status);
-                    return;  
-                }
-
-                // Examine the text in the response  
-                response.json().then(function(data) {  
-                    that.populateData(data);
-                });  
-            })  
-            .catch(function(err) {  
-                console.log('Fetch Error :-S', err);  
-            });
+        $.ajax({
+            url: '/api/caseStudies',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                that.populateData(data);
+            },
+            error: function (error) {
+                toaster('Whoops! Something went wrong! Error (' + error.status + ' ' + error.statusText + ')');
+            }
+        });
 
         // some funky stuff
         var title = $(document).find('title').text(),

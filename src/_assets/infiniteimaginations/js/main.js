@@ -105,8 +105,7 @@ if ('serviceWorker' in navigator) {
         console.log("navigator.serviceWorker.controller.onstatechange:: " + navigator.serviceWorker.controller.onstatechange)
         navigator.serviceWorker.controller.onstatechange = function (event) {
             if (event.target.state === 'redundant') {
-                toaster('A new version of this app is available.'); // duration 0 indications shows the toast indefinitely.
-                window.location.reload();
+                toaster('A new version of this app is available.', 0, true);
             }
         };
     }

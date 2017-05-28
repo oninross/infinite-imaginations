@@ -20693,12 +20693,17 @@ $(function () {
 // Toaster  //
 //////////////
 var toasterInd = 0;
-var toaster = function toaster(msg) {
+var toaster = function toaster() {
+    var msg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "Toaster message";
+    var ttl = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5;
+    var isReload = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
     // Alert Toaster
     var popupAlert = doT.template($('#toaster-template').html()),
         obj = {
         ind: toasterInd,
-        message: msg
+        message: msg,
+        isReload: isReload
     };
 
     if (!$('.toaster-wrap').length) {
@@ -20715,20 +20720,22 @@ var toaster = function toaster(msg) {
         ease: Expo.easeOut
     });
 
-    TweenMax.to(toaster, 0.75, {
-        opacity: 0,
-        scale: 0.75,
-        ease: Expo.easeOut,
-        delay: 5,
-        onComplete: function onComplete() {
-            $(toaster).remove();
-        }
-    });
+    if (ttl !== 0) {
+        TweenMax.to(toaster, 0.75, {
+            opacity: 0,
+            scale: 0.75,
+            ease: Expo.easeOut,
+            delay: ttl,
+            onComplete: function onComplete() {
+                $(toaster).remove();
+            }
+        });
+    }
 
-    $(toaster).on('click', function (e) {
+    $(toaster).on('click', '.js-dismiss', function (e) {
         e.preventDefault();
 
-        TweenMax.to($(this), 0.75, {
+        TweenMax.to($(this).parent(), 0.75, {
             opacity: 0,
             scale: 0.75,
             ease: Expo.easeOut,
@@ -20740,6 +20747,11 @@ var toaster = function toaster(msg) {
 
     toasterInd++;
 };
+
+$('body').on('click', '.js-refresh', function () {
+    console.log('asdasdasd');
+    window.location.reload();
+});
 
 ///////////////////
 // Ripple Effect //
@@ -22040,8 +22052,7 @@ if ('serviceWorker' in navigator) {
         console.log("navigator.serviceWorker.controller.onstatechange:: " + navigator.serviceWorker.controller.onstatechange);
         navigator.serviceWorker.controller.onstatechange = function (event) {
             if (event.target.state === 'redundant') {
-                (0, _material.toaster)('A new version of this app is available.'); // duration 0 indications shows the toast indefinitely.
-                window.location.reload();
+                (0, _material.toaster)('A new version of this app is available.', 0, true);
             }
         };
     }
@@ -22077,8 +22088,8 @@ var Galisteners = function () {
                 m.parentNode.insertBefore(a, m);
             })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-            // ga('create', 'UA-63786641-1', 'auto');  // Development
-            ga('create', 'UA-77788698-2', 'auto'); // Production
+            ga('create', 'UA-63786641-1', 'auto'); // Development
+            // ga('create', 'UA-77788698-2', 'auto');  // Production
         }
     }, {
         key: 'gaPageView',
@@ -22276,6 +22287,15 @@ var Listeners = function () {
 
         that = this;
 
+        TweenMax.to('.loader', 1, {
+            opacity: 0,
+            scale: 0.75,
+            ease: Expo.easeOut,
+            onComplete: function onComplete() {
+                $('.loader').remove();
+            }
+        });
+
         // Hello Animation
         TweenMax.to('.logo', 0.5, {
             opacity: 1,
@@ -22442,18 +22462,16 @@ var Listeners = function () {
         });
 
         // Load ajax
-        fetch('/api/caseStudies').then(function (response) {
-            if (response.status !== 200) {
-                (0, _material.toaster)('Whoops! Looks like there was a problem. Status Code: ' + response.status);
-                return;
-            }
-
-            // Examine the text in the response  
-            response.json().then(function (data) {
+        $.ajax({
+            url: '/api/caseStudies',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            success: function success(data) {
                 that.populateData(data);
-            });
-        }).catch(function (err) {
-            console.log('Fetch Error :-S', err);
+            },
+            error: function error(_error) {
+                (0, _material.toaster)('Whoops! Something went wrong! Error (' + _error.status + ' ' + _error.statusText + ')');
+            }
         });
 
         // some funky stuff
