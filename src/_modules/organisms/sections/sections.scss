@@ -1009,7 +1009,8 @@ section {
         }
 
         li {
-            font-family: 'EBGaramond-Regular', serif;
+            // font-family: 'EBGaramond-Regular', serif;
+            font-family: 'DroidSerif', serif;
             font-weight: $light;
         }
 
@@ -1069,7 +1070,7 @@ section {
 
     .navigation {
         margin-bottom: 20px;
-        
+
         a {
             @include transition(color, $animTime, $easeInOutExpo);
 

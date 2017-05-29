@@ -33,7 +33,7 @@ var version = '2.0.3',
         'assets/infiniteimaginations/css/fonts/HelveticaNeue.woff',
         'assets/infiniteimaginations/css/fonts/HelveticaNeue-Light.woff',
         'assets/infiniteimaginations/css/fonts/HelveticaNeue-Bold.woff',
-        'assets/infiniteimaginations/css/fonts/EBGaramond-Regular.woff',
+        'assets/infiniteimaginations/css/fonts/DroidSerif.woff',
         'index.html',
         '/'
     ],
