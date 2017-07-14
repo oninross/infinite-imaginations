@@ -2,7 +2,6 @@
 .header {
     @include transition((background, top), $animTime, $easeOutExpo);
 
-    background-color: $material-background;
     height: 75px;
     padding: 17px 20px;
     position: fixed;
@@ -29,7 +28,7 @@
     }
 
     &.dark {
-        background-color: $matte-black;
+        background-color: $black;
 
         svg {
             polygon {

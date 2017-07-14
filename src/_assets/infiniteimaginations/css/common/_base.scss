@@ -6,7 +6,6 @@ html {
 }
 
 body {
-    background-color: $material-background;
     font: 62.5%/1.618 'HelveticaNeue', Arial, sans-serif;
 
 //     font: 62.5%/1.618 sans-serif;
@@ -61,7 +60,7 @@ menu, ol, ul {
     padding: 0 0 0 40px;
 
     li {
-        font-size: $default-font-size;
+        font-size: 1.8em;
 
         li {
             font-size: 1em;
@@ -148,7 +147,7 @@ blockquote {
 }
 
 p {
-    font-size: $default-font-size;
+    font-size: 1.8em;
     word-break: break-word;
 
     a {
@@ -157,7 +156,7 @@ p {
 }
 
 a {
-    color: $matte-black;
+    color: $black;
     font-size: $default-font-size;
     font-weight: $bold;
     margin-bottom: 10px;
@@ -289,7 +288,7 @@ Layout
 
     &:before,
     &:after {
-        background: $matte-black;
+        background: $black;
         content: attr(data-text);
         clip: rect(0, 900px, 0, 0);
         opacity: 0.5;
@@ -300,13 +299,13 @@ Layout
 
     &:before {
         animation: noise-anim-2 3s infinite linear alternate-reverse;
-        left: -3px;
+        left: -5px;
         text-shadow: 1px 0 cyan;
     }
 
     &:after {
         animation: noise-anim-1 2s infinite linear alternate-reverse;
-        left: 3px;
+        left: 5px;
         text-shadow: -1px 0 red;
     }
 }
@@ -332,15 +331,14 @@ Layout
 }
 
 p {
-    color: $matte-black;
-    font-size: 2em;
-    font-weight: $light;
+    color: $black;
+    // font-weight: $light;
     // font-family: 'EBGaramond-Regular', serif;
-    font-family: 'Droid Serif', serif;
+    // font-family: 'Droid Serif', serif;
     margin-top: 0;
 
     a {
-        background-color: $matte-black;
+        background-color: $black;
         color: $white;
         display: inline-block;
         font-weight: $bold;
