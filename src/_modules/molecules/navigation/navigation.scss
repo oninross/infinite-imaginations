@@ -215,7 +215,7 @@
 
         @include transition((top, right, bottom, left), 0.25s, $easeOutExpo);
 
-        background-color: $matte-black;
+        background-color: $black;
         display: block;
         height: 8px;
         width: 8px;

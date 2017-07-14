@@ -12,11 +12,10 @@
 // 2011-2014, Laura Doktorova, https://github.com/olado/doT
 // Licensed under the MIT license.
 
-(function () {
+(function() {
 	"use strict";
 
 	var doT = {
-		name: "doT",
 		version: "1.1.1",
 		templateSettings: {
 			evaluate:    /\{\{([\s\S]+?(\}?)+)\}\}/g,
@@ -21392,10 +21391,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
    *   elem.style.WebkitBorderRadius
    * instead of something like the following (which is technically incorrect):
    *   elem.style.webkitBorderRadius
-    * WebKit ghosts their properties in lowercase but Opera & Moz do not.
+     * WebKit ghosts their properties in lowercase but Opera & Moz do not.
    * Microsoft uses a lowercase `ms` instead of the correct `Ms` in IE8+
    *   erik.eae.net/archives/2008/03/10/21.48.10/
-    * More here: github.com/Modernizr/Modernizr/issues/issue/21
+     * More here: github.com/Modernizr/Modernizr/issues/issue/21
    *
    * @access private
    * @returns {string} The string representing the vendor-specific style properties
@@ -22006,58 +22005,60 @@ var $window = (0, _jquery2.default)(window),
 });
 
 // Simple Service Worker to make App Install work (OPTIONAL)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function () {
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js', { scope: './' }).then(function (registration) {
-                console.log('registered service worker');
+// if ('serviceWorker' in navigator) {
+//     window.addEventListener('load', function () {
+//         if ('serviceWorker' in navigator) {
+//             navigator.serviceWorker.register('/service-worker.js', { scope: './' })
+//                 .then(function (registration) {
+//                     console.log('registered service worker');
 
-                registration.onupdatefound = function () {
-                    // The updatefound event implies that registration.installing is set; see
-                    // https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html#service-worker-container-updatefound-event
-                    var installingWorker = registration.installing;
+//                     registration.onupdatefound = function () {
+//                         // The updatefound event implies that registration.installing is set; see
+//                         // https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html#service-worker-container-updatefound-event
+//                         const installingWorker = registration.installing;
 
-                    installingWorker.onstatechange = function () {
-                        switch (installingWorker.state) {
-                            case 'installed':
-                                if (!navigator.serviceWorker.controller) {
-                                    (0, _material.toaster)('Caching complete!');
-                                }
-                                break;
+//                         installingWorker.onstatechange = function () {
+//                             switch (installingWorker.state) {
+//                                 case 'installed':
+//                                     if (!navigator.serviceWorker.controller) {
+//                                         toaster('Caching complete!');
+//                                     }
+//                                     break;
 
-                            case 'redundant':
-                                throw Error('The installing service worker became redundant.');
-                        }
-                    };
-                };
-            }).catch(function (whut) {
-                console.error('uh oh... ');
-                console.error(whut);
-            });
+//                                 case 'redundant':
+//                                     throw Error('The installing service worker became redundant.');
+//                             }
+//                         };
+//                     };
+//                 })
+//             .catch(function (whut) {
+//                 console.error('uh oh... ');
+//                 console.error(whut);
+//             });
 
-            window.addEventListener('beforeinstallprompt', function (e) {
-                outputElement.textContent = 'beforeinstallprompt Event fired';
-            });
-        }
-    });
+//             window.addEventListener('beforeinstallprompt', function (e) {
+//                 outputElement.textContent = 'beforeinstallprompt Event fired';
+//             });
+//         }
+//     });
 
-    window.addEventListener('beforeinstallprompt', function (e) {
-        // Prevent Add to Homescreen Banner from firing
-        e.preventDefault();
-        return false;
-    });
+//     window.addEventListener('beforeinstallprompt', function (e) {
+//         // Prevent Add to Homescreen Banner from firing
+//         e.preventDefault();
+//         return false;
+//     });
 
-    // Check to see if the service worker controlling the page at initial load
-    // has become redundant, since this implies there's a new service worker with fresh content.
-    if (navigator.serviceWorker && navigator.serviceWorker.controller) {
-        console.log("navigator.serviceWorker.controller.onstatechange:: " + navigator.serviceWorker.controller.onstatechange);
-        navigator.serviceWorker.controller.onstatechange = function (event) {
-            if (event.target.state === 'redundant') {
-                (0, _material.toaster)('A new version of this app is available.', 0, true);
-            }
-        };
-    }
-}
+//     // Check to see if the service worker controlling the page at initial load
+//     // has become redundant, since this implies there's a new service worker with fresh content.
+//     if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+//         console.log("navigator.serviceWorker.controller.onstatechange:: " + navigator.serviceWorker.controller.onstatechange)
+//         navigator.serviceWorker.controller.onstatechange = function (event) {
+//             if (event.target.state === 'redundant') {
+//                 toaster('A new version of this app is available.', 0, true);
+//             }
+//         };
+//     }
+// }
 
 },{"../../../_modules/atoms/galisteners/galisteners":16,"../../../_modules/atoms/history/history":17,"../../../_modules/molecules/navigation/navigation":19,"../../../_modules/organisms/header/header":20,"./_helper":12,"./_material":13,"./_modernizr":14,"TweenMax":4,"doT":2,"jquery":8,"lazyload":7}],16:[function(require,module,exports){
 'use strict';

@@ -48,12 +48,12 @@ section {
     }
 
     hr {
-        border-top: 3px solid $matte-black;
+        border-top: 3px solid $black;
         width: 0;
     }
 
     .bar {
-        background-color: $matte-black;
+        background-color: $black;
         height: 100%;
         left: 0;
         position: absolute;
@@ -102,7 +102,7 @@ section {
         }
 
         .bar {
-            background: $matte-black;
+            background: $black;
             display: block;
             height: 100%;
             left: 0;
@@ -118,10 +118,6 @@ section {
         opacity: 0;
         position: relative;
         transform: translate(0, 50px);
-
-        @include tablet {
-            font-size: 2em;
-        }
 
         a {
             margin: 0;
@@ -177,7 +173,7 @@ section {
         }
 
         .text {
-            color: $matte-black;
+            color: $black;
         }
     }
 
@@ -213,7 +209,7 @@ section {
 
         /* Safari 6.1+ */
         justify-content: center;
-        border: 3px solid $matte-black;
+        border: 3px solid $black;
         height: 100%;
         margin: 0;
         // overflow: hidden;
@@ -356,7 +352,7 @@ section {
 
     .skills {
         &__bar {
-            background-color: $matte-black;
+            background-color: $black;
             height: 30px;
             margin-bottom: 15px;
             min-width: 60px;
@@ -367,7 +363,7 @@ section {
             width: 0;
 
             &:before {
-                background-color: $matte-black;
+                background-color: $black;
                 content: '';
                 height: 100%;
                 left: 0;
@@ -380,8 +376,8 @@ section {
             &:after {
                 background: repeating-linear-gradient(
                     -45deg,
-                    lighten($matte-black, 25%),
-                    lighten($matte-black, 25%) 2px,
+                    lighten($black, 25%),
+                    lighten($black, 25%) 2px,
                     transparent 0px,
                     transparent 5px
                 );
@@ -608,7 +604,7 @@ section {
 
             &:before,
             &:after {
-                background-color: $matte-black;
+                background-color: $black;
                 content: '';
                 position: absolute;
             }
@@ -675,8 +671,8 @@ section {
         &-pattern {
             background: repeating-linear-gradient(
                 -45deg,
-                lighten($matte-black, 68%),
-                lighten($matte-black, 68%) 2px,
+                lighten($black, 75%),
+                lighten($black, 75%) 2px,
                 transparent 0px,
                 transparent 4px
             );
@@ -710,7 +706,7 @@ section {
         }
 
         li {
-            border: 4px solid $matte-black;
+            border: 4px solid $black;
             display: inline-block;
             height: 90px;
             margin: 0 15px 30px;
@@ -786,7 +782,7 @@ section {
 
     .card {
         background-color: transparent;
-        border: 6px solid $matte-black;
+        border: 6px solid $black;
         height: 220px;
         overflow: hidden;
         padding: 0;
@@ -815,7 +811,7 @@ section {
             -webkit-transition-delay: 0.1s;
                     transition-delay: 0.1s;
 
-            background-color: $matte-black;
+            background-color: $black;
         }
 
         &:hover {
@@ -832,11 +828,11 @@ section {
             .card-text {
                 .cta {
                     background-color: $white;
-                    color: $matte-black;
+                    color: $black;
                     max-width: 215px;
 
                     .icon {
-                        color: $matte-black;
+                        color: $black;
                         opacity: 1;
 
                         &:first-child {
@@ -875,7 +871,7 @@ section {
             z-index: 10;
 
             .cta {
-                background-color: $matte-black;
+                background-color: $black;
                 color: $white;
                 margin-bottom: 0;
                 max-width: 180px;
@@ -1010,15 +1006,15 @@ section {
 
         li {
             // font-family: 'EBGaramond-Regular', serif;
-            font-family: 'DroidSerif', serif;
+            // font-family: 'DroidSerif', serif;
             font-weight: $light;
         }
 
         .pattern {
             background: repeating-linear-gradient(
                 -45deg,
-                lighten($matte-black, 60%),
-                lighten($matte-black, 60%) 2px,
+                lighten($black, 60%),
+                lighten($black, 60%) 2px,
                 transparent 0px,
                 transparent 5px
             );
@@ -1031,7 +1027,7 @@ section {
     }
 
     .cta {
-        background-color: $matte-black;
+        background-color: $black;
         color: $white !important;
         cursor: pointer;
         display: block;
@@ -1075,6 +1071,7 @@ section {
             @include transition(color, $animTime, $easeInOutExpo);
 
             background-color: $white;
+            border: 2px solid $black;
             display: block;
             margin-bottom: 15px;
             padding: 20px;
@@ -1103,7 +1100,7 @@ section {
                 -webkit-transition-delay: 0.1s;
                         transition-delay: 0.1s;
 
-                background-color: $matte-black;
+                background-color: $black;
             }
 
             &:hover {
@@ -1153,8 +1150,8 @@ section {
             &:after {
                 background: repeating-linear-gradient(
                     -45deg,
-                    lighten($matte-black, 25%),
-                    lighten($matte-black, 25%) 2px,
+                    lighten($black, 25%),
+                    lighten($black, 25%) 2px,
                     transparent 0px,
                     transparent 5px
                 );
@@ -1214,7 +1211,7 @@ section {
     .line {
         @include transition(all, $animTime, $easeInOutExpo);
 
-        background-color: $matte-black;
+        background-color: $black;
         bottom: 0;
         display: none;
         height: 1px;
