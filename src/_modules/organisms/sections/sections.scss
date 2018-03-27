@@ -1,6 +1,7 @@
 // sections styles
 section {
     display: none;
+    width: 100%;
 
     h1 {
         border-left: 0px solid $blue;
@@ -71,20 +72,21 @@ section {
 
 .hello {
     display: block;
+    margin: auto;
 
-    @include tablet {
-        @include vertically-centering-the-unknown();
+    // @include tablet {
+    //     @include vertically-centering-the-unknown();
 
-        width: 100%;
-    }
+    //     width: 100%;
+    // }
 
-    @include desktop {
-        @include reset-centering();
-    }
+    // @include desktop {
+    //     @include reset-centering();
+    // }
 
-    @include large-desktop {
-        @include vertically-centering-the-unknown();
-    }
+    // @include large-desktop {
+    //     @include vertically-centering-the-unknown();
+    // }
 
     h1 {
         display: block;
@@ -913,7 +915,9 @@ section {
 
             &:only-child,
             &:last-child {
-                margin-bottom: 0;
+                @include tablet {
+                    margin-bottom: 0;
+                }
             }
 
             img {
@@ -1005,9 +1009,10 @@ section {
         }
 
         li {
-            // font-family: 'EBGaramond-Regular', serif;
+            font-family: 'EBGaramond-Regular', serif;
+            font-size: 2em;
             // font-family: 'DroidSerif', serif;
-            font-weight: $light;
+            // font-weight: $light;
         }
 
         .pattern {

@@ -272,6 +272,8 @@ Layout
 #main {
     @include transition(height, $animTime, $easeOutExpo);
 
+    display: flex;
+    height: calc(100vh - 75px);
     margin-top: 75px;
 }
 
@@ -332,8 +334,9 @@ Layout
 
 p {
     color: $black;
-    // font-weight: $light;
-    // font-family: 'EBGaramond-Regular', serif;
+    font-weight: $light;
+    font-family: 'EBGaramond-Regular', serif;
+    font-size: 2em;
     // font-family: 'Droid Serif', serif;
     margin-top: 0;
 
