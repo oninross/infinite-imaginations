@@ -1,6 +1,7 @@
 // sections styles
 section {
     display: none;
+    margin: auto;
     width: 100%;
 
     h1 {
@@ -338,19 +339,19 @@ section {
 }
 
 .about {
-    @include tablet {
-        @include vertically-centering-the-unknown();
+    // @include tablet {
+    //     @include vertically-centering-the-unknown();
 
-        width: 100%;
-    }
+    //     width: 100%;
+    // }
 
-    @include desktop {
-        @include reset-centering();
-    }
+    // @include desktop {
+    //     @include reset-centering();
+    // }
 
-    @include large-desktop {
-        @include vertically-centering-the-unknown();
-    }
+    // @include large-desktop {
+    //     @include vertically-centering-the-unknown();
+    // }
 
     .skills {
         &__bar {
@@ -459,17 +460,17 @@ section {
 }
 
 .achievements {
-    @include tablet {
-        width: 100%;
-    }
+    // @include tablet {
+    //     width: 100%;
+    // }
 
-    @include desktop {
-        @include reset-centering();
-    }
+    // @include desktop {
+    //     @include reset-centering();
+    // }
 
-    @include large-desktop {
-        @include vertically-centering-the-unknown();
-    }
+    // @include large-desktop {
+    //     @include vertically-centering-the-unknown();
+    // }
 
     .beta {
         display: block !important;
@@ -768,19 +769,19 @@ section {
 }
 
 .case-studies {
-    @include tablet {
-        @include vertically-centering-the-unknown();
+    // @include tablet {
+    //     @include vertically-centering-the-unknown();
 
-        width: 100%;
-    }
+    //     width: 100%;
+    // }
 
-    @include desktop {
-        @include reset-centering();
-    }
+    // @include desktop {
+    //     @include reset-centering();
+    // }
 
-    @include large-desktop {
-        @include vertically-centering-the-unknown();
-    }
+    // @include large-desktop {
+    //     @include vertically-centering-the-unknown();
+    // }
 
     .card {
         background-color: transparent;
@@ -1238,11 +1239,11 @@ section {
 }
 
 .contact {
-    @include tablet {
-        @include vertically-centering-the-unknown();
+    // @include tablet {
+    //     @include vertically-centering-the-unknown();
 
-        width: 100%;
-    }
+    //     width: 100%;
+    // }
 
     h1 {
         @include desktop {
