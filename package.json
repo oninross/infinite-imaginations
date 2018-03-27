@@ -1,6 +1,6 @@
 {
   "name": "infinite-imaginations",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "dependencies": {
     "baffle": "^0.3.6",
     "browserify-shim": "^3.8.12",
