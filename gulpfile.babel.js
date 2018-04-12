@@ -48,7 +48,6 @@ gulp.task('critical', function () {
     .pipe(critical({
       base: 'build/',
       inline: true,
-      extract: true,
       minify: true,
       src: 'index.html',
       css: ['./build/assets/infiniteimaginations/css/main.css']
