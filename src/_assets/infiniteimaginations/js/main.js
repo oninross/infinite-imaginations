@@ -20,12 +20,7 @@ import { debounce, isMobile } from './_helper';
 import { toaster } from './_material';
 
 // Variable declaration
-let $window = $(window),
-    $body = $('body'),
-    $header = $('.header'),
-    isMobileDevice = isMobile(),
-    lastScrollTop = 0,
-    gaListeners = new Galisteners(),
+let gaListeners = new Galisteners(),
     navigation = new Navigation();
 
 $(() => {

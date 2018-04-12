@@ -37,10 +37,10 @@ var $document = $(document),
 
 export default class Listeners {
     constructor() {
-        let gaListeners = new GaListeners(),
-            navigation = new Navigation();
+        let navigation = new Navigation();
 
         that = this;
+        that.gaListeners = new GaListeners();
 
         TweenMax.to('.loader', 1, {
             opacity: 0,
@@ -118,16 +118,16 @@ export default class Listeners {
                     navigation.tlHoverReverse();
                 }, 500);
 
-                gaListeners.gaClickEvent('Menu: Nav', $data);
+                that.gaListeners.gaClickEvent('Menu: Nav', $data);
             } else {
-                gaListeners.gaClickEvent('Hello: Nav', $data);
+                that.gaListeners.gaClickEvent('Hello: Nav', $data);
             }
         });
 
         $('.header .logo a').on('click', function () {
             $data = 'hello';
 
-            gaListeners.gaClickEvent('Logo', null);
+            that.gaListeners.gaClickEvent('Logo', null);
         });
 
         $('section h1 .icon').on('click', function () {
@@ -147,23 +147,23 @@ export default class Listeners {
         })
 
         $('p a').on('click', function () {
-            gaListeners.gaClickEvent('Link', $(this).data('text'));
+            that.gaListeners.gaClickEvent('Link', $(this).data('text'));
         });
 
         $('.achievements a').on('click', function () {
-            gaListeners.gaClickEvent('Link', 'infinite imaginations: BETA');
+            that.gaListeners.gaClickEvent('Link', 'infinite imaginations: BETA');
         });
 
         $('.case-study').on('click', '.navigation a', function () {
             if ($(this).find('span').length) {
-                gaListeners.gaClickEvent('Next', $(this).find('.navigation-label span').text());
+                that.gaListeners.gaClickEvent('Next', $(this).find('.navigation-label span').text());
             } else {
-                gaListeners.gaClickEvent('Next', $(this).find('.navigation-label').text());
+                that.gaListeners.gaClickEvent('Next', $(this).find('.navigation-label').text());
             }
         });
 
         $('.contact-icons a').click(function () {
-            gaListeners.gaClickEvent('Contact', $(this).find('.vh').text());
+            that.gaListeners.gaClickEvent('Contact', $(this).find('.sr-only').text());
         });
 
 
@@ -358,7 +358,7 @@ export default class Listeners {
             $this.find('img').attr('alt', caseStudies[i].title);
             $this.find('.card-title').text(caseStudies[i].title);
         }).on('click', function () {
-            gaListeners.gaClickEvent('Case Studies', $(this).find('.card-title').text());
+            that.gaListeners.gaClickEvent('Case Studies', $(this).find('.card-title').text());
         });
     }
 
