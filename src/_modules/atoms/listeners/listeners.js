@@ -1,46 +1,46 @@
 'use strict';
 
 import baffle from 'baffle';
+import scrollMonitor from 'scrollMonitor';
 import scrollTo from 'ScrollToPlugin';
 import countTo from 'countTo';
 import GaListeners from '../galisteners/galisteners'
 import Navigation from '../../molecules/navigation/navigation'
 import { isDesktop, isMobile } from '../../../_assets/infiniteimaginations/js/_helper.js'
 import { toaster } from '../../../_assets/infiniteimaginations/js/_material.js'
-
-var $document = $(document),
-    $window = $(window),
-    $header = $('.header'),
-    currentPage = 'hello',
-    $data = 'hello',
-    syncTime = 0.5,
-    nextInd = 0,
-    caseStudies = [],
-    bSkillsLabel = [],
-    bHello,
-    bAbout,
-    bAchievements,
-    bCoding,
-    bDesign,
-    bContact,
-    bCaseStudy,
-    bError,
-    skillsWatcher,
-    logosWatcher,
-    ribbonsWatcher,
-    nominationsWatcher,
-    caseStudyWatcher,
-    caseStudyItem,
-    nextCaseStudyItem,
-    ind, vh, vw,
-    that;
+import { TweenMax } from 'gsap';
 
 export default class Listeners {
     constructor() {
-        let gaListeners = new GaListeners(),
+        const that = this,
+            $window = $(window),
             navigation = new Navigation();
 
-        that = this;
+        let $data = 'hello';
+
+        that.gaListeners = new GaListeners();
+        that.$header = $('.header');
+        that.currentPage = 'hello';
+        that.syncTime = 0.5
+        that.caseStudies = [];
+        that.bSkillsLabel = [];
+        that.ind;
+        that.nextInd = 0;
+        that.caseStudyItem;
+        that.nextCaseStudyItem;
+        that.bHello;
+        that.bAbout;
+        that.bAchievements;
+        that.bCoding;
+        that.bDesign;
+        that.bContact;
+        that.bCaseStudy;
+        that.bError;
+        that.skillsWatcher;
+        that.logosWatcher;
+        that.ribbonsWatcher;
+        that.nominationsWatcher;
+        that.caseStudyWatcher;
 
         TweenMax.to('.loader', 1, {
             opacity: 0,
@@ -91,11 +91,11 @@ export default class Listeners {
 
         // Navigation Listeners
         $('.hello nav a, .primary-nav a').on('click', function () {
-            var $this = $(this);
+            const $this = $(this);
 
             $data = $this.data('name');
 
-            if ($data == currentPage) {
+            if ($data == that.currentPage) {
                 return false;
             }
 
@@ -114,110 +114,106 @@ export default class Listeners {
             if ($this.closest('.primary-nav').length) {
                 $('.header .menu').trigger('click');
 
-                setTimeout(function () {
-                    navigation.tlHoverReverse();
-                }, 500);
-
-                gaListeners.gaClickEvent('Menu: Nav', $data);
+                that.gaListeners.gaClickEvent('Menu: Nav', $data);
             } else {
-                gaListeners.gaClickEvent('Hello: Nav', $data);
+                that.gaListeners.gaClickEvent('Hello: Nav', $data);
             }
         });
 
         $('.header .logo a').on('click', function () {
             $data = 'hello';
 
-            gaListeners.gaClickEvent('Logo', null);
+            that.gaListeners.gaClickEvent('Logo', null);
         });
 
         $('section h1 .icon').on('click', function () {
             TweenMax.fromTo(this, 0.5, {
                 x: -1
             },
-            {
-                x: 1,
-                ease: RoughEase.ease.config({
-                    strength: 4,
-                    points: 50,
-                    template: Linear.easeNone,
-                    randomize: false
-                }),
-                clearProps: "x"
-            })
+                {
+                    x: 1,
+                    ease: RoughEase.ease.config({
+                        strength: 4,
+                        points: 50,
+                        template: Linear.easeNone,
+                        randomize: false
+                    }),
+                    clearProps: "x"
+                })
         })
 
         $('p a').on('click', function () {
-            gaListeners.gaClickEvent('Link', $(this).data('text'));
+            that.gaListeners.gaClickEvent('Link', $(this).data('text'));
         });
 
         $('.achievements a').on('click', function () {
-            gaListeners.gaClickEvent('Link', 'infinite imaginations: BETA');
+            that.gaListeners.gaClickEvent('Link', 'infinite imaginations: BETA');
         });
 
         $('.case-study').on('click', '.navigation a', function () {
             if ($(this).find('span').length) {
-                gaListeners.gaClickEvent('Next', $(this).find('.navigation-label span').text());
+                that.gaListeners.gaClickEvent('Next', $(this).find('.navigation-label span').text());
             } else {
-                gaListeners.gaClickEvent('Next', $(this).find('.navigation-label').text());
+                that.gaListeners.gaClickEvent('Next', $(this).find('.navigation-label').text());
             }
         });
 
         $('.contact-icons a').click(function () {
-            gaListeners.gaClickEvent('Contact', $(this).find('.vh').text());
+            that.gaListeners.gaClickEvent('Contact', $(this).find('.sr-only').text());
         });
 
 
         // Magical Scroll Monitor
-        skillsWatcher = scrollMonitor.create(document.getElementsByClassName('skills'), -100);
-        logosWatcher = scrollMonitor.create(document.getElementsByClassName('logos'), -100);
-        ribbonsWatcher = scrollMonitor.create(document.getElementsByClassName('ribbons'), -100);
-        nominationsWatcher = scrollMonitor.create(document.getElementsByClassName('nominations'), -100);
+        that.skillsWatcher = scrollMonitor.create(document.getElementsByClassName('skills'), -100);
+        that.logosWatcher = scrollMonitor.create(document.getElementsByClassName('logos'), -100);
+        that.ribbonsWatcher = scrollMonitor.create(document.getElementsByClassName('ribbons'), -100);
+        that.nominationsWatcher = scrollMonitor.create(document.getElementsByClassName('nominations'), -100);
 
         that.createCaseStudyScrollMonitor();
 
         // Funky decoder
-        bHello = baffle('.hello h1 .text', {
+        that.bHello = baffle('.hello h1 .text', {
             characters: '█▓▒░',
             speed: 40
         });
 
-        bAbout = baffle('.about h1 .text', {
+        that.bAbout = baffle('.about h1 .text', {
             characters: '█▓▒░',
             speed: 40
         });
 
-        bAchievements = baffle('.achievements h1 .text', {
+        that.bAchievements = baffle('.achievements h1 .text', {
             characters: '█▓▒░',
             speed: 40
         });
 
-        bCoding = baffle('.coding h1 .text', {
+        that.bCoding = baffle('.coding h1 .text', {
             characters: '█▓▒░',
             speed: 40
         });
 
-        bDesign = baffle('.design h1 .text', {
+        that.bDesign = baffle('.design h1 .text', {
             characters: '█▓▒░',
             speed: 40
         });
 
-        bCaseStudy = baffle('.case-study h1 .text', {
+        that.bCaseStudy = baffle('.case-study h1 .text', {
             characters: '█▓▒░',
             speed: 40
         });
 
-        bContact = baffle('.contact h1 .text', {
+        that.bContact = baffle('.contact h1 .text', {
             characters: '█▓▒░',
             speed: 40
         });
 
-        bError = baffle('.error h1 .text', {
+        that.bError = baffle('.error h1 .text', {
             characters: '█▓▒░',
             speed: 40
         });
 
         $('.skills__bar').each(function (i, v) {
-            bSkillsLabel.push(baffle('.skills__bar:nth-child(' + (i + 1) + ') .skills__label', { characters: '█▓▒░', speed: 40 }));
+            that.bSkillsLabel.push(baffle('.skills__bar:nth-child(' + (i + 1) + ') .skills__label', { characters: '█▓▒░', speed: 40 }));
         });
 
 
@@ -235,8 +231,9 @@ export default class Listeners {
         });
 
         // some funky stuff
-        var title = $(document).find('title').text(),
-            altTitle = 'Don\'t just leave yet!',
+        const altTitle = 'Don\'t just leave yet!';
+
+        let title = $(document).find('title').text(),
             $docTitle = $(document).find('title');
 
         document.addEventListener('visibilitychange', function () {
@@ -245,23 +242,23 @@ export default class Listeners {
 
 
         // Window scroll
-        var st, $headerHeight, lastScrollTop;
+        let st, $headerHeight, lastScrollTop;
         $window.on('scroll', function () {
             st = $(this).scrollTop();
-            $headerHeight = $header.height();
+            that.$headerHeight = that.$header.height();
             lastScrollTop;
 
             if (st > lastScrollTop) {
                 // scroll down
                 if (document.body.scrollTop >= 20) {
-                    $header.addClass('dark hide shadow-z2');
+                    that.$header.addClass('dark hide shadow-z2');
                 }
             } else {
                 // scroll up
                 if (st <= $headerHeight) {
-                    $header.removeClass('dark shadow-z2');
+                    that.$header.removeClass('dark shadow-z2');
                 } else {
-                    $header.removeClass('hide');
+                    that.$header.removeClass('hide');
                 }
             }
 
@@ -270,12 +267,14 @@ export default class Listeners {
     }
 
     createCaseStudyScrollMonitor() {
+        const that = this;
+
         $('.case-study__section').each(function (i, el) {
-            var $this = $(el);
+            const $this = $(el);
 
-            caseStudyWatcher = scrollMonitor.create(el, -100);
+            that.caseStudyWatcher = scrollMonitor.create(el, -100);
 
-            caseStudyWatcher.enterViewport(function () {
+            that.caseStudyWatcher.enterViewport(function () {
                 TweenMax.to($this.find('h2'), 0.5, {
                     opacity: 1,
                     y: 0,
@@ -332,19 +331,23 @@ export default class Listeners {
     }
 
     destroyCaseStudyScrollMonitor() {
-        caseStudyWatcher.destroy();
+        const that = this;
+
+        that.caseStudyWatcher.destroy();
     }
 
     populateData(json) {
-        var caseStudyCoding = $('.coding'),
-            caseStudyDesign = $('.design'),
-            caseStudyCard,
+        const that = this,
+            caseStudyCoding = $('.coding'),
+            caseStudyDesign = $('.design');
+
+        let caseStudyCard,
             nthChild;
 
-        caseStudies = json.caseStudies;
+        that.caseStudies = json.caseStudies;
 
         $('.card-link').each(function (i, v) {
-            var $this = $(this);
+            const $this = $(this);
 
             if (i == 0 || i < 3) {
                 nthChild = i + 1;
@@ -352,35 +355,37 @@ export default class Listeners {
                 nthChild = (i + 1) - 3;
             }
 
-            $this.attr('href', caseStudies[i].url.local);
-            $this.data('original', caseStudies[i].images.small);
-            $this.find('img').attr('src', caseStudies[i].images.small);
-            $this.find('img').attr('alt', caseStudies[i].title);
-            $this.find('.card-title').text(caseStudies[i].title);
+            $this.attr('href', that.caseStudies[i].url.local);
+            $this.data('original', that.caseStudies[i].images.small);
+            $this.find('img').attr('src', that.caseStudies[i].images.small);
+            $this.find('img').attr('alt', that.caseStudies[i].title);
+            $this.find('.card-title').text(that.caseStudies[i].title);
         }).on('click', function () {
-            gaListeners.gaClickEvent('Case Studies', $(this).find('.card-title').text());
+            that.gaListeners.gaClickEvent('Case Studies', $(this).find('.card-title').text());
         });
     }
 
     getData(param) {
+        const that = this;
+
         switch (param) {
             case 'elements':
-                ind = 0;
+                that.ind = 0;
                 break;
             case 'physical-web':
-                ind = 1;
+                that.ind = 1;
                 break;
             case 'adelphi-digital':
-                ind = 2;
+                that.ind = 2;
                 break;
             case 'infinite-imaginations-beta':
-                ind = 3;
+                that.ind = 3;
                 break;
             case 'the-jewel-box':
-                ind = 4;
+                that.ind = 4;
                 break;
             case 'envirobot':
-                ind = 5;
+                that.ind = 5;
                 break;
             default:
                 window.location.href = '#/error';
@@ -388,51 +393,55 @@ export default class Listeners {
 
         }
 
-        that.setData(ind);
+        that.setData(that.ind);
     }
 
     setData(ind) {
         // caseStudies[ind]
-        var $caseStudy = $('.case-study'),
-            caseStudyTemp = doT.template($('#case-study-template').html()),
-            obj = {};
+        const that = this,
+            $caseStudy = $('.case-study'),
+            caseStudyTemp = doT.template($('#case-study-template').html());
 
-        if (caseStudies[ind] == undefined) {
+        let obj = {};
+
+        if (that.caseStudies[ind] == undefined) {
             setTimeout(function () {
                 setData(ind);
             }, 1000);
         } else {
-            nextInd = (ind + 1) == caseStudies.length ? 0 : ind + 1;
-            caseStudyItem = caseStudies[ind];
-            nextCaseStudyItem = caseStudies[nextInd];
+            that.nextInd = (ind + 1) == that.caseStudies.length ? 0 : ind + 1;
+            that.caseStudyItem = that.caseStudies[ind];
+            that.nextCaseStudyItem = that.caseStudies[that.nextInd];
 
             obj = {
-                title: caseStudyItem.title,
-                image: caseStudyItem.images.large,
-                tldr: caseStudyItem.tldr,
+                title: that.caseStudyItem.title,
+                image: that.caseStudyItem.images.large,
+                tldr: that.caseStudyItem.tldr,
                 url: {
-                    live: caseStudyItem.url.live
+                    live: that.caseStudyItem.url.live
                 },
-                role: caseStudyItem.role,
-                challenges: caseStudyItem.challenges,
-                solutions: caseStudyItem.solutions,
-                technology: caseStudyItem.technology,
-                category: caseStudyItem.category,
+                role: that.caseStudyItem.role,
+                challenges: that.caseStudyItem.challenges,
+                solutions: that.caseStudyItem.solutions,
+                technology: that.caseStudyItem.technology,
+                category: that.caseStudyItem.category,
                 nextItem: {
-                    url: nextCaseStudyItem.url.local,
-                    title: nextCaseStudyItem.title
+                    url: that.nextCaseStudyItem.url.local,
+                    title: that.nextCaseStudyItem.title
                 }
             };
 
             $('.primary-nav .active').removeClass('active');
-            $('.primary-nav a[data-name="' + caseStudyItem.category + '"]').addClass('active');
+            $('.primary-nav a[data-name="' + that.caseStudyItem.category + '"]').addClass('active');
 
             $('.case-study__wrap').html(caseStudyTemp(obj));
         }
     }
 
     switchSlide($url) {
-        $('.' + currentPage).hide();
+        const that = this;
+
+        $('.' + that.currentPage).hide();
 
         if ($url == '') {
             $url = 'hello';
@@ -448,8 +457,8 @@ export default class Listeners {
             .show()
             .find('h1 .text').html('&nbsp;');
 
-        var $gotoElem = $('.' + $url + ' h1');
-        TweenMax.to('.element-clone', syncTime, {
+        let $gotoElem = $('.' + $url + ' h1');
+        TweenMax.to('.element-clone', that.syncTime, {
             left: $gotoElem.offset().left,
             top: $gotoElem.offset().top,
             height: $gotoElem.outerHeight(),
@@ -460,30 +469,30 @@ export default class Listeners {
 
         if ($url == 'case-study') {
             document.body.scrollTop = document.documentElement.scrollTop = 0;
-            $header.removeClass('dark hide shadow-z2');
+            that.$header.removeClass('dark hide shadow-z2');
         } else {
-            TweenMax.to(window, syncTime, {
+            TweenMax.to(window, that.syncTime, {
                 scrollTo: {
                     y: 0
                 },
                 ease: Expo.easeInOut,
                 onComplete: function () {
-                    $header.removeClass('dark hide shadow-z2');
+                    that.$header.removeClass('dark hide shadow-z2');
                 }
             });
         }
 
-        TweenMax.to('.element-clone .icon', syncTime, {
+        TweenMax.to('.element-clone .icon', that.syncTime, {
             opacity: 0,
             ease: Expo.easeInOut,
             onComplete: function () {
                 $('.element-clone').remove();
 
-                that.resetSlide(currentPage);
+                that.resetSlide(that.currentPage);
 
                 if ($url !== 'hello') {
                     TweenMax.set('.' + $url + ' h1', {
-                        'borderLeft' : '15px solid #2196f3'
+                        'borderLeft': '15px solid #2196f3'
                     });
                 }
 
@@ -521,7 +530,7 @@ export default class Listeners {
                         break;
                 }
 
-                currentPage = $url;
+                that.currentPage = $url;
             }
         });
     }
@@ -656,17 +665,19 @@ export default class Listeners {
     }
 
     enterHello() {
+        const that = this;
+
         $('.hello h1 .text').html('&nbsp;');
 
         TweenMax.to('.hello h1', 0.5, {
-            'borderLeft' : '15px solid #2196f3'
+            'borderLeft': '15px solid #2196f3'
         });
 
         TweenMax.to('.hello .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bHello.start().reveal(750, 750);
+                that.bHello.start().reveal(750, 750);
                 $('.hello h1 .text').addClass('glitch');
 
                 // setTimeout(function () {
@@ -697,11 +708,13 @@ export default class Listeners {
     }
 
     enterAbout() {
+        const that = this;
+
         TweenMax.to('.about .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bAbout.start().reveal(750, 750);
+                that.bAbout.start().reveal(750, 750);
                 $('.about h1 .text').addClass('glitch');
 
                 // setTimeout(function () {
@@ -723,7 +736,7 @@ export default class Listeners {
         });
 
         if (isMobile()) {
-            skillsWatcher.enterViewport(function () {
+            that.skillsWatcher.enterViewport(function () {
                 TweenMax.to('.about h2', 0.5, {
                     opacity: 1,
                     y: 0,
@@ -737,7 +750,7 @@ export default class Listeners {
                 }, 0.1);
 
                 $('.skills__bar').each(function (i) {
-                    var $this = $(this),
+                    const $this = $(this),
                         $percent = $this.data('percent');
 
                     setTimeout(function () {
@@ -763,13 +776,13 @@ export default class Listeners {
                         ease: Expo.easeInOut,
                         delay: 0.25 * i,
                         onStart: function () {
-                            bSkillsLabel[i].start().reveal(750, 750);
+                            that.bSkillsLabel[i].start().reveal(750, 750);
                         }
                     });
                 });
             });
 
-            logosWatcher.enterViewport(function () {
+            that.logosWatcher.enterViewport(function () {
                 TweenMax.to('.about hr', 0.5, {
                     width: '100%',
                     ease: Expo.easeOut
@@ -806,7 +819,7 @@ export default class Listeners {
 
             setTimeout(function () {
                 $('.skills__bar').each(function (i) {
-                    var $this = $(this),
+                    const $this = $(this),
                         $percent = $this.data('percent');
 
                     setTimeout(function () {
@@ -832,7 +845,7 @@ export default class Listeners {
                         ease: Expo.easeInOut,
                         delay: 0.1 * i,
                         onStart: function () {
-                            bSkillsLabel[i].start().reveal(750, 750);
+                            that.bSkillsLabel[i].start().reveal(750, 750);
                         }
                     });
                 });
@@ -861,11 +874,13 @@ export default class Listeners {
     }
 
     enterAchievements() {
+        const that = this;
+
         TweenMax.to('.achievements .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bAchievements.start().reveal(750, 750);
+                that.bAchievements.start().reveal(750, 750);
                 $('.achievements h1 .text').addClass('glitch');
 
                 // setTimeout(function () {
@@ -894,7 +909,7 @@ export default class Listeners {
         });
 
         if (isMobile()) {
-            nominationsWatcher.enterViewport(function () {
+            that.nominationsWatcher.enterViewport(function () {
                 TweenMax.to('.achievements h2', 0.5, {
                     opacity: 1,
                     y: 0,
@@ -911,7 +926,7 @@ export default class Listeners {
                 }, 0.1);
             });
 
-            ribbonsWatcher.enterViewport(function () {
+            that.ribbonsWatcher.enterViewport(function () {
                 TweenMax.to('.achievements hr', 0.5, {
                     width: '100%',
                     ease: Expo.easeOut
@@ -972,11 +987,13 @@ export default class Listeners {
     }
 
     enterCoding() {
+        const that = this;
+
         TweenMax.to('.coding .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bCoding.start().reveal(750, 750);
+                that.bCoding.start().reveal(750, 750);
                 $('.coding h1 .text').addClass('glitch');
 
                 // setTimeout(function () {
@@ -999,11 +1016,13 @@ export default class Listeners {
     }
 
     enterDesign() {
+        const that = this;
+
         TweenMax.to('.design .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bDesign.start().reveal(750, 750);
+                that.bDesign.start().reveal(750, 750);
                 $('.design h1 .text').addClass('glitch');
 
                 // setTimeout(function () {
@@ -1026,14 +1045,16 @@ export default class Listeners {
     }
 
     enterCaseStudy() {
+        const that = this;
+
         that.createCaseStudyScrollMonitor();
 
         TweenMax.to('.case-study .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bCaseStudy.text(function () {
-                    return '// case study: ' + caseStudyItem.title;
+                that.bCaseStudy.text(function () {
+                    return '// case study: ' + that.caseStudyItem.title;
                 }).start().reveal(750, 750);
 
                 $('.case-study h1 .text').addClass('glitch');
@@ -1041,7 +1062,7 @@ export default class Listeners {
                 // setTimeout(function () {
                 //     $('.case-study h1 .text').removeClass('glitch');
                 // }, 5000);
-                caseStudyWatcher.recalculateLocation();
+                that.caseStudyWatcher.recalculateLocation();
             }
         });
 
@@ -1052,11 +1073,13 @@ export default class Listeners {
     }
 
     enterContact() {
+        const that = this;
+
         TweenMax.to('.contact .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bContact.start().reveal(750, 750);
+                that.bContact.start().reveal(750, 750);
                 $('.contact h1 .text').addClass('glitch');
 
                 // setTimeout(function () {
@@ -1086,11 +1109,13 @@ export default class Listeners {
     }
 
     enterError() {
+        const that = this;
+
         TweenMax.to('.error .bar', 0.5, {
             width: '100%',
             ease: Expo.easeOut,
             onComplete: function () {
-                bError.start().reveal(750, 750);
+                that.bError.start().reveal(750, 750);
                 $('.error h1 .text').addClass('glitch');
 
                 // setTimeout(function () {
@@ -1100,7 +1125,7 @@ export default class Listeners {
         });
 
         TweenMax.to('.error h1', 1.5, {
-            'borderLeft' : '15px solid #383838',
+            'borderLeft': '15px solid #383838',
             ease: Expo.easeOut
         });
 
@@ -1118,29 +1143,30 @@ export default class Listeners {
     }
 
     exitCurrentSlide($url) {
+        const that = this;
 
-        if (currentPage != 'case-study') {
-            TweenMax.to('.' + currentPage + ' h1', 0.5, {
+        if (that.currentPage != 'case-study') {
+            TweenMax.to('.' + that.currentPage + ' h1', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut
             });
 
-            TweenMax.to('.' + currentPage + ' p', 0.5, {
+            TweenMax.to('.' + that.currentPage + ' p', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
                 delay: 0.1
             });
 
-            TweenMax.to('.' + currentPage + ' h2', 0.5, {
+            TweenMax.to('.' + that.currentPage + ' h2', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
                 delay: 0.1
             });
 
-            TweenMax.to('.' + currentPage + ' hr', 0.5, {
+            TweenMax.to('.' + that.currentPage + ' hr', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,
@@ -1148,7 +1174,7 @@ export default class Listeners {
             });
         }
 
-        if (currentPage == 'hello') {
+        if (that.currentPage == 'hello') {
             TweenMax.staggerTo('.hello li', 0.5, {
                 opacity: 0,
                 y: -50,
@@ -1158,7 +1184,7 @@ export default class Listeners {
             }, 0.1, function () {
                 that.switchSlide($url);
             });
-        } else if (currentPage == 'about') {
+        } else if (that.currentPage == 'about') {
             TweenMax.staggerTo('.skills__bar', 0.5, {
                 opacity: 0,
                 y: -50,
@@ -1176,7 +1202,7 @@ export default class Listeners {
             }, 0.1, function () {
                 that.switchSlide($url);
             });
-        } else if (currentPage == 'achievements') {
+        } else if (that.currentPage == 'achievements') {
             TweenMax.staggerTo('.nominations li', 0.5, {
                 opacity: 0,
                 y: -50,
@@ -1203,7 +1229,7 @@ export default class Listeners {
             }, 0.1, function () {
                 that.switchSlide($url);
             });
-        } else if (currentPage == 'coding') {
+        } else if (that.currentPage == 'coding') {
             TweenMax.staggerTo('.coding .card', 0.5, {
                 opacity: 0,
                 y: -50,
@@ -1213,7 +1239,7 @@ export default class Listeners {
             }, 0.1, function () {
                 that.switchSlide($url);
             });
-        } else if (currentPage == 'design') {
+        } else if (that.currentPage == 'design') {
             TweenMax.staggerTo('.design .card', 0.5, {
                 opacity: 0,
                 y: -50,
@@ -1223,7 +1249,7 @@ export default class Listeners {
             }, 0.1, function () {
                 that.switchSlide($url);
             });
-        } else if (currentPage == 'case-study') {
+        } else if (that.currentPage == 'case-study') {
             that.destroyCaseStudyScrollMonitor();
 
             TweenMax.to('.case-study', 0.5, {
@@ -1235,7 +1261,7 @@ export default class Listeners {
                     that.switchSlide($url);
                 }
             });
-        } else if (currentPage == 'contact') {
+        } else if (that.currentPage == 'contact') {
             TweenMax.staggerTo('.contact-icons li', 0.5, {
                 opacity: 0,
                 y: -50,
@@ -1245,7 +1271,7 @@ export default class Listeners {
             }, 0.1, function () {
                 that.switchSlide($url);
             });
-        } else if (currentPage == 'error') {
+        } else if (that.currentPage == 'error') {
             TweenMax.to('element', 0.5, {
                 delay: 0.2,
                 onComplete: function () {

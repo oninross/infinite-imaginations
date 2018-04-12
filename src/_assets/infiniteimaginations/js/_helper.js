@@ -6,18 +6,21 @@ let bp = {
 }
 
 let debounce = function (func, wait, immediate) {
-    var timeout;
+    let timeout;
     return function () {
-        var context = this, args = arguments;
-        var later = function () {
-            timeout = null;
-            if (!immediate) {
-                func.apply(context, args);
-            }
-        };
-        var callNow = immediate && !timeout;
+        let context = this, args = arguments,
+            later = function () {
+                timeout = null;
+                if (!immediate) {
+                    func.apply(context, args);
+                }
+            },
+            callNow = immediate && !timeout;
+
         clearTimeout(timeout);
+
         timeout = setTimeout(later, wait);
+
         if (callNow) {
             func.apply(context, args);
         }

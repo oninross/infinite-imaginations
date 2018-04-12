@@ -23,10 +23,6 @@ address {
     line-height: 1;
     margin: 0;
     margin-bottom: 10px;
-
-    a {
-        font-size: 1em;
-    }
 }
 
 h1 {
@@ -41,18 +37,8 @@ h3 {
     font-size: 2.4em;
 }
 
-h4 {
-    font-size: 2.2em;
-}
-
-h5 {
-    font-size: 2em;
-    font-style: italic;
-}
-
-h6 {
-    font-size: 1.8em;
-    font-style: italic;
+hr {
+    margin: 40px 0;
 }
 
 menu, ol, ul {
@@ -80,47 +66,6 @@ ol, ul {
     // }
 }
 
-dl {
-    font-size: $default-font-size;
-}
-
-table {
-    background-color: transparent;
-    border: 1px solid $grey;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin-bottom: 20px;
-    width: 100%;
-
-    tr:nth-child(even) {
-        background: lighten( $grey, 25%);
-    }
-
-    th, td {
-        padding: 5px 10px;
-        vertical-align: top;
-    }
-
-    th {
-        background: darken( $grey, 10% );
-        color: $white;
-        font-size: 1.8em;
-        text-align: left;
-    }
-
-    td {
-        font-size: $default-font-size;
-    }
-
-    p {
-        font-size: 1em;
-    }
-
-    // menu, ol, ul, p, a {
-    //     font-size: 1em;
-    // }
-}
-
 img {
     display: block;
     height: auto;
@@ -132,18 +77,6 @@ img {
         margin: 0 0 10px;
         width: auto;
     }
-}
-
-address {
-    font-size: $default-font-size;
-    margin: 0 0 10px;
-    word-break: break-word;
-}
-
-blockquote {
-    font-size: 1.8em;
-    font-weight: $light;
-    line-height: 1.25;
 }
 
 p {
@@ -163,70 +96,12 @@ a {
     text-decoration: none;
 }
 
-hr {
-    margin: 40px 0;
-}
-
 button {
     overflow: hidden;
     position: relative;
 
     &:focus {
         outline: 0;
-    }
-}
-
-.intro {
-    p {
-        font-size: 1.8em;
-        font-weight: bold;
-    }
-}
-
-::-ms-clear {
-    height: 22px;
-    width: 22px;
-}
-
-::-webkit-input-placeholder { /* Chrome */
-    color: #a9a9a9;
-}
-
-:-ms-input-placeholder { /* IE 10+ */
-    color: #a9a9a9;
-}
-
-::-moz-placeholder { /* Firefox 19+ */
-    color: #a9a9a9;
-    opacity: 1;
-}
-
-:-moz-placeholder { /* Firefox 4 - 18 */
-    color: #a9a9a9;
-    opacity: 1;
-}
-
-.btn {
-    @include transition(background, $animTime, $easeOutExpo);
-
-    background: $black;
-    border: 0;
-    border-radius: 3px;
-    color: $white;
-    font-size: $default-font-size;
-    padding: 10px;
-    width: auto;
-
-    &:hover {
-        background: lighten( $black, 10%);
-    }
-
-    svg.ripple circle {
-        fill: $white;
-    }
-
-    @include tablet {
-        width: auto;
     }
 }
 
@@ -253,17 +128,6 @@ svg.ripple {
     }
 }
 
-.vh {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
 
 
 /* =======================================================================
@@ -275,13 +139,6 @@ Layout
     display: flex;
     height: calc(100vh - 75px);
     margin-top: 75px;
-}
-
-.backstretch {
-    background-color: $grey;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
 }
 
 .glitch {

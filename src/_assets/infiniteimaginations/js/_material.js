@@ -1,9 +1,7 @@
 'use strict';
 
-import scrollMonitor from 'scrollMonitor';
-import mCustomScrollbar from 'mCustomScrollbar';
-
 import { debounce, isMobile } from './_helper';
+import { TweenMax } from 'gsap';
 
 let $body = $('body'),
     $window = $(window),
@@ -84,7 +82,6 @@ let toaster = function (msg = "Toaster message", ttl = 5, isReload = false) {
 };
 
 $('body').on('click', '.js-refresh', function () {
-    console.log('asdasdasd')
     window.location.reload();
 });
 

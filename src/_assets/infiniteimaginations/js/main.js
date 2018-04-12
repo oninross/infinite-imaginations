@@ -5,7 +5,6 @@
 
 import $ from 'jquery';
 import 'lazyload';
-import 'TweenMax';
 import 'doT';
 import './_modernizr';
 
@@ -18,14 +17,10 @@ import Galisteners from '../../../_modules/atoms/galisteners/galisteners';
 
 import { debounce, isMobile } from './_helper';
 import { toaster } from './_material';
+import { TweenMax } from 'gsap';
 
 // Variable declaration
-let $window = $(window),
-    $body = $('body'),
-    $header = $('.header'),
-    isMobileDevice = isMobile(),
-    lastScrollTop = 0,
-    gaListeners = new Galisteners(),
+let gaListeners = new Galisteners(),
     navigation = new Navigation();
 
 $(() => {
