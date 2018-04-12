@@ -2,34 +2,34 @@
 
 import { ripple } from '../../../_assets/infiniteimaginations/js/_material';
 import { debounce, isMobile, easeOutExpo } from '../../../_assets/infiniteimaginations/js/_helper';
-
-var $document = $(document),
-    $window = $(window),
-    $primaryNav = $('.primary-nav'),
-    $menu = $('.header .menu'),
-    $headerWrap = $('.header-wrap'),
-    vh, vw, tlHover;
+import { TimelineLite } from 'gsap';
 
 export default class Navigation {
-    constructor() {
-        var that = this;
-    }
+    constructor() { }
 
     init() {
-        var that = this,
-            tlClick = new TimelineMax(),
+        const that = this,
+            $document = $(document),
+            $primaryNav = $('.primary-nav'),
+            $menu = $('.header .menu'),
+            tlClick = new TimelineLite(),
             tl = '.box.tl',
             tr = '.box.tr',
             bl = '.box.bl',
             br = '.box.br';
 
-        tlHover = new TimelineMax();
+        that.tlHover = new TimelineLite();
+        that.$window = $(window);
+        that.$headerWrap = $('.header-wrap');
+        that.vh;
+        that.vw;
 
-        tlClick.to(tl, 0.25, { backgroundColor: '#fff',left: 0, top: 0, ease: Expo.easeOut });
-        tlClick.to(tr, 0.25, { backgroundColor: '#fff',right: 0, top: 0, ease: Expo.easeOut }, '-=0.25');
 
-        tlClick.to(bl, 0.25, { backgroundColor: '#fff',left: 0, bottom: 0, ease: Expo.easeOut }, '-=0.25');
-        tlClick.to(br, 0.25, { backgroundColor: '#fff',right: 0, bottom: 0, ease: Expo.easeOut }, '-=0.25');
+        tlClick.to(tl, 0.25, { backgroundColor: '#fff', left: 0, top: 0, ease: Expo.easeOut });
+        tlClick.to(tr, 0.25, { backgroundColor: '#fff', right: 0, top: 0, ease: Expo.easeOut }, '-=0.25');
+
+        tlClick.to(bl, 0.25, { backgroundColor: '#fff', left: 0, bottom: 0, ease: Expo.easeOut }, '-=0.25');
+        tlClick.to(br, 0.25, { backgroundColor: '#fff', right: 0, bottom: 0, ease: Expo.easeOut }, '-=0.25');
 
 
         tlClick.to(tl, 0.25, { height: 30, rotation: 45, ease: Expo.easeOut });
@@ -45,28 +45,28 @@ export default class Navigation {
             }, 200);
         });
 
-        tlHover.to(tl, 0.2, { left: -20, top: -20, ease: Expo.easeOut });
-        tlHover.to(tr, 0.2, { right: -20, top: -20, ease: Expo.easeOut }, '-=0.2');
+        that.tlHover.to(tl, 0.2, { left: -20, top: -20, ease: Expo.easeOut });
+        that.tlHover.to(tr, 0.2, { right: -20, top: -20, ease: Expo.easeOut }, '-=0.2');
 
-        tlHover.to(bl, 0.2, { left: -20, bottom: -20, ease: Expo.easeOut }, '-=0.2');
-        tlHover.to(br, 0.2, { right: -20, bottom: -20, ease: Expo.easeOut }, '-=0.2');
+        that.tlHover.to(bl, 0.2, { left: -20, bottom: -20, ease: Expo.easeOut }, '-=0.2');
+        that.tlHover.to(br, 0.2, { right: -20, bottom: -20, ease: Expo.easeOut }, '-=0.2');
 
-        tlHover.pause();
+        that.tlHover.pause();
 
         $menu.on('click', function (e) {
             e.preventDefault();
 
-            var $this = $(this);
+            const $this = $(this);
 
             $this.toggleClass('active');
             $primaryNav.toggleClass('active');
-            $headerWrap.toggleClass('active');
+            that.$headerWrap.toggleClass('active');
 
             if ($this.hasClass('active')) {
                 tlClick.play();
 
                 $primaryNav.find('ul').css({
-                    height: $window.height() - parseInt($primaryNav.find('ul').css('margin-top'))
+                    height: that.$window.height() - parseInt($primaryNav.find('ul').css('margin-top'))
                 });
             } else {
                 $primaryNav.find('ul').css({
@@ -76,11 +76,11 @@ export default class Navigation {
             }
         }).on('mouseover', function () {
             if (!$(this).hasClass('active') && $('.no-touchevents').length) {
-                tlHover.play();
+                that.tlHover.play();
             }
         }).on('mouseout', function () {
             if (!$(this).hasClass('active') && $('.no-touchevents').length) {
-                tlHover.reverse();
+                that.tlHover.reverse();
             }
         });
 
@@ -92,27 +92,31 @@ export default class Navigation {
                 $menu.trigger('click');
             });
 
-        vw = $document.outerWidth();
-        vh = $document.outerHeight();
+        that.vw = $document.outerWidth();
+        that.vh = $document.outerHeight();
 
         that.backgroundResize();
 
-        $window.on('resize scroll', debounce(function () {
+        that.$window.on('resize scroll', debounce(function () {
             that.backgroundResize();
         }, 250));
     }
 
     tlHoverReverse() {
-        tlHover.reverse();
+        const that = this;
+
+        that.tlHover.reverse();
     }
 
     backgroundResize() {
-        vw = $window.outerWidth();
-        vh = $window.outerHeight();
+        const that = this;
 
-        $headerWrap.css({
-            width: vw + 'px',
-            height: vh + 'px'
+        that.vw = that.$window.outerWidth();
+        that.vh = that.$window.outerHeight();
+
+        that.$headerWrap.css({
+            width: that.vw + 'px',
+            height: that.vh + 'px'
         });
     }
 }

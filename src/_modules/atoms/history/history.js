@@ -4,12 +4,12 @@ import Path from 'pathjs';
 import GaListeners from '../galisteners/galisteners';
 import Listeners from '../listeners/listeners';
 
-var gaListeners = new GaListeners(),
-    listeners = new Listeners();
-
 export default class History {
     constructor() {
-        let that = this;
+        let that = this,
+            listeners = new Listeners();
+
+        that.gaListeners = new GaListeners();
 
         Path.root("#/hello/");
 
@@ -66,6 +66,7 @@ export default class History {
     }
 
     updateAnalytics() {
-        gaListeners.gaPageView();
+        const that = this;
+        // that.gaListeners.gaPageView();
     }
 }

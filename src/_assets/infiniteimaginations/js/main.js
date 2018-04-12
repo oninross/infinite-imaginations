@@ -5,7 +5,6 @@
 
 import $ from 'jquery';
 import 'lazyload';
-import 'TweenMax';
 import 'doT';
 import './_modernizr';
 
@@ -18,6 +17,7 @@ import Galisteners from '../../../_modules/atoms/galisteners/galisteners';
 
 import { debounce, isMobile } from './_helper';
 import { toaster } from './_material';
+import { TweenMax } from 'gsap';
 
 // Variable declaration
 let gaListeners = new Galisteners(),
