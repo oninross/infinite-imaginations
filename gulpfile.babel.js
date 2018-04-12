@@ -14,13 +14,13 @@ const plugins = gulpLoadPlugins();
 // Create karma server
 const KarmaServer = require('karma').Server;
 
-const defaultNotification = function(err) {
-    return {
-        subtitle: err.plugin,
-        message: err.message,
-        sound: 'Funk',
-        onLast: true,
-    };
+const defaultNotification = function (err) {
+  return {
+    subtitle: err.plugin,
+    message: err.message,
+    sound: 'Funk',
+    onLast: true,
+  };
 };
 
 let config = Object.assign({}, pjson.config, defaultNotification);
@@ -36,8 +36,25 @@ let browserSync = browserSyncLib.create();
 // in order to load all gulp tasks
 wrench.readdirSyncRecursive('./gulp').filter((file) => {
   return (/\.(js)$/i).test(file);
-}).map(function(file) {
+}).map(function (file) {
   require('./gulp/' + file)(gulp, plugins, args, config, taskTarget, browserSync);
+});
+
+// Critical Path
+let log = require('fancy-log');
+let critical = require('critical').stream;
+gulp.task('critical', function () {
+  return gulp.src('build/*.html')
+    .pipe(critical({
+      base: 'build/',
+      inline: true,
+      extract: true,
+      minify: true,
+      src: 'index.html',
+      css: ['./build/assets/infiniteimaginations/css/main.css']
+    }))
+    .on('error', function (err) { log.error(err.message); })
+    .pipe(gulp.dest('build'));
 });
 
 // Default task
