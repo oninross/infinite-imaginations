@@ -74,20 +74,6 @@ section {
     display: block;
     margin: auto;
 
-    // @include tablet {
-    //     @include vertically-centering-the-unknown();
-
-    //     width: 100%;
-    // }
-
-    // @include desktop {
-    //     @include reset-centering();
-    // }
-
-    // @include large-desktop {
-    //     @include vertically-centering-the-unknown();
-    // }
-
     h1 {
         display: block;
         font-size: 3.4em;
@@ -347,20 +333,6 @@ section {
 }
 
 .about {
-    // @include tablet {
-    //     @include vertically-centering-the-unknown();
-
-    //     width: 100%;
-    // }
-
-    // @include desktop {
-    //     @include reset-centering();
-    // }
-
-    // @include large-desktop {
-    //     @include vertically-centering-the-unknown();
-    // }
-
     .skills {
         &__bar {
             background-color: $black;
@@ -462,18 +434,6 @@ section {
 }
 
 .achievements {
-    // @include tablet {
-    //     width: 100%;
-    // }
-
-    // @include desktop {
-    //     @include reset-centering();
-    // }
-
-    // @include large-desktop {
-    //     @include vertically-centering-the-unknown();
-    // }
-
     .beta {
         display: block !important;
         font-size: 0.9em;
@@ -487,6 +447,12 @@ section {
 
         &:after {
             left: 54px !important;
+        }
+    }
+
+    .beta__img {
+        .glitch__cont {
+            padding-bottom: 50%;
         }
     }
 
@@ -762,24 +728,14 @@ section {
         p {
             text-align: center;
         }
+
+        .glitch__cont {
+            padding-bottom: 20px;
+        }
     }
 }
 
 .case-studies {
-    // @include tablet {
-    //     @include vertically-centering-the-unknown();
-
-    //     width: 100%;
-    // }
-
-    // @include desktop {
-    //     @include reset-centering();
-    // }
-
-    // @include large-desktop {
-    //     @include vertically-centering-the-unknown();
-    // }
-
     .card {
         background-color: transparent;
         border: 6px solid $black;
@@ -846,14 +802,14 @@ section {
             }
         }
 
-        img {
-            filter: grayscale(100%);
-            left: 0;
-            opacity: 0.25;
-            position: absolute;
-            top: 0;
-            z-index: 1;
-        }
+        // img {
+        //     filter: grayscale(100%);
+        //     left: 0;
+        //     opacity: 0.25;
+        //     position: absolute;
+        //     top: 0;
+        //     z-index: 1;
+        // }
 
         &-wrap {
             height: 100%;
@@ -971,6 +927,18 @@ section {
 
     .col:last-child {
         margin-bottom: 0;
+    }
+
+    .glitch__cont,
+    .glitch__img {
+        background-size: cover;
+    }
+
+    .glitch__cont {
+        height: 100%;
+        filter: grayscale(100%);
+        left: 0;
+        opacity: 0.25;
     }
 }
 
@@ -1155,6 +1123,27 @@ section {
         }
     }
 
+    .cta {
+        @include transition((background-color, color), $animTime, $easeOutExpo);
+
+        background-color: $black;
+        border: 4px solid $black;
+        display: block;
+        color: $white;
+        font-weight: $bold;
+        margin: 0 auto 30px;
+        max-width: 170px;
+        padding: 8px 20px;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+
+        &:hover {
+            background-color: $white;
+            color: $black;
+        }
+    }
+
     .col {
         opacity: 0;
         transform: translate(0, 50px);
@@ -1183,15 +1172,13 @@ section {
             width: 212px;
         }
     }
+
+    .glitch__cont {
+        margin-bottom: 20px;
+    }
 }
 
 .contact {
-    // @include tablet {
-    //     @include vertically-centering-the-unknown();
-
-    //     width: 100%;
-    // }
-
     h1 {
         @include desktop {
             font-size: 3.2em;
