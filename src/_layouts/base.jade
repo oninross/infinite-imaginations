@@ -80,7 +80,7 @@ html.no-js(lang='en')
                 .toaster(class='toaster{{= it.ind }}')
                     p {{! it.message }}
                     | {{? it.isReload }}
-                    button.btn-refresh.js-refresh REFRESH
+                    button.btn-refresh.js-refresh Refresh
                     | {{? }}
                     button.js-dismiss
                         span.sr-only Close
@@ -90,7 +90,13 @@ html.no-js(lang='en')
                 .case-study__section.tldr
                     .wrap
                         .col.col-12
-                            img(src='{{! it.image }}', alt='{{! it.title }}')
+                            //- img(src='{{! it.image }}', alt='{{! it.title }}')
+                            .glitch__cont(style='background-image: url({{! it.image }}); padding-bottom:{{! it.padding}}%;', title='{{! it.title }}')
+                                .glitch__img(style='background-image: url({{! it.image }}); padding-bottom:{{! it.padding}}%;', title='{{! it.title }}')
+                                .glitch__img(style='background-image: url({{! it.image }}); padding-bottom:{{! it.padding}}%;', title='{{! it.title }}')
+                                .glitch__img(style='background-image: url({{! it.image }}); padding-bottom:{{! it.padding}}%;', title='{{! it.title }}')
+                                .glitch__img(style='background-image: url({{! it.image }}); padding-bottom:{{! it.padding}}%;', title='{{! it.title }}')
+                                .glitch__img(style='background-image: url({{! it.image }}); padding-bottom:{{! it.padding}}%;', title='{{! it.title }}')
                             h2 TLDR;
                             hr
                             i.pattern

@@ -337,12 +337,9 @@ export default class Listeners {
     }
 
     populateData(json) {
-        const that = this,
-            caseStudyCoding = $('.coding'),
-            caseStudyDesign = $('.design');
+        const that = this;
 
-        let caseStudyCard,
-            nthChild;
+        let nthChild;
 
         that.caseStudies = json.caseStudies;
 
@@ -356,9 +353,7 @@ export default class Listeners {
             }
 
             $this.attr('href', that.caseStudies[i].url.local);
-            $this.data('original', that.caseStudies[i].images.small);
-            $this.find('img').attr('src', that.caseStudies[i].images.small);
-            $this.find('img').attr('alt', that.caseStudies[i].title);
+            $this.find('.lazy').css('background-image', 'url(' + that.caseStudies[i].images.small + ')');
             $this.find('.card-title').text(that.caseStudies[i].title);
         }).on('click', function () {
             that.gaListeners.gaClickEvent('Case Studies', $(this).find('.card-title').text());
@@ -415,7 +410,8 @@ export default class Listeners {
 
             obj = {
                 title: that.caseStudyItem.title,
-                image: that.caseStudyItem.images.large,
+                image: that.caseStudyItem.images.large.url,
+                padding: that.caseStudyItem.images.large.padding,
                 tldr: that.caseStudyItem.tldr,
                 url: {
                     live: that.caseStudyItem.url.live

@@ -17,7 +17,10 @@
                 "JavaScript / jQuery / TweenMax"
             ],
             "images": {
-                "large": "/assets/infiniteimaginations/images/large-elements.png",
+                "large": {
+                    "url": "/assets/infiniteimaginations/images/large-elements.png",
+                    "padding": 0
+                },
                 "small": "/assets/infiniteimaginations/images/small-elements.jpg"
             },
             "url": {
@@ -42,7 +45,10 @@
                 "JavaScript / jQuery / TweenMax"
             ],
             "images": {
-                "large": "/assets/infiniteimaginations/images/large-physical-web.png",
+                "large": {
+                    "url": "/assets/infiniteimaginations/images/large-physical-web.png",
+                    "padding": 0
+                },
                 "small": "/assets/infiniteimaginations/images/small-physical-web.jpg"
             },
             "url": {
@@ -67,7 +73,10 @@
                 "JavaScript / jQuery / TweenMax"
             ],
             "images": {
-                "large": "/assets/infiniteimaginations/images/large-adelphi-digital.png",
+                "large": {
+                    "url": "/assets/infiniteimaginations/images/large-adelphi-digital.png",
+                    "padding": 0
+                },
                 "small": "/assets/infiniteimaginations/images/small-adelphi-digital.jpg"
             },
             "url": {
@@ -92,7 +101,10 @@
                 "JavaScript / jQuery / TweenMax"
             ],
             "images": {
-                "large": "/assets/infiniteimaginations/images/large-infinite-imaginations-beta.png",
+                "large": {
+                    "url": "/assets/infiniteimaginations/images/large-infinite-imaginations-beta.png",
+                    "padding": 0
+                },
                 "small": "/assets/infiniteimaginations/images/small-infinite-imaginations-beta.jpg"
             },
             "url": {
@@ -117,7 +129,10 @@
                 "XML"
             ],
             "images": {
-                "large": "/assets/infiniteimaginations/images/large-the-jewel-box.png",
+                "large": {
+                    "url": "/assets/infiniteimaginations/images/large-the-jewel-box.png",
+                    "padding": 0
+                },
                 "small": "/assets/infiniteimaginations/images/small-the-jewel-box.jpg"
             },
             "url": {
@@ -141,7 +156,10 @@
                 "TweenMax for ActionScript"
             ],
             "images": {
-                "large": "/assets/infiniteimaginations/images/large-envirobot.png",
+                "large": {
+                    "url": "/assets/infiniteimaginations/images/large-envirobot.png",
+                    "padding": 0
+                },
                 "small": "/assets/infiniteimaginations/images/small-envirobot.jpg"
             },
             "url": {
