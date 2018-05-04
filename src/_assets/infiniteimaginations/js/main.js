@@ -52,4 +52,4 @@ $(() => {
 /*
  * Simple Service Worker to make App Install work (OPTIONAL)
  */
-// new ServiceWorkers();
+new ServiceWorkers();
