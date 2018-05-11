@@ -22,6 +22,11 @@ import { TweenMax } from 'gsap';
 let gaListeners = new GaListeners(),
     navigation = new Navigation();
 
+/*
+ * Simple Service Worker to make App Install work (OPTIONAL)
+ */
+new ServiceWorkers();
+
 $(() => {
     gaListeners.init();
     new Header();
@@ -47,9 +52,3 @@ $(() => {
 
     console.log("i am infinite imaginations!");
 });
-
-
-/*
- * Simple Service Worker to make App Install work (OPTIONAL)
- */
-// new ServiceWorkers();
