@@ -4,36 +4,37 @@ import { debounce, isMobile } from '../../../_assets/infiniteimaginations/js/_he
 
 export default class Header {
     constructor() {
+        const that = this;
+
+        $(window).on('resize scroll', debounce(that.toggleHeader, 250));
+    }
+
+    toggleHeader() {
         const $header = $('header');
 
         let isMobileDevice = false,
-            lastScrollTop = 0;
+            lastScrollTop = 0,
+            st = $(this).scrollTop(),
+            $headerHeight = $header.height();
 
-        $(window).on('resize scroll', debounce(toggleHeader, 250));
+        isMobileDevice = isMobile();
 
-        function toggleHeader() {
-            let st = $(this).scrollTop(),
-                $headerHeight = $header.height();
-
-            isMobileDevice = isMobile();
-
-            if (!isMobileDevice) {
-                if (st > lastScrollTop) {
-                    // scroll down
-                    if (st > $headerHeight) {
-                        $header.addClass('hide').removeClass('compact');
-                    }
+        if (!isMobileDevice) {
+            if (st > lastScrollTop) {
+                // scroll down
+                if (st > $headerHeight) {
+                    $header.addClass('hide').removeClass('compact');
+                }
+            } else {
+                // scroll up
+                if (st <= $headerHeight) {
+                    $header.removeClass('compact hide');
                 } else {
-                    // scroll up
-                    if (st <= $headerHeight) {
-                        $header.removeClass('compact hide');
-                    } else {
-                        $header.addClass('compact');
-                    }
+                    $header.addClass('compact');
                 }
             }
+        }
 
-            lastScrollTop = st;
-        };
-    }
+        lastScrollTop = st;
+    };
 }

@@ -39,8 +39,8 @@ export default class Navigation {
         tlClick.to(br, 0.25, { autoAlpha: 0, ease: Expo.easeOut }, '-=0.25');
 
         tlClick.pause();
-        tlClick.eventCallback('onReverseComplete', function () {
-            setTimeout(function () {
+        tlClick.eventCallback('onReverseComplete', () => {
+            setTimeout(() => {
                 $('.menu .box').attr('style', '');
             }, 200);
         });
@@ -53,16 +53,28 @@ export default class Navigation {
 
         that.tlHover.pause();
 
-        $menu.on('click', function (e) {
+        $menu.on('click', (e) => {
             e.preventDefault();
 
-            const $this = $(this);
+            const self = e.currentTarget;
 
-            $this.toggleClass('active');
+            if (self.classList) {
+                self.classList.toggle('active');
+            } else {
+                var classes = self.className.split(' ');
+                var existingIndex = classes.indexOf('active');
+
+                if (existingIndex >= 0)
+                    classes.splice(existingIndex, 1);
+                else
+                    classes.push('active');
+
+                self.className = classes.join(' ');
+            }
             $primaryNav.toggleClass('active');
             that.$headerWrap.toggleClass('active');
 
-            if ($this.hasClass('active')) {
+            if (self.classList.contains('active')) {
                 tlClick.play();
 
                 $primaryNav.find('ul').css({
@@ -74,19 +86,23 @@ export default class Navigation {
                 });
                 tlClick.reverse();
             }
-        }).on('mouseover', function () {
-            if (!$(this).hasClass('active') && $('.no-touchevents').length) {
+        }).on('mouseover', (e) => {
+            const self = e.currentTarget;
+
+            if (!self.classList.contains('active') && $('.no-touchevents').length) {
                 that.tlHover.play();
             }
-        }).on('mouseout', function () {
-            if (!$(this).hasClass('active') && $('.no-touchevents').length) {
+        }).on('mouseout', (e) => {
+            const self = e.currentTarget;
+
+            if (!self.classList.contains('active') && $('.no-touchevents').length) {
                 that.tlHover.reverse();
             }
         });
 
         $primaryNav
             .append('<i class="overlay"></i>')
-            .on('click', '.overlay', function (e) {
+            .on('click', '.overlay', (e) => {
                 e.preventDefault();
 
                 $menu.trigger('click');
@@ -97,7 +113,7 @@ export default class Navigation {
 
         that.backgroundResize();
 
-        that.$window.on('resize scroll', debounce(function () {
+        that.$window.on('resize scroll', debounce(() => {
             that.backgroundResize();
         }, 250));
     }

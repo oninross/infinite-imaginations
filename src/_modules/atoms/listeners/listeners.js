@@ -4,7 +4,7 @@ import baffle from 'baffle';
 import scrollMonitor from 'scrollMonitor';
 import scrollTo from 'ScrollToPlugin';
 import countTo from 'countTo';
-import GaListeners from '../galisteners/galisteners'
+import GaListeners from '../GaListeners/GaListeners'
 import Navigation from '../../molecules/navigation/navigation'
 import { isDesktop, isMobile } from '../../../_assets/infiniteimaginations/js/_helper.js'
 import { toaster } from '../../../_assets/infiniteimaginations/js/_material.js'
@@ -18,7 +18,7 @@ export default class Listeners {
 
         let $data = 'hello';
 
-        that.gaListeners = new GaListeners();
+        that.GaListeners = new GaListeners();
         that.$header = $('.header');
         that.currentPage = 'hello';
         that.syncTime = 0.5
@@ -114,16 +114,16 @@ export default class Listeners {
             if ($this.closest('.primary-nav').length) {
                 $('.header .menu').trigger('click');
 
-                that.gaListeners.gaClickEvent('Menu: Nav', $data);
+                that.GaListeners.gaClickEvent('Menu: Nav', $data);
             } else {
-                that.gaListeners.gaClickEvent('Hello: Nav', $data);
+                that.GaListeners.gaClickEvent('Hello: Nav', $data);
             }
         });
 
         $('.header .logo a').on('click', function () {
             $data = 'hello';
 
-            that.gaListeners.gaClickEvent('Logo', null);
+            that.GaListeners.gaClickEvent('Logo', null);
         });
 
         $('section h1 .icon').on('click', function () {
@@ -143,23 +143,23 @@ export default class Listeners {
         })
 
         $('p a').on('click', function () {
-            that.gaListeners.gaClickEvent('Link', $(this).data('text'));
+            that.GaListeners.gaClickEvent('Link', $(this).data('text'));
         });
 
         $('.achievements a').on('click', function () {
-            that.gaListeners.gaClickEvent('Link', 'infinite imaginations: BETA');
+            that.GaListeners.gaClickEvent('Link', 'infinite imaginations: BETA');
         });
 
         $('.case-study').on('click', '.navigation a', function () {
             if ($(this).find('span').length) {
-                that.gaListeners.gaClickEvent('Next', $(this).find('.navigation-label span').text());
+                that.GaListeners.gaClickEvent('Next', $(this).find('.navigation-label span').text());
             } else {
-                that.gaListeners.gaClickEvent('Next', $(this).find('.navigation-label').text());
+                that.GaListeners.gaClickEvent('Next', $(this).find('.navigation-label').text());
             }
         });
 
         $('.contact-icons a').click(function () {
-            that.gaListeners.gaClickEvent('Contact', $(this).find('.sr-only').text());
+            that.GaListeners.gaClickEvent('Contact', $(this).find('.sr-only').text());
         });
 
 
@@ -356,7 +356,7 @@ export default class Listeners {
             $this.find('.lazy').css('background-image', 'url(' + that.caseStudies[i].images.small + ')');
             $this.find('.card-title').text(that.caseStudies[i].title);
         }).on('click', function () {
-            that.gaListeners.gaClickEvent('Case Studies', $(this).find('.card-title').text());
+            that.GaListeners.gaClickEvent('Case Studies', $(this).find('.card-title').text());
         });
     }
 

@@ -1,6 +1,6 @@
 'use strict';
 
-export default class Galisteners {
+export default class GaListeners {
     constructor() { }
 
     init() {
