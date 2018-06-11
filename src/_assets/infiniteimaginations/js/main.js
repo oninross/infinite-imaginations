@@ -25,7 +25,7 @@ let gaListeners = new GaListeners(),
 /*
  * Simple Service Worker to make App Install work (OPTIONAL)
  */
-new ServiceWorkers();
+// new ServiceWorkers();
 
 $(() => {
     gaListeners.init();
@@ -46,9 +46,6 @@ $(() => {
     $('.lazy').lazyload({
         effect : 'fadeIn'
     });
-
-
-
 
     console.log("i am infinite imaginations!");
 });
