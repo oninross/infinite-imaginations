@@ -48,7 +48,7 @@ $ultra-bold: 900;
         url("fonts/EBGaramond-Regular.woff") format("woff"),
         url("fonts/EBGaramond-Regular.ttf") format("truetype"),
         url("fonts/EBGaramond-Regular.svg#EBGaramond-Regular") format("svg");
-    font-weight: $bold;
+    font-weight: $normal;
     font-style: normal;
 }
 
@@ -109,6 +109,9 @@ $ultra-bold: 900;
 }
 .icon-email:before {
   content: "\e901";
+}
+.icon-medium:before {
+  content: "\e90f";
 }
 .icon-instagram:before {
   content: "\e902";

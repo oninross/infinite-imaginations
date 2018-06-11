@@ -47,8 +47,5 @@ $(() => {
         effect : 'fadeIn'
     });
 
-
-
-
     console.log("i am infinite imaginations!");
 });
