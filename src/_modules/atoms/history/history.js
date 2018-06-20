@@ -13,51 +13,51 @@ export default class History {
 
         Path.root("#/hello/");
 
-        Path.map('#/hello/').enter(() => {
+        Path.map('#/hello/').enter(function () {
             that.updateAnalytics();
-        }).to(() => {
+        }).to(function () {
             listeners.exitCurrentSlide('hello');
             listeners.setActiveNav('hello');
         });
 
-        Path.map('#/about/').enter(() => {
+        Path.map('#/about/').enter(function () {
             that.updateAnalytics();
-        }).to(() => {
+        }).to(function () {
             listeners.exitCurrentSlide('about');
             listeners.setActiveNav('about');
         });
 
-        Path.map('#/achievements/').enter(() => {
+        Path.map('#/achievements/').enter(function () {
             that.updateAnalytics();
-        }).to(() => {
+        }).to(function () {
             listeners.exitCurrentSlide('achievements');
             listeners.setActiveNav('achievements');
         });
 
-        Path.map('#/coding/').enter(() => {
+        Path.map('#/coding/').enter(function () {
             that.updateAnalytics();
-        }).to(() => {
+        }).to(function () {
             listeners.exitCurrentSlide('coding');
             listeners.setActiveNav('coding');
         });
 
-        Path.map('#/design/').enter(() => {
+        Path.map('#/design/').enter(function () {
             that.updateAnalytics();
-        }).to(() => {
+        }).to(function () {
             listeners.exitCurrentSlide('design');
             listeners.setActiveNav('design');
         });
 
-        Path.map('#/design/').enter(() => {
+        Path.map('#/design/').enter(function () {
             that.updateAnalytics();
-        }).to(() => {
+        }).to(function () {
             listeners.exitCurrentSlide('design');
             listeners.setActiveNav('design');
         });
 
-        Path.map('#/case-study/:param').enter(() => {
+        Path.map('#/case-study/:param').enter(function () {
             that.updateAnalytics();
-        }).to(() => {
+        }).to(function () {
             listeners.exitCurrentSlide('case-study');
 
             const param = this.params.param;
@@ -67,9 +67,9 @@ export default class History {
             }, 500);
         });
 
-        Path.map('#/contact/').enter(() => {
+        Path.map('#/contact/').enter(function () {
             that.updateAnalytics();
-        }).to(() => {
+        }).to(function () {
             listeners.exitCurrentSlide('contact');
             listeners.setActiveNav('contact');
         });
