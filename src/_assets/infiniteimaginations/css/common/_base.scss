@@ -139,6 +139,26 @@ Layout
     margin-top: 75px;
 }
 
+.listing {
+    ul {
+        font-family: 'EBGaramond-Regular', serif;
+        margin-bottom: 30px;
+    }
+
+    li {
+        font-size: 2em;
+    }
+
+    a {
+        font-weight: $light;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
 .glitch {
     display: block;
     position: relative;
