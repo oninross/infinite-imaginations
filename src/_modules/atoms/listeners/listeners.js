@@ -40,6 +40,7 @@ export default class Listeners {
         that.logosWatcher;
         that.ribbonsWatcher;
         that.nominationsWatcher;
+        that.listingsWatcher;
         that.caseStudyWatcher;
 
         TweenMax.to('.loader', 1, {
@@ -168,6 +169,7 @@ export default class Listeners {
         that.logosWatcher = scrollMonitor.create(document.getElementsByClassName('logos'), -100);
         that.ribbonsWatcher = scrollMonitor.create(document.getElementsByClassName('ribbons'), -100);
         that.nominationsWatcher = scrollMonitor.create(document.getElementsByClassName('nominations'), -100);
+        that.listingsWatcher = scrollMonitor.create(document.getElementsByClassName('listing'), -100);
 
         that.createCaseStudyScrollMonitor();
 
@@ -904,57 +906,17 @@ export default class Listeners {
             delay: 0.2
         });
 
-        if (isMobile()) {
-            that.nominationsWatcher.enterViewport(function () {
-                TweenMax.to('.achievements h2', 0.5, {
-                    opacity: 1,
-                    y: 0,
-                    ease: Expo.easeOut
-                });
-
-                TweenMax.staggerTo('.nominations .ui-pattern', 0.5, {
-                    opacity: 1,
-                    scale: 1,
-                    ease: Expo.easeOut,
-                    onStart: function () {
-                        $(this.target).parent().parent().addClass('init');
-                    }
-                }, 0.1);
-            });
-
-            that.ribbonsWatcher.enterViewport(function () {
-                TweenMax.to('.achievements hr', 0.5, {
-                    width: '100%',
-                    ease: Expo.easeOut
-                });
-
-                TweenMax.to('.ribbons p', 0.75, {
-                    opacity: 1,
-                    y: 0,
-                    ease: Expo.easeOut,
-                    delay: 0.25
-                });
-
-                TweenMax.staggerTo('.achievements .ribbons li', 0.5, {
-                    opacity: 1,
-                    y: 0,
-                    ease: Expo.easeOut,
-                    delay: 0.5
-                }, 0.1);
-            });
-        } else {
+        that.nominationsWatcher.enterViewport(function () {
             TweenMax.to('.achievements h2', 0.5, {
                 opacity: 1,
                 y: 0,
-                ease: Expo.easeOut,
-                delay: 0.3
+                ease: Expo.easeOut
             });
 
             TweenMax.staggerTo('.nominations .ui-pattern', 0.5, {
                 opacity: 1,
                 scale: 1,
                 ease: Expo.easeOut,
-                delay: 0.4,
                 onStart: function () {
                     $(this.target).parent().parent().addClass('init');
                 }
@@ -962,22 +924,53 @@ export default class Listeners {
 
             TweenMax.to('.achievements hr', 0.5, {
                 width: '100%',
-                ease: Expo.easeOut,
-                delay: 0.4
+                ease: Expo.easeOut
             });
+        });
 
-            TweenMax.to('.ribbons p', 0.5, {
+        that.ribbonsWatcher.enterViewport(function () {
+            TweenMax.to('.ribbons p', 0.75, {
                 opacity: 1,
                 y: 0,
                 ease: Expo.easeOut,
-                delay: 0.5
+                delay: 0.25
             });
 
             TweenMax.staggerTo('.achievements .ribbons li', 0.5, {
                 opacity: 1,
                 y: 0,
                 ease: Expo.easeOut,
-                delay: 0.6
+                delay: 0.5
+            }, 0.1);
+        });
+
+        if (isMobile()) {
+            that.listingsWatcher.enterViewport(function () {
+                TweenMax.staggerTo('.listing h2', 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut
+                }, 0.1);
+
+                TweenMax.staggerTo('.listing li', 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.2
+                }, 0.1);
+            });
+        } else {
+            TweenMax.staggerTo('.listing h2', 0.5, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeOut
+            }, 0.1);
+
+            TweenMax.staggerTo('.listing li', 0.5, {
+                opacity: 1,
+                y: 0,
+                ease: Expo.easeOut,
+                delay: 0.2
             }, 0.1);
         }
     }
@@ -1217,6 +1210,16 @@ export default class Listeners {
             });
 
             TweenMax.staggerTo('.ribbons li', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.2,
+                clearProps: 'all'
+            }, 0.1, function () {
+                that.switchSlide($url);
+            });
+
+            TweenMax.staggerTo('.listing li', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,

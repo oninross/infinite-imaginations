@@ -68,6 +68,15 @@ section {
         position: relative;
         z-index: 5;
     }
+
+    .listing {
+        li {
+            opacity: 0;
+            position: relative;
+            transform: translate(0, 50px);
+            z-index: 1;
+        }
+    }
 }
 
 .hello {
@@ -468,6 +477,10 @@ section {
     }
 
     .nominations {
+        h2 {
+            text-align: center;
+        }
+
         ul {
             @include clearfix;
             @include normalise-list;
@@ -479,18 +492,18 @@ section {
         li {
             float: left;
             font-size: 0.8em;
-            height: 133px;
+            height: 150px;
             line-height: 1.125;
             margin: 0 10px 25px;
             position: relative;
             padding: 0;
             vertical-align: top;
-            width: 42.85%;
+            width: 44.8%;
             z-index: 1;
 
             @include tablet {
                 font-size: 0.875em;
-                width: 42.5%;
+                width: 22.325%;
 
                 &:nth-child(9),
                 &:nth-child(10),
@@ -503,7 +516,7 @@ section {
 
             @include desktop {
                 font-size: 0.8em;
-                width: 27.25%;
+                width: 14.66667%;
 
                 &:nth-child(9),
                 &:nth-child(10),
