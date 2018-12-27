@@ -242,15 +242,14 @@ export default class Listeners {
         });
 
 
+        // TODO: fix it
         // some funky stuff
-        const altTitle = 'Don\'t just leave yet!';
+        // const altTitle = 'Don\'t just leave yet!';
+        // let $docTitle = $(document).find('title');
 
-        let title = $(document).find('title').text(),
-            $docTitle = $(document).find('title');
-
-        document.addEventListener('visibilitychange', function () {
-            document.hidden ? $docTitle.text(altTitle) : $docTitle.text(title)
-        });
+        // document.addEventListener('visibilitychange', function () {
+        //     document.hidden ? $docTitle.text(altTitle) : $docTitle.text($(document).find('title').text())
+        // });
 
 
         // Window scroll
