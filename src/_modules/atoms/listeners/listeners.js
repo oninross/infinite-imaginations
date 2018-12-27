@@ -1218,6 +1218,16 @@ export default class Listeners {
     enterArticle() {
         const that = this;
 
+        $('title').text(that.articleItem.title);
+        $('meta[property="og:title"]').attr('content', that.articleItem.title + ' | infinite imaginations');
+        $('meta[property="og:type"]').attr('content', 'article');
+        $('meta[property="og:url"]').attr('content', window.location.href);
+        $('meta[property="og:description"]').attr('content', '');
+
+        $('meta[property="twitter:title"]').attr('content', that.articleItem.title + ' | infinite imaginations');
+        $('meta[property="twitter:url"]').attr('content', window.location.href);
+        $('meta[property="twitter:description"]').attr('content', '');
+
         that.createArticleScrollMonitor();
 
         TweenMax.to('.article .bar', 0.5, {
@@ -1442,6 +1452,16 @@ export default class Listeners {
             });
         } else if (that.currentPage == 'article') {
             that.destroyArticleScrollMonitor();
+
+            $('title').text('UX Developer | infinite imaginations');
+            $('meta[property="og:title"]').attr('content', 'Senior UX Developer | infinite imaginations');
+            $('meta[property="og:type"]').attr('content', 'website');
+            $('meta[property="og:url"]').attr('content', window.location.href);
+            $('meta[property="og:description"]').attr('content', 'I\'m Niño Ross Rodriguez, a Senior UX developer based in Canberra, Australia. I specialise in developing pixel perfect websites quickly without sacrificing code quality.');
+
+            $('meta[property="twitter:title"]').attr('content', 'Senior UX Developer | infinite imaginations');
+            $('meta[property="twitter:url"]').attr('content', window.location.href);
+            $('meta[property="twitter:description"]').attr('content', 'I\'m Niño Ross Rodriguez, a Senior UX developer based in Canberra, Australia. I specialise in developing pixel perfect websites quickly without sacrificing code quality.');
 
             TweenMax.to('.article', 0.5, {
                 opacity: 0,
