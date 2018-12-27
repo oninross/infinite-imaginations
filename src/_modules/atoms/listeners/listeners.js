@@ -27,6 +27,8 @@ export default class Listeners {
         that.nextInd = 0;
         that.caseStudyItem;
         that.nextCaseStudyItem;
+        that.articleItem;
+        that.nextArticleItem;
         that.bHello;
         that.bAbout;
         that.bAchievements;
@@ -567,11 +569,17 @@ export default class Listeners {
                 setArticle(ind);
             }, 1000);
         } else {
+            that.nextInd = (ind + 1) == that.articles.length ? 0 : ind + 1;
             that.articleItem = that.articles[ind];
+            that.nextArticleItem = that.articles[that.nextInd];
 
             obj = {
                 title: that.articleItem.title,
-                content: that.articleItem.content
+                content: that.articleItem.content,
+                nextItem: {
+                    url: that.nextArticleItem.url,
+                    title: that.nextArticleItem.title
+                }
             };
 
             $('.article__wrap').html(articleTemp(obj));
@@ -1389,9 +1397,7 @@ export default class Listeners {
                 ease: Expo.easeInOut,
                 delay: 0.2,
                 clearProps: 'all'
-            }, 0.1, function () {
-                that.switchSlide($url);
-            });
+            }, 0.1);
 
             TweenMax.staggerTo('.listing li', 0.5, {
                 opacity: 0,

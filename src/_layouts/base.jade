@@ -165,6 +165,16 @@ html.no-js(lang='en')
                 .article__section.navigation
                     .wrap
                         .col.col-12
+                            a(href='{{! it.nextItem.url}}')
+                                .navigation-label
+                                    | next: !{' '}
+                                    span {{! it.nextItem.title }}
+                                i.line
+                                i.navigation-shadow
+                                .navigation-icon
+                                    i.icon.icon-chevron-right
+                                    i.icon.icon-chevron-right
+                        .col.col-12
                             a.js-back-to-listing(href='/#/achievements/')
                                 .navigation-label back to listing
                                 i.line
