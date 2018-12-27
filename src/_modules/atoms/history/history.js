@@ -63,7 +63,19 @@ export default class History {
             const param = this.params.param;
 
             setTimeout(() => {
-                listeners.getData(param);
+                listeners.getCaseStudy(param);
+            }, 500);
+        });
+
+        Path.map('#/article/:param').enter(function () {
+            that.updateAnalytics();
+        }).to(function () {
+            listeners.exitCurrentSlide('article');
+
+            const param = this.params.param;
+
+            setTimeout(() => {
+                listeners.getArticle(param);
             }, 500);
         });
 
