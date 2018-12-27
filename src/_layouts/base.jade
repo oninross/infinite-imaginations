@@ -157,3 +157,28 @@ html.no-js(lang='en')
                                 .navigation-icon
                                     i.icon.icon-chevron-right
                                     i.icon.icon-chevron-right
+
+            script#article-template(type='text/template')
+                .article__section
+                    |{{= it.content }}
+
+                .article__section.navigation
+                    .wrap
+                        .col.col-12
+                            a(href='{{! it.nextItem.url}}')
+                                .navigation-label
+                                    | next: !{' '}
+                                    span {{! it.nextItem.title }}
+                                i.line
+                                i.navigation-shadow
+                                .navigation-icon
+                                    i.icon.icon-chevron-right
+                                    i.icon.icon-chevron-right
+                        .col.col-12
+                            a.js-back-to-listing(href='/#/achievements/')
+                                .navigation-label back to listing
+                                i.line
+                                i.navigation-shadow
+                                .navigation-icon
+                                    i.icon.icon-chevron-right
+                                    i.icon.icon-chevron-right

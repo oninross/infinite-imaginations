@@ -14,8 +14,6 @@ import ServiceWorkers from '../../../_modules/atoms/serviceworkers/serviceworker
 import History from '../../../_modules/atoms/history/history';
 import GaListeners from '../../../_modules/atoms/gaListeners/gaListeners';
 
-import { debounce, isMobile } from './_helper';
-import { toaster } from './_material';
 import { TweenMax } from 'gsap';
 
 // Variable declaration

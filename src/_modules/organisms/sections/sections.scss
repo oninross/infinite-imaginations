@@ -77,6 +77,161 @@ section {
             z-index: 1;
         }
     }
+
+    .navigation {
+        margin-bottom: 20px;
+
+        a {
+            @include transition(color, $animTime, $easeInOutExpo);
+
+            background-color: $white;
+            border: 2px solid $black;
+            display: block;
+            margin-bottom: 15px;
+            padding: 20px;
+            position: relative;
+
+            &:before,
+            &:after {
+                @include transition(width, $animTime, $easeInOutExpo);
+
+                content: '';
+                cursor: pointer;
+                display: block;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 0;
+                z-index: 5;
+            }
+
+            &:before {
+                background-color: $blue;
+            }
+
+            &:after {
+                -webkit-transition-delay: 0.1s;
+                transition-delay: 0.1s;
+                background-color: $black;
+            }
+
+            &:hover {
+                color: $white;
+
+                &:before,
+                &:after {
+                    width: 100%;
+                }
+
+                .line {
+                    background-color: $white;
+                    opacity: 0;
+                    width: 6px;
+                }
+
+                .icon {
+                    opacity: 1;
+
+                    &:first-child {
+                        transform: translate(-10px, 0);
+                    }
+
+                    &:last-child {
+                        transform: translate(0, 0);
+                    }
+                }
+            }
+        }
+
+        &-label {
+            line-height: 1;
+            position: relative;
+            z-index: 10;
+
+            span {
+                font-weight: $light;
+            }
+        }
+
+        &-shadow {
+            display: block;
+            margin-bottom: 0;
+            height: 100%;
+            width: 100%;
+
+            &:after {
+                background: repeating-linear-gradient(-45deg, lighten($black, 25%), lighten($black, 25%) 2px, transparent 0px, transparent 5px);
+                content: '';
+                height: 100%;
+                left: 5px;
+                top: 5px;
+                position: absolute;
+                width: 100%;
+                z-index: -1;
+            }
+        }
+
+        &-icon {
+            bottom: 0;
+            height: 100%;
+            padding: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 10;
+
+            .icon {
+                @include transition(all, $animTime, $easeInOutExpo);
+
+                bottom: 0;
+                color: $white;
+                display: block;
+                font-size: 2em;
+                height: 40px;
+                margin: auto;
+                opacity: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 40px;
+
+                &:first-child {
+                    transform: translate(-40px, 0);
+                    transition-delay: 0.3s;
+                }
+
+                &:last-child {
+                    transform: translate(-30px, 0);
+                    transition-delay: 0.2s;
+                }
+            }
+        }
+
+        .line {
+            @include transition(all, $animTime, $easeInOutExpo);
+
+            background-color: $black;
+            bottom: 0;
+            display: none;
+            height: 1px;
+            right: 20px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            z-index: 10;
+
+            @include tablet {
+                display: block;
+                width: 130px;
+            }
+
+
+            @include desktop {
+                width: 212px;
+            }
+        }
+    }
 }
 
 .hello {
@@ -1005,137 +1160,6 @@ section {
         }
     }
 
-    .navigation {
-        margin-bottom: 20px;
-
-        a {
-            @include transition(color, $animTime, $easeInOutExpo);
-
-            background-color: $white;
-            border: 2px solid $black;
-            display: block;
-            margin-bottom: 15px;
-            padding: 20px;
-            position: relative;
-
-            &:before,
-            &:after {
-                @include transition(width, $animTime, $easeInOutExpo);
-
-                content: '';
-                cursor: pointer;
-                display: block;
-                height: 100%;
-                left: 0;
-                position: absolute;
-                top: 0;
-                width: 0;
-                z-index: 5;
-            }
-
-            &:before {
-                background-color: $blue;
-            }
-
-            &:after {
-                -webkit-transition-delay: 0.1s;
-                transition-delay: 0.1s;
-                background-color: $black;
-            }
-
-            &:hover {
-                color: $white;
-
-                &:before,
-                &:after {
-                    width: 100%;
-                }
-
-                .line {
-                    background-color: $white;
-                    opacity: 0;
-                    width: 6px;
-                }
-
-                .icon {
-                    opacity: 1;
-
-                    &:first-child {
-                        transform: translate(-10px, 0);
-                    }
-
-                    &:last-child {
-                        transform: translate(0, 0);
-                    }
-                }
-            }
-        }
-
-        &-label {
-            line-height: 1;
-            position: relative;
-            z-index: 10;
-
-            span {
-                font-weight: $light;
-            }
-        }
-
-        &-shadow {
-            display: block;
-            margin-bottom: 0;
-            height: 100%;
-            width: 100%;
-
-            &:after {
-                background: repeating-linear-gradient(-45deg, lighten($black, 25%), lighten($black, 25%) 2px, transparent 0px, transparent 5px);
-                content: '';
-                height: 100%;
-                left: 5px;
-                top: 5px;
-                position: absolute;
-                width: 100%;
-                z-index: -1;
-            }
-        }
-
-        &-icon {
-            bottom: 0;
-            height: 100%;
-            padding: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-            z-index: 10;
-
-            .icon {
-                @include transition(all, $animTime, $easeInOutExpo);
-
-                bottom: 0;
-                color: $white;
-                display: block;
-                font-size: 2em;
-                height: 40px;
-                margin: auto;
-                opacity: 0;
-                position: absolute;
-                right: 0;
-                top: 0;
-                width: 40px;
-
-                &:first-child {
-                    transform: translate(-40px, 0);
-                    transition-delay: 0.3s;
-                }
-
-                &:last-child {
-                    transform: translate(-30px, 0);
-                    transition-delay: 0.2s;
-                }
-            }
-        }
-    }
-
     .cta {
         @include transition((background-color, color), $animTime, $easeOutExpo);
 
@@ -1162,32 +1186,61 @@ section {
         transform: translate(0, 50px);
     }
 
-    .line {
-        @include transition(all, $animTime, $easeInOutExpo);
+    .glitch__cont {
+        margin-bottom: 20px;
+    }
+}
+
+.article {
+    margin-top: 50px;
+
+    h1 {
+        padding: 15px 55px 15px 15px;
+    }
+
+    img {
+        margin: auto;
+    }
+
+    .twitter-tweet {
+        margin: auto;
+    }
+
+    .cta {
+        @include transition((background-color, color), $animTime, $easeOutExpo);
 
         background-color: $black;
-        bottom: 0;
-        display: none;
-        height: 1px;
-        right: 20px;
-        margin: auto;
-        position: absolute;
-        top: 0;
-        z-index: 10;
+        border: 4px solid $black;
+        display: block;
+        color: $white;
+        font-weight: $bold;
+        margin: 0 auto 30px;
+        max-width: 250px;
+        padding: 8px 20px;
+        position: relative;
+        text-align: center;
+        z-index: 1;
 
-        @include tablet {
-            display: block;
-            width: 130px;
-        }
-
-
-        @include desktop {
-            width: 212px;
+        &:hover {
+            background-color: $white;
+            color: $black;
         }
     }
 
-    .glitch__cont {
-        margin-bottom: 20px;
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+
+        iframe, object, embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     }
 }
 

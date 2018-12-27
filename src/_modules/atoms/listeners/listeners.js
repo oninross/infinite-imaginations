@@ -5,7 +5,6 @@ import scrollMonitor from 'scrollMonitor';
 import scrollTo from 'ScrollToPlugin';
 import countTo from 'countTo';
 import GaListeners from '../GaListeners/GaListeners'
-import Navigation from '../../molecules/navigation/navigation'
 import { isDesktop, isMobile } from '../../../_assets/infiniteimaginations/js/_helper.js'
 import { toaster } from '../../../_assets/infiniteimaginations/js/_material.js'
 import { TweenMax } from 'gsap';
@@ -13,8 +12,7 @@ import { TweenMax } from 'gsap';
 export default class Listeners {
     constructor() {
         const that = this,
-            $window = $(window),
-            navigation = new Navigation();
+            $window = $(window);
 
         let $data = 'hello';
 
@@ -23,11 +21,14 @@ export default class Listeners {
         that.currentPage = 'hello';
         that.syncTime = 0.5
         that.caseStudies = [];
+        that.articles = [];
         that.bSkillsLabel = [];
         that.ind;
         that.nextInd = 0;
         that.caseStudyItem;
         that.nextCaseStudyItem;
+        that.articleItem;
+        that.nextArticleItem;
         that.bHello;
         that.bAbout;
         that.bAchievements;
@@ -35,6 +36,7 @@ export default class Listeners {
         that.bDesign;
         that.bContact;
         that.bCaseStudy;
+        that.bArticle;
         that.bError;
         that.skillsWatcher;
         that.logosWatcher;
@@ -42,6 +44,7 @@ export default class Listeners {
         that.nominationsWatcher;
         that.listingsWatcher;
         that.caseStudyWatcher;
+        that.articleWatcher;
 
         TweenMax.to('.loader', 1, {
             opacity: 0,
@@ -204,6 +207,11 @@ export default class Listeners {
             speed: 40
         });
 
+        that.bArticle = baffle('.article h1 .text', {
+            characters: '█▓▒░',
+            speed: 40
+        });
+
         that.bContact = baffle('.contact h1 .text', {
             characters: '█▓▒░',
             speed: 40
@@ -219,18 +227,20 @@ export default class Listeners {
         });
 
 
-        // Load ajax
+        // Load Case Studies and Articles
         $.ajax({
-            url: '/api/caseStudies',
+            url: '/api/content',
             dataType: 'json',
             contentType: 'application/json; charset=utf-8',
             success: function (data) {
+                that.articles = data.articles;
                 that.populateData(data);
             },
             error: function (error) {
                 toaster('Whoops! Something went wrong! Error (' + error.status + ' ' + error.statusText + ')');
             }
         });
+
 
         // some funky stuff
         const altTitle = 'Don\'t just leave yet!';
@@ -338,6 +348,76 @@ export default class Listeners {
         that.caseStudyWatcher.destroy();
     }
 
+    createArticleScrollMonitor() {
+        const that = this;
+
+        $('.article__section').each(function (i, el) {
+            const $this = $(el);
+
+            that.articleWatcher = scrollMonitor.create(el, -100);
+
+            that.articleWatcher.enterViewport(function () {
+                TweenMax.to($this.find('h2'), 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut
+                });
+
+                TweenMax.staggerTo($this.find('.col'), 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut
+                }, 0.1);
+
+                TweenMax.staggerTo($this.find('h3'), 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.1
+                }, 0.1);
+
+                TweenMax.to($this.find('hr'), 0.5, {
+                    width: '100%',
+                    ease: Expo.easeOut,
+                    delay: 0.2
+                });
+
+                TweenMax.to($this.find('.pattern'), 0.5, {
+                    width: '100%',
+                    ease: Expo.easeOut,
+                    delay: 0.3
+                });
+
+                TweenMax.staggerTo($this.find('p'), 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.4
+                }, 0.1);
+
+                TweenMax.staggerTo($this.find('li'), 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.5
+                }, 0.1);
+
+                TweenMax.to($this.find('.cta'), 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.6
+                });
+            });
+        });
+    }
+
+    destroyArticleScrollMonitor() {
+        const that = this;
+
+        that.articleWatcher.destroy();
+    }
+
     populateData(json) {
         const that = this;
 
@@ -362,7 +442,7 @@ export default class Listeners {
         });
     }
 
-    getData(param) {
+    getCaseStudy(param) {
         const that = this;
 
         switch (param) {
@@ -390,20 +470,19 @@ export default class Listeners {
 
         }
 
-        that.setData(that.ind);
+        that.setCaseStudy(that.ind);
     }
 
-    setData(ind) {
+    setCaseStudy(ind) {
         // caseStudies[ind]
         const that = this,
-            $caseStudy = $('.case-study'),
             caseStudyTemp = doT.template($('#case-study-template').html());
 
         let obj = {};
 
         if (that.caseStudies[ind] == undefined) {
             setTimeout(function () {
-                setData(ind);
+                setCaseStudy(ind);
             }, 1000);
         } else {
             that.nextInd = (ind + 1) == that.caseStudies.length ? 0 : ind + 1;
@@ -433,6 +512,77 @@ export default class Listeners {
             $('.primary-nav a[data-name="' + that.caseStudyItem.category + '"]').addClass('active');
 
             $('.case-study__wrap').html(caseStudyTemp(obj));
+        }
+    }
+
+    getArticle(param) {
+        const that = this;
+
+        switch (param) {
+            case '2018-the-year-of-artificial-intelligence':
+                that.ind = 0;
+                break;
+            case 'vr-and-ar-in-the-mobile-web':
+                that.ind = 1;
+                break;
+            case 'are-qr-codes-making-a-comeback':
+                that.ind = 2;
+                break;
+            case 'identifying-objects-using-your-browser-with-tensorflowjs':
+                that.ind = 3;
+                break;
+            case 'the-art-of-minimalism-with-ux':
+                that.ind = 4;
+                break;
+            case 'service-workers-on-ios':
+                that.ind = 5;
+                break;
+            case 'through-the-looking-glass-an-overview-of-visual-recognition':
+                that.ind = 6;
+                break;
+            case 'an-app-but-not-progressive-web-apps':
+                that.ind = 7;
+                break;
+            case 'what-i-have-learned-from-building-a-chatbot':
+                that.ind = 8;
+                break;
+            case 'ux-beacons-and-the-physical-web':
+                that.ind = 9;
+                break;
+            default:
+                window.location.href = '#/error';
+                break;
+        }
+
+        that.setArticle(that.ind);
+    }
+
+    setArticle(ind) {
+        // articles[ind]
+        const that = this,
+            articleTemp = doT.template($('#article-template').html());
+
+        let obj = {};
+
+        if (that.articles[ind] == undefined) {
+            setTimeout(function () {
+                setArticle(ind);
+            }, 1000);
+        } else {
+            that.nextInd = (ind + 1) == that.articles.length ? 0 : ind + 1;
+            that.articleItem = that.articles[ind];
+            that.nextArticleItem = that.articles[that.nextInd];
+
+            obj = {
+                title: that.articleItem.title,
+                content: that.articleItem.content,
+                nextItem: {
+                    url: that.nextArticleItem.url,
+                    title: that.nextArticleItem.title
+                }
+            };
+
+            $('.article__wrap').html(articleTemp(obj));
         }
     }
 
@@ -521,6 +671,10 @@ export default class Listeners {
 
                     case 'case-study':
                         that.enterCaseStudy();
+                        break;
+
+                    case 'article':
+                        that.enterArticle();
                         break;
 
                     case 'error':
@@ -1061,6 +1215,34 @@ export default class Listeners {
         });
     }
 
+    enterArticle() {
+        const that = this;
+
+        that.createArticleScrollMonitor();
+
+        TweenMax.to('.article .bar', 0.5, {
+            width: '100%',
+            ease: Expo.easeOut,
+            onComplete: function () {
+                that.bArticle.text(function () {
+                    return '// article: ' + that.articleItem.title;
+                }).start().reveal(750, 750);
+
+                $('.article h1 .text').addClass('glitch');
+
+                // setTimeout(function () {
+                //     $('.article h1 .text').removeClass('glitch');
+                // }, 5000);
+                that.articleWatcher.recalculateLocation();
+            }
+        });
+
+        TweenMax.to('.article h1 .icon', 0.5, {
+            opacity: 1,
+            ease: Expo.easeOut
+        });
+    }
+
     enterContact() {
         const that = this;
 
@@ -1134,7 +1316,7 @@ export default class Listeners {
     exitCurrentSlide($url) {
         const that = this;
 
-        if (that.currentPage != 'case-study') {
+        if (that.currentPage != 'case-study' || that.currentPage != 'article') {
             TweenMax.to('.' + that.currentPage + ' h1', 0.5, {
                 opacity: 0,
                 y: -50,
@@ -1215,9 +1397,7 @@ export default class Listeners {
                 ease: Expo.easeInOut,
                 delay: 0.2,
                 clearProps: 'all'
-            }, 0.1, function () {
-                that.switchSlide($url);
-            });
+            }, 0.1);
 
             TweenMax.staggerTo('.listing li', 0.5, {
                 opacity: 0,
@@ -1252,6 +1432,18 @@ export default class Listeners {
             that.destroyCaseStudyScrollMonitor();
 
             TweenMax.to('.case-study', 0.5, {
+                opacity: 0,
+                y: -50,
+                ease: Expo.easeInOut,
+                delay: 0.2,
+                onComplete: function () {
+                    that.switchSlide($url);
+                }
+            });
+        } else if (that.currentPage == 'article') {
+            that.destroyArticleScrollMonitor();
+
+            TweenMax.to('.article', 0.5, {
                 opacity: 0,
                 y: -50,
                 ease: Expo.easeInOut,

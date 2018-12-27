@@ -105,6 +105,13 @@ button {
     }
 }
 
+blockquote {
+    font-size: 2em;
+    font-weight: $bold;
+    font-style: italic;
+    text-align: center;
+}
+
 svg.ripple {
     left: 0;
     position: absolute;
