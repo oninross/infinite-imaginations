@@ -16,7 +16,7 @@
         ]
       },
       {
-        "source": "/api/caseStudies",
+        "source": "/api/content",
         "headers": [
           {
             "key": "Cache-Control",
