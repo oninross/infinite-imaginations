@@ -42,7 +42,7 @@ section {
         z-index: 1;
     }
 
-    p {
+    p, code, img {
         opacity: 0;
         position: relative;
         transform: translate(0, 50px);

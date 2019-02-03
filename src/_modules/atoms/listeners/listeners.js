@@ -394,11 +394,25 @@ export default class Listeners {
                     delay: 0.4
                 }, 0.1);
 
+                TweenMax.staggerTo($this.find('code'), 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.5
+                }, 0.1);
+
                 TweenMax.staggerTo($this.find('li'), 0.5, {
                     opacity: 1,
                     y: 0,
                     ease: Expo.easeOut,
                     delay: 0.5
+                }, 0.1);
+
+                TweenMax.staggerTo($this.find('img'), 0.5, {
+                    opacity: 1,
+                    y: 0,
+                    ease: Expo.easeOut,
+                    delay: 0.6
                 }, 0.1);
 
                 TweenMax.to($this.find('.cta'), 0.5, {
@@ -518,35 +532,38 @@ export default class Listeners {
         const that = this;
 
         switch (param) {
-            case '2018-the-year-of-artificial-intelligence':
+            case 'using-artificial-intelligence-to-generate-alt-text-on-images':
                 that.ind = 0;
                 break;
-            case 'vr-and-ar-in-the-mobile-web':
+            case '2018-the-year-of-artificial-intelligence':
                 that.ind = 1;
                 break;
-            case 'are-qr-codes-making-a-comeback':
+            case 'vr-and-ar-in-the-mobile-web':
                 that.ind = 2;
                 break;
-            case 'identifying-objects-using-your-browser-with-tensorflowjs':
+            case 'are-qr-codes-making-a-comeback':
                 that.ind = 3;
                 break;
-            case 'the-art-of-minimalism-with-ux':
+            case 'identifying-objects-using-your-browser-with-tensorflowjs':
                 that.ind = 4;
                 break;
-            case 'service-workers-on-ios':
+            case 'the-art-of-minimalism-with-ux':
                 that.ind = 5;
                 break;
-            case 'through-the-looking-glass-an-overview-of-visual-recognition':
+            case 'service-workers-on-ios':
                 that.ind = 6;
                 break;
-            case 'an-app-but-not-progressive-web-apps':
+            case 'through-the-looking-glass-an-overview-of-visual-recognition':
                 that.ind = 7;
                 break;
-            case 'what-i-have-learned-from-building-a-chatbot':
+            case 'an-app-but-not-progressive-web-apps':
                 that.ind = 8;
                 break;
-            case 'ux-beacons-and-the-physical-web':
+            case 'what-i-have-learned-from-building-a-chatbot':
                 that.ind = 9;
+                break;
+            case 'ux-beacons-and-the-physical-web':
+                that.ind = 10;
                 break;
             default:
                 window.location.href = '#/error';
