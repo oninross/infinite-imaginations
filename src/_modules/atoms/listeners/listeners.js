@@ -532,7 +532,7 @@ export default class Listeners {
         const that = this;
 
         switch (param) {
-            case 'breakdown-of-alt-text-generators':
+            case 'using-artificial-intelligence-to-generate-alt-text-on-images':
                 that.ind = 0;
                 break;
             case '2018-the-year-of-artificial-intelligence':
