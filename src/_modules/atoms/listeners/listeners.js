@@ -1470,14 +1470,14 @@ export default class Listeners {
             that.destroyArticleScrollMonitor();
 
             $('title').text('UX Developer | infinite imaginations');
-            $('meta[property="og:title"]').attr('content', 'Senior UX Developer | infinite imaginations');
+            $('meta[property="og:title"]').attr('content', 'UX Manager | infinite imaginations');
             $('meta[property="og:type"]').attr('content', 'website');
             $('meta[property="og:url"]').attr('content', window.location.href);
-            $('meta[property="og:description"]').attr('content', 'I\'m Niño Ross Rodriguez, a Senior UX developer based in Canberra, Australia. I specialise in developing pixel perfect websites quickly without sacrificing code quality.');
+            $('meta[property="og:description"]').attr('content', 'I\'m Niño Ross Rodriguez, a UX Manager based in Canberra, Australia. I specialise in developing pixel perfect websites quickly without sacrificing code quality.');
 
-            $('meta[property="twitter:title"]').attr('content', 'Senior UX Developer | infinite imaginations');
+            $('meta[property="twitter:title"]').attr('content', 'UX Manager | infinite imaginations');
             $('meta[property="twitter:url"]').attr('content', window.location.href);
-            $('meta[property="twitter:description"]').attr('content', 'I\'m Niño Ross Rodriguez, a Senior UX developer based in Canberra, Australia. I specialise in developing pixel perfect websites quickly without sacrificing code quality.');
+            $('meta[property="twitter:description"]').attr('content', 'I\'m Niño Ross Rodriguez, a UX Manager based in Canberra, Australia. I specialise in developing pixel perfect websites quickly without sacrificing code quality.');
 
             TweenMax.to('.article', 0.5, {
                 opacity: 0,
