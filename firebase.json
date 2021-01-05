@@ -7,7 +7,7 @@
     ],
     "headers": [
       {
-        "source": "./infinite-imaginations/assets/infiniteimaginations/**",
+        "source": "/infinite-imaginations/assets/infiniteimaginations/**",
         "headers": [
           {
             "key": "Cache-Control",
@@ -16,7 +16,7 @@
         ]
       },
       {
-        "source": "./infinite-imaginations/api/content",
+        "source": "/infinite-imaginations/api/content",
         "headers": [
           {
             "key": "Cache-Control",
@@ -25,7 +25,7 @@
         ]
       },
       {
-        "source": "./infinite-imaginations/manifest.json",
+        "source": "/infinite-imaginations/manifest.json",
         "headers": [
           {
             "key": "Cache-Control",
@@ -34,7 +34,7 @@
         ]
       },
       {
-        "source": "./infinite-imaginations/index.html",
+        "source": "/infinite-imaginations/index.html",
         "headers": [
           {
             "key": "Cache-Control",

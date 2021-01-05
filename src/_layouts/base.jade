@@ -4,7 +4,7 @@ include ../_modules/organisms/header/header
 block config
     //- Setup site's base URL to match the "baseUrl" key within `package.json`
     //- Otherwise default to relative pathing
-    - var baseUrl = config.baseUrl || './infinite-imaginations'
+    - var baseUrl = config.baseUrl || '/infinite-imaginations/'
 
 doctype html
 html.no-js(lang='en')
@@ -18,7 +18,7 @@ html.no-js(lang='en')
 
         meta(name='google-site-verification', content='oXearTxGSlotNgqnSGdz9E5lE8B73H42x5KWm2MqYk8')
 
-        link(rel='manifest', href='./infinite-imaginations/manifest.json')
+        link(rel='manifest', href='/infinite-imaginations/manifest.json')
         meta(name='mobile-web-app-capable', content='yes')
         meta(name='apple-mobile-web-app-capable', content='yes')
         meta(name='msapplication-TileColor', content='#2b2c33')
@@ -150,7 +150,7 @@ html.no-js(lang='en')
                                     i.icon.icon-chevron-right
                                     i.icon.icon-chevron-right
                         .col.col-12
-                            a.js-back-to-listing(href='/#/{{! it.category }}/')
+                            a.js-back-to-listing(href='infinite-imaginations/#/{{! it.category }}/')
                                 .navigation-label back to listing
                                 i.line
                                 i.navigation-shadow
@@ -175,7 +175,7 @@ html.no-js(lang='en')
                                     i.icon.icon-chevron-right
                                     i.icon.icon-chevron-right
                         .col.col-12
-                            a.js-back-to-listing(href='/#/achievements/')
+                            a.js-back-to-listing(href='infinite-imaginations/#/achievements/')
                                 .navigation-label back to listing
                                 i.line
                                 i.navigation-shadow
