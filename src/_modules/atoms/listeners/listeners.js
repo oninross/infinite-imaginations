@@ -229,7 +229,7 @@ export default class Listeners {
 
         // Load Case Studies and Articles
         $.ajax({
-            url: '/api/content',
+            url: './api/content',
             dataType: 'json',
             contentType: 'application/json; charset=utf-8',
             success: function (data) {
