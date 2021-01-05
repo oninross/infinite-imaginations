@@ -18,10 +18,10 @@
             ],
             "images": {
                 "large": {
-                    "url": "/assets/infiniteimaginations/images/large-elements.png",
+                    "url": "./infinite-imaginations/assets/infiniteimaginations/images/large-elements.png",
                     "padding": 61
                 },
-                "small": "/assets/infiniteimaginations/images/small-elements.jpg"
+                "small": "./infinite-imaginations/assets/infiniteimaginations/images/small-elements.jpg"
             },
             "url": {
                 "live": "http://elements.infiniteimaginations.co",
@@ -46,10 +46,10 @@
             ],
             "images": {
                 "large": {
-                    "url": "/assets/infiniteimaginations/images/large-physical-web.png",
+                    "url": "./infinite-imaginations/assets/infiniteimaginations/images/large-physical-web.png",
                     "padding": 60
                 },
-                "small": "/assets/infiniteimaginations/images/small-physical-web.jpg"
+                "small": "./infinite-imaginations/assets/infiniteimaginations/images/small-physical-web.jpg"
             },
             "url": {
                 "live": null,
@@ -74,10 +74,10 @@
             ],
             "images": {
                 "large": {
-                    "url": "/assets/infiniteimaginations/images/large-adelphi-digital.png",
+                    "url": "./infinite-imaginations/assets/infiniteimaginations/images/large-adelphi-digital.png",
                     "padding": 61
                 },
-                "small": "/assets/infiniteimaginations/images/small-adelphi-digital.jpg"
+                "small": "./infinite-imaginations/assets/infiniteimaginations/images/small-adelphi-digital.jpg"
             },
             "url": {
                 "live": "http://adelphi.digital",
@@ -102,10 +102,10 @@
             ],
             "images": {
                 "large": {
-                    "url": "/assets/infiniteimaginations/images/large-infinite-imaginations-beta.png",
+                    "url": "./infinite-imaginations/assets/infiniteimaginations/images/large-infinite-imaginations-beta.png",
                     "padding": 61
                 },
-                "small": "/assets/infiniteimaginations/images/small-infinite-imaginations-beta.jpg"
+                "small": "./infinite-imaginations/assets/infiniteimaginations/images/small-infinite-imaginations-beta.jpg"
             },
             "url": {
                 "live": "http://beta.infiniteimaginations.co",
@@ -130,10 +130,10 @@
             ],
             "images": {
                 "large": {
-                    "url": "/assets/infiniteimaginations/images/large-the-jewel-box.png",
+                    "url": "./infinite-imaginations/assets/infiniteimaginations/images/large-the-jewel-box.png",
                     "padding": 70
                 },
-                "small": "/assets/infiniteimaginations/images/small-the-jewel-box.jpg"
+                "small": "./infinite-imaginations/assets/infiniteimaginations/images/small-the-jewel-box.jpg"
             },
             "url": {
                 "live": null,
@@ -157,10 +157,10 @@
             ],
             "images": {
                 "large": {
-                    "url": "/assets/infiniteimaginations/images/large-envirobot.png",
+                    "url": "./infinite-imaginations/assets/infiniteimaginations/images/large-envirobot.png",
                     "padding": 70
                 },
-                "small": "/assets/infiniteimaginations/images/small-envirobot.jpg"
+                "small": "./infinite-imaginations/assets/infiniteimaginations/images/small-envirobot.jpg"
             },
             "url": {
                 "live": null,
